@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Village extends Model
+class Activity extends Model
 {
     /**
      * Relationships
      */
-    public function cabins()
+    public function guests()
     {
-        return $this->hasMany('App\Cabin');
+        return $this->belongsToMany('App\Guest');
     }
 }

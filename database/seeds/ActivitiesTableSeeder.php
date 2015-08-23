@@ -5,10 +5,17 @@ use Illuminate\Database\Seeder;
 // composer require laracasts/testdummy
 use Laracasts\TestDummy\Factory as TestDummy;
 
-class {{class}} extends Seeder
+class ActivityTableSeeder extends Seeder
 {
     public function run()
     {
-        // TestDummy::times(20)->create('App\Post');
+        $activities = [
+            ['name' => 'Swimming'],
+            ['name' => 'Boating'],
+            ['name' =>'Archery'],
+            ['name' =>'Arts & Crafts'],
+            ['name' =>'Tennis']
+        ];
+        App\Activity::insert($activities);
     }
 }

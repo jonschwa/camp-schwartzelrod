@@ -15,6 +15,7 @@ class CreateRsvpsTable extends Migration
         Schema::create('rsvps', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('invitation_id')->unsigned()->nullable()->index();
+            $table->foreign('invitation_id')->references('id')->on('invitations');
             $table->integer('user_id')->unsigned()->index();
             $table->tinyInteger('will_attend');
             $table->integer('num_guests')->unsigned();

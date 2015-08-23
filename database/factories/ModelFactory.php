@@ -29,3 +29,33 @@ $factory->define(App\Guest::class, function (Faker\Generator $faker) {
         'is_color_war_participant' => $faker->boolean(),
     ];
 });
+
+$factory->define(App\Village::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word
+    ];
+});
+
+$factory->define(App\Cabin::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word,
+        'capacity' => rand(4,10)
+    ];
+});
+
+$factory->define(App\Invitation::class, function () {
+    return [];
+});
+
+$factory->define(App\Rsvp::class, function (Faker\Generator $faker) {
+    return [
+        'will_attend' => $faker->boolean(),
+        'num_gusts' => rand(1,5)
+    ];
+});
+
+$factory->define(App\Activity::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word
+    ];
+});

@@ -16,7 +16,7 @@ class CreateInvitationsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->dateTime('sent_at')->index();
+            $table->dateTime('sent_at')->index()->nullable();
             $table->timestamps();
         });
     }
