@@ -13,9 +13,19 @@
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
         'email' => $faker->email,
-        'password' => bcrypt(str_random(10)),
+        'password' => bcrypt('password'),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(App\Guest::class, function (Faker\Generator $faker) {
+    return [
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'is_staying' => $faker->boolean(),
+        'is_color_war_participant' => $faker->boolean(),
     ];
 });
