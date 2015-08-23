@@ -43,8 +43,10 @@ $factory->define(App\Cabin::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Invitation::class, function () {
-    return [];
+$factory->define(App\Invitation::class, function (Faker\Generator $faker) {
+    return [
+        'code' => substr(sha1(time() . $faker->word),0,8)
+    ];
 });
 
 $factory->define(App\Rsvp::class, function (Faker\Generator $faker) {

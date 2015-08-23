@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test', function() {
-    dd(App\Activity::lists('id')->toArray());
-});
+Route::get('users', 'UserController@index');
+Route::get('users/{id}', 'UserController@show');
+
