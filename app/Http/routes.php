@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('users', 'UserController@index');
-Route::get('users/{id}', 'UserController@show');
-
+Route::group(['prefix' => 'api'], function(){
+    Route::post('users', 'Api\UserController@store');
+    Route::get('users', 'Api\UserController@index');
+    Route::get('users/{id}', 'Api\UserController@show');
+});
