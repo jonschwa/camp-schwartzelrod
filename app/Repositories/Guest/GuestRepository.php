@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Repositories\Guest;
+<?php namespace App\Repositories\Guest;
 
 interface GuestRepository
 {
@@ -8,5 +6,5 @@ interface GuestRepository
 
     public function findById($id);
 
-    public function create(array $params);
+    public function create($params);
 }

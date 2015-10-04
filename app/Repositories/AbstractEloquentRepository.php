@@ -14,7 +14,7 @@ abstract class AbstractEloquentRepository
         return $this->model->where('id', '=', $id)->get();
     }
 
-    public function create(array $params)
+    public function create($params)
     {
         $create = $this->model->create($params);
         return $create;

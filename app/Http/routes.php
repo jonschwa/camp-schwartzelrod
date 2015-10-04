@@ -11,12 +11,28 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'api'], function(){
+    /*
+     * Registration API Endpoints
+     */
+    Route::group(['prefix' => 'register'], function() {
+        Route::get('/', function() {
+            dd('register!');
+        });
+    });
+    /*
+     * User API Endpoints
+     */
+    Route::group(['prefix' => 'users'], function() {
+        Route::post('/', 'Api\UserController@store');
+        Route::get('/', 'Api\UserController@index');
+        Route::get('{id}', 'Api\UserController@show');
+        Route::get('{id}/guests', 'Api\UserController@userWithGuests');
+    });
 });
 
-Route::group(['prefix' => 'api'], function(){
-    Route::post('users', 'Api\UserController@store');
-    Route::get('users', 'Api\UserController@index');
-    Route::get('users/{id}', 'Api\UserController@show');
+Route::get('/', function() {
+    return view('pages.home');
 });
+
+Route::get('savethedate/{code?}', 'InvitationController@savethedate');

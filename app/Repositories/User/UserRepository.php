@@ -1,7 +1,4 @@
-<?php
-
-namespace App\Repositories\User;
-
+<?php namespace App\Repositories\User;
 
 interface UserRepository
 {
@@ -9,7 +6,9 @@ interface UserRepository
 
     public function findById($id);
 
-    public function create(array $params);
+    public function create($params);
 
-    public function addGuest($userId, array $params);
+    public function addGuest($userId, $params);
+
+    public function getUserWithGuests($userId);
 }

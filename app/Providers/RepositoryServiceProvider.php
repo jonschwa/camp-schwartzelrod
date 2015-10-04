@@ -2,9 +2,7 @@
 
 namespace App\Providers;
 
-use App\User;
 use Illuminate\Support\ServiceProvider;
-use App\Repositories\User\EloquentUserRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -27,7 +25,17 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind('App\Repositories\User\UserRepository', function($app)
         {
-            return new EloquentUserRepository(new User);
+            return new \App\Repositories\User\EloquentUserRepository(new \App\User);
+        });
+
+        $this->app->bind('App\Repositories\Invitation\InvitationRepository', function($app)
+        {
+            return new \App\Repositories\Invitation\EloquentInvitationRepository(new \App\Invitation);
+        });
+
+        $this->app->bind('App\Repositories\Guest\GuestRepository', function($app)
+        {
+            return new \App\Repositories\Guest\EloquentGuestRepository(new \App\Guest);
         });
     }
 }

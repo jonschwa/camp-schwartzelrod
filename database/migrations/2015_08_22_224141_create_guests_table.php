@@ -17,6 +17,7 @@ class CreateGuestsTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->string('first_name');
             $table->string('last_name')->nullable();
+            $table->tinyInteger('is_adult');
             $table->tinyInteger('is_staying')->default(0);
             $table->tinyInteger('is_color_war_participant')->default(0);
             $table->timestamps();

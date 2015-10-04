@@ -6,3 +6,4 @@ Homestead.json
 /capconfig
 .idea
 Capfile
+/public/css/

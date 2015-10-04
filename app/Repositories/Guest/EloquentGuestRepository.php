@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Repositories\Guest;
+<?php namespace App\Repositories\Guest;
 
 use App\Guest;
 use App\Repositories\AbstractEloquentRepository;
@@ -14,7 +12,7 @@ class EloquentGuestRepository extends AbstractEloquentRepository implements Gues
         $this->model = $model;
     }
 
-    public function create(array $params)
+    public function create($params)
     {
         $guest = $this->model->create($params);
         return $guest;

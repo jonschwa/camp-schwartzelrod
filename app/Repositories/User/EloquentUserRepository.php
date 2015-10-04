@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Repositories\User;
+<?php namespace App\Repositories\User;
 
 use App\User;
 use App\Repositories\AbstractEloquentRepository;
@@ -15,8 +13,9 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
         $this->model = $model;
     }
 
-    public function addGuest($userId, array $params)
+    public function addGuest($userId, $params)
     {
+        //@todo pass a user object - 1 less query
         try{
             $user = $this->findById($userId);
             $user->guests()->create($params);
@@ -26,4 +25,11 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
             return false;
         }
     }
+
+    public function getUserWithGuests($userId) {
+        $user = $this->model->find($userId)->with('guests')->first();
+        return $user;
+    }
+
+
 }
