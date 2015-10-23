@@ -2,5 +2,5 @@
 
 class UserController extends Controller
 {
-    
+
 }

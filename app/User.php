@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Hash;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -24,7 +25,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'first_name', 'last_name', 'email', 'password', 'active'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -44,6 +45,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function invitation()
     {
         return $this->hasOne('App\Invitation');
+    }
+
+    public function setPasswordAttribute($pass){
+
+        $this->attributes['password'] = Hash::make($pass);
+
     }
 
 }

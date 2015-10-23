@@ -13,6 +13,16 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
         $this->model = $model;
     }
 
+    public function create($params)
+    {
+        $params['active'] = 1;
+        if ($create = $this->model->create($params))
+        {
+            return $create;
+        }
+        return false;
+    }
+
     public function addGuest($userId, $params)
     {
         //@todo pass a user object - 1 less query
@@ -27,7 +37,8 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
     }
 
     public function getUserWithGuests($userId) {
-        $user = $this->model->find($userId)->with('guests')->first();
+        //$user = $this->model->find($userId)->with('guests')->first();
+        $user = $this->model->where('id', '=', $userId)->with('guests')->first();
         return $user;
     }
 

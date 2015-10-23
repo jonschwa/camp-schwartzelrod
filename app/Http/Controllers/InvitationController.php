@@ -26,18 +26,20 @@ class InvitationController extends Controller
         if($code) {
             $invitation = $this->invitationRepo->getInvitationByCode($code);
             $user = $this->userRepo->getUserWithGuests($invitation->user->id);
-            $data = [
-                'invitation' => $invitation,
-                'guests' => $user->guests
-            ];
-            return $data;
+            //is this user activated?
+            if($user->activated) {
+                return view('user.login');
+            }
+            else {
+                return view('rsvp.activation', ['user' => $user, 'invitation' => $invitation, 'guests' => $user->guests]);
+            }
+
         }
         else {
             $inputs = \Input::all();
             if(isset($inputs['rsvp-code'])) {
                 return redirect('/savethedate/' . $inputs['rsvp-code']);
             }
-            //return "we didn't invite you, motherfucker!";
             return view('rsvp.enter_code');
         }
     }

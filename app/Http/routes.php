@@ -28,7 +28,12 @@ Route::group(['prefix' => 'api'], function(){
         Route::get('/', 'Api\UserController@index');
         Route::get('{id}', 'Api\UserController@show');
         Route::get('{id}/guests', 'Api\UserController@userWithGuests');
+        Route::post('register', 'Api\UserController@register');
     });
+});
+
+Route::get('svgtest', function() {
+   return view('svgtest');
 });
 
 Route::get('/', function() {
