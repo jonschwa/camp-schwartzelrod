@@ -11,12 +11,9 @@ class EloquentInvitationRepository implements InvitationRepository
         $this->model = $model;
     }
 
-    public function getInvitationByCode($invitationCode) {
+    public function getByCode($code) {
         try {
-            $invitation = $this->model->where('code', '=', $invitationCode)
-                                      ->with('user')
-                                      ->with('rsvp')
-                                      ->firstOrFail();
+            $invitation = $this->model->byCode($code)->with('user')->firstOrFail();
         }
         catch(ModelNotFoundException $e) {
             return false;

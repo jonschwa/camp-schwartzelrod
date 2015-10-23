@@ -17,11 +17,11 @@ abstract class ApiController extends Controller
         return $this->apiResponse('ok', $record);
     }
 
-    public function apiResponse($message, $data, $contentType = 'application/json') {
+    public function apiResponse($message, $data=[], $contentType = 'application/json') {
         return (new Response(['message' => $message, 'data' => $data], 200))->header('Content-Type', $contentType);
     }
 
-    public function apiErrorResponse($message, $data, $statusCode = 500, $contentType = 'application/json') {
+    public function apiErrorResponse($message, $statusCode = 500, $data=[], $contentType = 'application/json') {
         return (new Response(['message' => $message, 'errors' => $data], $statusCode))->header('Content-Type', $contentType);
     }
 

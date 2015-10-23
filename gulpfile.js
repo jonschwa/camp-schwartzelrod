@@ -33,7 +33,7 @@ elixir(function(mix) {
 
 // Browserify
 gulp.task('browserify', function() {
-    return browserify(source+'js/test.js')
+    return browserify(source+'js/dev.js')
         .bundle()
         .pipe(sourcestream('main.js'))
         .pipe(gulp.dest(dist));

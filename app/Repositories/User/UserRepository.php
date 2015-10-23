@@ -8,6 +8,8 @@ interface UserRepository
 
     public function create($params);
 
+    public function activate($userId, $params);
+
     public function addGuest($userId, $params);
 
     public function getUserWithGuests($userId);

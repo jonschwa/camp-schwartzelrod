@@ -2,5 +2,5 @@
 
 interface InvitationRepository
 {
-    public function getInvitationByCode($invitationCode);
+    public function getByCode($invitationCode);
 }

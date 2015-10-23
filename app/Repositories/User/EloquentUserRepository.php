@@ -23,6 +23,14 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
         return false;
     }
 
+    public function activate($userId, $params)
+    {
+        $user = $this->model->find($userId);
+        $params['active'] = 1;
+        $user->update($params);
+        return $user;
+    }
+
     public function addGuest($userId, $params)
     {
         //@todo pass a user object - 1 less query

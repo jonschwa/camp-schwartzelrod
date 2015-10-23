@@ -20,15 +20,22 @@ Route::group(['prefix' => 'api'], function(){
             dd('register!');
         });
     });
+
+    Route::post('login', 'Api\UserController@login');
     /*
      * User API Endpoints
      */
     Route::group(['prefix' => 'users'], function() {
         Route::post('/', 'Api\UserController@store');
+        Route::post('{id}/activate', 'Api\UserController@activate');
         Route::get('/', 'Api\UserController@index');
         Route::get('{id}', 'Api\UserController@show');
         Route::get('{id}/guests', 'Api\UserController@userWithGuests');
         Route::post('register', 'Api\UserController@register');
+    });
+
+    Route::group(['prefix' => 'invitations'], function() {
+        Route::get('code/{code}', 'Api\InvitationController@getByCode');
     });
 });
 
@@ -40,4 +47,8 @@ Route::get('/', function() {
     return view('pages.home');
 });
 
-Route::get('savethedate/{code?}', 'InvitationController@savethedate');
+Route::get('guests', function() {
+    dd(Auth::user());
+});
+
+Route::get('savethedate', 'InvitationController@savethedate');

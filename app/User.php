@@ -47,10 +47,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasOne('App\Invitation');
     }
 
-    public function setPasswordAttribute($pass){
-
+    /**
+     * Mutators
+     */
+    public function setPasswordAttribute($pass)
+    {
         $this->attributes['password'] = Hash::make($pass);
 
     }
-
 }

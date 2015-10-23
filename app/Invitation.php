@@ -18,4 +18,12 @@ class Invitation extends Model
     {
         return $this->hasOne('App\Rsvp');
     }
+
+    /**
+     * Query Scopes
+     */
+    public function scopeByCode($query, $code)
+    {
+        return $query->where('code', $code);
+    }
 }
