@@ -14,8 +14,14 @@ class InvitationController extends ApiController
     {
         if ($invitation = $this->repo->getByCode($code))
         {
-
-            return $this->apiResponse('ok', ['invitation' => $invitation, 'user']);
+            if($invitation->user->active == 0)
+            {
+                return $this->apiResponse('ok', ['invitation' => $invitation, 'user']);
+            }
+            else
+            {
+                return $this->apiErrorResponse("This code has been claimed! Please try logging in <a href=".route('user.login').">here</a>");
+            }
         }
         else
         {

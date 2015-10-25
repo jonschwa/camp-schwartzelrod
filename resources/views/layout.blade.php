@@ -8,6 +8,10 @@
 <body>
 @include("header")
 <div id="main-content" class="content main-content">
+    <div id="error-flash-container" class="alert alert-danger" role="alert" style="display:none">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span id="error-flash-message" class="alert-error-text"></span>
+    </div>
     @yield("content")
 </div>
 @include("footer")

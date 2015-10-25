@@ -13,10 +13,11 @@
             <nav id="main-navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">Login</a>
-                    </li>
-                    <li>
-                        <a href="#">Register</a>
+                        @if(Auth::user())
+                            <a href="/logout">Log Out</a>
+                        @else
+                            <a href="/login">Log In</a>
+                        @endif
                     </li>
                 </ul>
             </nav>

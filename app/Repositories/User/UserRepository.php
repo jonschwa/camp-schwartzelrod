@@ -6,6 +6,8 @@ interface UserRepository
 
     public function findById($id);
 
+    public function findByEmail($email);
+
     public function create($params);
 
     public function activate($userId, $params);
@@ -13,4 +15,6 @@ interface UserRepository
     public function addGuest($userId, $params);
 
     public function getUserWithGuests($userId);
+
+    public function getAllUserInfo($userId);
 }

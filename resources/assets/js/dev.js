@@ -1,3 +1,9 @@
+function showErrorMessage(message) {
+    $('#error-flash-message').html(message);
+    $('#error-flash-container').fadeIn();
+    return false;
+}
+
 $('#form-enter-code').submit(function(event) {
     event.preventDefault();
 
@@ -13,10 +19,8 @@ $('#form-enter-code').submit(function(event) {
         $('#form-register-user-id').val(json.data.invitation.user.id);
         $('#form-register').fadeIn();
     }).error(function(json) {
-        console.log(json.responseJSON);
-        alert(json.responseJSON.message);
+        showErrorMessage(json.responseJSON.message);
     });
-
 });
 
 $('#form-register').submit(function(event) {
@@ -39,11 +43,35 @@ $('#form-register').submit(function(event) {
         console.log(json);
         //@todo store local user object?
         //@todo redirect to logged in homepage w/ guests
-
-
+        window.location.href = "/guests";
     }).error(function(json) {
-        console.log(json.responseJSON);
-        alert(json.responseJSON.message);
+        showErrorMessage(json.responseJSON.message);
+        //@todo highlight validation errs and show messages
+        $('#error-flash-container').fadeIn();
     });
+});
 
+$('#form-login').submit(function(event) {
+    //@todo show loading gif
+
+    event.preventDefault();
+    //@todo some FE validation?
+
+    $.ajax({
+        url: "/api/users/login",
+        method: "POST",
+        data: {
+            "email" : $('#form-login-email').val(),
+            "password" : $('#form-login-password').val(),
+        }
+    }).success(function(json) {
+        console.log(json);
+        //@todo store local user object?
+        //@todo redirect to logged in homepage w/ guests
+        window.location.href = "/home";
+    }).error(function(json) {
+        showErrorMessage(json.responseJSON.message);
+        //@todo highlight validation errs and show messages
+        $('#error-flash-container').fadeIn();
+    });
 });
