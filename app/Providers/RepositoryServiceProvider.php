@@ -37,5 +37,10 @@ class RepositoryServiceProvider extends ServiceProvider
         {
             return new \App\Repositories\Guest\EloquentGuestRepository(new \App\Guest);
         });
+
+        $this->app->bind('App\Repositories\Rsvp\RsvpRepository', function($app)
+        {
+            return new \App\Repositories\Rsvp\EloquentRsvpRepository(new \App\Rsvp);
+        });
     }
 }

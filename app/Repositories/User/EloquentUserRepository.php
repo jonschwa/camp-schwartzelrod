@@ -15,8 +15,9 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
 
     public function findByEmail($email)
     {
-        try{
-            $user = $this->model->where('email', '=', $email)->firstOrFail();
+        try {
+            $user = $this->model->where('email', '=', $email)
+                ->where('active', '=', 1)->firstOrFail();
             return $user;
         }
         catch(ModelNotFoundException $e) {
@@ -27,8 +28,7 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
     public function create($params)
     {
         $params['active'] = 1;
-        if ($create = $this->model->create($params))
-        {
+        if ($create = $this->model->create($params)) {
             return $create;
         }
         return false;
@@ -65,7 +65,7 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
         $user = $this->model->where('id', '=', $userId)
                             ->with('guests')
                             ->with('invitation')->first();
-        $user->rsvp = $user->invitation->rsvp;
+        $user->rsvp = isset($user->invitation->rsvp) ? $user->invitation->rsvp : null;
         unset($user->invitation);
         return $user;
     }

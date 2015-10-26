@@ -18,7 +18,7 @@ class CreateRsvpsTable extends Migration
             $table->foreign('invitation_id')->references('id')->on('invitations');
             $table->integer('user_id')->unsigned()->index();
             $table->tinyInteger('will_attend');
-            $table->integer('num_guests')->unsigned();
+            $table->integer('num_guests')->unsigned()->default(0);
             $table->string('comment')->nullable();
             $table->timestamps();
         });

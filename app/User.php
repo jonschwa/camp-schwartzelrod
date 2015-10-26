@@ -47,6 +47,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasOne('App\Invitation');
     }
 
+    public function rsvp()
+    {
+        return $this->hasOne('App\Rsvp');
+    }
+
     /**
      * Mutators
      */
