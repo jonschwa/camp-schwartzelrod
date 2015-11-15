@@ -11,7 +11,7 @@ class UsersTableSeeder extends Seeder
                 $numGuests = rand(0,4);
                 for($i=0; $i<=$numGuests; $i++) {
                     $guest = $u->guests()->save(factory(App\Guest::class)->make());
-                    $guest->activities()->attach($this->getRandomActivityIds());
+                    //$guest->activities()->attach($this->getRandomActivityIds());
                     $i++;
                 }
                 $invitation = $u->invitation()->save(factory(App\Invitation::class)->make());

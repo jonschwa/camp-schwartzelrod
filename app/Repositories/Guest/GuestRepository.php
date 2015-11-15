@@ -7,4 +7,6 @@ interface GuestRepository
     public function findById($id);
 
     public function create($params);
+
+    public function createOrUpdate($user, $guestData);
 }

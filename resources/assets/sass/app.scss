@@ -1,10 +1,17 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-.giant-input {
+.giant-input
+{
   height: 76px;
   font-size: 40px;
 }
 
-.navbar {
+.navbar
+{
   background-color: #1D6107;
+}
+
+.form-rsvp-guest-header span
+{
+  display: inline-block;
 }

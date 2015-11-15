@@ -1,7 +1,9 @@
 <?php namespace App\Http\Controllers\Api;
 
+use App\Repositories\Guest\GuestRepository;
 use Auth;
 use Event;
+use Input;
 use Validator;
 use Illuminate\Http\Request;
 use App\Events\UserWasCreated;
@@ -32,10 +34,12 @@ class UserController extends ApiController
     ];
 
     protected $repo;
+    protected $guest;
 
-    public function __construct(UserRepository $user)
+    public function __construct(UserRepository $user, GuestRepository $guest)
     {
         $this->repo = $user;
+        $this->guest = $guest;
     }
 
     public function userWithGuests($userId)
@@ -104,5 +108,15 @@ class UserController extends ApiController
     {
         Auth::logout();
         return $this->apiResponse('User logged out');
+    }
+
+    public function updateUserGuests($userId)
+    {
+        $user = $this->repo->findById($userId);
+        $guestData = Input::all();
+        $guests = $this->guest->createOrUpdate($user, $guestData['guests']);
+        $this->guest->deleteOldGuests($user, $guests);
+        dd($guests);
+    //return 'hi';
     }
 }

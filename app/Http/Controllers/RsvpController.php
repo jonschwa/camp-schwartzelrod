@@ -26,8 +26,8 @@ class RsvpController extends Controller
         $user = Auth::user();
         $allUserInfo = $this->userRepo->getAllUserInfo($user->id);
 
-        return $allUserInfo;
-
+        //return $allUserInfo;
+        return view('rsvp.index', ['user' => $allUserInfo]);
     }
 
     public function bummer()

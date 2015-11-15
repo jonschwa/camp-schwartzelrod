@@ -1,5 +1,6 @@
 <?php namespace App\Repositories\User;
 
+use App\Repositories\Guest\GuestRepository;
 use App\User;
 use App\Repositories\AbstractEloquentRepository;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -68,6 +69,11 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
         $user->rsvp = isset($user->invitation->rsvp) ? $user->invitation->rsvp : null;
         unset($user->invitation);
         return $user;
+    }
+
+    public function syncUserGuests($user, $guests)
+    {
+        dd($guests);
     }
 
 

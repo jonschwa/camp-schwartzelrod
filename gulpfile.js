@@ -31,12 +31,19 @@ elixir(function(mix) {
     ]);
 });
 
+// define the default task and add the watch task to it
+gulp.task('default', ['watch']);
+
 // Browserify
 gulp.task('browserify', function() {
     return browserify(source+'js/dev.js')
         .bundle()
         .pipe(sourcestream('main.js'))
         .pipe(gulp.dest(dist));
+});
+
+gulp.task('watch', function() {
+    gulp.watch(source + 'js/*.js', ['browserify']);
 });
 
 // Scripts

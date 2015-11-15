@@ -13,6 +13,7 @@ Route::group(['prefix' => 'api'], function()
         Route::get('/', 'Api\UserController@index');
         Route::get('{id}', 'Api\UserController@show');
         Route::get('{id}/guests', 'Api\UserController@userWithGuests');
+        Route::post('{id}/guests', 'Api\UserController@updateUserGuests');
         Route::post('register', 'Api\UserController@register');
 
         Route::post('{userId}/rsvp', 'Api\RsvpController@store');
@@ -43,5 +44,5 @@ Route::get('invitation', 'InvitationController@savethedate');
 Route::get('login', ['as' => 'user.login', 'uses' => 'UserController@login']);
 Route::get('logout', ['as' => 'user.logout', 'uses' => 'UserController@logout']);
 Route::get('rsvp', ['as' => 'rsvp', 'uses' => 'RsvpController@store']);
-Route::get('home', ['as' => 'user.loggedIn.home', 'middleware' => 'auth', 'uses' => 'UserController@loggedInHome']);
+Route::get('status', ['as' => 'user.loggedIn.home', 'middleware' => 'auth', 'uses' => 'UserController@loggedInHome']);
 Route::get('bummer', 'RsvpController@bummer');

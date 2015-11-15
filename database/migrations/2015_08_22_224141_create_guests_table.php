@@ -15,11 +15,16 @@ class CreateGuestsTable extends Migration
         Schema::create('guests', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
-            $table->string('first_name');
-            $table->string('last_name')->nullable();
-            $table->tinyInteger('is_adult');
+            $table->string('first_name', 50);
+            $table->string('last_name', 50)->nullable();
+            $table->tinyInteger('is_adult')->default(1);
             $table->tinyInteger('is_staying')->default(0);
-            $table->tinyInteger('is_color_war_participant')->default(0);
+            $table->tinyInteger('interested_archery')->default(0);
+            $table->tinyInteger('interested_swimming')->default(0);
+            $table->tinyInteger('interested_boating')->default(0);
+            $table->tinyInteger('interested_good_time')->default(0);
+            $table->tinyInteger('interested_arts_and_crafts')->default(0);
+            $table->tinyInteger('interested_sports')->default(0);
             $table->timestamps();
         });
     }

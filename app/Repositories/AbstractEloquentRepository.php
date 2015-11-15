@@ -11,7 +11,7 @@ abstract class AbstractEloquentRepository
 
     public function findById($id)
     {
-        return $this->model->where('id', '=', $id)->get();
+        return $this->model->where('id', '=', $id)->first();
     }
 
     public function create($params)
