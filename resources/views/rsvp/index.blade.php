@@ -22,7 +22,7 @@
     </div>
     <div class="container">
         <div id="rsvp-submit-area">
-            <button type="button" class="btn-primary btn">Finish and submit!</button>
+            <button type="button" class="btn-primary btn" id="btn-user-guest-submit">Finish and submit!</button>
         </div>
     </div>
 @stop

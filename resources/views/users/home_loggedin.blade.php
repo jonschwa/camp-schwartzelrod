@@ -9,7 +9,7 @@
                     <h3>RSVP</h3>
                     @if(is_null($user->rsvp))
                         <p>You haven't rsvped!</p>
-                        <p><a href="/user/rsvp">Do it now!</a></p>
+                        <p><a href="/rsvp">Do it now!</a></p>
                     @else
                         <p>Thanks! You've rsvped!</p>
                     @endif

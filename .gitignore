@@ -8,3 +8,7 @@ Homestead.json
 Capfile
 /public/css/
 /public/js/
+/public/fonts/
+/resources/assets/js/dev-mixed.js
+/resources/assets/js/dev-mixed.js.map
+/resources/assets/js/bootstrap.min.js

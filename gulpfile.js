@@ -1,7 +1,7 @@
 var elixir = require('laravel-elixir');
 var browserify = require('browserify');
 var gulp = require('gulp');
-var sourcestream = require('vinyl-source-stream');
+//var sourcestream = require('vinyl-source-stream');
 
 // VARIABLES
 // ----------
@@ -26,36 +26,23 @@ function handleError() {
  */
 
 elixir(function(mix) {
+    var bootstrapPath = 'node_modules/bootstrap-sass/assets';
+
     mix.sass([
      'app.scss'
-    ]);
-});
-
-// define the default task and add the watch task to it
-gulp.task('default', ['watch']);
-
-// Browserify
-gulp.task('browserify', function() {
-    return browserify(source+'js/dev.js')
-        .bundle()
-        .pipe(sourcestream('main.js'))
-        .pipe(gulp.dest(dist));
-});
-
-gulp.task('watch', function() {
-    gulp.watch(source + 'js/*.js', ['browserify']);
-});
-
-// Scripts
-gulp.task('scripts', ['lint', 'browserify'], function() {
-    return gulp.src([
-        source+'js/vendor/_*.js',
-        dist+'main.js'
     ])
-        .pipe(concat('source.dev.js'))
-        .pipe(gulp.dest(dist+'js'))
-        .pipe(rename('source.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest(dist))
-        .pipe(browserSync.stream({match: '**/*.js'}));
+    .copy(bootstrapPath + '/fonts', 'public/fonts')
+    .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'resources/assets/js');
+});
+
+elixir(function(mix) {
+    mix.scripts(['helpers.js',
+                 'guests.js',
+                 'invitation.js',
+                 'login.js'
+                ],
+                'resources/assets/js/dev-mixed.js',
+                'resources/assets/js'
+                )
+    .browserify('resources/assets/js/dev-mixed.js', 'public/js/main.js');
 });
