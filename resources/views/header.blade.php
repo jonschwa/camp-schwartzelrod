@@ -14,7 +14,9 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         @if(Auth::user())
-                            <a href="/logout">Log Out</a>
+                            <div class="nav-logged-in-text">Logged in as {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}
+                                <a href="/logout">Log Out</a>
+                            </div>
                         @else
                             <a href="/login">Log In</a>
                         @endif

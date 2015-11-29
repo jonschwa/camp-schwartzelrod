@@ -16,7 +16,7 @@
                 <input name="is-staying" type="checkbox">This person will be staying on-site in a cabin
             </label>
         </div>
-        <div class="container guest-activities">
+        <div class="container-fluid guest-activities">
             <p>And would be interested in these activities:</p>
             <div>
                 <span class="activityIcon" aria-hidden="true" input-name="interested-archery">Archery</span>
