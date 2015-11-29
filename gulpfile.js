@@ -1,5 +1,4 @@
 var elixir = require('laravel-elixir');
-var browserify = require('browserify');
 var gulp = require('gulp');
 //var sourcestream = require('vinyl-source-stream');
 
