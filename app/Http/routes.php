@@ -5,6 +5,10 @@ Route::get('test_invites', function() {
     return $i->all(['code']);
 });
 
+Route::get('test', function() {
+    dd('works!');
+});
+
 Route::group(['prefix' => 'api'], function()
 {
     /*
