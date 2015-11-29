@@ -1,5 +1,10 @@
 <?php
 
+Route::get('test_invites', function() {
+    $i = new App\Invitation();
+    return $i->all();
+});
+
 Route::group(['prefix' => 'api'], function()
 {
     /*
