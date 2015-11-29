@@ -3,6 +3,8 @@
 
 @section("content")
 <div class="container">
-    <h1>hi!</h1>
+    <h1>This will be a real thing soon!</h1>
+    <p><a href="/invitation">Invitation page</a></p>
+    <p><a href="/test_invites">Invitation codes</a></p>
 </div>
 @stop

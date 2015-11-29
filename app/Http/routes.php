@@ -2,7 +2,7 @@
 
 Route::get('test_invites', function() {
     $i = new App\Invitation();
-    return $i->all();
+    return $i->all(['code']);
 });
 
 Route::group(['prefix' => 'api'], function()
