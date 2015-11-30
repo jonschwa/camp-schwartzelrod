@@ -6,7 +6,7 @@ Route::get('test_invites', function() {
 });
 
 Route::get('test', function() {
-    dd('works!');
+    dd('changed!');
 });
 
 Route::group(['prefix' => 'api'], function()
