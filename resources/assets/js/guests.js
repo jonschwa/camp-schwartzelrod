@@ -32,6 +32,7 @@ function UserGuest (params) {
     this.firstName = params.firstName;
     this.lastName = params.lastName;
     this.isStaying = params.isStaying;
+    this.cabinAdventureLevel = params.cabinAdventureLevel;
     this.archery = params.archery;
     this.swimming = params.swimming;
     this.boating = params.boating,
@@ -90,6 +91,7 @@ function generateRequestBody(guestFormData) {
             lastName : $(this).find("input[name='last-name']").val(),
             isAdult : $(this).find("input[name='is-adult']").is(':checked') ? 1 : 0,
             isStaying : $(this).find("input[name='is-staying']").is(':checked') ? 1 : 0,
+            cabinAdventureLevel : $(this).find("input[name='cabin-adventure-level']").val(),
             archery : $(this).find("input[name='interested-archery']").is(':checked') ? 1 : 0,
             swimming : $(this).find("input[name='interested-swimming']").is(':checked') ? 1 : 0,
             bbq : $(this).find("input[name='interested-bbq']").is(':checked') ? 1 : 0,

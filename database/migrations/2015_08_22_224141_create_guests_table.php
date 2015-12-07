@@ -19,6 +19,7 @@ class CreateGuestsTable extends Migration
             $table->string('last_name', 50)->nullable();
             $table->tinyInteger('is_adult')->default(1);
             $table->tinyInteger('is_staying')->default(0);
+            $table->tinyInteger('cabin_adventure_level')->nullable();
             $table->tinyInteger('interested_archery')->default(0);
             $table->tinyInteger('interested_swimming')->default(0);
             $table->tinyInteger('interested_boating')->default(0);

@@ -8,17 +8,18 @@
             </div>
         <div class="checkbox">
             <label>
-                @if($guest->is_adult == 1)
-                    <input name="is-adult" type="checkbox" checked>This person is an adult
-                @else
-                    <input name="is-adult" type="checkbox">This person is an adult
-                @endif
+                <input name="is-adult" type="checkbox" @if($guest->is_adult == 1) checked @endif>This person is an adult
             </label>
         </div>
         <div class="checkbox">
             <label>
-                <input name="is-staying" type="checkbox">This person will be staying on-site in a cabin
+                <input name="is-staying" type="checkbox" @if($guest->is_staying == 1) checked @endif>This person will be staying on-site in a cabin
             </label>
+        </div>
+        <div class="cabin-details" @if($guest->is_staying == 0) style="display:none;" @endif >
+            <div class="cabirn-adventure-level">
+                Cabin Adventure Level: <input type="text" name="cabin-adventure-level" value="{{ $guest->cabin_adventure_level }}">
+            </div>
         </div>
         <div class="container-fluid guest-activities">
             <p>And would be interested in these activities:</p>
