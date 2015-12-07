@@ -55,7 +55,24 @@ $('#btn-user-guest-submit').on('click', function() {
     }).success(function(json) {
         console.log(json);
 
-        window.alert('that went well!');
+        console.log('guests updated!');
+        //create or update the rsvp record
+        $.ajax({
+            url: "/api/users/" + userId + '/rsvp/',
+            method: "POST",
+            data: {
+                "will_attend" : 1,
+                "num_guests" : userGuests.length
+            }
+        }).success(function(json) {
+            console.log('rsvp updated!');
+            //redirect to the status page!
+            window.location.href = "/status";
+
+        }).error(function(json) {
+            showErrorMessage(json.responseJSON.message);
+        });
+
         //window.location.href = "/status";
     }).error(function(json) {
         showErrorMessage(json.responseJSON.message);

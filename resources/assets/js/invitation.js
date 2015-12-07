@@ -119,7 +119,7 @@ $('#form-register').submit(function(event) {
         console.log(json);
         //@todo store local user object?
         //@todo redirect to logged in homepage w/ guests
-        window.location.href = "/status";
+        window.location.href = "/rsvp";
     }).error(function(json) {
         showErrorMessage(json.responseJSON.message);
         //@todo highlight validation errs and show messages

@@ -26,6 +26,7 @@ class UserController extends Controller
         //get the logged in user's relevant information
         $loggedInUser = Auth::user();
         $user = $this->user->getAllUserInfo($loggedInUser->id);
-        return view('users.home_loggedin', ['user' => $user]);
+        $rsvp = !is_null($user->rsvp()) ? $user->rsvp()->first(): null;
+        return view('users.home_loggedin', ['user' => $user, 'rsvp' => $rsvp]);
     }
 }

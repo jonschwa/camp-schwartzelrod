@@ -7,12 +7,21 @@
             <div class="row">
                 <div class="col-md-4">
                     <h3>RSVP</h3>
-                    @if(is_null($user->rsvp))
+                    @if(is_null($rsvp))
                         <p>You haven't rsvped!</p>
                         <p><a href="/rsvp">Do it now!</a></p>
                     @else
-                        <p>Thanks! You've rsvped!</p>
+                        <p>You have rsvped
+                        @if($rsvp->will_attend == 1)
+                            yes
+                        @elseif($rsvp->will_attend == 0)
+                            no
+                        @elseif($rsvp->will_attend == -1)
+                            maybe
+                        @endif
+                        </p>
                     @endif
+                    <p><a href="/rsvp">Update your rsvp status</a></p>
                 </div>
                 <div class="col-md-4">
                     <h3>Attendees</h3> <!-- todo edit button! --!>

@@ -25,7 +25,7 @@
     </div>
     <div class="container-fluid">
         <div id="rsvp-submit-area">
-            <button type="button" class="btn-primary btn" id="btn-user-guest-submit">Finish and submit!</button>
+            <button type="button" class="btn-primary btn" id="btn-user-guest-submit">Confirm RSVP</button>
         </div>
     </div>
 @stop

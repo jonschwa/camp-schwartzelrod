@@ -8,7 +8,11 @@
             </div>
         <div class="checkbox">
             <label>
-                <input name="is-adult" type="checkbox">This person is an adult
+                @if($guest->is_adult == 1)
+                    <input name="is-adult" type="checkbox" checked>This person is an adult
+                @else
+                    <input name="is-adult" type="checkbox">This person is an adult
+                @endif
             </label>
         </div>
         <div class="checkbox">

@@ -65,7 +65,9 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
     public function getAllUserInfo($userId) {
         $user = $this->model->where('id', '=', $userId)
                             ->with('guests')
-                            ->with('invitation')->first();
+                            ->with('invitation')
+                            ->with('rsvp')
+                            ->first();
         $user->rsvp = isset($user->invitation->rsvp) ? $user->invitation->rsvp : null;
         unset($user->invitation);
         return $user;
