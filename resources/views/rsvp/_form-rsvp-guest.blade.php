@@ -13,11 +13,11 @@
         </div>
         <div class="checkbox">
             <label>
-                <input name="is-staying" type="checkbox" @if($guest->is_staying == 1) checked @endif>This person will be staying on-site in a cabin
+                <input name="is-staying" class="cb-is-staying" type="checkbox" @if($guest->is_staying == 1) checked @endif>This person will be staying on-site in a cabin
             </label>
         </div>
         <div class="cabin-details" @if($guest->is_staying == 0) style="display:none;" @endif >
-            <div class="cabirn-adventure-level">
+            <div class="cabin-adventure-level">
                 Cabin Adventure Level: <input type="text" name="cabin-adventure-level" value="{{ $guest->cabin_adventure_level }}">
             </div>
         </div>

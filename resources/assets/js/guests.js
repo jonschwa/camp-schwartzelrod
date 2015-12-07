@@ -125,3 +125,12 @@ $('#rsvp-guests-container').on('click', '.activityIcon', function(e) {
     }
     toggleInterestColor(active, e.target);
 });
+
+$('#rsvp-guests-container').on('click', '.cb-is-staying', function(e) {
+    if($(this).is(':checked')) {
+        $(this).closest('.rsvp-guest-interests').find('.cabin-details').show();
+    }
+    else {
+        $(this).closest('.rsvp-guest-interests').find('.cabin-details').hide();
+    }
+});
