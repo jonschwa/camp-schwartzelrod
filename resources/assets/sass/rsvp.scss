@@ -1,0 +1,46 @@
+@font-face {
+  font-family: campTitle;
+  src: url('/fonts/CardenioModernBold.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: campSubtitle;
+  src: url('/fonts/CardenioModernStd.ttf');
+  font-weight: bold;
+}
+
+#rsvp-form-container
+{
+  width: 85%;
+  margin: auto;
+  padding: 15px;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px #acadad;
+  background-image: url("/img/paper_fibers.png");
+  text-align: center;
+
+  .title
+  {
+    //font-family: campTitle;
+    font-size: 5em;
+  }
+
+  .subtitle
+  {
+    //font-family: campSubtitle;
+    font-size: 2em;
+  }
+
+  .inner-container
+  {
+    border: 1px solid black;
+    background-image: url("/img/lightpaperfibers.png");
+    padding: 50px;
+  }
+
+  #code-response-container
+  {
+    text-align: left;
+  }
+}

@@ -15,13 +15,13 @@ class UsersTableSeeder extends Seeder
                     $i++;
                 }
                 $invitation = $u->invitation()->save(factory(App\Invitation::class)->make());
-                if(rand(0,1) === 1) {
-                    $invitation->rsvp()->create([
-                        'will_attend' => rand(0,1),
-                        'user_id' => $invitation->user_id,
-                        'num_guests' => $u->guests()->count()
-                    ]);
-                }
+//                if(rand(0,1) === 1) {
+//                    $invitation->rsvp()->create([
+//                        'will_attend' => rand(0,1),
+//                        'user_id' => $invitation->user_id,
+//                        'num_guests' => $u->guests()->count()
+//                    ]);
+//                }
             });
     }
 

@@ -21,9 +21,8 @@ class EloquentRsvpRepository extends AbstractEloquentRepository implements RsvpR
             if(isset($params['num_guests'])) {
                 $rsvp->num_guests = $params['num_guests'];
             }
-            if(isset($params['comment'])) {
-               $rsvp->comment = $params['comment'];
-            }
+            $rsvp->comment = isset($params['comment']) ? $params['comment'] : null;
+
             $rsvp->save();
         }
         catch(ModelNotFoundException $e) {

@@ -11,7 +11,7 @@ class RsvpController extends ApiController
     protected $user;
 
     protected $storeRules = [
-        'will_attend' => 'required|in:1,0',
+        'will_attend' => 'required|in:-1,1,0',
         'num_guests' => 'numeric'
     ];
 
@@ -22,7 +22,7 @@ class RsvpController extends ApiController
 
     public function store($userId, Request $request)
     {
-        $user = $this->user->findById($userId)->first();
+        $user = $this->user->findById($userId);
 
         $validator = Validator::make($request->all(), $this->storeRules);
         if ($validator->fails()) {
