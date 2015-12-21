@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/css/app.css">
     <title>Camp Schwartzelrod</title>
 </head>
-<body>
+<body data-spy="scroll" data-target="#main-site-nav" data-offset="50">
 @include("header")
 <div id="main-content" class="content main-content">
     <div id="error-flash-container" class="alert alert-danger" role="alert" style="display:none">

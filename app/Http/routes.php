@@ -42,10 +42,7 @@ Route::get('svgtest', function()
    return view('svgtest');
 });
 
-Route::get('/', function()
-{
-    return view('pages.home');
-});
+Route::get('/', 'PageController@index');
 
 Route::get('guests', 'GuestController@index');
 Route::get('invitation', 'InvitationController@savethedate');

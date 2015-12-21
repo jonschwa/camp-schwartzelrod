@@ -1,5 +1,6 @@
 var elixir = require('laravel-elixir');
 var gulp = require('gulp');
+
 //var sourcestream = require('vinyl-source-stream');
 
 // VARIABLES
@@ -29,20 +30,22 @@ elixir(function(mix) {
 
     mix.sass([
      'app.scss',
-     'rsvp.scss'
+     'rsvp.scss',
+     'main-page.scss'
     ])
     .copy(bootstrapPath + '/fonts', 'public/fonts')
     .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'resources/assets/js');
 });
 
 elixir(function(mix) {
-    mix.scripts(['helpers.js',
+    mix.scripts(['bootstrap.min.js',
+                 'helpers.js',
                  'guests.js',
                  'invitation.js',
-                 'login.js'
+                 'login.js',
+                 'nav.js'
                 ],
-                'resources/assets/js/dev-mixed.js',
-                'resources/assets/js'
+                'resources/assets/js/dev-mixed.js'
                 )
     .browserify('resources/assets/js/dev-mixed.js', 'public/js/main.js');
 });
