@@ -10,44 +10,48 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Camp Schwartzelrod</a>
+                    <a class="navbar-brand" href="#">Camp</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="/#wedding-info" id="nav-wedding-info-link">Wedding Info</a>
-                        </li>
-                        <li>
-                            <a href="/#our-story" id="nav-our-story-link">Our Story</a>
-                        </li>
-                        <li>
-                            <a href="/#lodging-info" id="nav-lodging-info-link">Lodging</a>
-                        </li>
-                        <li>
-                            @if(Auth::user())
-                                <a href="/status">RSVP</a>
-                            @else
-                                <a id="nav-rsvp-link">RSVP</a>
-                            @endif
-                        </li>
-                    </ul>
-                    @if(Auth::user())
-                        <ul class="nav navbar-nav navbar-right">
+                    <span>
+                        <ul class="nav navbar-nav">
                             <li>
-                                <p class="navbar-text">Logged in as {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} <a href="/logout">(Log Out)</a></p>
+                                <a href="/#wedding-info" id="nav-wedding-info-link">Wedding</a>
+                            </li>
+                            <li>
+                                <a href="/#our-story" id="nav-our-story-link">Story</a>
+                            </li>
+                            <li>
+                                <a href="/#lodging-info" id="nav-lodging-info-link">Lodging</a>
+                            </li>
+                            <li>
+                                @if(Auth::user())
+                                    <a href="/status">RSVP</a>
+                                @else
+                                    <a id="nav-rsvp-link">RSVP</a>
+                                @endif
                             </li>
                         </ul>
-                    @else
-                        <form class="navbar-form navbar-right">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="email">
-                                <input type="password" class="form-control" placeholder="password">
-                            </div>
-                            <button type="submit" class="btn btn-default">Log In</button>
-                        </form>
-                    @endif
+                    </span>
+                    <span>
+                        @if(Auth::user())
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <p class="navbar-text">Logged in as {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} <a href="/logout">(Log Out)</a></p>
+                                </li>
+                            </ul>
+                        @else
+                            <form class="navbar-form navbar-right form-group-sm">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="email">
+                                    <input type="password" class="form-control" placeholder="password">
+                                </div>
+                                <button type="submit" class="btn btn-xs">Log In</button>
+                            </form>
+                        @endif
+                    </span>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>

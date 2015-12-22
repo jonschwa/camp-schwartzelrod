@@ -2,3 +2,89 @@
 {
   padding-top: 50px;
 }
+
+#main-page-splash
+{
+  margin-top: 20px;;
+  text-align: center;
+
+  p.wedding-info-headline
+  {
+    font-size: 4em;
+  }
+
+  img
+  {
+    width:100%;
+  }
+
+  @media (min-width: 0px) {
+    img {
+      width: 60%;
+    }
+    p.wedding-info-headline
+    {
+      font-size: 2em;
+    }
+  }
+
+  @media (min-width: 768px) {
+    img {
+      width: 100%;
+    }
+    p.wedding-info-headline
+    {
+      font-size: 2.5em;
+    }
+  }
+
+  @media (min-width: 992px) {
+    p.wedding-info-headline
+    {
+      font-size: 3em;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    p.wedding-info-headline
+    {
+      font-size: 4em;
+    }
+  }
+
+  #outer-invitation
+  {
+    padding: 20px;
+    box-shadow: 3px 3px 3px #acadad;
+    background-image: url("/img/paper_fibers.png");
+    min-width: 465px;
+    border: 1px solid #acadad;
+    //border-top: 1px solid #acadad;
+    //border-left: 1px solid #acadad;
+  }
+
+    #inner-invitation
+  {
+    box-shadow: 3px 3px 3px #acadad;
+    background-image: url("/img/lightpaperfibers.png");
+    padding: 50px;
+    border: 1px solid #acadad;
+    //border-top: 1px solid #acadad;
+    //border-left: 1px solid #acadad;
+  }
+
+  .text-container
+  {
+    margin: 25px;
+  }
+}
+
+#splash-wedding-info-header
+{
+  background-color: #acadad;
+}
+
+#wedding-info-content
+{
+  padding: 25px;
+}

@@ -43,7 +43,8 @@ elixir(function(mix) {
                  'guests.js',
                  'invitation.js',
                  'login.js',
-                 'nav.js'
+                 'nav.js',
+                 'main-page.js'
                 ],
                 'resources/assets/js/dev-mixed.js'
                 )

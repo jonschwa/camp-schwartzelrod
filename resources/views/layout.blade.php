@@ -8,9 +8,11 @@
 <body data-spy="scroll" data-target="#main-site-nav" data-offset="50">
 @include("header")
 <div id="main-content" class="content main-content">
-    <div id="error-flash-container" class="alert alert-danger" role="alert" style="display:none">
-        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-        <span id="error-flash-message" class="alert-error-text"></span>
+    <div id="row">
+        <div id="error-flash-container container-fluid" class="alert alert-danger container" role="alert" style="display:none">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span id="error-flash-message" class="alert-error-text"></span>
+        </div>
     </div>
     @yield("content")
 </div>
