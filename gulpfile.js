@@ -27,6 +27,7 @@ function handleError() {
 
 elixir(function(mix) {
     var bootstrapPath = 'node_modules/bootstrap-sass/assets';
+    var assetPath = 'resources/assets';
 
     mix.sass([
      'app.scss',
@@ -34,7 +35,8 @@ elixir(function(mix) {
      'main-page.scss'
     ])
     .copy(bootstrapPath + '/fonts', 'public/fonts')
-    .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'resources/assets/js');
+    .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'resources/assets/js')
+    .copy(assetPath + '/fonts', 'public/fonts');
 });
 
 elixir(function(mix) {
