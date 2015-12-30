@@ -1,29 +1,18 @@
 <div id="main-page-splash">
-    <div id="invitation_container" class="container">
+    <div id="invitation_container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div id="outer-invitation">
-                    <div id="inner-invitation">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img src="http://placehold.it/300x450">
-                            </div>
-                            <div class="col-md-1"></div>
-                            <div class="col-md-7">
-                                <div class="text-container">
-                                    <p class="wedding-info-headline">
-                                        Jon Schwartz<br>
-                                        and<br>
-                                        Stacey Axelrod<br>
-                                    <p>
-                                </div>
-                                <p class="wedding-info">
-                                    invite you to a fun-filled camp weekend<br>
-                                    to celebrate their marriage<br>
-                                </p>
-                            </div>
-                        </div>
+            <div class="col-md-12">
+                <div id="parksign-container">
+                    {{--<div id="parksign-shape"><img src="/img/national-forest-sign.svg" /></div>--}}
+                    <div id="parksign-text">
+                        <p class="wedding-info-headline">Jon Schwartz</p>
+                        <p>and</p>
+                        <p class="wedding-info-headline">Stacey Axelrod<p>
                     </div>
+                    <p class="wedding-info-subhead">
+                        invite you to a fun-filled camp weekend<br>
+                        to celebrate their marriage<br>
+                    </p>
                 </div>
             </div>
         </div>

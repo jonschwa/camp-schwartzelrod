@@ -3,88 +3,107 @@
   padding-top: 50px;
 }
 
+#parksign-shape
+{
+  position:absolute;
+  z-index: -1;
+
+  img {
+    height: inherit;
+    width: inherit;
+  }
+}
+
 #main-page-splash
 {
   margin-top: 20px;;
   text-align: center;
 
+  #parksign-container
+  {
+    background: url("/img/national-forest-sign.svg") no-repeat center;
+    background-size: 100% auto;
+    position: relative;
+    z-index: 1;
+    height: 600px;
+    margin: auto auto;
+    max-width: 1024px;
+    min-width: 764px;
+    //padding: 20px;
+  }
+
+  #parksign-text
+  {
+    padding-top:200px;
+  }
+
   p.wedding-info-headline
   {
-    font-size: 4em;
+    font-family: Variane;
+    font-size: 5em;
+    line-height: 1em;
+    color: #ecc844;
   }
 
-  //img
-  //{
-  //  width:100%;
-  //}
-  //
-  //@media (min-width: 0px) {
-  //  img {
-  //    width: 60%;
-  //  }
-  //  p.wedding-info-headline
-  //  {
-  //    font-size: 2em;
-  //  }
-  //}
-  //
-  //@media (min-width: 768px) {
-  //  img {
-  //    width: 100%;
-  //  }
-  //  p.wedding-info-headline
-  //  {
-  //    font-size: 2.5em;
-  //  }
-  //}
-  //
-  //@media (min-width: 992px) {
-  //  p.wedding-info-headline
-  //  {
-  //    font-size: 3em;
-  //  }
-  //}
-  //
-  //@media (min-width: 1200px) {
-  //  p.wedding-info-headline
-  //  {
-  //    font-size: 4em;
-  //  }
-  //}
-
-  #outer-invitation
+  p.wedding-info-subhead
   {
-    padding: 20px;
-    box-shadow: 3px 3px 3px #acadad;
-    background-image: url("/img/paper_fibers.png");
-    min-width: 465px;
-    border: 1px solid #acadad;
-    //border-top: 1px solid #acadad;
-    //border-left: 1px solid #acadad;
+    font-family: Superclarendon;
+    font-size: 2em;
   }
 
-    #inner-invitation
-  {
-    box-shadow: 3px 3px 3px #acadad;
-    background-image: url("/img/lightpaperfibers.png");
-    padding: 50px;
-    border: 1px solid #acadad;
-    //border-top: 1px solid #acadad;
-    //border-left: 1px solid #acadad;
+  //1024
+
+  @media (min-device-width: 0px) {
+    #parksign-container
+    {
+      background: #7d4128;
+      padding: 0px;
+      margin: 0px;
+      min-width: 363px;
+      width: 100%;
+    }
+
+    .col-md-12
+    {
+      padding: 0px;
+    }
+
+    #main-page-splash
+    {
+      margin: 0px;
+    }
   }
 
-  .text-container
-  {
-    margin: 25px;
+  @media (min-width: 1024px) {
+    #parksign-container
+    {
+      background: url("/img/national-forest-sign.svg") no-repeat center;
+      background-size: 90% auto;;
+      position: relative;
+      z-index: 1;
+      height: 600px;
+      margin: auto auto;
+      max-width: 990px;
+      min-width: 840px;
+      padding: 20px;
+    }
   }
 }
 
-#splash-wedding-info-header
+#wedding-info-section, #lodging-info-section
 {
   background-color: #acadad;
+  z-index: 99;
 }
 
-#wedding-info-content
+.content-text-head
 {
-  padding: 25px;
+  font-family: Variane;
+  font-size: 4em;
+  line-height: 2em;
+}
+
+.main-page-content-block
+{
+  text-align: center;
 }
