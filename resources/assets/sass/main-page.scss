@@ -3,6 +3,27 @@
   padding-top: 50px;
 }
 
+p.content-title
+{
+  margin-top:25px;
+  font-family: Variane, Helvetica, Arial, sans-serif;
+  font-size: 3em;
+}
+
+img.content-image
+{
+  //padding-bottom: 25px;
+}
+
+.content-body
+{
+  width: 60%;
+  margin: auto;
+  p {
+    font-family: Superclarendon, Helvetica, Arial, sans-serif;
+  }
+}
+
 #parksign-shape
 {
   position:absolute;
@@ -21,25 +42,16 @@
 
 #main-page-splash
 {
-  margin-top: 20px;;
+  padding: 50px;
+  margin: -60px;
+  margin-top: -20px;
   text-align: center;
+  background: url('/img/abnaki-tree-lake-bg.jpg') no-repeat center center fixed;
+  background-size: 2000px 1000px;
 
-  #parksign-container
+  #main-page-campsign
   {
-    background: url("/img/national-forest-sign.svg") no-repeat center;
-    background-size: 100% auto;
-    position: relative;
-    z-index: 1;
-    height: 600px;
-    margin: auto auto;
-    max-width: 1024px;
-    min-width: 764px;
-    //padding: 20px;
-  }
-
-  #parksign-text
-  {
-    padding-top:200px;
+    width: 60%;
   }
 
   p.wedding-info-headline
@@ -57,49 +69,40 @@
   }
 
   //1024
-
-  @media (min-device-width: 0px) {
-    #parksign-container
-    {
-      background: #7d4128;
-      padding: 0px;
-      margin: 0px;
-      min-width: 363px;
-      width: 100%;
-    }
-
-    .col-md-12
-    {
-      padding: 0px;
-    }
-
-    #main-page-splash
-    {
-      margin: 0px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    #parksign-container
-    {
-      background: url("/img/national-forest-sign.svg") no-repeat center;
-      background-size: 90% auto;;
-      position: relative;
-      z-index: 1;
-      height: 600px;
-      margin: auto auto;
-      max-width: 990px;
-      min-width: 840px;
-      padding: 20px;
-    }
-  }
 }
 
-#wedding-info-section, #lodging-info-section
+#wedding-info-section
+{
+
+  #wedding-datetime
+  {
+    padding:100px;
+  }
+
+  #gmap_canvas
+  {
+    height: 400px;
+    width: 100%;
+    position: relative;
+    //margin: auto auto;
+    //text-align: center;
+  }
+
+  #wedding-info-content
+  {
+    margin-top: 70px;
+  }
+
+}
+
+
+#lodging-info-section
 {
   background-color: #acadad;
   z-index: 99;
 }
+
+
 
 .content-text-head
 {

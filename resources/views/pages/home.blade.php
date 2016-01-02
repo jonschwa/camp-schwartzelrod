@@ -2,6 +2,7 @@
 @extends("layout")
 
 @section("content")
+<div id="mainpage" isMainPage=true style="display:none;"></div>
 <div class="container-fluid">
     @include("pages._big-logo-splash")
     @include("pages._wedding-info")

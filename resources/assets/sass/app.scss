@@ -1,5 +1,12 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+$brown: '#3d1e07';
+$yellow-text: '#ecc884';
+
+a {
+  color: inherit;
+}
+
 body
 {
   margin-top: 60px;
@@ -18,8 +25,16 @@ body
   src: url('/fonts/VarianeScript.ttf');
 }
 
-.font-superclarendon {
+.clarendon-headline
+{
   font-family: Superclarendon, Helvetica, Arial, sans-serif;
+  font-size: 3em;
+}
+
+.clarendon-subhead
+{
+  font-family: Superclarendon, Helvetica, Arial, sans-serif;
+  font-size: 2em;
 }
 
 .giant-input
@@ -34,7 +49,11 @@ body
   {
     li{
       a{
-        color: #ecc844;
+        color: #ecc884;
+      }
+
+      a:hover{
+        color: #138f22;
       }
     }
   }
@@ -42,7 +61,7 @@ body
 
 .navbar
 {
-  background: #7d4128;
+  background: #3d1e07;
   margin-bottom: 0px;
   min-width: 948px;
   font-family: Superclarendon;

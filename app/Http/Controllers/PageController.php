@@ -46,26 +46,20 @@ class PageController extends Controller
 
         $this->weddingInfoContent = [
             [
+                'title' => 'The Weekend',
                 'body' => 'Firefish sardine, shrimpfish spiny dogfish blacktip reef shark; lefteye flounder cisco elephant fish
                            Owens pupfish Black sea bass flathead. Deep sea smelt Cornish Spaktailed Bream tripod fish, gopher
                            rockfish shark sandfish tench flat loach graveldiver hammerhead shark deepwater stingray.',
                 'img'  => 'https://placehold.it/200x200'
             ],
             [
+                'title' => 'Activities',
                 'body' => 'Betta bent-tooth pufferfish hagfish weeverfish eeltail catfish stickleback--steelhead milkfish
                            bullhead; Oregon chub. Electric stargazer wolf-herring red snapper sandburrower broadband dogfish
                            tuna European perch!" Dartfish Death Valley pupfish, Molly Miller; kelp perch buffalofish surgeonfish
-                           clownfish sucker scat. Luderick crevice kelpfish bonnetmouth Sacramento splittail European eel common
-                           tunny glowlight danio Redhorse sucker bull trout pikeperch menhaden yellowmargin triggerfish. Bluefin
-                           tuna prickleback northern anchovy gunnel pelican eel convict blenny blackfish sand knifefish boga grunt
-                           sculpin. Wasp fish, glowlight danio temperate perch!',
+                           clownfish sucker scat.',
                 'img'  => 'https://placehold.it/200x200'
             ],
-            [
-                'body' => 'Greeneye, loosejaw scaleless black dragonfish New World rivuline; ghost carp longnose dace anchovy.
-                           Muskellunge, peladillo sand goby South American darter.',
-                'img'  => 'https://placehold.it/200x200'
-            ]
         ];
 
         $this->lodgingContent = [
