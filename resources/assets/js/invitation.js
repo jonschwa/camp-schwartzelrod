@@ -1,4 +1,10 @@
+function hideErrors()
+{
+    $('#error-flash-container').fadeOut();
+}
+
 $('.button-form-enter-code-positive').click(function() {
+    hideErrors();
     if($('#rsvp-code').val() == '') {
         showErrorMessage('You didn\'t enter a code!');
     }
@@ -20,6 +26,7 @@ $('.button-form-enter-code-positive').click(function() {
 });
 
 $('.button-form-enter-code-maybe').click(function() {
+    hideErrors();
     if($('#rsvp-code').val() == '') {
         showErrorMessage('You didn\'t enter a code!');
     }
@@ -43,6 +50,7 @@ $('.button-form-enter-code-maybe').click(function() {
 });
 
 $('.button-form-enter-code-negative').click(function() {
+    hideErrors();
     if($('#rsvp-code').val() == '') {
         showErrorMessage('You didn\'t enter a code!');
     }
@@ -62,6 +70,7 @@ $('.button-form-enter-code-negative').click(function() {
 });
 
 $('#form-decline').submit(function(event) {
+    hideErrors();
     event.preventDefault();
     $.ajax({
         url: "/api/users/" + $('#form-decline-user-id').val() + '/rsvp/',
@@ -81,6 +90,7 @@ $('#form-decline').submit(function(event) {
 });
 
 $('#form-maybe').submit(function(event) {
+    hideErrors();
     event.preventDefault();
     $.ajax({
         url: "/api/users/" + $('#form-maybe-user-id').val() + '/rsvp/',
@@ -100,6 +110,7 @@ $('#form-maybe').submit(function(event) {
 });
 
 $('#form-register').submit(function(event) {
+    hideErrors();
     //@todo show loading gif
 
     event.preventDefault();

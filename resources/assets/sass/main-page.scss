@@ -1,13 +1,13 @@
 .main-page-content-block
 {
-  padding-top: 50px;
+  margin-top: 50px;
 }
 
 p.content-title
 {
   margin-top:25px;
-  font-family: Variane, Helvetica, Arial, sans-serif;
-  font-size: 3em;
+  font-family: Superclarendon, Helvetica, Arial, sans-serif;
+  font-size: 2.25em;
 }
 
 img.content-image
@@ -17,11 +17,16 @@ img.content-image
 
 .content-body
 {
-  width: 60%;
+  width: 80%;
   margin: auto;
   p {
-    font-family: Superclarendon, Helvetica, Arial, sans-serif;
+    font-size: 1.25em;
   }
+}
+
+.content-block{
+  padding: 25px;
+  margin: auto;
 }
 
 #parksign-shape
@@ -71,30 +76,53 @@ img.content-image
   //1024
 }
 
-#wedding-info-section
+#wedding-info
 {
+  //margin-top:-50px;
 
-  #wedding-datetime
+  #wedding-info-section
   {
-    padding:100px;
-  }
+    margin-top:0px;
 
-  #gmap_canvas
-  {
-    height: 400px;
-    width: 100%;
-    position: relative;
-    //margin: auto auto;
-    //text-align: center;
-  }
+    #gmap_canvas
+    {
+      height: 400px;
+      width: 100%;
+      position: relative;
+      //margin: auto auto;
+      //text-align: center;
+    }
 
-  #wedding-info-content
-  {
-    margin-top: 70px;
+    #wedding-info-content
+    {
+      margin-top: 70px;
+    }
   }
-
 }
 
+#wedding-datetime
+{
+  padding:100px;
+}
+
+#our-story
+{
+  background: #acadad;
+  margin: -15px;
+  padding-bottom: 50px;
+
+  #our-story-content
+  {
+    padding: 50px;
+    margin-top: 30px;
+  }
+
+  #our-story-text
+  {
+    font-size: 1.1em;
+    padding: 30px 100px 0px 100px;
+  }
+}
 
 #lodging-info-section
 {
@@ -102,6 +130,11 @@ img.content-image
   z-index: 99;
 }
 
+#rsvp-section
+{
+  padding:100px;
+  font-family: Superclarendon, Helvetica, Arial, sans-serif;
+}
 
 
 .content-text-head
@@ -114,4 +147,13 @@ img.content-image
 .main-page-content-block
 {
   text-align: center;
+}
+
+#vt-info-section
+{
+  text-align: center;
+  #distance-to-camp
+  {
+    font-size: 0.8em;
+  }
 }

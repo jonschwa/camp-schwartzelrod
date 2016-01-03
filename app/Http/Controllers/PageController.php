@@ -6,63 +6,60 @@ class PageController extends Controller
 {
     protected $ourStoryContent;
     protected $weddingInfoContent;
-    protected $lodgingContent;
+    protected $lodgingOnSiteContent;
+    protected $lodgingOffSiteContent;
+    protected $vtInfoContent;
     protected $faqContent;
     protected $thingsToDoContent;
 
     public function __construct()
     {
-        $this->ourStoryContent = [
+        $this->weddingInfoContent = [
             [
-                'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit dolor, tincidunt lobortis
-                           fringilla eu, consectetur et ipsum. In finibus condimentum posuere. Ut auctor facilisis sapien,
-                           tempor porta nulla euismod ut. Nunc pharetra hendrerit nisl, sed fringilla turpis accumsan et.
-                           Integer eu blandit enim. Mauris laoreet ultrices neque nec condimentum. Ut aliquam purus id leo
-                           placerat lacinia. Nam auctor, est eu elementum gravida, tortor arcu laoreet massa, eu sagittis
-                           est erat sed nisi. Vestibulum ullamcorper ultrices sapien quis tincidunt.',
+                'title' => 'The Wedding',
+                'subtitle' => 'Saturday September 10th, 2016',
+                'body' => '<p>Our wedding on will be on Lake Champlain at Camp Abnaki in North Hero, VT. Leave your stilettos and tuxedos at home - this is a more casual affair with the ceremony on grass and reception in the dining hall.</p>
+                           <p>Ceremony: Time TBD<br />
+                           Dinner, dancing, drinks, and a bonfire to follow</p>',
                 'img'  => 'https://placehold.it/200x200'
             ],
             [
-                'body' => 'Etiam tristique orci quis enim blandit porta. Suspendisse sem purus, pharetra quis elit eu,
-                           laoreet tristique diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis
-                           sollicitudin enim dolor, a varius nisl pellentesque eu. Etiam fermentum volutpat nunc vel luctus.
-                           Ut in enim vitae augue fringilla congue vitae sit amet est. Maecenas eleifend, nisi vitae
-                           elementum viverra, ex augue porttitor ipsum, ultricies pellentesque ligula nisl sit amet magna.
-                           Donec dapibus velit nulla.',
+                'title' => 'The Weekend',
+                'subtitle' => 'Fri Sept 9th - Sun Sept 11th 2016',
+                'body' => '<p>We also invite everyone to enjoy the lakeside camp property with us all weekend! If you\'re adventurous and want to stay with us at camp for the full experience–fantastic! If you can\'t wait to join in the weekend\'s festivities, but prefer to stay off site–no problem! If you\'ll be joining us for just the ceremony and reception–fabulous! We look forward to celebrating with you.</p>',
                 'img'  => 'https://placehold.it/200x200'
             ],
             [
-                'body' => 'Integer fermentum nulla a magna luctus bibendum. Nullam in ex ultricies, tempus orci nec,
-                           consectetur purus. Fusce vel urna in purus tincidunt sollicitudin. Donec rutrum nunc ut orci
-                           interdum vehicula. Nulla facilisi. Ut ut pellentesque est, et ornare sem. Curabitur tellus arcu,
-                           sollicitudin sed elit in, commodo volutpat augue. Aliquam at turpis ipsum. In ac nibh eu mauris
-                           gravida condimentum. Nullam vitae augue ut risus maximus aliquam. Duis massa leo, mollis nec urna
-                           eget, hendrerit dictum ligula. Vestibulum ac augue nec mi viverra vulputate. Curabitur in metus ut
-                           nibh commodo efficitur. Maecenas eget ex dignissim, dictum velit nec, eleifend leo. Sed sit amet
-                           vestibulum libero. Nullam aliquet erat nibh, eu fringilla nulla aliquet eget.',
+                'title' => 'Events & Activities',
+                'body' => "<p>We will be hosting a Welcome BBQ on Friday, fun activities throughout the weekend, and, of course, s’mores over the campfire at night.</p>
+                          <p>Lawn games, sporting equipment, and hiking trails will be available throughout the weekend. You can also just relax and enjoy the scenery!</p>
+                          <p>Official schedule of events coming soon.</p>",
+                'img'  => 'https://placehold.it/200x200'
+            ],
+        ];
+
+        $this->lodgingOnSiteContent = [
+            [
+                'body' => 'Blue castello roquefort cauliflower cheese. Monterey jack fromage monterey jack melted cheese fromage
+                           lancashire cheese and wine dolcelatte. Bocconcini lancashire caerphilly cheesy feet cheesy feet swiss
+                           the big cheese caerphilly. Cheesy feet brie.',
+                'img'  => 'https://placehold.it/200x200'
+            ],
+            [
+                'body' => 'Halloumi chalk and cheese everyone loves. Cut the cheese cheese and biscuits swiss cheddar fondue
+                           gouda cheeseburger cheddar. Red leicester cottage cheese red leicester fromage frais jarlsberg red
+                           leicester queso taleggio. Cheesecake dolcelatte fromage stinking bishop boursin cheesecake.',
+                'img'  => 'https://placehold.it/200x200'
+            ],
+            [
+                'body' => 'Camembert de normandie hard cheese swiss. Monterey jack stinking bishop cheesecake cheesy grin
+                           jarlsberg cheddar say cheese fromage frais. St. agur blue cheese roquefort cottage cheese mascarpone
+                           cream cheese cheesy grin hard cheese mozzarella. Cheesy feet hard cheese cheese slices croque monsieur.',
                 'img'  => 'https://placehold.it/200x200'
             ]
         ];
 
-        $this->weddingInfoContent = [
-            [
-                'title' => 'The Weekend',
-                'body' => 'Firefish sardine, shrimpfish spiny dogfish blacktip reef shark; lefteye flounder cisco elephant fish
-                           Owens pupfish Black sea bass flathead. Deep sea smelt Cornish Spaktailed Bream tripod fish, gopher
-                           rockfish shark sandfish tench flat loach graveldiver hammerhead shark deepwater stingray.',
-                'img'  => 'https://placehold.it/200x200'
-            ],
-            [
-                'title' => 'Activities',
-                'body' => 'Betta bent-tooth pufferfish hagfish weeverfish eeltail catfish stickleback--steelhead milkfish
-                           bullhead; Oregon chub. Electric stargazer wolf-herring red snapper sandburrower broadband dogfish
-                           tuna European perch!" Dartfish Death Valley pupfish, Molly Miller; kelp perch buffalofish surgeonfish
-                           clownfish sucker scat.',
-                'img'  => 'https://placehold.it/200x200'
-            ],
-        ];
-
-        $this->lodgingContent = [
+        $this->lodgingOffSiteContent = [
             [
                 'body' => 'Blue castello roquefort cauliflower cheese. Monterey jack fromage monterey jack melted cheese fromage
                            lancashire cheese and wine dolcelatte. Bocconcini lancashire caerphilly cheesy feet cheesy feet swiss
@@ -88,8 +85,7 @@ class PageController extends Controller
     {
         $pageContent = [
             'weddingInfoContent' => $this->weddingInfoContent,
-            'ourStoryContent' => $this->ourStoryContent,
-            'lodgingInfoContent' => $this->lodgingContent
+            'lodgingInfoContent' => $this->lodgingOnSiteContent
         ];
         return view('pages.home', $pageContent);
     }

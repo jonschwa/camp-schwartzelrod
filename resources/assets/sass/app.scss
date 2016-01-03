@@ -11,12 +11,19 @@ body
 {
   margin-top: 60px;
   position: relative;
+  font-family: Highway-Gothic, Helvetica, Arial, sans-serif;
 }
 
 @font-face
 {
   font-family: Superclarendon;
   src: url('/fonts/SuperclarendonRegular.ttf');
+}
+
+@font-face
+{
+  font-family: Highway-Gothic;
+  src: url('/fonts/HWYGOTH.ttf');
 }
 
 @font-face
@@ -47,6 +54,7 @@ body
 {
   .navbar-nav
   {
+    font-size: 1.5em;
     li{
       a{
         color: #ecc884;
@@ -64,7 +72,7 @@ body
   background: #3d1e07;
   margin-bottom: 0px;
   min-width: 948px;
-  font-family: Superclarendon;
+  font-family: Highway-Gothic;
   border: none;
 
 }

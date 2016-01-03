@@ -6,5 +6,6 @@
         <input type="textarea" class="form-control input" id="form-maybe-comment" name="comment" placeholder="Can you briefly explain your indecisiveness?">
         <input type="hidden" id="form-maybe-user-id">
     </div>
+    <button class="btn btn-default btn-back"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Back</button>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>
