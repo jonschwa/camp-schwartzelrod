@@ -24,13 +24,16 @@
                                 <a href="/#our-story" id="nav-our-story-link">Story</a>
                             </li>
                             <li>
+                                <a href="/#vt-info" id="nav-vt-info-link">The Area</a>
+                            </li>
+                            <li>
                                 <a href="/#lodging-info" id="nav-lodging-info-link">Lodging</a>
                             </li>
                             <li>
                                 @if(Auth::user())
                                     <a href="/status">RSVP</a>
                                 @else
-                                    <a id="nav-rsvp-link">RSVP</a>
+                                    <a href="/#rsvp" id="nav-rsvp-link">RSVP</a>
                                 @endif
                             </li>
                         </ul>

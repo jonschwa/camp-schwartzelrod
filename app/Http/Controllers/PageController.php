@@ -6,11 +6,7 @@ class PageController extends Controller
 {
     protected $ourStoryContent;
     protected $weddingInfoContent;
-    protected $lodgingOnSiteContent;
-    protected $lodgingOffSiteContent;
-    protected $vtInfoContent;
     protected $faqContent;
-    protected $thingsToDoContent;
 
     public function __construct()
     {
@@ -37,57 +33,19 @@ class PageController extends Controller
                 'img'  => 'https://placehold.it/200x200'
             ],
         ];
-
-        $this->lodgingOnSiteContent = [
-            [
-                'body' => 'Blue castello roquefort cauliflower cheese. Monterey jack fromage monterey jack melted cheese fromage
-                           lancashire cheese and wine dolcelatte. Bocconcini lancashire caerphilly cheesy feet cheesy feet swiss
-                           the big cheese caerphilly. Cheesy feet brie.',
-                'img'  => 'https://placehold.it/200x200'
-            ],
-            [
-                'body' => 'Halloumi chalk and cheese everyone loves. Cut the cheese cheese and biscuits swiss cheddar fondue
-                           gouda cheeseburger cheddar. Red leicester cottage cheese red leicester fromage frais jarlsberg red
-                           leicester queso taleggio. Cheesecake dolcelatte fromage stinking bishop boursin cheesecake.',
-                'img'  => 'https://placehold.it/200x200'
-            ],
-            [
-                'body' => 'Camembert de normandie hard cheese swiss. Monterey jack stinking bishop cheesecake cheesy grin
-                           jarlsberg cheddar say cheese fromage frais. St. agur blue cheese roquefort cottage cheese mascarpone
-                           cream cheese cheesy grin hard cheese mozzarella. Cheesy feet hard cheese cheese slices croque monsieur.',
-                'img'  => 'https://placehold.it/200x200'
-            ]
-        ];
-
-        $this->lodgingOffSiteContent = [
-            [
-                'body' => 'Blue castello roquefort cauliflower cheese. Monterey jack fromage monterey jack melted cheese fromage
-                           lancashire cheese and wine dolcelatte. Bocconcini lancashire caerphilly cheesy feet cheesy feet swiss
-                           the big cheese caerphilly. Cheesy feet brie.',
-                'img'  => 'https://placehold.it/200x200'
-            ],
-            [
-                'body' => 'Halloumi chalk and cheese everyone loves. Cut the cheese cheese and biscuits swiss cheddar fondue
-                           gouda cheeseburger cheddar. Red leicester cottage cheese red leicester fromage frais jarlsberg red
-                           leicester queso taleggio. Cheesecake dolcelatte fromage stinking bishop boursin cheesecake.',
-                'img'  => 'https://placehold.it/200x200'
-            ],
-            [
-                'body' => 'Camembert de normandie hard cheese swiss. Monterey jack stinking bishop cheesecake cheesy grin
-                           jarlsberg cheddar say cheese fromage frais. St. agur blue cheese roquefort cottage cheese mascarpone
-                           cream cheese cheesy grin hard cheese mozzarella. Cheesy feet hard cheese cheese slices croque monsieur.',
-                'img'  => 'https://placehold.it/200x200'
-            ]
-        ];
     }
 
     public function index()
     {
         $pageContent = [
             'weddingInfoContent' => $this->weddingInfoContent,
-            'lodgingInfoContent' => $this->lodgingOnSiteContent
         ];
         return view('pages.home', $pageContent);
+    }
+
+    public function opt_out()
+    {
+        return view('rsvp.opt-out');
     }
 
 }

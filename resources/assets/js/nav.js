@@ -36,3 +36,15 @@ $('#nav-lodging-info-link').on('click', function(e){
     scrollToAnchor('lodging-info');
 });
 
+$('#nav-vt-info-link').on('click', function(e){
+    if (checkMainPage()) {
+        e.preventDefault();
+    }
+    scrollToAnchor('vt-info');
+});
+$('#nav-rsvp-link').on('click', function(e){
+    if (checkMainPage()) {
+        e.preventDefault();
+    }
+    scrollToAnchor('rsvp');
+});

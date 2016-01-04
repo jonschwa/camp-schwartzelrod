@@ -20,7 +20,8 @@ img.content-image
   width: 80%;
   margin: auto;
   p {
-    font-size: 1.25em;
+    font-size: 1em;
+    text-align: justify;
   }
 }
 
@@ -51,8 +52,8 @@ img.content-image
   margin: -60px;
   margin-top: -20px;
   text-align: center;
-  background: url('/img/abnaki-tree-lake-bg.jpg') no-repeat center center fixed;
-  background-size: 2000px 1000px;
+  background: url('/img/abnaki-tree-lake-bg.jpg') no-repeat top fixed;
+  background-size: 100%;
 
   #main-page-campsign
   {
@@ -84,15 +85,6 @@ img.content-image
   {
     margin-top:0px;
 
-    #gmap_canvas
-    {
-      height: 400px;
-      width: 100%;
-      position: relative;
-      //margin: auto auto;
-      //text-align: center;
-    }
-
     #wedding-info-content
     {
       margin-top: 70px;
@@ -119,15 +111,10 @@ img.content-image
 
   #our-story-text
   {
-    font-size: 1.1em;
+    font-size: 1em;
+    text-align: justify;
     padding: 30px 100px 0px 100px;
   }
-}
-
-#lodging-info-section
-{
-  background-color: #acadad;
-  z-index: 99;
 }
 
 #rsvp-section
@@ -137,13 +124,6 @@ img.content-image
 }
 
 
-.content-text-head
-{
-  font-family: Variane;
-  font-size: 4em;
-  line-height: 2em;
-}
-
 .main-page-content-block
 {
   text-align: center;
@@ -152,8 +132,60 @@ img.content-image
 #vt-info-section
 {
   text-align: center;
+  margin-top: 40px;
+
   #distance-to-camp
   {
     font-size: 0.8em;
   }
+
+  #gmap_canvas
+  {
+    height: 400px;
+    width: 100%;
+    position: relative;
+    //margin: auto auto;
+    //text-align: center;
+  }
+}
+
+#lodging-info-content {
+  #lodging-header
+  {
+    margin: 0px -15px;
+    background-color: #acadad;
+    padding:150px;
+    background: url('/img/abnaki-cabins.jpg') center no-repeat;
+    background-size: 100%;
+  }
+
+  #lodging-options-container
+  {
+    padding:80px;
+
+    .checkin-times
+    {
+      text-align: center;
+    }
+
+    .inline-option-header
+    {
+      .title
+      {
+        //margin-top:40px;
+      }
+    }
+
+  }
+
+  .option {
+    text-align: left;
+  }
+
+
+}
+
+#rsvp-section
+{
+  text-align: center;
 }

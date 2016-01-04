@@ -14,6 +14,6 @@
            you can click the large red button below and we will follow up with you individually. Expect some shaming,
            but we will try to keep it within reason.
         </p>
-        <button type="button" class="btn btn-danger button-form-opt-out">This is too much technology for me</button>
+        <a href="/technology-opt-out"><button type="button" class="btn btn-danger button-form-opt-out">This is too much technology for me</button></a>
     </div>
 </form>

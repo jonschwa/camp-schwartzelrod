@@ -43,6 +43,7 @@ Route::get('svgtest', function()
 });
 
 Route::get('/', 'PageController@index');
+Route::get('technology-opt-out', 'PageController@opt_out');
 
 Route::get('guests', 'GuestController@index');
 Route::get('invitation', 'InvitationController@savethedate');

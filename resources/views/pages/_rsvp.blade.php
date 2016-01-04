@@ -1,9 +1,8 @@
+<a name="rsvp"></a>
 <div class="container-fluid" id="rsvp-section">
-    <div class="row">
-        <div id="error-flash-container" class="alert alert-danger container" role="alert" style="display:none">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span id="error-flash-message" class="alert-error-text"></span>
-        </div>
+    <div id="error-flash-container" class="alert alert-danger container" role="alert" style="display:none">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span id="error-flash-message" class="alert-error-text"></span>
     </div>
     <div class="row">
         <p class="clarendon-headline">RSVP</p>
