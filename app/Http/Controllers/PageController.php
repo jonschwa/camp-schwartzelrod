@@ -14,7 +14,7 @@ class PageController extends Controller
             [
                 'title' => 'The Wedding',
                 'subtitle' => 'Saturday September 10th, 2016',
-                'body' => '<p>Our wedding on will be on Lake Champlain at Camp Abnaki in North Hero, VT. Leave your stilettos and tuxedos at home - this is a more casual affair with the ceremony on grass and reception in the dining hall.</p>
+                'body' => '<p>Our wedding will be on Lake Champlain at Camp Abnaki in North Hero, VT. Leave your stilettos and tuxedos at home - this is a more casual affair with the ceremony on grass and reception in the dining hall.</p>
                            <p>Ceremony: Time TBD<br />
                            Dinner, dancing, drinks, and a bonfire to follow</p>',
                 'img'  => 'https://placehold.it/200x200'

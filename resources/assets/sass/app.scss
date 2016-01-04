@@ -11,7 +11,7 @@ body
 {
   margin-top: 60px;
   position: relative;
-  font-family: Highway-Gothic, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 @font-face
@@ -61,7 +61,7 @@ body
 {
   .navbar-nav
   {
-    font-size: 1.5em;
+    font-size: 1em;
     li{
       a{
         color: #ecc884;
@@ -79,7 +79,6 @@ body
   background: #3d1e07;
   margin-bottom: 0px;
   min-width: 948px;
-  font-family: Highway-Gothic;
   border: none;
 
 }
