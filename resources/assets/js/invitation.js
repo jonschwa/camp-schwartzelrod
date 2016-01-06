@@ -12,11 +12,11 @@ $('.button-form-enter-code-positive').click(function() {
         url: "/api/invitations/code/" + $('#rsvp-code').val()
     }).success(function(json) {
         //prefill the next form, hide this one, show the next
-        $('#form-enter-code').fadeOut();
         $('#form-register-email').val(json.data.invitation.user.email);
         $('#form-register-first-name').val(json.data.invitation.user.first_name);
         $('#form-register-last-name').val(json.data.invitation.user.last_name);
         $('#form-register-user-id').val(json.data.invitation.user.id);
+        $('#form-enter-code').fadeOut();
         $('#form-register').fadeIn();
         $('#rsvp-subtitle').html('Confirm the information we have for you and set a password');
 
@@ -35,12 +35,12 @@ $('.button-form-enter-code-maybe').click(function() {
     }).success(function(json) {
         console.log(json.data.invitation.user.id);
         //prefill the next form, hide this one, show the next
-        $('#form-enter-code').fadeOut();
         $('#form-maybe-email').val(json.data.invitation.user.email);
         $('#form-maybe-first-name').val(json.data.invitation.user.first_name);
         $('#form-maybe-last-name').val(json.data.invitation.user.last_name);
         $('#form-maybe-user-id').val(json.data.invitation.user.id);
         $('#form-maybe-message').val(json.data.invitation.user.id);
+        $('#form-enter-code').fadeOut();
         $('#form-maybe').fadeIn();
         $('#rsvp-subtitle').html('We get it! No pressure! Can you just confirm your name and email so we can bug you about it if we don\'t hear from you in a couple of months?');
 
@@ -59,9 +59,9 @@ $('.button-form-enter-code-negative').click(function() {
     }).success(function(json) {
         //prefill the next form, hide this one, show the next
         //@todo make this less janky, use waypoints
-        $('#form-enter-code').fadeOut();
         $('#form-decline-user-id').val(json.data.invitation.user.id);
         $('#form-decline-message').val(json.data.invitation.user.id);
+        $('#form-enter-code').fadeOut();
         $('#form-decline').fadeIn();
         $('#rsvp-subtitle').html('We will miss you! Please throughly apologize in this text box.');
     }).error(function(json) {
@@ -81,8 +81,8 @@ $('#form-decline').submit(function(event) {
             "num_guests" : 0
         }
     }).success(function(json) {
-        //redirect to the sorry you won't make it page!
-        window.location.href = "/bummer";
+        $('#form-decline').fadeOut();
+        $('#rsvp-not-coming').fadeIn();
 
     }).error(function(json) {
         showErrorMessage(json.responseJSON.message);
@@ -101,8 +101,8 @@ $('#form-maybe').submit(function(event) {
             "num_guests" : 0
         }
     }).success(function(json) {
-        //redirect to the sorry you won't make it page!
-        window.location.href = "/bummer";
+        $('#form-maybe').fadeOut();
+        $('#rsvp-not-coming').fadeIn();
 
     }).error(function(json) {
         showErrorMessage(json.responseJSON.message);
@@ -137,3 +137,17 @@ $('#form-register').submit(function(event) {
         $('#error-flash-container').fadeIn();
     });
 });
+
+$('.btn-back').click(function(event) {
+    event.preventDefault();
+    defaultRsvpSubtitle();
+    $('#form-register').fadeOut();
+    $('#form-maybe').fadeOut();
+    $('#form-decline').fadeOut();
+    $('#form-enter-code').fadeIn();
+});
+
+function defaultRsvpSubtitle()
+{
+    $('#rsvp-subtitle').html('Got a code? It\'s your invitation! Enter it to start camp registration:');
+}

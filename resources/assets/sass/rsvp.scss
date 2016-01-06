@@ -1,15 +1,3 @@
-@font-face {
-  font-family: campTitle;
-  src: url('/fonts/CardenioModernBold.ttf');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: campSubtitle;
-  src: url('/fonts/CardenioModernStd.ttf');
-  font-weight: bold;
-}
-
 #rsvp-form-container
 {
   width: 85%;
@@ -46,6 +34,14 @@
   }
 }
 
+.code-response-form
+{
+  input
+  {
+    padding: 10px;
+  }
+}
+
 #rsvp-code
 {
   margin: auto;
@@ -57,4 +53,45 @@
 #old-person-opt-out-container
 {
   padding-top:80px;
+}
+
+#registration-info
+{
+  text-align: center;
+
+  .clarendon-headline
+  {
+    margin-top: 25px;
+  }
+
+  .content
+  {
+    width: 65%;
+    margin:auto;
+    text-align: justify;
+    padding: 20px;
+  }
+}
+
+#rsvp-guests-container
+{
+  margin: auto;
+  width: 80%;
+  #rsvp-guests-container {
+    .guest-rsvp-container {
+      margin: auto;
+      width: 80%;
+    }
+  }
+}
+
+#camper-info-form
+{
+
+}
+
+.guest-rsvp-container
+{
+  padding:20px;
+  margin-top: 10px;
 }

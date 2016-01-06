@@ -128,9 +128,9 @@ $('#rsvp-guests-container').on('click', '.activityIcon', function(e) {
 
 $('#rsvp-guests-container').on('click', '.cb-is-staying', function(e) {
     if($(this).is(':checked')) {
-        $(this).closest('.rsvp-guest-interests').find('.cabin-details').show();
+        $(this).closest('.rsvp-guest-interests').find('.cabin-details').fadeIn();
     }
     else {
-        $(this).closest('.rsvp-guest-interests').find('.cabin-details').hide();
+        $(this).closest('.rsvp-guest-interests').find('.cabin-details').fadeOut();
     }
 });

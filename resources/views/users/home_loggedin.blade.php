@@ -1,5 +1,4 @@
 @extends("layout")
-
 @section("content")
     <div class="container">
         <h1>You're logged in!</h1>

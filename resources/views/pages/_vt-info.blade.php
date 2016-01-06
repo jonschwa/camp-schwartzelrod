@@ -29,7 +29,7 @@
             <div class="col-md-6">
                 <div class="content-block">
                     {{--<img class="content-image img-circle" src="https://placehold.it/200x200">--}}
-                    <p class="clarendon-headline">North Hero Island, VT</p>
+                    <p class="clarendon-headline">North Hero Island</p>
                     <div class="content-body">
                         <p>Camp Abnaki is located in North Hero, VT, one of four towns which make up the Lake Champlain Islands. </p>
                         <div id="distance-to-camp">
