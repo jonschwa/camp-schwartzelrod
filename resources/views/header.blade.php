@@ -46,18 +46,21 @@
                                 </li>
                             </ul>
                         @else
-                            <form class="navbar-form navbar-right form-group-sm">
+                            <form class="navbar-form navbar-right form-group-sm" id="form-nav-login">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="email">
-                                    <input type="password" class="form-control" placeholder="password">
+                                    <input id="form-nav-login-email" type="text" class="form-control" placeholder="email">
+                                    <input id="form-nav-login-password" type="password" class="form-control" placeholder="password">
                                 </div>
-                                <button type="submit" class="btn btn-xs">Log In</button>
+                                <button type="submit" id="nav-login-submit" class="btn btn-xs">Log In</button>
                             </form>
                         @endif
                     </span>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-
     </header>
+    <div class="alert alert-danger" id="nav-error-container" role="alert">
+        <button id="btn-nav-error-hide" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div id="nav-error-body">There was an error.</div>
+    </div>
 @show

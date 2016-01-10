@@ -22,3 +22,43 @@ $('#form-login').submit(function(event) {
         $('#error-flash-container').fadeIn();
     });
 });
+
+$('#form-nav-login').submit(function(event) {
+    hideNavErrors();
+    //@todo show loading gif
+    event.preventDefault();
+    console.log($('#form-nav-login-email').val());
+    //@todo some FE validation?
+
+    $.ajax({
+        url: "/api/users/login",
+        method: "POST",
+        data: {
+            "email" : $('#form-nav-login-email').val(),
+            "password" : $('#form-nav-login-password').val()
+        }
+    }).success(function(json) {
+        console.log(json);
+        window.location.href = "/status";
+    }).error(function(json) {
+        var messageHTML = "<strong>"+json.responseJSON.message+"</strong>";
+        var errors = json.responseJSON.errors;
+        messageHTML += "<ul>";
+
+        $.each(errors, function (index, value) {
+            messageHTML += "<li>" + value + "</li>"
+        });
+        messageHTML += "</ul>";
+        $('#nav-error-body').html(messageHTML);
+        $('#nav-error-container').fadeIn();
+    });
+});
+
+$("#btn-nav-error-hide").on("click", function() {
+    hideNavErrors();
+});
+
+function hideNavErrors()
+{
+    $('#nav-error-container').hide();
+}

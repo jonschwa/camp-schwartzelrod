@@ -70,7 +70,7 @@ class UserController extends ApiController
 
         $validator = Validator::make($request->all(), $this->storeRules);
         if ($validator->fails()) {
-            return $this->apiErrorResponse('Unable to register', 503, $validator->errors()->toArray());
+            return $this->apiErrorResponse('Unable to register', 400, $validator->errors()->toArray());
         }
 
         if ($user = $this->repo->activate($userId, $request->all())) {
@@ -87,7 +87,7 @@ class UserController extends ApiController
     {
         $validator = Validator::make($request->all(), $this->loginRules);
         if ($validator->fails()) {
-            return $this->apiErrorResponse('Unable to log in', 503, $validator->errors()->toArray());
+            return $this->apiErrorResponse('Unable to log in', 400, $validator->errors()->toArray());
         }
         //check if this user exists
         $user = $this->repo->findByEmail($request->email);

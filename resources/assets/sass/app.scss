@@ -93,12 +93,28 @@ body
   {
     min-width: 360px;
   }
+  #nav-error-container
+  {
+    display: none;
+    position:absolute;
+    right: 0px;
+    width: 100%;
+    margin-top: -10px;
+  }
 }
 
 @media (min-width: 768px) {
   .navbar
   {
     min-width: 948px;
+  }
+  #nav-error-container
+  {
+    display: none;
+    position:absolute;
+    right: 10px;
+    width: 50%;
+    margin-top: 0px;
   }
 }
 

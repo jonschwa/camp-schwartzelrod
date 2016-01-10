@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="/css/app.css">
     <title>Camp Schwartzelrod</title>
 </head>
-<body data-spy="scroll" data-target="#main-site-nav" data-offset="50">
 @include("header")
 <div id="main-content">
     @yield("content")
