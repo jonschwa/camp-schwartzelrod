@@ -27,7 +27,6 @@ $('#form-nav-login').submit(function(event) {
     hideNavErrors();
     //@todo show loading gif
     event.preventDefault();
-    console.log($('#form-nav-login-email').val());
     //@todo some FE validation?
 
     $.ajax({
@@ -38,7 +37,6 @@ $('#form-nav-login').submit(function(event) {
             "password" : $('#form-nav-login-password').val()
         }
     }).success(function(json) {
-        console.log(json);
         window.location.href = "/status";
     }).error(function(json) {
         var messageHTML = "<strong>"+json.responseJSON.message+"</strong>";
