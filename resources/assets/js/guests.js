@@ -1,15 +1,6 @@
 /**
  * RSVP GUEST THINGS
  */
-$('.button-rsvp-add-guest').on('click', function() {
-    var clone = $('.guest-rsvp-container.blank').clone().removeClass('blank').appendTo('#rsvp-guests-container');
-    clone.fadeIn();
-});
-
-$('#rsvp-guests-container').on('click', '.button-rsvp-remove-guest', function(){
-    var guestDiv = $(this).closest('.guest-rsvp-container');
-    guestDiv.fadeOut().remove();
-});
 
 $('#rsvp-guests-container').on('click', '.activityIcon', function(e) {
     var attrName = e.target.getAttribute('input-name');
@@ -89,7 +80,7 @@ function generateRequestBody(guestFormData) {
             guestId : $(this).find("input[name='guestid']").val(),
             firstName : $(this).find("input[name='first-name']").val(),
             lastName : $(this).find("input[name='last-name']").val(),
-            isAdult : $(this).find("input[name='is-adult']").is(':checked') ? 1 : 0,
+            isAdult : $(this).find("input[name='is-child']").is(':checked') ? 0 : 1,
             isStaying : $(this).find("input[name='is-staying']").is(':checked') ? 1 : 0,
             cabinAdventureLevel : $(this).find("input[name='cabin-adventure-level']").val(),
             archery : $(this).find("input[name='interested-archery']").is(':checked') ? 1 : 0,
@@ -112,16 +103,25 @@ function generateRequestBody(guestFormData) {
 }
 
 $('#rsvp-guests-container').on('click', '.activityIcon', function(e) {
+    console.log(e.target);
     var attrName = e.target.getAttribute('input-name');
     var active;
+    var checkable = false;
+    var count = $(this).closest('.rsvp-guest-interests').find('.activity-checkbox:checkbox:checked');
+    if(count.length < 3) {
+        checkable = true;
+    }
+
     var checkBox = $(this).closest('.rsvp-guest-interests').find("input[name='"+attrName+"']");
     if($(checkBox).is(':checked') === true) {
         $(checkBox).prop('checked', false);
         active = false;
     }
     else {
-        $(checkBox).prop('checked', true);
-        active = true;
+        if(checkable) {
+            $(checkBox).prop('checked', true);
+            active = true;
+        }
     }
     toggleInterestColor(active, e.target);
 });
@@ -131,6 +131,47 @@ $('#rsvp-guests-container').on('click', '.cb-is-staying', function(e) {
         $(this).closest('.rsvp-guest-interests').find('.cabin-details').fadeIn();
     }
     else {
-        $(this).closest('.rsvp-guest-interests').find('.cabin-details').fadeOut();
+        $(this).closest('.rsvp-guest-interests').find('.cabin-details').hide();
     }
+});
+
+$('#rsvp-guests-container').on('click', '.cal-option-container', function(e) {
+    $(this).siblings( ".selected").removeClass('selected');
+    $(this).addClass('selected');
+    var level = $(this).attr('level');
+    $(this).closest(".cabin-adventure-level").find("input[name='cabin-adventure-level']").val(level)
+
+});
+
+
+$('#rsvp-guests-container').on('click', '.button-rsvp-remove-guest', function(){
+    //hide the button if the number of guests is higher than what the user is allowed
+    var maxGuests = $('#maxguests').val();
+    var numGuests = $('.guest-rsvp-container').length;
+
+    var guestDiv = $(this).closest('.guest-rsvp-container');
+    guestDiv.fadeOut().remove();
+
+    if(maxGuests <= numGuests)
+    {
+        if($('#add-guest-button').is(':visible')) {
+            //do nothing
+        }
+        else {
+            $('#add-guest-button').show();
+        }
+    }
+});
+
+$('#button-rsvp-add-guest').on('click', function(e){
+    var maxGuests = $('#maxguests').val();
+    var numGuests = $('.guest-rsvp-container').length;
+
+    //console.log('numGuests: ' + numGuests + ' maxGuests: ' + maxGuests);
+    if(numGuests == maxGuests) {
+        $('#add-guest-button').hide();
+    }
+
+    var clone = $('.guest-rsvp-container.blank').clone().removeClass('blank').appendTo('#rsvp-guests-container');
+    clone.fadeIn();
 });

@@ -13,4 +13,10 @@ function toggleInterestColor(active, element) {
         element.style.color = '#acadad';
        // element.attr('active', false);
     }
+    //if(active === true) {
+    //    element.removeClass('interest-inactive').addClass('interest-active');
+    //}
+    //else {
+    //    element.removeClass('interest-active').addClass('interest-inactive');
+    //}
 }

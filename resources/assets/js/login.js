@@ -49,6 +49,7 @@ $('#form-nav-login').submit(function(event) {
         messageHTML += "</ul>";
         $('#nav-error-body').html(messageHTML);
         $('#nav-error-container').fadeIn();
+        scrollToAnchor('page-top', 'fast');
     });
 });
 

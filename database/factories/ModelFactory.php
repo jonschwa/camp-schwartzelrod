@@ -17,6 +17,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'last_name' => $faker->lastName,
         'email' => $faker->email,
         'password' => bcrypt('password'),
+        'max_guests' => rand(1,5),
         'remember_token' => str_random(10),
     ];
 });
@@ -27,12 +28,6 @@ $factory->define(App\Guest::class, function (Faker\Generator $faker) {
         'last_name' => $faker->lastName,
         'is_staying' => $faker->boolean(),
         'is_adult' => $faker->boolean(),
-        'interested_archery' => $faker->boolean(),
-        'interested_swimming' => $faker->boolean(),
-        'interested_boating' => $faker->boolean(),
-        'interested_good_time' => $faker->boolean(),
-        'interested_arts_and_crafts' => $faker->boolean(),
-        'interested_sports' => $faker->boolean()
     ];
 });
 

@@ -24,20 +24,23 @@
 <div class="container-fluid" id="camper-info-form">
     <form class="user-info">
         <input type="hidden" id="userid" value="{{$user->id}}">
+        <input type="hidden" id="maxguests" value="{{ $user->max_guests }}">
     </form>
-    <div class="container-fluid" id="rsvp-guests-container">
-        <p class="clarendon-headline">Campers</p>
-        <p class="todo">[Please let us know who is coming - We took our best guess]</p>
+    <div id="rsvp-guests-container">
+        <p class="clarendon-headline txt-centered">Campers</p>
+        <p class="todo txt-centered">[Please let us know who is coming - We took our best guess]</p>
         <div id="rsvp-guests-form">
             @foreach($user->guests as $guest)
                 @include('rsvp._form-rsvp-guest')
             @endforeach
             @include('rsvp._form-rsvp-guest-add')
         </div>
-        <button type="button" class="button-rsvp-add-guest btn btn-success btn-xs">Add</button>
-        <div id="rsvp-submit-area">
-            <button type="button" class="btn-primary btn" id="btn-user-guest-submit">Confirm RSVP</button>
-        </div>
+    </div>
+    <div id="add-camper-row">
+        @include('rsvp._add-camper')
+    </div>
+    <div id="rsvp-submit-area">
+        <button type="button" class="btn-primary btn btn-lg" id="btn-user-guest-submit">Confirm RSVP</button>
     </div>
 </div>
 @stop

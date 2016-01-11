@@ -23,9 +23,18 @@ class CreateGuestsTable extends Migration
             $table->tinyInteger('interested_archery')->default(0);
             $table->tinyInteger('interested_swimming')->default(0);
             $table->tinyInteger('interested_boating')->default(0);
-            $table->tinyInteger('interested_good_time')->default(0);
             $table->tinyInteger('interested_arts_and_crafts')->default(0);
-            $table->tinyInteger('interested_sports')->default(0);
+            $table->tinyInteger('interested_soccer')->default(0);
+            $table->tinyInteger('interested_tennis')->default(0);
+            $table->tinyInteger('interested_basketball')->default(0);
+            $table->tinyInteger('interested_baseball')->default(0);
+            $table->tinyInteger('interested_volleyball')->default(0);
+            $table->tinyInteger('interested_football')->default(0);
+            $table->tinyInteger('interested_frisbee')->default(0);
+            $table->tinyInteger('interested_dodgeball')->default(0);
+            $table->tinyInteger('interested_capture_the_flag')->default(0);
+            $table->tinyInteger('interested_scavenger_hunt')->default(0);
+            $table->tinyInteger('interested_low_ropes')->default(0);
             $table->timestamps();
         });
     }

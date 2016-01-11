@@ -10,6 +10,8 @@
     @include("pages._wedding-info")
     @include("pages._vt-info")
     @include("pages._lodging-info")
-    @include("pages._rsvp")
+    @if(!Auth::user())
+        @include("pages._rsvp")
+    @endif
 </div>
 @stop

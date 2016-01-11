@@ -1,4 +1,5 @@
 @section("header")
+    <a class="page-top" name="page-top"></a>
     <header class="navbar navbar-fixed-top main-header" id="top" role="banner">
         <nav class="navbar navbar-default">
             <div class="container-fluid">

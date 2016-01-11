@@ -16,7 +16,7 @@ $('.button-form-enter-code-positive').click(function() {
         $('#form-register-first-name').val(json.data.invitation.user.first_name);
         $('#form-register-last-name').val(json.data.invitation.user.last_name);
         $('#form-register-user-id').val(json.data.invitation.user.id);
-        $('#form-enter-code').fadeOut();
+        $('#form-enter-code').hide();
         $('#form-register').fadeIn();
         $('#rsvp-subtitle').html('Confirm the information we have for you and set a password');
 
@@ -40,7 +40,7 @@ $('.button-form-enter-code-maybe').click(function() {
         $('#form-maybe-last-name').val(json.data.invitation.user.last_name);
         $('#form-maybe-user-id').val(json.data.invitation.user.id);
         $('#form-maybe-message').val(json.data.invitation.user.id);
-        $('#form-enter-code').fadeOut();
+        $('#form-enter-code').hide();
         $('#form-maybe').fadeIn();
         $('#rsvp-subtitle').html('We get it! No pressure! Can you just confirm your name and email so we can bug you about it if we don\'t hear from you in a couple of months?');
 
@@ -61,7 +61,7 @@ $('.button-form-enter-code-negative').click(function() {
         //@todo make this less janky, use waypoints
         $('#form-decline-user-id').val(json.data.invitation.user.id);
         $('#form-decline-message').val(json.data.invitation.user.id);
-        $('#form-enter-code').fadeOut();
+        $('#form-enter-code').hide();
         $('#form-decline').fadeIn();
         $('#rsvp-subtitle').html('We will miss you! Please throughly apologize in this text box.');
     }).error(function(json) {
@@ -81,7 +81,7 @@ $('#form-decline').submit(function(event) {
             "num_guests" : 0
         }
     }).success(function(json) {
-        $('#form-decline').fadeOut();
+        $('#form-decline').hide();
         $('#rsvp-not-coming').fadeIn();
 
     }).error(function(json) {
@@ -101,7 +101,7 @@ $('#form-maybe').submit(function(event) {
             "num_guests" : 0
         }
     }).success(function(json) {
-        $('#form-maybe').fadeOut();
+        $('#form-maybe').hide();
         $('#rsvp-not-coming').fadeIn();
 
     }).error(function(json) {

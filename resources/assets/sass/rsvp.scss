@@ -6,7 +6,6 @@
   padding: 15px;
   border: 1px solid black;
   box-shadow: 5px 5px 5px #acadad;
-  background-image: url("/img/paper_fibers.png");
   text-align: center;
 
   .title
@@ -77,12 +76,15 @@
 {
   margin: auto;
   width: 80%;
-  #rsvp-guests-container {
     .guest-rsvp-container {
       margin: auto;
       width: 80%;
     }
-  }
+
+    .rsvp-guest-interests {
+      background-color: #a6e1ec;
+      padding:30px;
+    }
 }
 
 #camper-info-form
@@ -94,4 +96,80 @@
 {
   padding:20px;
   margin-top: 10px;
+  position: relative;
+
+  .button-rsvp-remove-guest
+  {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+}
+
+#cabin-adventure-level-decription
+{
+  text-align: center;
+
+  .selected
+  {
+    background-color: #acadad;
+  }
+}
+
+#add-camper-row
+{
+  text-align: center;
+  margin: auto;
+}
+
+#rsvp-submit-area
+{
+  text-align: center;
+  margin: auto;
+  padding: 50px;
+}
+
+
+@media (min-width: 0px) {
+  #rsvp-guests-container
+  {
+    margin: auto;
+    width: 100%;
+    .guest-rsvp-container {
+      margin: auto;
+      width: 100%;
+    }
+
+    .rsvp-guest-interests {
+      background-color: #a6e1ec;
+      padding:30px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #rsvp-guests-container
+  {
+    margin: auto;
+    width: 80%;
+    .guest-rsvp-container {
+      margin: auto;
+      width: 80%;
+    }
+
+    .rsvp-guest-interests {
+      background-color: #a6e1ec;
+      padding:30px;
+    }
+  }
+}
+
+.interest-inactive
+{
+  color: #acadad;
+}
+
+.interest-active
+{
+  color: #00AA00;
 }

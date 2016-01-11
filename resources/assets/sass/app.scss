@@ -131,5 +131,16 @@ body
 .activityIcon
 {
   padding: 5px 10px 5px 10px;
-  color: #acadad;
+  color: #000;
+}
+
+.txt-centered
+{
+  text-align: center;
+}
+
+a.page-top
+{
+  position: absolute;
+  top: -100px;
 }
