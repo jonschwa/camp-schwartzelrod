@@ -11,7 +11,8 @@ body
 {
   margin-top: 60px;
   position: relative;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Palatino serif;
+  font-size: 1.5em;
 }
 
 @font-face
@@ -49,6 +50,32 @@ body
   font-size: 2em;
 }
 
+.green
+{
+  color: #006936;
+}
+
+.white
+{
+  color: #ffffff;
+}
+
+.highway-headline
+{
+  font-family: Highway-Gothic, Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.highway-subhead
+{
+  font-family: Highway-Gothic, Helvetica, Arial, sans-serif;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
 .content-text-head
 {
   font-family: Variane;
@@ -77,6 +104,30 @@ body
       }
     }
   }
+}
+
+.navbar-header
+{
+  span{
+    display:inline-block;
+  }
+
+  #nav-camp-logo
+  {
+    width: 40px;
+    margin-top: -14px;
+    height: 40px;
+  }
+
+  #nav-camp-name
+  {
+    color: #ecc884;
+    font-family: Superclarendon, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 13px;
+    margin-top: 10px;
+  }
+
 }
 
 .navbar

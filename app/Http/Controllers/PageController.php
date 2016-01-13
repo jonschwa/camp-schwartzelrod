@@ -14,10 +14,10 @@ class PageController extends Controller
             [
                 'title' => 'The Wedding',
                 'subtitle' => 'Saturday September 10th, 2016',
-                'body' => '<p>Our wedding will be on Lake Champlain at Camp Abnaki in North Hero, VT. Leave your stilettos and tuxedos at home - this is a more casual affair with the ceremony on grass and reception in the dining hall.</p>
-                           <p>Ceremony: Time TBD<br />
-                           Dinner, dancing, drinks, and a bonfire to follow</p>',
-                'img'  => 'https://placehold.it/200x200'
+                'body' => '<p>Our wedding will be on Lake Champlain at Camp Abnaki in North Hero, VT. Leave your stilettos and tuxedos at home - this is a more casual affair with the ceremony on grass and reception in the dining hall.</p>',
+                'img'  => 'https://placehold.it/200x200',
+                'post-header' => 'Ceremony: Time TBD<br />
+                                  Dinner, dancing, drinks, and a bonfire to follow'
             ],
             [
                 'title' => 'The Weekend',
@@ -27,9 +27,9 @@ class PageController extends Controller
             ],
             [
                 'title' => 'Events & Activities',
+                'subtitle' => 'Official Scedule of Events coming soon',
                 'body' => "<p>We will be hosting a Welcome BBQ on Friday, fun activities throughout the weekend, and, of course, s’mores over the campfire at night.</p>
-                          <p>Lawn games, sporting equipment, and hiking trails will be available throughout the weekend. You can also just relax and enjoy the scenery!</p>
-                          <p>Official schedule of events coming soon.</p>",
+                          <p>Lawn games, sporting equipment, and hiking trails will be available throughout the weekend. You can also just relax and enjoy the scenery!</p>",
                 'img'  => 'https://placehold.it/200x200'
             ],
         ];

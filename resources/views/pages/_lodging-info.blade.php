@@ -1,27 +1,28 @@
-<a name="lodging-info"></a>
 <div class="main-page-content-block" id="lodging-info">
     <div class="row">
         <div class="col-md-12" id="lodging-info-section">
             <div id="lodging-info-content">
                 <div id="lodging-header">
-                    <p class="clarendon-headline">Accommodations</p>
-                    <div class="content-body">
-                        <p>We will be staying on the camp property for the whole weekend and we’d love for you to join us, but we understand that not everyone loves camping as much as we do. No matter where you stay, you will be welcome to join in on camp activities (swimming, boating, sports, etc.) or just come hang out on the beautiful lakefront camp property throughout the weekend.</p>
-                    </div>
+                    <img class="header-img" src="/img/cabin-wide.jpg" />
+                    <p class="clarendon-headline white">Accommodations</p>
                 </div>
+                <a name="lodging-info"></a>
                 <div id="lodging-options-container">
-                    <div class="col-md-6 lodging-options" id="lodging-on-site">
-                        <p class="clarendon-headline">Camp Lodging</p>
+                    <div class="col-md-6 col-sm-6 col-xs-6 lodging-options" id="lodging-on-site">
+                        <p class="clarendon-headline green">Camp Lodging</p>
                         <p class="option-detail">Guests staying at camp will be free to enjoy the entire lakefront property and all the fun activities we have planned. There is no need to drive anywhere and you’ll be right in the center of all the action. Plus, you’ll have an easy stumble to bed after the party! Continental breakfast and a light lunch will be provided on Saturday. Visit the <a href="http://www.campabnaki.org" target="_blank">Camp Abnaki website</a> for more info, photos, and a virtual tour.</p>
-                        <div class="checkin-times">
-                            <p>Check in: Friday<br />
-                            Check out: Sunday</p>
-                        </div>
                         <div class="option">
                             <div class="container-fluid inline-option-header">
-                                <img class="option-image img-circle" src="https://placehold.it/70x70" />
-                                <p class="clarendon-subhead">Camp Cabin</p>
-                                <p class="subtitle"><span class="text-success">$200/night</span>: Sleeps up to 10 people - fill it with friends for a really affordable stay or keep it private</p>
+                                <div class="col-md-10">
+                                    <p class="clarendon-subhead left-text subtitle">Camp Cabin</p>
+                                    <div class="subtitle left-text">
+                                        <p class="highway-subhead">$200/night</p>
+                                        Sleeps up to 10 people - fill it with friends for a really affordable stay or keep it private
+                                    </div>
+                                </div>
+                                <div class="col-md-2 right-img">
+                                    <img class="option-image img-circle" src="https://placehold.it/110x110" />
+                                </div>
                             </div>
                             <p class="option-detail">Get the whole camp experience in a rustic cabin! Each cabin has 4 or 5 bunk beds in one large room with electricity and lights. Sheets, pillows, and towels will be provided. Cabins are arranged in a village with 6 cabins, a fire pit, and a separate (but conveniently located!) wash house. Each wash house has multiple toilets, sinks, showers, changing areas, and plenty of hot water. The wash houses are much nicer than you’d expect at a camp, recently renovated, and just a few steps away from your cabin. Bring your own toiletries, but we’ll make sure there’s plenty of sunscreen and bug spray available.</p>
                         </div>
@@ -35,8 +36,8 @@
 
                         </div>
                     </div>
-                    <div class="col-md-6 lodging-options" id="lodging-off-site">
-                        <p class="clarendon-headline">Off-Site Lodging</p>
+                    <div class="col-md-6 col-sm-6 col-xs-6 lodging-options" id="lodging-off-site">
+                        <p class="clarendon-headline green">Off-Site Lodging</p>
                         <p class="option-detail">If camping isn’t your thing, there are lots of places to stay within one hour of Camp Abnaki. Guests staying off-site will be welcome to hang out with us at the beautiful camp property and participate in camp activities. Aside from the welcome BBQ on Friday and the reception on Saturday, food will not be provided for off-site guests. Transportation will not be provided, but there is plenty of parking available. We expect anyone staying off site to make safe and responsible decisions.</p>
                         <div class="option">
                             <div class="container-fluid inline-option-header">

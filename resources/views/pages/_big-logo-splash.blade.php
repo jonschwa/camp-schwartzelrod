@@ -1,3 +1,5 @@
- <div id="main-page-splash">
-        <img id="main-page-campsign" src="/img/camp-schwartzelrod-sign.png" />
+<div class="container-fluid">
+        <div id="main-page-splash">
+                <img id="main-page-campsign" src="/img/camp-schwartzelrod-sign.png" />
+        </div>
 </div>

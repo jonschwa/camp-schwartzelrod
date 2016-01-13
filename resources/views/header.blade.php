@@ -11,7 +11,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Camp</a>
+                    <span>
+                        <img id="nav-camp-logo" src="/img/camp-schwartelrod-logo-no-text.png">
+                    </span>
+                    <span>
+                        <p id="nav-camp-name">Camp<br />Schwartzelrod</p>
+                    </span>
+
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,22 +25,22 @@
                     <span>
                         <ul class="nav navbar-nav">
                             <li>
-                                <a href="/#wedding-info" id="nav-wedding-info-link">Wedding</a>
+                                <a class="highway-subhead" href="/#our-story" id="nav-our-story-link">History</a>
                             </li>
                             <li>
-                                <a href="/#our-story" id="nav-our-story-link">Story</a>
+                                <a class="highway-subhead" href="/#wedding-info" id="nav-wedding-info-link">Wedding</a>
                             </li>
                             <li>
-                                <a href="/#vt-info" id="nav-vt-info-link">The Area</a>
+                                <a class="highway-subhead" href="/#vt-info" id="nav-vt-info-link">Location</a>
                             </li>
                             <li>
-                                <a href="/#lodging-info" id="nav-lodging-info-link">Lodging</a>
+                                <a class="highway-subhead" href="/#lodging-info" id="nav-lodging-info-link">Acommodations</a>
                             </li>
                             <li>
                                 @if(Auth::user())
-                                    <a href="/status">RSVP</a>
+                                    <a class="highway-subhead" href="/status">RSVP</a>
                                 @else
-                                    <a href="/#rsvp" id="nav-rsvp-link">RSVP</a>
+                                    <a class="highway-subhead" href="/#rsvp" id="nav-rsvp-link">RSVP</a>
                                 @endif
                             </li>
                         </ul>
@@ -43,14 +49,14 @@
                         @if(Auth::user())
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                    <p class="navbar-text">Logged in as {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} <a href="/logout">(Log Out)</a></p>
+                                    <p class="highway-subhead" class="navbar-text">Logged in as {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} <a href="/logout">(Log Out)</a></p>
                                 </li>
                             </ul>
                         @else
                             <form class="navbar-form navbar-right form-group-sm" id="form-nav-login">
                                 <div class="form-group">
-                                    <input id="form-nav-login-email" type="text" class="form-control" placeholder="email">
-                                    <input id="form-nav-login-password" type="password" class="form-control" placeholder="password">
+                                    <input id="form-nav-login-email" type="text" class="form-control" placeholder="Email">
+                                    <input id="form-nav-login-password" type="password" class="form-control" placeholder="Password">
                                 </div>
                                 <button type="submit" id="nav-login-submit" class="btn btn-xs">Log In</button>
                             </form>

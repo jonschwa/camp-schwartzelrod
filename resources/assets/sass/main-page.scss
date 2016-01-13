@@ -53,9 +53,8 @@ img.content-image
   margin: -15px;
   margin-top: -20px;
   text-align: center;
-  background: url('/img/abnaki-tree-lake-bg.jpg') no-repeat top;
-  //background: url('/img/waterfront.jpg') no-repeat top;
-  background-size: 100%;
+  background: url('/img/tree_bark.jpg');
+  margin-bottom: 15px;
 
   #main-page-campsign
   {
@@ -79,18 +78,32 @@ img.content-image
   //1024
 }
 
-#wedding-info
+#wedding-info-header
 {
-  //margin-top:-50px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
 
-  #wedding-info-section
-  {
-    margin-top:0px;
 
-    #wedding-info-content
-    {
-      margin-top: 70px;
-    }
+#wedding-info-content
+{
+  margin-top: 70px;
+  //font-size: 0.9em;
+
+  .content-body p {
+    text-align: center;
+  }
+
+  .highway-subhead {
+    font-size: 1.0em;
+    margin-top: 5px;
+    margin-bottom: -10px;
+  }
+
+  p {
+    margin: 0px;
   }
 }
 
@@ -145,6 +158,10 @@ img.content-image
   text-align: center;
   margin-bottom: -70px;
 
+  .clarendon-headline
+  {
+    font-size: 2.5em;
+  }
 
   .info
   {
@@ -162,16 +179,39 @@ img.content-image
 #lodging-info-content {
   #lodging-header
   {
+    position: relative;
     margin: 0px -15px;
     background-color: #acadad;
-    padding:150px;
-    background: url('/img/abnaki-cabins.jpg') center no-repeat;
-    background-size: 100%;
+    text-align: center;
+
+    .clarendon-headline
+    {
+      bottom: 25px;
+      position: absolute;
+      text-align: center;
+      z-index: 1;
+      width: 100%;
+      font-size: 3.5em;
+    }
+
+    .header-img
+    {
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
   }
 
   #lodging-options-container
   {
     padding:80px;
+    text-align: center;
+
+    .clarendon-headline
+    {
+      font-size: 2.5em;
+    }
 
     .checkin-times
     {
@@ -183,17 +223,48 @@ img.content-image
       padding:20px;
       width: 90%;
       margin:auto;
-      text-align: justify;
     }
 
     .option
     {
+      .highway-subhead
+      {
+        margin: 0px;
+      }
+
+      .clarendon-subhead
+      {
+        margin: 0px;
+        font-size: 1.5em;
+      }
+
       .option-detail
       {
         padding:20px;
         width: 80%;
         margin:auto;
-        text-align: justify;
+      }
+
+      @media(min-width: 0) {
+        .left-text {
+          text-align: center;
+        }
+
+        .right-img {
+          margin-left: 0px;
+          margin-top: 10px;
+        }
+      }
+
+      @media(min-width: 992px) {
+        .left-text {
+          text-align: right;
+        }
+
+        .right-img {
+          margin-left: -50px;
+          margin-top: 10px;
+        }
       }
     }
     .inline-option-header
@@ -206,7 +277,7 @@ img.content-image
       }
       .subtitle
       {
-        width: 65%;
+        width: 75%;
         margin: auto;
       }
     }
