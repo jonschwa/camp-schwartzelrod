@@ -48,7 +48,7 @@ img.content-image
   margin: -15px;
   margin-top: -20px;
   text-align: center;
-  background: url('/img/tree_bark.jpg');
+  background: url('/img/tree_bark.jpg') repeat fixed;
   margin-bottom: 15px;
 
   @media(min-width: 0px) {
@@ -140,9 +140,12 @@ img.content-image
 
   #desktop-story
   {
-    background: url('/img/Lakehouse-hires.jpg') center no-repeat;
-    background-size: 100%;
-    margin-top: -70px;
+    background: url('/img/Lakehouse-hires.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: -60px;
     //margin:15px;
     height: 750px;
 
@@ -154,18 +157,15 @@ img.content-image
 
   }
 
-  .our-story-content
-  {
-    padding: 50px;
-    margin-top: 30px;
-  }
-
   .our-story-text
   {
+    margin-top: 100px;
+    padding: 70px;
     font-size: 1em;
     text-align: justify;
-    padding: 30px 100px 0px 100px;
+    //padding: 30px 100px 0px 100px;
   }
+
 }
 
 #rsvp-section
