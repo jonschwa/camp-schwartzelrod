@@ -42,11 +42,6 @@ img.content-image
   }
 }
 
-#main-page-campsign
-{
-  width: 80%;
-}
-
 #main-page-splash
 {
   padding: 50px;
@@ -56,9 +51,17 @@ img.content-image
   background: url('/img/tree_bark.jpg');
   margin-bottom: 15px;
 
-  #main-page-campsign
-  {
-    width: 60%;
+  @media(min-width: 0px) {
+    #main-page-campsign
+    {
+      width: 100%;
+    }
+  }
+  @media(min-width: 992px) {
+    #main-page-campsign
+    {
+      width: 60%;
+    }
   }
 
   p.wedding-info-headline
@@ -114,17 +117,50 @@ img.content-image
 
 #our-story
 {
-  background: #acadad;
-  margin: -15px;
-  padding-bottom: 50px;
+  @media(min-width: 0px) {
+    #desktop-story
+    {
+      display: none;
+    }
+    #mobile-story
+    {
+      display: inline-block;
+    }
+  }
+  @media(min-width: 992px) {
+    #desktop-story
+    {
+      display: inline-block;
+    }
+    #mobile-story
+    {
+      display: none;
+    }
+  }
 
-  #our-story-content
+  #desktop-story
+  {
+    background: url('/img/Lakehouse-hires.jpg') center no-repeat;
+    background-size: 100%;
+    margin-top: -70px;
+    //margin:15px;
+    height: 750px;
+
+
+  }
+
+  #mobile-story
+  {
+
+  }
+
+  .our-story-content
   {
     padding: 50px;
     margin-top: 30px;
   }
 
-  #our-story-text
+  .our-story-text
   {
     font-size: 1em;
     text-align: justify;
