@@ -225,11 +225,19 @@ img.content-image
       margin:auto;
     }
 
+    .option-image
+    {
+      height: 110px;
+      width: 110px;
+    }
+
     .option
     {
       .highway-subhead
       {
         margin: 0px;
+        font-size: 1.0em;
+        letter-spacing: 0px;
       }
 
       .clarendon-subhead
@@ -243,6 +251,7 @@ img.content-image
         padding:20px;
         width: 80%;
         margin:auto;
+        text-align: justify;
       }
 
       @media(min-width: 0) {
@@ -250,10 +259,20 @@ img.content-image
           text-align: center;
         }
 
-        .right-img {
+        .left-img {
           margin-left: 0px;
           margin-top: 10px;
         }
+        .right-text {
+          text-align: center;
+        }
+
+        .right-img {
+          margin-right: 0px;
+          margin-top: 10px;
+        }
+
+
       }
 
       @media(min-width: 992px) {
@@ -261,9 +280,24 @@ img.content-image
           text-align: right;
         }
 
-        .right-img {
+        .left-img {
           margin-left: -50px;
           margin-top: 10px;
+        }
+        .right-text {
+          text-align: left;
+        }
+
+        .right-img {
+          margin-right: 0px;
+          margin-top: 10px;
+        }
+      }
+
+      .inn-links{
+        text-align: center;
+        ul{
+          list-style: none
         }
       }
     }
