@@ -14,5 +14,4 @@ $( document ).ready(function() {
     var imgMargin = (windowHeight - imgHeight)/4;
 
     $('#main-page-campsign').css('margin-top', imgMargin);
-
 });

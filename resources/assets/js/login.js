@@ -59,5 +59,5 @@ $("#btn-nav-error-hide").on("click", function() {
 
 function hideNavErrors()
 {
-    $('#nav-error-container').hide();
+    $('#nav-error-container').fadeOut('fast');
 }

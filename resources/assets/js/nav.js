@@ -15,6 +15,44 @@ function checkMainPage()
     return false;
 }
 
+$(window).on("scroll", function() {
+    var scrollPos = $(window).scrollTop();
+    if (scrollPos >= 40) {
+        toggleNavForm('hide');
+        hideNavErrors();
+    }
+    else if (scrollPos <= 0) {
+        toggleNavForm('show');
+    }
+});
+
+$('#login-form-toggle').on('click', function() {
+    hideNavErrors();
+    scrollToAnchor('page-top', 'fast');
+    toggleNavForm('show');
+});
+
+function toggleNavForm(display)
+{
+    var navForm = $('#form-nav-login');
+    if(display) {
+        if(display == 'hide') {
+            navForm.addClass('closed');
+        }
+        else {
+            navForm.removeClass('closed');
+        }
+        return false;
+    }
+
+    if (navForm.hasClass('closed')) {
+        navForm.removeClass('closed');
+    }
+    else {
+        navForm.addClass('closed');
+    }
+}
+
 $('#nav-our-story-link').on('click', function(e){
    if (checkMainPage()) {
        e.preventDefault();

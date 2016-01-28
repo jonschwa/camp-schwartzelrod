@@ -22,7 +22,7 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <span>
+                    <span class="navbar-left">
                         <ul class="nav navbar-nav">
                             <li>
                                 <a class="highway-subhead" href="/#our-story" id="nav-our-story-link">History</a>
@@ -36,16 +36,23 @@
                             <li>
                                 <a class="highway-subhead" href="/#lodging-info" id="nav-lodging-info-link">Acommodations</a>
                             </li>
+
+                            @if(Auth::user())
                             <li>
-                                @if(Auth::user())
-                                    <a class="highway-subhead" href="/status">RSVP</a>
-                                @else
-                                    <a class="highway-subhead" href="/#rsvp" id="nav-rsvp-link">RSVP</a>
-                                @endif
+                                <a class="highway-subhead" href="/status">RSVP</a>
                             </li>
+                            @else
+                            <li>
+                                <a class="highway-subhead" href="/#rsvp" id="nav-rsvp-link">RSVP</a>
+                            </li>
+                            <li>
+                                <a class="highway-subhead" id="login-form-toggle">Log In</a>
+                            </li>
+                            @endif
+
                         </ul>
                     </span>
-                    <span>
+                    <span class="navbar-right">
                         @if(Auth::user())
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
@@ -53,19 +60,35 @@
                                 </li>
                             </ul>
                         @else
-                            <form class="navbar-form navbar-right form-group-sm" id="form-nav-login">
+
+                        @endif
+                    </span>
+                    <div id="form-nav-login-collapsed">
+                        <div id="nav-login-container">
+                            <form class="navbar-form form-group-sm">
                                 <div class="form-group">
                                     <input id="form-nav-login-email" type="text" class="form-control" placeholder="Email">
                                     <input id="form-nav-login-password" type="password" class="form-control" placeholder="Password">
                                 </div>
                                 <button type="submit" id="nav-login-submit" class="btn btn-xs">Log In</button>
                             </form>
-                        @endif
-                    </span>
+                        </div>
+                    </div>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
     </header>
+    <div id="form-nav-login" class="closed">
+        <div id="nav-login-container">
+            <form class="navbar-form form-group-sm">
+                <div class="form-group">
+                    <input id="form-nav-login-email" type="text" class="form-control" placeholder="Email">
+                    <input id="form-nav-login-password" type="password" class="form-control" placeholder="Password">
+                </div>
+                <button type="submit" id="nav-login-submit" class="btn btn-xs">Log In</button>
+            </form>
+        </div>
+    </div>
     <div class="alert alert-danger" id="nav-error-container" role="alert">
         <button id="btn-nav-error-hide" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <div id="nav-error-body">There was an error.</div>
