@@ -1,7 +1,8 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-$brown: '#3d1e07';
-$yellow-text: '#ecc884';
+$brown: #3d1e07;
+$yellow-text: #ecc884;
+$green: #138f22;
 
 a {
   color: inherit;
@@ -52,7 +53,7 @@ body
 
 .green
 {
-  color: #006936;
+  color: $green;
 }
 
 .white
@@ -62,7 +63,7 @@ body
 
 .yellow
 {
-  color: #ecc884;
+  color: $yellow-text;
 }
 
 .highway-headline
@@ -101,11 +102,11 @@ body
     font-size: 1em;
     li{
       a{
-        color: #ecc884;
+        color: $yellow-text;
       }
 
-      a:hover{
-        color: #138f22;
+      a:hover, a:active{
+        color: $green;
       }
     }
   }
@@ -126,7 +127,7 @@ body
 
   #nav-camp-name
   {
-    color: #ecc884;
+    color: $yellow-text;
     font-family: Superclarendon, Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 13px;
@@ -137,7 +138,7 @@ body
 
 .navbar
 {
-  background: #3d1e07;
+  background: $brown;
   margin-bottom: 0px;
   min-width: 948px;
   border: none;
@@ -148,10 +149,11 @@ body
   max-height: 0;
 }
 
-@media (min-width: 0px) {
+@media (max-width: 992px) {
   .navbar
   {
     min-width: 360px;
+    text-align: center;
   }
   #nav-error-container
   {
@@ -173,7 +175,7 @@ body
 
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .navbar
   {
     min-width: 794px;
@@ -208,7 +210,7 @@ body
     transition-duration: .4s;
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     width: 100%;
-    background-color: #acadad;
+    background-color: $green;
 
 
     .navbar-form {
@@ -242,4 +244,33 @@ a.page-top
 {
   position: absolute;
   top: -100px;
+}
+
+@media (max-width: 992px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+  .navbar-collapse.collapse.in {
+    display: block !important;
+  }
+  .navbar-nav {
+    float: none !important;
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }

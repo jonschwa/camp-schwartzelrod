@@ -1,5 +1,3 @@
-$('body').scrollspy({ target: '#main-site-nav' });
-
 function scrollToAnchor(aid, speed){
     var aTag = $("a[name='"+ aid +"']");
     $('html,body').animate({scrollTop: aTag.offset().top},speed);
@@ -28,6 +26,7 @@ $(window).on("scroll", function() {
 
 $('#login-form-toggle').on('click', function() {
     hideNavErrors();
+    $('.navbar-toggle').click();
     scrollToAnchor('page-top', 'fast');
     toggleNavForm('show');
 });
@@ -57,6 +56,7 @@ $('#nav-our-story-link').on('click', function(e){
    if (checkMainPage()) {
        e.preventDefault();
    }
+   $('.navbar-toggle').click();
    scrollToAnchor('our-story', 'slow');
 });
 
@@ -64,6 +64,7 @@ $('#nav-wedding-info-link').on('click', function(e){
     if (checkMainPage()) {
         e.preventDefault();
     }
+    $('.navbar-toggle').click();
     scrollToAnchor('wedding-info', 'slow');
 });
 
@@ -71,6 +72,7 @@ $('#nav-lodging-info-link').on('click', function(e){
     if (checkMainPage()) {
         e.preventDefault();
     }
+    $('.navbar-toggle').click();
     scrollToAnchor('lodging-info', 'slow');
 });
 
@@ -78,11 +80,13 @@ $('#nav-vt-info-link').on('click', function(e){
     if (checkMainPage()) {
         e.preventDefault();
     }
+    $('.navbar-toggle').click();
     scrollToAnchor('vt-info', 'slow');
 });
 $('#nav-rsvp-link').on('click', function(e){
     if (checkMainPage()) {
         e.preventDefault();
     }
+    $('.navbar-toggle').click();
     scrollToAnchor('rsvp', 'slow');
 });

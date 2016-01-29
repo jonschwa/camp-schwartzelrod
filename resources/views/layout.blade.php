@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/css/app.css">
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
     <title>Camp Schwartzelrod</title>
 </head>
 @include("header")

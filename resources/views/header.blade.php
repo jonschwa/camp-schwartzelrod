@@ -63,17 +63,17 @@
 
                         @endif
                     </span>
-                    <div id="form-nav-login-collapsed">
-                        <div id="nav-login-container">
-                            <form class="navbar-form form-group-sm">
-                                <div class="form-group">
-                                    <input id="form-nav-login-email" type="text" class="form-control" placeholder="Email">
-                                    <input id="form-nav-login-password" type="password" class="form-control" placeholder="Password">
-                                </div>
-                                <button type="submit" id="nav-login-submit" class="btn btn-xs">Log In</button>
-                            </form>
-                        </div>
-                    </div>
+                    {{--<div id="form-nav-login-collapsed">--}}
+                        {{--<div id="nav-login-container">--}}
+                            {{--<form class="navbar-form form-group-sm">--}}
+                                {{--<div class="form-group">--}}
+                                    {{--<input id="form-nav-login-email" type="text" class="form-control" placeholder="Email">--}}
+                                    {{--<input id="form-nav-login-password" type="password" class="form-control" placeholder="Password">--}}
+                                {{--</div>--}}
+                                {{--<button type="submit" id="nav-login-submit" class="btn btn-xs">Log In</button>--}}
+                            {{--</form>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
