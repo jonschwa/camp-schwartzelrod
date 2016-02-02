@@ -360,3 +360,65 @@ img.content-image
 {
   text-align: center;
 }
+
+//all praise to the great Robert Burch for helping me with these breakpoints
+@media screen and (max-width: 640px) {
+  .navbar {
+    min-width: 320px;
+  }
+  #main-page-splash {
+    height: auto !important;
+    margin-top: -10px;
+    padding: 25px;
+  }
+  #main-page-splash #main-page-campsign {
+    margin-top: 0 !important;
+  }
+  #wedding-datetime {
+    padding: 0;
+    margin-bottom: 50px;
+  }
+  #wedding-info-content {
+    margin-top: 0;
+  }
+  .content-block {
+    padding: 25px 0;
+  }
+  #vt-info-section .info {
+    padding: 0
+  }
+  #our-story #mobile-story { display: block; }
+  #lodging-info-content #lodging-header { margin: 0; }
+  #lodging-info-content #lodging-header .clarendon-headline {
+    font-size: 2em;
+  }
+  #lodging-info-content #lodging-options-container {
+    padding: 0;
+    margin-top: 50px;
+  }
+  #lodging-info-content #lodging-options-container .option-detail {
+    width: 100%;
+  }
+  #lodging-info-content #lodging-options-container .option .inn-links ul {
+    padding: 0;
+  }
+  #rsvp-section {
+    padding: 0 15px;
+  }
+  #rsvp-section #code-response-form-container { padding: 20px; }
+  .button-form-opt-out {
+    white-space: normal;
+  }
+  #rsvp-code {
+    width: 100%;
+    font-size: 22px;
+  }
+  #code-response-container button {
+    display: block;
+    margin: 0 auto 10px;
+  }
+  #code-response-container button:last-of-type {
+    margin-bottom: 0;
+  }
+  #our-story-section { margin: 0; }
+}
