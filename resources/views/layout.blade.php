@@ -6,12 +6,13 @@
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
     <title>Camp Schwartzelrod</title>
 </head>
+<body>
 @include("header")
 <div id="main-content">
     @yield("content")
 </div>
-@include("footer")
 </body>
+@include("footer")
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="js/main.js"></script>
 @yield('scripts')
