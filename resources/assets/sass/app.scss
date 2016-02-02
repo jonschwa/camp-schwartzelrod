@@ -141,6 +141,11 @@ body
 
 }
 
+#camp-navbar-collapse-1
+{
+  float: none !important;
+}
+
 .navbar
 {
   background: $brown;
@@ -277,5 +282,8 @@ a.page-top
   .navbar-nav > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+  .col-md-12 {
+    padding-right: 0px;
   }
 }
