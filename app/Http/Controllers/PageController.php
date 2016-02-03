@@ -10,6 +10,7 @@ class PageController extends Controller
 
     public function __construct()
     {
+        //@todo - cache this!
         $this->weddingInfoContent = [
             [
                 'title' => 'The Wedding',
@@ -33,12 +34,67 @@ class PageController extends Controller
                 'img'  => 'https://placehold.it/200x200'
             ],
         ];
+
+        $this->ourStoryContent = [
+            [
+                'date'     => 'November 23, 2010',
+                'event'    => 'First Message',
+                'location' => '97% match on OkCupid'
+            ],
+            [
+                'date'     => 'December 20, 2010',
+                'event'    => 'First Date',
+                'location' => 'Cheesecake Factory - Bridgewater, NJ'
+            ],
+            [
+                'date'     => 'April 2011',
+                'event'    => 'It\'s Official!',
+                'location' => 'New Brunswick, NJ'
+            ],
+            [
+                'date'     => 'August 2012',
+                'event'    => 'Moved in Together,<br />Combined Cats',
+                'location' => 'Bound Brook, NJ'
+            ],
+            [
+                'date'     => 'September 2012',
+                'event'    => '600 Mile Road Trip',
+                'location' => 'Portland Or &#10132; San Francisco CA'
+            ],
+            [
+                'date'     => 'July 4 2013',
+                'event'    => 'We\'re Engaged!',
+                'location' => 'Grounds For Sculpture - Hamilton, NJ'
+            ],
+            [
+                'date'     => 'January 2014',
+                'event'    => 'Moved to NYC',
+                'location' => 'Upper East Side, Manhattan'
+            ],
+            [
+                'date'     => 'May 2014',
+                'event'    => 'Adopted Escher',
+                'location' => 'ASPCA, NYC'
+            ],
+            [
+                'date'     => 'July 2014',
+                'event'    => 'First Engagement-iversary',
+                'location' => 'Climbed Mt. Bierstadt (14,065\'), CO'
+            ],
+            [
+                'date'     => 'Today',
+                'event'    => 'Living & Loving',
+                'location' => 'Living in NYC and loving every minute!'
+            ],
+
+        ];
     }
 
     public function index()
     {
         $pageContent = [
             'weddingInfoContent' => $this->weddingInfoContent,
+            'ourStoryContent'    => $this->ourStoryContent
         ];
         return view('pages.home', $pageContent);
     }
