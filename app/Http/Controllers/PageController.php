@@ -15,7 +15,7 @@ class PageController extends Controller
             [
                 'title' => 'The Wedding',
                 'subtitle' => 'Saturday September 10th, 2016',
-                'body' => '<p>Our wedding will be on Lake Champlain at Camp Abnaki in North Hero, VT. Leave your stilettos and tuxedos at home - this is a more casual affair with the ceremony on grass and reception in the dining hall.</p>',
+                'body' => '<p class="grey">Our wedding will be on Lake Champlain at Camp Abnaki in North Hero, VT. Leave your stilettos and tuxedos at home - this is a more casual affair with the ceremony on grass and reception in the dining hall.</p>',
                 'img'  => 'https://placehold.it/200x200',
                 'post-header' => 'Ceremony: Time TBD<br />
                                   Dinner, dancing, drinks, and a bonfire to follow'
@@ -23,14 +23,14 @@ class PageController extends Controller
             [
                 'title' => 'The Weekend',
                 'subtitle' => 'Fri Sept 9th - Sun Sept 11th 2016',
-                'body' => '<p>We also invite everyone to enjoy the lakeside camp property with us all weekend! If you\'re adventurous and want to stay with us at camp for the full experience–fantastic! If you can\'t wait to join in the weekend\'s festivities, but prefer to stay off site–no problem! If you\'ll be joining us for just the ceremony and reception–fabulous! We look forward to celebrating with you.</p>',
+                'body' => '<p class="grey">We also invite everyone to enjoy the lakeside camp property with us all weekend! If you\'re adventurous and want to stay with us at camp for the full experience–fantastic! If you can\'t wait to join in the weekend\'s festivities, but prefer to stay off site–no problem! If you\'ll be joining us for just the ceremony and reception–fabulous! We look forward to celebrating with you.</p>',
                 'img'  => 'https://placehold.it/200x200'
             ],
             [
                 'title' => 'Events & Activities',
-                'subtitle' => 'Official Scedule of Events coming soon',
-                'body' => "<p>We will be hosting a Welcome BBQ on Friday, fun activities throughout the weekend, and, of course, s’mores over the campfire at night.</p>
-                          <p>Lawn games, sporting equipment, and hiking trails will be available throughout the weekend. You can also just relax and enjoy the scenery!</p>",
+                'subtitle' => 'Official Schedule of Events coming soon',
+                'body' => "<p class=\"grey\">We will be hosting a Welcome BBQ on Friday, fun activities throughout the weekend, and, of course, s’mores over the campfire at night.</p>
+                          <p class=\"grey\">Lawn games, sporting equipment, and hiking trails will be available throughout the weekend. You can also just relax and enjoy the scenery!</p>",
                 'img'  => 'https://placehold.it/200x200'
             ],
         ];

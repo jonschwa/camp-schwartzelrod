@@ -13,8 +13,8 @@
                     <p class="clarendon-headline green">Camp Abnaki</p>
                     <p class="highway-subhead">(a.k.a. Camp Schwartzelrod)</p>
                     <div class="content-body">
-                        <p>Now in its 115th year, Camp Abnaki hosts 750 campers and 70 staff each summer. The 90-acre property features a modern dining hall, four cabin villages, an expansive waterfront, hiking trails, sports fields, skate park, archery range, low ropes course, historic camp buildings, and multiple scenic fire circles.</p>
-                        <p>We will have exclusive use of the entire camp property for the whole weekend!</p>
+                        <p class="grey">Now in its 115th year, Camp Abnaki hosts 750 campers and 70 staff each summer. The 90-acre property features a modern dining hall, four cabin villages, an expansive waterfront, hiking trails, sports fields, skate park, archery range, low ropes course, historic camp buildings, and multiple scenic fire circles.</p>
+                        <p class="grey">We will have exclusive use of the entire camp property for the whole weekend!</p>
                         <p>
                             <a class="highway-subhead" href="http://www.campabnaki.org/map_of_camp.shtml" target="_blank">Camp Map</a><br />
                             <a class="highway-subhead" href="http://newspin360.com/tour/vt/northhero/campabnaki/" target="_blank">Virtual Tour</a><br />
@@ -28,19 +28,20 @@
                 <div class="content-block">
                     {{--<img class="content-image img-circle" src="https://placehold.it/200x200">--}}
                     <p class="clarendon-headline green">North Hero Island</p>
+                    <p class="highway-subhead">(a.k.a. Almost Canada)</p>
                     <div class="content-body">
-                        <p>Camp Abnaki is located in North Hero, VT, one of four towns which make up the Lake Champlain Islands. It is easily accessible by car</p>
+                        <p class="grey">Camp Abnaki is located in North Hero, VT, one of four towns which make up the Lake Champlain Islands. It is easily accessible by car</p>
                         <div id="distance-to-camp">
                             <p>
-                                <span class="highway-subhead">Burlington International Airport</span> 45 minutes<br />
-                                <span class="highway-subhead">Plattsburgh International Airport</span> 1 hour, 15 minutes<br />
-                                <span class="highway-subhead">Burlington, VT</span> 45 minutes<br />
-                                <span class="highway-subhead">Plattsburgh, NY</span> 1 hour (or <a href=”http://www.ferries.com/crossing-schedule-rates/grand-isle-to-plattsburgh-ferry” target=”_blank”>take the ferry</a>!)<br />
-                                <span class="highway-subhead">Boston, MA</span> 4 hours<br />
-                                <span class="highway-subhead">Ithaca, NY</span> 6 hours<br />
-                                <span class="highway-subhead">New York, NY</span> 6 hours<br />
-                                <span class="highway-subhead">Washington, DC</span> 9.5 hours<br />
-                                <span class="highway-subhead">Montreal, Canada</span> 1.5 hours
+                                <span class="highway-subhead">Burlington International Airport</span><span class="grey"> 45 minutes</span><br />
+                                <span class="highway-subhead">Plattsburgh International Airport</span><span class="grey"> 1 hour, 15 minutes</span><br />
+                                <span class="highway-subhead">Burlington, VT</span><span class="grey"> 45 minutes</span><br />
+                                <span class="highway-subhead">Plattsburgh, NY</span><span class="grey"> 1 hour (or <a href=”http://www.ferries.com/crossing-schedule-rates/grand-isle-to-plattsburgh-ferry” target=”_blank”>take the ferry</a>!)</span><br />
+                                <span class="highway-subhead">Boston, MA</span><span class="grey"> 4 hours</span><br />
+                                <span class="highway-subhead">Ithaca, NY</span><span class="grey"> 6 hours</span><br />
+                                <span class="highway-subhead">New York, NY</span><span class="grey"> 6 hours</span><br />
+                                <span class="highway-subhead">Washington, DC</span><span class="grey"> 9.5 hours</span><br />
+                                <span class="highway-subhead">Montreal, Canada</span><span class="grey"> 1.5 hours</span>
                             </p>
                         </div>
                     </div>

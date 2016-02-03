@@ -3,6 +3,7 @@
 $brown: #3d1e07;
 $yellow-text: #ecc884;
 $green: #138f22;
+$grey: #666666;
 
 a {
   color: inherit;
@@ -25,7 +26,7 @@ body
 @font-face
 {
   font-family: Highway-Gothic;
-  src: url('/fonts/HWYGOTH.TTF');
+  src: url('/fonts/HWYGNRRW.TTF');
 }
 
 @font-face
@@ -69,6 +70,11 @@ body
 .yellow
 {
   color: $yellow-text;
+}
+
+.grey
+{
+  color: $grey;
 }
 
 .highway-headline
@@ -128,6 +134,7 @@ body
     width: 40px;
     margin-top: -14px;
     height: 40px;
+    margin-right: 4px;
   }
 
   #nav-camp-name

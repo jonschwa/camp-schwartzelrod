@@ -1,3 +1,8 @@
+$brown: #3d1e07;
+$yellow-text: #ecc884;
+$green: #138f22;
+$grey: #666666;
+
 .main-page-content-block
 {
   margin-top: 50px;
@@ -69,7 +74,7 @@ img.content-image
     font-family: Variane;
     font-size: 5em;
     line-height: 1em;
-    color: #ecc844;
+    color: $yellow-text;
   }
 
   p.wedding-info-subhead
@@ -79,6 +84,12 @@ img.content-image
   }
 
   //1024
+}
+
+.wedding-location
+{
+  color: $grey;
+  font-size: 1.2em;
 }
 
 #wedding-info-header
@@ -102,7 +113,11 @@ img.content-image
   .highway-subhead {
     font-size: 1.0em;
     margin-top: 5px;
-    margin-bottom: -10px;
+    margin-bottom: 0px;
+  }
+
+  .clarendon-subhead {
+    margin-bottom: -5px;
   }
 
   p {
@@ -112,7 +127,13 @@ img.content-image
 
 #wedding-datetime
 {
-  padding:100px;
+  margin-top: 10px;
+  padding:120px;
+
+  .clarendon-headline {
+    margin-bottom: 15px;
+    margin-top: 6px;
+  }
 }
 
 #our-story
@@ -162,7 +183,7 @@ img.content-image
       font-size: 1.2em;
     }
     p.location {
-      color: #808080;
+      color: $grey;
     }
 
   }
@@ -215,6 +236,12 @@ img.content-image
   .clarendon-headline
   {
     font-size: 2.5em;
+    margin-bottom: 0px;
+  }
+
+  .highway-subhead
+  {
+    margin-bottom: 0px;
   }
 
   .info
@@ -226,7 +253,9 @@ img.content-image
   }
   #distance-to-camp
   {
-    //font-size: 0.8em;
+    .grey {
+      margin-left: 3px;
+    }
   }
 }
 
@@ -272,11 +301,17 @@ img.content-image
       text-align: center;
     }
 
+    .option-subhead
+    {
+      color: $grey;
+    }
+
     .option-detail
     {
       padding:20px;
       width: 90%;
       margin:auto;
+      color: $grey;
     }
 
     .option-image

@@ -15,7 +15,7 @@
                                     <p class="highway-subhead">{!! $content['subtitle'] !!}</p>
                                 @endif
                                 <div class="content-body">
-                                    <p>{!! $content['body'] !!}</p>
+                                    <p class="grey">{!! $content['body'] !!}</p>
                                 </div>
                                 @if(isset($content['post-header']))
                                     <p class="highway-subhead">{!! $content['post-header'] !!}</p>
