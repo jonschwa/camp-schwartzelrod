@@ -28,9 +28,17 @@ class EloquentGuestRepository extends AbstractEloquentRepository implements Gues
                     'interested_archery' => intval($guest['archery']),
                     'interested_swimming' => intval($guest['swimming']),
                     'interested_boating' => intval($guest['boating']),
-                    'interested_good_time' => intval($guest['goodTime']),
                     'interested_arts_and_crafts' => intval($guest['artsAndCrafts']),
-                    'interested_sports' => intval($guest['sports'])
+                    'interested_soccer' => intval($guest['soccer']),
+                    'interested_tennis' => intval($guest['tennis']),
+                    'interested_basketball' => intval($guest['basketball']),
+                    'interested_baseball' => intval($guest['baseball']),
+                    'interested_volleyball' => intval($guest['volleyball']),
+                    'interested_football' => intval($guest['football']),
+                    'interested_frisbee' => intval($guest['frisbee']),
+                    'interested_kickball' => intval($guest['kickball']),
+                    'interested_capture_the_flag' => intval($guest['ctf']),
+                    'interested_scavenger_hunt' => intval($guest['scavengerHunt'])
                 ]);
                 $guests[] = $newGuest->toArray();
             } else {
@@ -45,9 +53,17 @@ class EloquentGuestRepository extends AbstractEloquentRepository implements Gues
                     'interested_archery' => intval($guest['archery']),
                     'interested_swimming' => intval($guest['swimming']),
                     'interested_boating' => intval($guest['boating']),
-                    'interested_good_time' => intval($guest['goodTime']),
                     'interested_arts_and_crafts' => intval($guest['artsAndCrafts']),
-                    'interested_sports' => intval($guest['sports'])
+                    'interested_soccer' => intval($guest['soccer']),
+                    'interested_tennis' => intval($guest['tennis']),
+                    'interested_basketball' => intval($guest['basketball']),
+                    'interested_baseball' => intval($guest['baseball']),
+                    'interested_volleyball' => intval($guest['volleyball']),
+                    'interested_football' => intval($guest['football']),
+                    'interested_frisbee' => intval($guest['frisbee']),
+                    'interested_kickball' => intval($guest['kickball']),
+                    'interested_capture_the_flag' => intval($guest['ctf']),
+                    'interested_scavenger_hunt' => intval($guest['scavengerHunt'])
                 ]);
                 $existingGuest->save();
                 $guests[] = $existingGuest->toArray();

@@ -26,11 +26,19 @@ function UserGuest (params) {
     this.cabinAdventureLevel = params.cabinAdventureLevel;
     this.archery = params.archery;
     this.swimming = params.swimming;
-    this.boating = params.boating,
-    this.bbq = params.bbq;
-    this.sports = params.sports;
+    this.boating = params.boating;
+    //this.bbq = params.bbq;
     this.artsAndCrafts = params.artsAndCrafts;
-    this.goodTime = params.goodTime
+    this.soccer = params.soccer;
+    this.tennis = params.tennis;
+    this.basketball = params.basketball;
+    this.baseball = params.baseball;
+    this.volleyball = params.volleyball;
+    this.football = params.football;
+    this.frisbee = params.frisbee;
+    this.kickball = params.kickball;
+    this.ctf = params.ctf;
+    this.scavengerHunt = params.scavengerHunt;
 }
 
 $('#btn-user-guest-submit').on('click', function() {
@@ -85,11 +93,19 @@ function generateRequestBody(guestFormData) {
             cabinAdventureLevel : $(this).find("input[name='cabin-adventure-level']").val(),
             archery : $(this).find("input[name='interested-archery']").is(':checked') ? 1 : 0,
             swimming : $(this).find("input[name='interested-swimming']").is(':checked') ? 1 : 0,
-            bbq : $(this).find("input[name='interested-bbq']").is(':checked') ? 1 : 0,
+            //bbq : $(this).find("input[name='interested-bbq']").is(':checked') ? 1 : 0,
             boating : $(this).find("input[name='interested-boating']").is(':checked') ? 1 : 0,
-            goodTime : $(this).find("input[name='interested-good-time']").is(':checked') ? 1 : 0,
-            sports : $(this).find("input[name='interested-sports']").is(':checked') ? 1 : 0,
-            artsAndCrafts : $(this).find("input[name='interested-arts-and-crafts']").is(':checked') ? 1 : 0
+            artsAndCrafts : $(this).find("input[name='interested-arts-and-crafts']").is(':checked') ? 1 : 0,
+            soccer : $(this).find("input[name='interested-soccer']").is(':checked') ? 1 : 0,
+            tennis : $(this).find("input[name='interested-tennis']").is(':checked') ? 1 : 0,
+            basketball : $(this).find("input[name='interested-basketball']").is(':checked') ? 1 : 0,
+            baseball : $(this).find("input[name='interested-baseball']").is(':checked') ? 1 : 0,
+            volleyball : $(this).find("input[name='interested-volleyball']").is(':checked') ? 1 : 0,
+            football : $(this).find("input[name='interested-football']").is(':checked') ? 1 : 0,
+            frisbee : $(this).find("input[name='interested-frisbee']").is(':checked') ? 1 : 0,
+            kickball : $(this).find("input[name='interested-kickball']").is(':checked') ? 1 : 0,
+            ctf : $(this).find("input[name='interested-ctf']").is(':checked') ? 1 : 0,
+            scavengerHunt : $(this).find("input[name='interested-scavenger-hunt']").is(':checked') ? 1 : 0
         };
 
         if($(this).parent().hasClass('blank') === false) {
@@ -103,7 +119,6 @@ function generateRequestBody(guestFormData) {
 }
 
 $('#rsvp-guests-container').on('click', '.activityIcon', function(e) {
-    console.log(e.target);
     var attrName = e.target.getAttribute('input-name');
     var active;
     var checkable = false;
@@ -173,5 +188,6 @@ $('#button-rsvp-add-guest').on('click', function(e){
     }
 
     var clone = $('.guest-rsvp-container.blank').clone().removeClass('blank').appendTo('#rsvp-guests-container');
+    var activities = clone.find('')
     clone.fadeIn();
 });

@@ -6,17 +6,11 @@ function showErrorMessage(message) {
 
 function toggleInterestColor(active, element) {
     if(active === true) {
-        element.style.color = '#1D6107';
+        element.style.color = '#138f22';
     //    element.attr('active', true);
     }
     else {
         element.style.color = '#acadad';
        // element.attr('active', false);
     }
-    //if(active === true) {
-    //    element.removeClass('interest-inactive').addClass('interest-active');
-    //}
-    //else {
-    //    element.removeClass('interest-active').addClass('interest-inactive');
-    //}
 }

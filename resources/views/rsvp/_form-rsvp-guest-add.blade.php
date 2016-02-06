@@ -38,10 +38,10 @@
         <div class="cabin-details" style="display:none;">
             <div class="row">
                 <div class="col-md-12">
-                    @include('rsvp._cabin-adventure-level')
+                    @include('rsvp._cabin-adventure-level-template')
                 </div>
             </div>
         </div>
-        @include('rsvp._activity-selection')
+        @include('rsvp._activity-selection-template')
     </form>
 </div>

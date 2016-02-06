@@ -31,10 +31,9 @@ class CreateGuestsTable extends Migration
             $table->tinyInteger('interested_volleyball')->default(0);
             $table->tinyInteger('interested_football')->default(0);
             $table->tinyInteger('interested_frisbee')->default(0);
-            $table->tinyInteger('interested_dodgeball')->default(0);
+            $table->tinyInteger('interested_kickball')->default(0);
             $table->tinyInteger('interested_capture_the_flag')->default(0);
             $table->tinyInteger('interested_scavenger_hunt')->default(0);
-            $table->tinyInteger('interested_low_ropes')->default(0);
             $table->timestamps();
         });
     }

@@ -78,6 +78,7 @@
             </div><!-- /.container-fluid -->
         </nav>
     </header>
+    @if(!Auth::user())
     <div id="form-nav-login" class="closed">
         <div id="nav-login-container">
             <form class="navbar-form form-group-sm">
@@ -93,4 +94,5 @@
         <button id="btn-nav-error-hide" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <div id="nav-error-body">There was an error.</div>
     </div>
+    @endif
 @show
