@@ -55,6 +55,7 @@ function toggleNavForm(display)
 $('#nav-our-story-link').on('click', function(e){
    if (checkMainPage()) {
        e.preventDefault();
+       $(this).blur();
    }
    $('.navbar-toggle').click();
    scrollToAnchor('our-story', 'slow');
@@ -63,6 +64,7 @@ $('#nav-our-story-link').on('click', function(e){
 $('#nav-wedding-info-link').on('click', function(e){
     if (checkMainPage()) {
         e.preventDefault();
+        $(this).blur();
     }
     $('.navbar-toggle').click();
     scrollToAnchor('wedding-info', 'slow');
@@ -71,6 +73,7 @@ $('#nav-wedding-info-link').on('click', function(e){
 $('#nav-lodging-info-link').on('click', function(e){
     if (checkMainPage()) {
         e.preventDefault();
+        $(this).blur();
     }
     $('.navbar-toggle').click();
     scrollToAnchor('lodging-info', 'slow');
@@ -79,6 +82,7 @@ $('#nav-lodging-info-link').on('click', function(e){
 $('#nav-vt-info-link').on('click', function(e){
     if (checkMainPage()) {
         e.preventDefault();
+        $(this).blur();
     }
     $('.navbar-toggle').click();
     scrollToAnchor('vt-info', 'slow');
@@ -86,6 +90,7 @@ $('#nav-vt-info-link').on('click', function(e){
 $('#nav-rsvp-link').on('click', function(e){
     if (checkMainPage()) {
         e.preventDefault();
+        $(this).blur();
     }
     $('.navbar-toggle').click();
     scrollToAnchor('rsvp', 'slow');
