@@ -1,6 +1,7 @@
 <a name="rsvp"></a>
+<div id="rsvp-border"></div>
 <div class="container-fluid" id="rsvp-section">
-    <div id="error-flash-container" class="alert alert-danger container" role="alert" style="display:none">
+    <div id="error-flash-container" class="alert alert-danger" role="alert" style="display:none">
         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
         <span id="error-flash-message" class="alert-error-text"></span>
     </div>

@@ -9,7 +9,7 @@
         <button type="button" class="btn btn-primary button-form-enter-code-positive">Yes, Count me in!</button>
     </div>
     <div id="old-person-opt-out-container">
-        <h2>Is this all too much for you?</h2>
+        <p class="clarendon-subhead">Is this all too much for you?</p>
         <p>We tried to make this pretty simple, but if all this newfangled internet technology is too much to handle,
            you can click the large red button below and we will follow up with you individually. Expect some shaming,
            but we will try to keep it within reason.

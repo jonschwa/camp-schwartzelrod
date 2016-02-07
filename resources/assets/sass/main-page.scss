@@ -211,10 +211,25 @@ img.content-image
 
 #rsvp-section
 {
+  margin-top: 80px;
   padding:100px;
-  font-family: Superclarendon, Helvetica, Arial, sans-serif;
-}
+  //font-family: Superclarendon, Helvetica, Arial, sans-serif;
 
+  width: 100%;
+  background-image: repeating-linear-gradient(135deg, #F29B91 0px, #F09290 30px, transparent 30px, transparent 50px, #83B3DB 50px, #84ADCB 80px, transparent 80px, transparent 100px);
+  padding: 20px;
+
+  #code-response-form-container
+  {
+    background: url('/img/groovepaper.png');
+    width: 100%; height: 100%;
+    padding: 50px 150px;
+    margin-left: 7px;
+  }
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 .main-page-content-block
 {

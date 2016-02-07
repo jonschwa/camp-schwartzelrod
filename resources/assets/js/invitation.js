@@ -18,7 +18,7 @@ $('.button-form-enter-code-positive').click(function() {
         $('#form-register-user-id').val(json.data.invitation.user.id);
         $('#form-enter-code').hide();
         $('#form-register').fadeIn();
-        $('#rsvp-subtitle').html('Confirm the information we have for you and set a password');
+        $('#rsvp-subtitle').html('<p class="highway-subhead">Yes! We were hoping you would say that!</p>Please confirm the information we have for you and set a password');
 
     }).error(function(json) {
         showErrorMessage(json.responseJSON.message);
@@ -42,7 +42,7 @@ $('.button-form-enter-code-maybe').click(function() {
         $('#form-maybe-message').val(json.data.invitation.user.id);
         $('#form-enter-code').hide();
         $('#form-maybe').fadeIn();
-        $('#rsvp-subtitle').html('We get it! No pressure! Can you just confirm your name and email so we can bug you about it if we don\'t hear from you in a couple of months?');
+        $('#rsvp-subtitle').html('<p class="highway-subhead">We get it! No pressure!</p>Can you just confirm your name and email so we can bug you about it if we don\'t hear from you in a couple of months?');
 
     }).error(function(json) {
         showErrorMessage(json.responseJSON.message);
