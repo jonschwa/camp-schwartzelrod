@@ -2,28 +2,19 @@
  * RSVP GUEST THINGS
  */
 
-$('#rsvp-guests-container').on('click', '.activityIcon', function(e) {
-    var attrName = e.target.getAttribute('input-name');
-    var active;
-    var checkBox = $(this).closest('.rsvp-guest-interests').find("input[name='"+attrName+"']");
-    if($(checkBox).prop('checked') === false) {
-        $(checkBox).prop('checked', false);
-        active = false;
-    }
-    else {
-        $(checkBox).prop('checked', true);
-        active = true;
-    }
-    toggleInterestColor(active, e.target);
-});
-
 function UserGuest (params) {
     this.guestId = params.guestId;
     this.isAdult = params.isAdult;
+    this.childAge = params.childAge;
     this.firstName = params.firstName;
     this.lastName = params.lastName;
     this.isStaying = params.isStaying;
+    this.fridayBBQ = params.fridayBBQ;
+    this.friCampActivities = params.friCampActivities;
+    this.satCampActivities = params.satCampActivities;
+    this.weddingAttend = params.weddingAttend;
     this.cabinAdventureLevel = params.cabinAdventureLevel;
+    this.desiredBunkMates = params.desiredBunkMates;
     this.archery = params.archery;
     this.swimming = params.swimming;
     this.boating = params.boating;
@@ -31,8 +22,6 @@ function UserGuest (params) {
     this.artsAndCrafts = params.artsAndCrafts;
     this.soccer = params.soccer;
     this.tennis = params.tennis;
-    this.basketball = params.basketball;
-    this.baseball = params.baseball;
     this.volleyball = params.volleyball;
     this.football = params.football;
     this.frisbee = params.frisbee;
@@ -89,17 +78,20 @@ function generateRequestBody(guestFormData) {
             firstName : $(this).find("input[name='first-name']").val(),
             lastName : $(this).find("input[name='last-name']").val(),
             isAdult : $(this).find("input[name='is-child']").is(':checked') ? 0 : 1,
+            childAge : $(this).find("input[name='child-age']").val(),
             isStaying : $(this).find("input[name='is-staying']").is(':checked') ? 1 : 0,
+            fridayBBQ : $(this).find("input[name='friday-bbq']").is(':checked') ? 1 : 0,
+            friCampActivities : $(this).find("input[name='fri-camp-activities']").is(':checked') ? 1 : 0,
+            satCampActivities : $(this).find("input[name='sat-camp-activities']").is(':checked') ? 1 : 0,
+            weddingAttend : $(this).find("input[name='wedding-attend']").is(':checked') ? 1 : 0,
             cabinAdventureLevel : $(this).find("input[name='cabin-adventure-level']").val(),
+            desiredBunkMates : $(this).find("textarea[name='desired-bunkmates']").val(),
             archery : $(this).find("input[name='interested-archery']").is(':checked') ? 1 : 0,
             swimming : $(this).find("input[name='interested-swimming']").is(':checked') ? 1 : 0,
-            //bbq : $(this).find("input[name='interested-bbq']").is(':checked') ? 1 : 0,
             boating : $(this).find("input[name='interested-boating']").is(':checked') ? 1 : 0,
             artsAndCrafts : $(this).find("input[name='interested-arts-and-crafts']").is(':checked') ? 1 : 0,
             soccer : $(this).find("input[name='interested-soccer']").is(':checked') ? 1 : 0,
             tennis : $(this).find("input[name='interested-tennis']").is(':checked') ? 1 : 0,
-            basketball : $(this).find("input[name='interested-basketball']").is(':checked') ? 1 : 0,
-            baseball : $(this).find("input[name='interested-baseball']").is(':checked') ? 1 : 0,
             volleyball : $(this).find("input[name='interested-volleyball']").is(':checked') ? 1 : 0,
             football : $(this).find("input[name='interested-football']").is(':checked') ? 1 : 0,
             frisbee : $(this).find("input[name='interested-frisbee']").is(':checked') ? 1 : 0,
@@ -119,7 +111,8 @@ function generateRequestBody(guestFormData) {
 }
 
 $('#rsvp-guests-container').on('click', '.activityIcon', function(e) {
-    var attrName = e.target.getAttribute('input-name');
+    var activityOptionParent = e.target.closest('.activityIcon');
+    var attrName = activityOptionParent.getAttribute('input-name');
     var active;
     var checkable = false;
     var count = $(this).closest('.rsvp-guest-interests').find('.activity-checkbox:checkbox:checked');
@@ -138,7 +131,7 @@ $('#rsvp-guests-container').on('click', '.activityIcon', function(e) {
             active = true;
         }
     }
-    toggleInterestColor(active, e.target);
+    toggleInterestColor(active, activityOptionParent);
 });
 
 $('#rsvp-guests-container').on('click', '.cb-is-staying', function(e) {
@@ -175,6 +168,16 @@ $('#rsvp-guests-container').on('click', '.button-rsvp-remove-guest', function(){
         else {
             $('#add-guest-button').show();
         }
+    }
+});
+
+$('#rsvp-guests-container').on('click', 'input[name="is-child"]', function(){
+    //show the age form is is-child is selected
+    if($(this).is(':checked')) {
+        $(this).closest('.row').find('.child-age-form').fadeIn('fast');
+    }
+    else {
+        $(this).closest('.row').find('.child-age-form').hide();
     }
 });
 

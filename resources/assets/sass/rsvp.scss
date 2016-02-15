@@ -165,6 +165,12 @@
   }
 }
 
+.activityIcon
+{
+  color: #acadad;
+  cursor: pointer;
+}
+
 .interest-inactive
 {
   color: #acadad;
@@ -172,5 +178,34 @@
 
 .interest-active
 {
-  color: #00AA00;
+  color: #138f22;
+}
+
+/*
+* The admin page!
+*/
+
+#logged-in-homepage-header
+{
+  margin-top: -10px;
+  padding: 40px;
+  background: url('/img/tree_bark.jpg') repeat fixed;
+
+  #logged-in-rsvp-status
+  {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  #camp-logo
+  {
+    fill: #000;
+    height: 230px;
+  }
+}
+
+#logged-in-guests-container
+{
+  padding: 40px;
+  text-align: center;
 }

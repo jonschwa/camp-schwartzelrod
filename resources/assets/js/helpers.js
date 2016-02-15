@@ -7,10 +7,8 @@ function showErrorMessage(message) {
 function toggleInterestColor(active, element) {
     if(active === true) {
         element.style.color = '#138f22';
-    //    element.attr('active', true);
     }
     else {
         element.style.color = '#acadad';
-       // element.attr('active', false);
     }
 }

@@ -31,6 +31,7 @@ elixir(function(mix) {
 
     mix.sass([
      'app.scss',
+     'activity-font.scss',
      'rsvp.scss',
      'main-page.scss'
     ])

@@ -12,7 +12,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <span>
-                        <img id="nav-camp-logo" src="/img/camp-schwartelrod-logo-no-text.png">
+                        <span id="nav-camp-logo" class="icon-camp-logo-no-text"></span>
                     </span>
                     <span>
                         <p id="nav-camp-name">Camp<br />Schwartzelrod</p>

@@ -131,10 +131,9 @@ body
 
   #nav-camp-logo
   {
-    width: 40px;
-    margin-top: -14px;
-    height: 40px;
-    margin-right: 4px;
+    color: #ecc884;
+    font-size: 40px;
+    margin-top: 5px;
   }
 
   #nav-camp-name
@@ -255,8 +254,19 @@ body
 
 .activityIcon
 {
-  padding: 5px 10px 5px 10px;
+  //padding: 5px 10px 5px 10px;
   color: #000;
+  text-align: center;
+}
+
+.activity-icon-font
+{
+  font-size: 50px;
+}
+
+.activity-icon-row
+{
+
 }
 
 .txt-centered

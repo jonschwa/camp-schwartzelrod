@@ -1,23 +1,47 @@
 <div class="row">
     <div class="col-md-12">
-        <div class="guest-activities">
+        <div class="guest-activities" @if(!$guest->fri_camp_activities && !$guest->sat_camp_activities) "style=display:none;" @endif>
             <p class="clarendon-subhead">Activities</p>
-            <p class="todo">[Pick your top 3!]</p>
-            <div>
-                <span class="activityIcon @if($guest->interested_archery === 0) interest-inactive @else interest-active @endif"  aria-hidden="true" input-name="interested-archery">Archery</span>
-                <span class="activityIcon @if($guest->interested_boating === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-boating">Boating</span>
-                <span class="activityIcon @if($guest->interested_swimming === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-swimming">Swimming</span>
-                <span class="activityIcon @if($guest->interested_arts_and_crafts === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-arts-and-crafts">Arts & Crafts</span>
-                <span class="activityIcon @if($guest->interested_soccer === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-soccer">Soccer</span>
-                <span class="activityIcon @if($guest->interested_tennis === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-tennis">Tennis</span>
-                <span class="activityIcon @if($guest->interested_basketball === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-basketball">Basketball</span>
-                <span class="activityIcon @if($guest->interested_baseball === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-baseball">Baseball</span>
-                <span class="activityIcon @if($guest->interested_volleyball === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-volleyball">Volleyball</span>
-                <span class="activityIcon @if($guest->interested_football === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-football">Football</span>
-                <span class="activityIcon @if($guest->interested_frisbee === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-frisbee">Ultimate Frisbee</span>
-                <span class="activityIcon @if($guest->interested_kickball === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-kickball">Kickball</span>
-                <span class="activityIcon @if($guest->interested_capture_the_flag === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-ctf">Capture the Flag</span>
-                <span class="activityIcon @if($guest->interested_scavenger_hunt === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-scavenger-hunt">Scavenger Hunt</span>
+            <p class="highway-subhead">Pick your top 3! We will plan events around the most popular activities.</p>
+            <div class="row activity-icon-row">
+                <div class="col-md-2">
+                    <span class="activityIcon @if($guest->interested_archery === 0) interest-inactive @else interest-active @endif"  aria-hidden="true" input-name="interested-archery"><div class="icon-archery activity-icon-font"></div><p class="highway-subhead">Archery</p></span>
+                </div>
+                <div class="col-md-2">
+                    <span class="activityIcon @if($guest->interested_boating === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-boating"><div class="icon-boating activity-icon-font"></div><p class="highway-subhead">Boating</p></span>
+                </div>
+                <div class="col-md-2">
+                    <span class="activityIcon @if($guest->interested_swimming === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-swimming"><div class="icon-swimming activity-icon-font"></div><p class="highway-subhead">Swimming</p></span>
+                </div>
+                <div class="col-md-2">
+                    <span class="activityIcon @if($guest->interested_kickball === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-kickball"><div class="icon-kickball activity-icon-font"></div><p class="highway-subhead">Kickball</p></span>
+                </div>
+                <div class="col-md-2">
+                    <span class="activityIcon @if($guest->interested_soccer === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-soccer"><div class="icon-soccer activity-icon-font"></div><p class="highway-subhead">Soccer</p></span>
+                </div>
+                <div class="col-md-2">
+                    <span class="activityIcon @if($guest->interested_tennis === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-tennis"><div class="icon-tennis activity-icon-font"></div><p class="highway-subhead">Tennis</p></span>
+                </div>
+            </div>
+            <div class="row activity-icon-row">
+                <div class="col-md-2">
+                    <span class="activityIcon @if($guest->interested_capture_the_flag === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-ctf"><div class="icon-capture-flag activity-icon-font"></div><p class="highway-subhead">Capture the Flag</p></span>
+                </div>
+                <div class="col-md-2">
+                    <span class="activityIcon @if($guest->interested_scavenger_hunt === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-scavenger-hunt"><div class="icon-scavenger-hunt activity-icon-font"></div><p class="highway-subhead">Scavenger Hunt</p></span>
+                </div>
+                <div class="col-md-2">
+                    <span class="activityIcon @if($guest->interested_volleyball === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-volleyball"><div class="icon-volleyball activity-icon-font"></div><p class="highway-subhead">Volleyball</p></span>
+                </div>
+                <div class="col-md-2">
+                    <span class="activityIcon @if($guest->interested_football === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-football"><div class="icon-football activity-icon-font"></div><p class="highway-subhead">Football</p></span>
+                </div>
+                <div class="col-md-2">
+                    <span class="activityIcon @if($guest->interested_frisbee === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-frisbee"><div class="icon-frisbee activity-icon-font"></div><p class="highway-subhead">Ultimate Frisbee</p></span>
+                </div>
+                <div class="col-md-2">
+                    <span class="activityIcon @if($guest->interested_arts_and_crafts === 0) interest-inactive @else interest-active @endif" aria-hidden="true" input-name="interested-arts-and-crafts"><div class="icon-arts-crafts activity-icon-font"></div><p class="highway-subhead">Arts & Crafts</p></span>
+                </div>
             </div>
         </div>
     </div>
@@ -50,16 +74,6 @@
 <div class="checkbox hidden-input">
     <label>
         <input @if($guest->interested_tennis === 1) checked @endif name="interested-tennis" type="checkbox" class="activity-checkbox">Tennis
-    </label>
-</div>
-<div class="checkbox hidden-input">
-    <label>
-        <input @if($guest->interested_basketball === 1) checked @endif name="interested-basketball" type="checkbox" class="activity-checkbox">Basketball
-    </label>
-</div>
-<div class="checkbox hidden-input">
-    <label>
-        <input @if($guest->interested_baseball === 1) checked @endif name="interested-baseball" type="checkbox" class="activity-checkbox">Baseball
     </label>
 </div>
 <div class="checkbox hidden-input">
