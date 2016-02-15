@@ -17,7 +17,7 @@
             other guests (for example: yoga instruction, outdoor survival skills, birdwatching, art) or an activity you’d
             like to host, please <a href="#">contact us</a> with your idea!
         </p>
-        <p class="txt-centered"><strong>PLEASE SUBMIT YOUR RSVP BY AUGUST 1ST</strong><p>
+        <p class="highway-subhead txt-centered">PLEASE SUBMIT YOUR RSVP BY AUGUST 1ST<p>
     </div>
 </div>
 <div class="container-fluid" id="camper-info-form">
