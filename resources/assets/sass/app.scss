@@ -5,9 +5,16 @@ $yellow-text: #ecc884;
 $green: #138f22;
 $grey: #666666;
 
+
 a {
-  color: inherit;
+  color: $green;
 }
+
+a.hover {
+  color: blue;
+  text-decoration: underline;
+}
+
 
 body
 {

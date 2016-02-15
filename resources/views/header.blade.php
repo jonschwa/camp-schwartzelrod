@@ -34,7 +34,7 @@
                                 <a class="highway-subhead" href="/#vt-info" id="nav-vt-info-link">Location</a>
                             </li>
                             <li>
-                                <a class="highway-subhead" href="/#lodging-info" id="nav-lodging-info-link">Acommodations</a>
+                                <a class="highway-subhead" href="/#lodging-info" id="nav-lodging-info-link">Accommodations</a>
                             </li>
 
                             @if(Auth::user())
