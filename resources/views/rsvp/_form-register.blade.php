@@ -20,6 +20,6 @@
         <input type="password" class="form-control input" id="form-register-password-confirm" name="password-confirm" placeholder="Now type it again!">
     </div>
         <input type="hidden" id="form-register-user-id">
-    <button class="btn btn-default btn-back"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Back</button>
+    <button type="button" class="btn btn-default btn-back"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Back</button>
     <button type="submit" class="btn btn-primary btn-default">Submit</button>
 </form>

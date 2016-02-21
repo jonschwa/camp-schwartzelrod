@@ -4,70 +4,81 @@ function hideErrors()
 }
 
 $('.button-form-enter-code-positive').click(function() {
-    hideErrors();
-    if($('#rsvp-code').val() == '') {
-        showErrorMessage('You didn\'t enter a code!');
-    }
-    $.ajax({
-        url: "/api/invitations/code/" + $('#rsvp-code').val()
-    }).success(function(json) {
-        //prefill the next form, hide this one, show the next
-        $('#form-register-email').val(json.data.invitation.user.email);
-        $('#form-register-first-name').val(json.data.invitation.user.first_name);
-        $('#form-register-last-name').val(json.data.invitation.user.last_name);
-        $('#form-register-user-id').val(json.data.invitation.user.id);
-        $('#form-enter-code').hide();
-        $('#form-register').fadeIn();
-        $('#rsvp-subtitle').html('<p class="highway-subhead">AWESOME! WE CAN’T WAIT TO CELEBRATE WITH YOU!!</p>Please confirm your information and set a password.');
-
-    }).error(function(json) {
-        showErrorMessage(json.responseJSON.message);
-    });
+    submitCode('yes');
 });
 
 $('.button-form-enter-code-maybe').click(function() {
-    hideErrors();
-    if($('#rsvp-code').val() == '') {
-        showErrorMessage('You didn\'t enter a code!');
-    }
-    $.ajax({
-        url: "/api/invitations/code/" + $('#rsvp-code').val()
-    }).success(function(json) {
-        console.log(json.data.invitation.user.id);
-        //prefill the next form, hide this one, show the next
-        $('#form-maybe-email').val(json.data.invitation.user.email);
-        $('#form-maybe-first-name').val(json.data.invitation.user.first_name);
-        $('#form-maybe-last-name').val(json.data.invitation.user.last_name);
-        $('#form-maybe-user-id').val(json.data.invitation.user.id);
-        $('#form-maybe-message').val(json.data.invitation.user.id);
-        $('#form-enter-code').hide();
-        $('#form-maybe').fadeIn();
-        $('#rsvp-subtitle').html('<p class="highway-subhead">We get it! No pressure!</p>Please confirm your contact information so we can get in touch when the RSVP deadline rolls around (that\’s August 1st, by the way). You may come back to this website and enter your code to change your RSVP at any time.');
-
-    }).error(function(json) {
-        showErrorMessage(json.responseJSON.message);
-    });
+    submitCode('maybe');
 });
 
 $('.button-form-enter-code-negative').click(function() {
-    hideErrors();
-    if($('#rsvp-code').val() == '') {
-        showErrorMessage('You didn\'t enter a code!');
-    }
-    $.ajax({
-        url: "/api/invitations/code/" + $('#rsvp-code').val()
-    }).success(function(json) {
-        //prefill the next form, hide this one, show the next
-        //@todo make this less janky, use waypoints
-        $('#form-decline-user-id').val(json.data.invitation.user.id);
-        $('#form-decline-message').val(json.data.invitation.user.id);
-        $('#form-enter-code').hide();
-        $('#form-decline').fadeIn();
-        $('#rsvp-subtitle').html('<p class="highway-subhead">We will miss you!</p>Feel free to write us a message below. You may come back to this website and enter your code to change your RSVP at any time (deadline is August 1st).');
-    }).error(function(json) {
-        showErrorMessage(json.responseJSON.message);
-    });
+    submitCode('no');
 });
+
+function submitCode(response)
+{
+    hideErrors();
+    if(response == 'yes') {
+        if ($('#rsvp-code').val() == '') {
+            showErrorMessage('You didn\'t enter a code!');
+        }
+        $.ajax({
+            url: "/api/invitations/code/" + $('#rsvp-code').val()
+        }).success(function (json) {
+            //prefill the next form, hide this one, show the next
+            $('#form-register-email').val(json.data.invitation.user.email);
+            $('#form-register-first-name').val(json.data.invitation.user.first_name);
+            $('#form-register-last-name').val(json.data.invitation.user.last_name);
+            $('#form-register-user-id').val(json.data.invitation.user.id);
+            $('#form-enter-code').hide();
+            $('#form-register').fadeIn();
+            $('#rsvp-subtitle').html('<p class="highway-subhead">AWESOME! WE CAN’T WAIT TO CELEBRATE WITH YOU!!</p>Please confirm your information and set a password.');
+
+        }).error(function (json) {
+            showErrorMessage(json.responseJSON.message);
+        });
+    }
+    else if(response == 'maybe') {
+        if($('#rsvp-code').val() == '') {
+            showErrorMessage('You didn\'t enter a code!');
+        }
+        $.ajax({
+            url: "/api/invitations/code/" + $('#rsvp-code').val()
+        }).success(function(json) {
+            console.log(json.data.invitation.user.id);
+            //prefill the next form, hide this one, show the next
+            $('#form-maybe-email').val(json.data.invitation.user.email);
+            $('#form-maybe-first-name').val(json.data.invitation.user.first_name);
+            $('#form-maybe-last-name').val(json.data.invitation.user.last_name);
+            $('#form-maybe-user-id').val(json.data.invitation.user.id);
+            $('#form-maybe-message').val(json.data.invitation.user.id);
+            $('#form-enter-code').hide();
+            $('#form-maybe').fadeIn();
+            $('#rsvp-subtitle').html('<p class="highway-subhead">We get it! No pressure!</p>Please confirm your contact information so we can get in touch when the RSVP deadline rolls around (that\’s August 1st, by the way). You may come back to this website and enter your code to change your RSVP at any time.');
+
+        }).error(function(json) {
+            showErrorMessage(json.responseJSON.message);
+        });
+    }
+    else if(response == 'no') {
+        if($('#rsvp-code').val() == '') {
+            showErrorMessage('You didn\'t enter a code!');
+        }
+        $.ajax({
+            url: "/api/invitations/code/" + $('#rsvp-code').val()
+        }).success(function(json) {
+            //prefill the next form, hide this one, show the next
+            //@todo make this less janky, use waypoints
+            $('#form-decline-user-id').val(json.data.invitation.user.id);
+            $('#form-decline-message').val(json.data.invitation.user.id);
+            $('#form-enter-code').hide();
+            $('#form-decline').fadeIn();
+            $('#rsvp-subtitle').html('<p class="highway-subhead">We will miss you!</p>Feel free to write us a message below. You may come back to this website and enter your code to change your RSVP at any time (deadline is August 1st).');
+        }).error(function(json) {
+            showErrorMessage(json.responseJSON.message);
+        });
+    }
+}
 
 $('#form-decline').submit(function(event) {
     hideErrors();

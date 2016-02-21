@@ -1,5 +1,5 @@
 <div class="cabin-adventure-level">
-    <p class="clarendon-subhead txt-centered">Choose your Cabin Adventure Level&#8482;</p>
+    <p class="highway-headline txt-centered">Choose your Cabin Adventure Level&#8482;</p>
     <div class="container-fluid" id="cabin-adventure-level-decription">
         <div class="col-md-3 cal-option-container" level="1">
             <div class="cal-option @if($guest->cabin_adventure_level == 1) selected @endif">

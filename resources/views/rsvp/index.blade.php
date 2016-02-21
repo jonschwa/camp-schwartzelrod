@@ -17,7 +17,11 @@
             other guests (for example: yoga instruction, outdoor survival skills, birdwatching, art) or an activity you’d
             like to host, please <a href="#">contact us</a> with your idea!
         </p>
-        <p class="highway-subhead txt-centered">PLEASE SUBMIT YOUR RSVP BY AUGUST 1ST<p>
+        @if(is_null($rsvp) || $rsvp->will_attend != 1)
+            <p class="highway-subhead txt-centered">PLEASE SUBMIT YOUR RSVP BY AUGUST 1ST<p>
+        @else
+            <p class="highway-subhead txt-centered">Thanks for your RSVP! You can update your info below until August 1st.<p>
+        @endif
     </div>
 </div>
 <div class="container-fluid" id="camper-info-form">
@@ -40,8 +44,9 @@
     <div id="add-camper-row">
         @include('rsvp._add-camper')
     </div>
-    <div id="rsvp-submit-area">
-        <button type="button" class="btn-primary btn btn-lg" id="btn-user-guest-submit">Confirm RSVP</button>
-    </div>
+</div>
+@include('rsvp._lodging-selection-form')
+<div id="rsvp-submit-area">
+    <button type="button" class="btn-primary btn btn-lg" id="btn-user-guest-submit">Confirm RSVP</button>
 </div>
 @stop

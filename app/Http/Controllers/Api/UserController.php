@@ -116,7 +116,6 @@ class UserController extends ApiController
         $guestData = Input::all();
         $guests = $this->guest->createOrUpdate($user, $guestData['guests']);
         $this->guest->deleteOldGuests($user, $guests);
-        dd($guests);
-    //return 'hi';
+        return $this->apiResponse('Updated guests!');
     }
 }

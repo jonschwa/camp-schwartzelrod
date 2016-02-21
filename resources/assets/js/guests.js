@@ -18,7 +18,6 @@ function UserGuest (params) {
     this.archery = params.archery;
     this.swimming = params.swimming;
     this.boating = params.boating;
-    //this.bbq = params.bbq;
     this.artsAndCrafts = params.artsAndCrafts;
     this.soccer = params.soccer;
     this.tennis = params.tennis;
@@ -35,6 +34,7 @@ $('#btn-user-guest-submit').on('click', function() {
     var userId = $('#userid').val();
     var userGuests = generateRequestBody(guestFormData);
 
+    //console.log(userGuests);
     $.ajax({
         url: "/api/users/" + userId + "/guests",
         method: "POST",
@@ -44,7 +44,7 @@ $('#btn-user-guest-submit').on('click', function() {
     }).success(function(json) {
         console.log(json);
 
-        console.log('guests updated!');
+        //console.log('guests updated!');
         //create or update the rsvp record
         $.ajax({
             url: "/api/users/" + userId + '/rsvp/',
@@ -54,7 +54,7 @@ $('#btn-user-guest-submit').on('click', function() {
                 "num_guests" : userGuests.length
             }
         }).success(function(json) {
-            console.log('rsvp updated!');
+            //console.log('rsvp updated!');
             //redirect to the status page!
             window.location.href = "/status";
 
@@ -72,6 +72,13 @@ $('#btn-user-guest-submit').on('click', function() {
 
 function generateRequestBody(guestFormData) {
     var userGuests = [];
+
+    var lodgingInfo = getLodgingInfo();
+    //console.log(lodgingInfo);
+
+    //console.log(lodgingInfo.isStaying);
+    //console.log(lodgingInfo.cabinAdventureLevel);
+
     $.each(guestFormData, function(guestData) {
         var params = {
             guestId : $(this).find("input[name='guestid']").val(),
@@ -79,13 +86,13 @@ function generateRequestBody(guestFormData) {
             lastName : $(this).find("input[name='last-name']").val(),
             isAdult : $(this).find("input[name='is-child']").is(':checked') ? 0 : 1,
             childAge : $(this).find("input[name='child-age']").val(),
-            isStaying : $(this).find("input[name='is-staying']").is(':checked') ? 1 : 0,
+            isStaying : lodgingInfo.isStaying,
             fridayBBQ : $(this).find("input[name='friday-bbq']").is(':checked') ? 1 : 0,
             friCampActivities : $(this).find("input[name='fri-camp-activities']").is(':checked') ? 1 : 0,
             satCampActivities : $(this).find("input[name='sat-camp-activities']").is(':checked') ? 1 : 0,
             weddingAttend : $(this).find("input[name='wedding-attend']").is(':checked') ? 1 : 0,
-            cabinAdventureLevel : $(this).find("input[name='cabin-adventure-level']").val(),
-            desiredBunkMates : $(this).find("textarea[name='desired-bunkmates']").val(),
+            cabinAdventureLevel : parseInt(lodgingInfo.cabinAdventureLevel),
+            desiredBunkMates : lodgingInfo.desiredBunkMates,
             archery : $(this).find("input[name='interested-archery']").is(':checked') ? 1 : 0,
             swimming : $(this).find("input[name='interested-swimming']").is(':checked') ? 1 : 0,
             boating : $(this).find("input[name='interested-boating']").is(':checked') ? 1 : 0,
@@ -104,10 +111,36 @@ function generateRequestBody(guestFormData) {
             var guest = new UserGuest(params);
             userGuests.push(guest);
         }
-        console.log(userGuests);
+        //console.log(userGuests);
     });
 
     return userGuests;
+}
+
+function getLodgingInfo()
+{
+    var lodgingForm = $.find('#lodging-selection-form');
+    var isStaying = $('input[class=radio-is-staying]:checked', lodgingForm).val();
+    var hotelChoice = null;
+    var bunkMates = null;
+    var cabinAdventureLevel = 0;
+
+    if(isStaying != 'true') {
+        isStaying = 0;
+        hotelChoice = $('#offsite-lodging-options-select').find(":selected").val();
+    }
+    else {
+        isStaying = 1;
+        cabinAdventureLevel = $('input[name=cabin-adventure-level]', lodgingForm).val();
+        bunkMates = $('textarea[name=desired-bunkmates]', lodgingForm).val();
+    }
+
+    return {
+        isStaying : isStaying,
+        cabinAdventureLevel : cabinAdventureLevel,
+        desiredBunkMates : bunkMates,
+        hotelChoice : hotelChoice
+    };
 }
 
 $('#rsvp-guests-container').on('click', '.activityIcon', function(e) {
@@ -142,15 +175,6 @@ $('#rsvp-guests-container').on('click', '.activityIcon', function(e) {
     toggleInterestColor(active, activityOptionParent);
 });
 
-$('#rsvp-guests-container').on('click', '.cb-is-staying', function(e) {
-    if($(this).is(':checked')) {
-        $(this).closest('.rsvp-guest-interests').find('.cabin-details').fadeIn();
-    }
-    else {
-        $(this).closest('.rsvp-guest-interests').find('.cabin-details').hide();
-    }
-});
-
 $('#rsvp-guests-container').on('click', '.cb-activities', function(e) {
     var friActivities = $(this).closest('.guest-form-row').find('.friday-activities').is(':checked');
     var satActivities = $(this).closest('.guest-form-row').find('.saturday-activities').is(':checked');
@@ -164,15 +188,6 @@ $('#rsvp-guests-container').on('click', '.cb-activities', function(e) {
 
 
 });
-
-$('#rsvp-guests-container').on('click', '.cal-option-container', function(e) {
-    $(this).siblings( ".selected").removeClass('selected');
-    $(this).addClass('selected');
-    var level = $(this).attr('level');
-    $(this).closest(".cabin-adventure-level").find("input[name='cabin-adventure-level']").val(level)
-
-});
-
 
 $('#rsvp-guests-container').on('click', '.button-rsvp-remove-guest', function(){
     //hide the button if the number of guests is higher than what the user is allowed
@@ -215,4 +230,34 @@ $('#button-rsvp-add-guest').on('click', function(e){
     var clone = $('.guest-rsvp-container.blank').clone().removeClass('blank').appendTo('#rsvp-guests-container');
     var activities = clone.find('')
     clone.fadeIn();
+});
+
+$('#lodging-selection-form').on('click', '.radio-is-staying', function(e) {
+    if($(this).val() === 'true') {
+        $('#lodging-selection-form').find('.offsite-details').hide();
+        $('#lodging-selection-form').find('.cabin-details').fadeIn();
+    }
+    else {
+        $('#lodging-selection-form').find('.cabin-details').hide();
+        $('#lodging-selection-form').find('.offsite-details').fadeIn();
+    }
+});
+
+$('#lodging-selection-form').on('click', '.cal-option-container', function(e) {
+    $(this).siblings( ".selected").removeClass('selected');
+    $(this).addClass('selected');
+    var level = $(this).attr('level');
+    $(this).closest(".cabin-adventure-level").find("input[name='cabin-adventure-level']").val(level)
+});
+
+$('#lodging-selection-form').on('change', '.offsite-lodging-options-select', function(e) {
+    var selection = $(this).val();
+    var additionalInfo = '';
+
+    if(selection == 'hampton-inn') {
+        additionalInfo += '<p>Please do not book a room yet.</p> ' +
+            '<p>If enough people want to stay there, we will lock in the group rate and email you instructions to book a room.</p>'
+    }
+
+    $(this).closest('.offsite-details').find('.offsite-lodging-feedback').html(additionalInfo);
 });

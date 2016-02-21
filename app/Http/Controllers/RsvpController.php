@@ -4,6 +4,7 @@ use Auth;
 use App\Repositories\Rsvp\RsvpRepository;
 use App\Repositories\User\UserRepository;
 use App\Repositories\Guest\GuestRepository;
+use Illuminate\Support\Collection;
 
 class RsvpController extends Controller
 {
@@ -26,9 +27,17 @@ class RsvpController extends Controller
         $user = Auth::user();
         $allUserInfo = $this->userRepo->getAllUserInfo($user->id);
         $rsvp = !is_null($user->rsvp()) ? $user->rsvp()->first(): null;
+        $lodgingInfo = new Collection;
 
-        //return $allUserInfo;
-        return view('rsvp.index', ['user' => $allUserInfo, 'rsvp' => $rsvp]);
+        $lodgingInfo->is_staying = $user->guests->first()->is_staying;
+        $lodgingInfo->cabin_adventure_level = $user->guests->first()->cabin_adventure_level;
+        $lodgingInfo->desired_bunkmates = $user->guests->first()->desired_bunkmates;
+
+        return view('rsvp.index', ['user' => $allUserInfo,
+                                   'rsvp' => $rsvp,
+                                   'numGuests' => $user->guests->count(),
+                                   'lodging' => $lodgingInfo
+            ]);
     }
 
     public function bummer()
