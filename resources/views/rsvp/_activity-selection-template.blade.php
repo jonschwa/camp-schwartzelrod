@@ -1,9 +1,10 @@
-<div class="row">
+<div class="row activity-selection-form" style="display:none;">
     <div class="col-md-12">
         <div class="guest-activities">
-            <p class="clarendon-subhead">Activities</p>
-            <p class="highway-subhead">Pick your top 3! We will plan events around the most popular activities.</p>
-            <div class="row activity-icon-row">
+            <div class="activities-header">
+                <span class="clarendon-subhead">Activities </span>
+                <span class="highway-subhead top3-instructions">Pick your top 3!</span>
+            </div>
                 <div class="col-md-2">
                     <span class="activityIcon interest-inactive"  aria-hidden="true" input-name="interested-archery"><div class="icon-archery activity-icon-font"></div><p class="highway-subhead">Archery</p></span>
                 </div>

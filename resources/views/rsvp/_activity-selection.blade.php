@@ -1,8 +1,10 @@
-<div class="row">
+<div class="row activity-selection-form" @if($guest->fri_camp_activities == 0 && $guest->sat_camp_activities == 0) style="display:none;" @endif>
     <div class="col-md-12">
-        <div class="guest-activities" @if(!$guest->fri_camp_activities && !$guest->sat_camp_activities) "style=display:none;" @endif>
-            <p class="clarendon-subhead">Activities</p>
-            <p class="highway-subhead">Pick your top 3! We will plan events around the most popular activities.</p>
+        <div class="guest-activities">
+            <div class="activities-header">
+                <span class="clarendon-subhead">Activities </span>
+                <span class="highway-subhead top3-instructions">Pick your top 3!</span>
+            </div>
             <div class="row activity-icon-row">
                 <div class="col-md-2">
                     <span class="activityIcon @if($guest->interested_archery == 0) interest-inactive @else interest-active @endif"  aria-hidden="true" input-name="interested-archery"><div class="icon-archery activity-icon-font"></div><p class="highway-subhead">Archery</p></span>

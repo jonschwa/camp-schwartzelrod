@@ -1,4 +1,7 @@
 $( document ).ready(function() {
+
+    $('[data-toggle="tooltip"]').tooltip();
+
     var mainSplashArea = $('#main-page-splash');
 
     //get the page height

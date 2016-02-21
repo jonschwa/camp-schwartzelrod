@@ -1,4 +1,8 @@
-<p id="rsvp-subtitle">Please enter the code from your Save the Date (under the magnet). Once registered, you will be able to confirm your RSVP for the wedding and other weekend events, enter guest information, and book a cabin (if you’re interested!)</p>
+<p id="rsvp-subtitle">
+    Please enter the code found under the magnet inside your Save the Date card. Once registered,
+    you will be able to confirm your RSVP for the wedding and other weekend events, enter guest information,
+    and choose lodging.
+</p>
 <form id="form-enter-code" action="#">
         <div class="form-group">
             <input type="text" class="form-control giant-input" id="rsvp-code" name="rsvp-code" placeholder="Enter your code here">
@@ -9,11 +13,17 @@
         <button type="button" class="btn btn-primary button-form-enter-code-positive">Yes, Count me in!</button>
     </div>
     <div id="old-person-opt-out-container">
-        <p class="clarendon-subhead">Is this all too much for you?</p>
-        <p>We tried to make this pretty simple, but if all this newfangled internet technology is too much to handle,
-           you can click the large red button below and we will follow up with you individually. Expect some shaming,
-           but we will try to keep it within reason.
+        <p class="clarendon-subhead">Need Help?</p>
+        <p>
+            Remember, we will NOT be sending out paper invitations and all RSVPs will be processed through this website.
+            We think it’s pretty simple and tested it on some not-so-tech-savvy parents so we hope everyone will give
+            it a shot. But if all this newfangled internet technology is really too much to handle, you can click the
+            large red button below and we will follow up with you individually.
         </p>
-        <a href="/technology-opt-out"><button type="button" class="btn btn-danger button-form-opt-out">Help! I want to do this the old-fashioned way</button></a>
+        <a href="/technology-opt-out">
+            <button type="button" class="btn btn-danger button-form-opt-out">
+                Help! I want to do this the old-fashioned
+            </button>
+        </a>
     </div>
 </form>

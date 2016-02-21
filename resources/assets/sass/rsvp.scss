@@ -1,3 +1,12 @@
+$brown: #3d1e07;
+$yellow-text: #ecc884;
+$green: #138f22;
+$grey: #666666;
+
+.ui-effects-wrapper {
+  display:inline;
+}
+
 #rsvp-form-container
 {
   width: 85%;
@@ -83,7 +92,8 @@
     }
 
     .rsvp-guest-interests {
-      background-color: #a6e1ec;
+      //background-color: #a6e1ec;
+      border: 5px dashed $yellow-text;
       padding:30px;
     }
 }
@@ -102,9 +112,58 @@
   .button-rsvp-remove-guest
   {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 40px;
+    right: 40px;
+    font-size: 2em;
+    color: #FF0000;
+    cursor: pointer;
   }
+
+  .rsvp-camper-lg-input
+  {
+    height: 45px;
+    font-size: 24px;
+  }
+
+  .rsvp-camper-age-input
+  {
+    width: 50px;
+  }
+
+  .rsvp-camper-adult-toggle
+  {
+    float:right;
+  }
+
+  .child-age-form
+  {
+    .age-input-label
+    {
+      font-size: 24px;
+    }
+  }
+
+  .child-age-input
+  {
+    margin-top:-1px;
+  }
+
+  .guest-form-row
+  {
+    margin-left:0px;
+    padding-top: 10px;
+  }
+
+  .top3-instructions
+  {
+    font-size: 0.8em;
+  }
+
+  .activities-header
+  {
+    margin-bottom: 16px;
+  }
+
 }
 
 #cabin-adventure-level-decription
@@ -130,7 +189,6 @@
   padding: 50px;
 }
 
-
 @media (min-width: 0px) {
   #rsvp-guests-container
   {
@@ -142,7 +200,6 @@
     }
 
     .rsvp-guest-interests {
-      background-color: #a6e1ec;
       padding:30px;
     }
   }
@@ -159,10 +216,14 @@
     }
 
     .rsvp-guest-interests {
-      background-color: #a6e1ec;
       padding:30px;
     }
   }
+}
+
+.review-lodging-link
+{
+  font-size: 0.4em;
 }
 
 .activityIcon

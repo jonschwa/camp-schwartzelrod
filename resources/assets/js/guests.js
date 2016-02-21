@@ -130,6 +130,14 @@ $('#rsvp-guests-container').on('click', '.activityIcon', function(e) {
             $(checkBox).prop('checked', true);
             active = true;
         }
+        else {
+            $(this).closest('.rsvp-guest-interests')
+                .find('.top3-instructions')
+                .css('color', 'red')
+                .effect( "bounce", {times:4}, 1000, function() {
+                    $(this).css('color', 'black');
+            });
+        }
     }
     toggleInterestColor(active, activityOptionParent);
 });
@@ -141,6 +149,20 @@ $('#rsvp-guests-container').on('click', '.cb-is-staying', function(e) {
     else {
         $(this).closest('.rsvp-guest-interests').find('.cabin-details').hide();
     }
+});
+
+$('#rsvp-guests-container').on('click', '.cb-activities', function(e) {
+    var friActivities = $(this).closest('.guest-form-row').find('.friday-activities').is(':checked');
+    var satActivities = $(this).closest('.guest-form-row').find('.saturday-activities').is(':checked');
+
+    if(friActivities || satActivities) {
+        $(this).closest('.rsvp-guest-interests').find('.activity-selection-form').fadeIn();
+    }
+    else {
+        $(this).closest('.rsvp-guest-interests').find('.activity-selection-form').hide();
+    }
+
+
 });
 
 $('#rsvp-guests-container').on('click', '.cal-option-container', function(e) {
