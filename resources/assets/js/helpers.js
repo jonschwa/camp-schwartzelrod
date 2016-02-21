@@ -4,6 +4,16 @@ function showErrorMessage(message) {
     return false;
 }
 
+function showFormErrors(errors, form) {
+    console.log(errors);
+    $.each(errors, function(key, val) {
+       console.log(key);
+        var formFieldParent = form.find("input[name='"+key+"']").closest('.form-group');
+        formFieldParent.addClass('has-error');
+        formFieldParent.find('.error-label').html(val).show();
+    });
+}
+
 function toggleInterestColor(active, element) {
     if(active === true) {
         element.style.color = '#138f22';

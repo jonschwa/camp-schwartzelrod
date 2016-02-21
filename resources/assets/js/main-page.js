@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-    $('[data-toggle="tooltip"]').tooltip();
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 
     var mainSplashArea = $('#main-page-splash');
 

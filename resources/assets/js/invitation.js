@@ -1,6 +1,7 @@
 function hideErrors()
 {
     $('#error-flash-container').fadeOut();
+    $('.error-label').hide();
 }
 
 $('.button-form-enter-code-positive').click(function() {
@@ -144,7 +145,10 @@ $('#form-register').submit(function(event) {
         window.location.href = "/rsvp";
     }).error(function(json) {
         showErrorMessage(json.responseJSON.message);
+
         //@todo highlight validation errs and show messages
+        showFormErrors(json.responseJSON.errors, $('#form-register'));
+
         $('#error-flash-container').fadeIn();
     });
 });

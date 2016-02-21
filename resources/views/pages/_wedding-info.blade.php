@@ -1,5 +1,6 @@
 <div id="wedding-info-header">
-    <img src="/img/abnaki-google-earth.jpg">
+    {{--<img src="/img/abnaki-google-earth.jpg">--}}
+    <img src="/img/greetings.jpg">
 </div>
 <div class="container-fluid">
     <a name="wedding-info"></a>
