@@ -30,7 +30,7 @@
                     <p class="clarendon-headline green">North Hero Island</p>
                     <p class="highway-subhead">(a.k.a. Almost Canada)</p>
                     <div class="content-body">
-                        <p class="grey">Camp Abnaki is located in North Hero, VT, one of four towns which make up the Lake Champlain Islands. It is easily accessible by car</p>
+                        <p class="grey">Camp Abnaki is located in North Hero, VT, one of four towns which make up the Lake Champlain Islands. It is easily accessible by car.</p>
                         <div id="distance-to-camp">
                             <p>
                                 <span class="highway-subhead">Burlington International Airport</span><span class="grey"> 45 minutes</span><br />

@@ -89,6 +89,10 @@
                     <input id="form-nav-login-password" type="password" class="form-control" placeholder="Password">
                 </div>
                 <button type="submit" id="nav-login-submit" class="btn btn-xs">Log In</button>
+                {{--@todo - pw reset--}}
+                {{--<div class="form-group">--}}
+                    {{--<a href="#">Problems Logging In?</a>--}}
+                {{--</div>--}}
             </form>
         </div>
     </div>

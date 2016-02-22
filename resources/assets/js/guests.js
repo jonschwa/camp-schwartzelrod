@@ -250,7 +250,7 @@ $('#lodging-selection-form').on('click', '.cal-option-container', function(e) {
     $(this).closest(".cabin-adventure-level").find("input[name='cabin-adventure-level']").val(level)
 });
 
-$('#lodging-selection-form').on('change', '.offsite-lodging-options-select', function(e) {
+$('#lodging-selection-form').on('change', '#offsite-lodging-options-select', function(e) {
     var selection = $(this).val();
     var additionalInfo = '';
 

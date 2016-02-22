@@ -1,4 +1,5 @@
 <div class="cabin-adventure-level">
+    <p class="txt-centered">Cabin registration is coming soon! More explanation?</p>
     <p class="highway-headline txt-centered">Choose your Cabin Adventure Level&#8482;</p>
     <div class="container-fluid" id="cabin-adventure-level-decription">
         <div class="col-md-3 cal-option-container @if($lodging->cabin_adventure_level == 1) selected @endif" level="1">

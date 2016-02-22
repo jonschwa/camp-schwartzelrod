@@ -499,3 +499,18 @@ img.content-image
   }
   #our-story-section { margin: 0; }
 }
+
+#technology-opt-out-wrapper
+{
+  text-align: center;
+}
+
+#technology-opt-out-footer, #technology-opt-out-header
+{
+  margin-top: -10px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -22,7 +22,7 @@
         </p>
         <a href="/technology-opt-out">
             <button type="button" class="btn btn-danger button-form-opt-out">
-                Help! I want to do this the old-fashioned
+                Help! I want to do this the old-fashioned way
             </button>
         </a>
     </div>
