@@ -15,7 +15,8 @@ class Guest extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function activities() {
+    public function activities()
+    {
         return $this->belongsToMany('App\Activity');
     }
 }

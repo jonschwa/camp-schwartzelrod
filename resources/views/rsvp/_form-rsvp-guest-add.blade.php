@@ -63,6 +63,6 @@
                 </div>
             </div>
         </div>
-        @include('rsvp._activity-selection')
+        @include('rsvp._activity-selection-template')
     </form>
 </div>

@@ -93,11 +93,17 @@ $trees: url('/img/tree_bark.jpg');
       width: 80%;
     }
 
-    .rsvp-guest-interests {
-      background-color: #fff;
-      outline: 5px dotted $yellow-text;
-      padding:30px;
-    }
+}
+
+.rsvp-guest-interests {
+  background-color: #fff;
+  outline: 5px dotted $yellow-text;
+  padding:30px;
+  min-width: 360px;
+
+  .clarendon-subhead {
+    min-width: 350px;
+  }
 }
 
 #camper-info-form
@@ -300,4 +306,31 @@ $trees: url('/img/tree_bark.jpg');
 {
   padding: 40px;
   text-align: center;
+}
+
+#rsvp-guest-list
+{
+  width: 80%;
+  margin: auto;
+}
+
+.guest-rsvp-card
+{
+  margin-bottom: 25px;
+}
+
+.selected-activities-container
+{
+  padding: 0px 100px;
+
+  .activity-icon-font{
+    font-size:40px;
+  }
+}
+
+.rsvp-guest-selections
+{
+  padding: 20px;
+  height: 140px;
+
 }

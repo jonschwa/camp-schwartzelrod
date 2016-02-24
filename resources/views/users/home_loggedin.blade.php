@@ -42,80 +42,35 @@
     <div class="container-fluid" id="logged-in-guests-container">
         <div class="row">
             <div class="col-md-12">
-                <p class="clarendon-subhead">Guests</p> <!-- todo change text for when not rsvp-ed --!>
-                    @if(!is_null($user->guests))
-                            <p>Here are the guests that you have said are coming. If you need to modify this, click <a href="/rsvp">here</a>.
-
-                            @foreach($user->guests as $guest)
-                                <div class="homepage-guest-info-block">
-                                    <h3>{{ $guest->first_name }} {{ $guest->last_name }}</h3>
-                                        @if($guest->is_adult == 1)
-                                    <p>Adult</p>
-                                @else
-                                    <p>Child</p>
-                                @endif
-                                @if($guest->is_staying == 1)
-                                    <p>Is Staying Onsite</p>
-                                @else
-                                    <p>Not Staying Onsite</p>
-                                @endif
-                                    </div>
-                            @endforeach
-                    @endif
-
-                    <a href="/rsvp">Update your rsvp status</a></p>
-            </div><p>
-        </div>
-    </div>
-     @endif
-
-    {{--<div class="container">--}}
-        {{--<h1>You're logged in!</h1>--}}
-        {{--<div id="user-tasks">--}}
-            {{--<div class="row">--}}
-                {{--<div class="col-md-4">--}}
-                    {{--<h3>RSVP</h3>--}}
-                    {{--@if(is_null($rsvp))--}}
-                        {{--<p>You haven't rsvped!</p>--}}
-                        {{--<p><a href="/rsvp">Do it now!</a></p>--}}
-                    {{--@else--}}
-                        {{--<p>You have rsvped--}}
-                        {{--@if($rsvp->will_attend == 1)--}}
-                            {{--yes--}}
-                        {{--@elseif($rsvp->will_attend == 0)--}}
-                            {{--no--}}
-                        {{--@elseif($rsvp->will_attend == -1)--}}
-                            {{--maybe--}}
-                        {{--@endif--}}
-                        {{--</p>--}}
-                    {{--@endif--}}
-                    {{--<p><a href="/rsvp">Update your rsvp status</a></p>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-4">--}}
-{{--                    <h3>Attendees</h3> <!-- todo edit button! --!>
-                    @if(!is_null($user->guests))
-                        @foreach($user->guests as $guest)
-                            <div class="homepage-guest-info-block">
-                                <h3>{{ $guest->first_name }} {{ $guest->last_name }}</h3>
-                                @if($guest->is_adult == 1)
-                                    <p>Adult</p>
-                                @else
-                                    <p>Child</p>
-                                @endif
-                                @if($guest->is_staying == 1)
-                                    <p>Is Staying Onsite</p>
-                                @else
-                                    <p>Not Staying Onsite</p>
-                                @endif
+                <p class="clarendon-subhead">Guests</p>
+                @if(!is_null($user->guests))
+                    <div id="rsvp-guest-list">
+                        <p>Here are the guests that you have said are coming. If you need to modify this, click <a href="/rsvp">here</a>.
+                        @foreach($user->guests as $key => $guest)
+                            @if($key == 0 || $key == 2 || $key == 4)
+                                <div class="row">
+                            @endif
+                            <div class="col-md-6 col-xs-12 guest-rsvp-card">
+                                @include('guests.rsvp-info')
                             </div>
+                            @if($key == 1 || $key == 3 || $key == 5)
+                                </div>
+                            @endif
                         @endforeach
-                    @endif--}}
-                {{--</div>--}}
-                {{--<div class="col-md-4">--}}
-                    {{--<h3>Cabins (coming soon)</h3>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+                    </div>
+                @endif
+            </div>
+        </div>
+        @if(!empty($cabinInfo))
+            <p class="clarendon-subhead">Cabin</p>
+            <p>Cabin registration is coming soon!</p>
+            @if($cabinInfo['adventureLevel'] > 0)
+                <p>Your Adventure Level: {{$cabinInfo['adventureLevel']}}</p>
+            @endif
+            @if(!is_null($cabinInfo['bunkmates']))
+                <p>Your Desired Bunkmates: {{$cabinInfo['bunkmates']}}</p>
+            @endif
+        @endif
+     @endif
 @stop
 

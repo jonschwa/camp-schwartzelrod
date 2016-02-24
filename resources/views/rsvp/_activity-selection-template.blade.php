@@ -5,6 +5,7 @@
                 <span class="clarendon-subhead">Activities </span>
                 <span class="highway-subhead top3-instructions">Pick your top 3!</span>
             </div>
+            <div class="row activity-icon-row">
                 <div class="col-md-2">
                     <span class="activityIcon interest-inactive"  aria-hidden="true" input-name="interested-archery"><div class="icon-archery activity-icon-font"></div><p class="highway-subhead">Archery</p></span>
                 </div>
@@ -94,7 +95,7 @@
 </div>
 <div class="checkbox hidden-input">
     <label>
-        <input name="interested-kickball" type="checkbox" class="activity-checkbox">Kickball
+        <input name="interested-kickball" type="checkbox" class="activity-checkbox">Dodgeball
     </label>
 </div>
 <div class="checkbox hidden-input">
