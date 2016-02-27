@@ -207,6 +207,11 @@ body
     height: 53px;
     min-width: 360px;
 
+    .navbar-left, .navbar-right {
+      margin-left: 0px;
+      text-align:center;
+    }
+
     #hacky-nav-logo-container
     {
       margin-left: 15px;
@@ -255,26 +260,6 @@ body
       border-radius: 0;
     }
   }
-
-  //#form-nav-login
-  //{
-  //  display: block;
-  //  overflow-y: hidden;
-  //  position: absolute;
-  //  top: 10px;
-  //  right: 0px;
-  //  max-height: 500px; /* approximate max height */
-  //  transition-property: all;
-  //  transition-duration: .4s;
-  //  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  //  width: 100%;
-  //  background-color: $green;
-  //
-  //
-  //  .navbar-form {
-  //    text-align: center;
-  //  }
-  //}
 }
 
 .form-rsvp-guest-header span

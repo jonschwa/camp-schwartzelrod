@@ -53,40 +53,8 @@
                             </li>
                         </ul>
                     @endif
-                    {{--<div id="form-nav-login-collapsed">--}}
-                        {{--<div id="nav-login-container">--}}
-                            {{--<form class="navbar-form form-group-sm">--}}
-                                {{--<div class="form-group">--}}
-                                    {{--<input id="form-nav-login-email" type="text" class="form-control" placeholder="Email">--}}
-                                    {{--<input id="form-nav-login-password" type="password" class="form-control" placeholder="Password">--}}
-                                {{--</div>--}}
-                                {{--<button type="submit" id="nav-login-submit" class="btn btn-xs">Log In</button>--}}
-                            {{--</form>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
     </header>
-    {{--@if(!Auth::user())--}}
-    {{--<div id="form-nav-login" class="closed">--}}
-        {{--<div id="nav-login-container">--}}
-            {{--<form class="navbar-form form-group-sm">--}}
-                {{--<div class="form-group">--}}
-                    {{--<input id="form-nav-login-email" type="text" class="form-control" placeholder="Email">--}}
-                    {{--<input id="form-nav-login-password" type="password" class="form-control" placeholder="Password">--}}
-                {{--</div>--}}
-                {{--<button type="submit" id="nav-login-submit" class="btn btn-xs">Log In</button>--}}
-                {{--@todo - pw reset--}}
-                {{--<div class="form-group">--}}
-                    {{--<a href="#">Problems Logging In?</a>--}}
-                {{--</div>--}}
-            {{--</form>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-    {{--<div class="alert alert-danger" id="nav-error-container" role="alert">--}}
-        {{--<button id="btn-nav-error-hide" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>--}}
-        {{--<div id="nav-error-body">There was an error.</div>--}}
-    {{--</div>--}}
-    {{--@endif--}}
 @show
