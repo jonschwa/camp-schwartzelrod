@@ -50,7 +50,7 @@ class UserController extends ApiController
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), $this->activateRules);
+        $validator = Validator::make($request->all(), $this->storeRules);
         if ($validator->fails()) {
             return $this->apiErrorResponse('Unable to register', $validator->errors()->toArray());
         }
@@ -68,7 +68,7 @@ class UserController extends ApiController
             return $this->apiErrorResponse('User not found', 404);
         }
 
-        $validator = Validator::make($request->all(), $this->storeRules);
+        $validator = Validator::make($request->all(), $this->activateRules);
         if ($validator->fails()) {
             return $this->apiErrorResponse('Unable to register', 400, $validator->errors()->toArray());
         }

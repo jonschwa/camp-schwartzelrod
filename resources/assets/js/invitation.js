@@ -83,6 +83,10 @@ function submitCode(response)
 
 $('#form-decline').submit(function(event) {
     hideErrors();
+    //disable buttons
+    var btns = $(this).find('.btn');
+    btns.addClass('disabled');
+
     event.preventDefault();
     $.ajax({
         url: "/api/users/" + $('#form-decline-user-id').val() + '/rsvp/',
@@ -98,11 +102,16 @@ $('#form-decline').submit(function(event) {
 
     }).error(function(json) {
         showErrorMessage(json.responseJSON.message);
+        btns.removeClass('disabled');
     });
 });
 
 $('#form-maybe').submit(function(event) {
     hideErrors();
+    //disable buttons
+    var btns = $(this).find('.btn');
+    btns.addClass('disabled');
+
     event.preventDefault();
     $.ajax({
         url: "/api/users/" + $('#form-maybe-user-id').val() + '/rsvp/',
@@ -118,12 +127,19 @@ $('#form-maybe').submit(function(event) {
 
     }).error(function(json) {
         showErrorMessage(json.responseJSON.message);
+        btns.removeClass('disabled');
     });
 });
 
 $('#form-register').submit(function(event) {
-    hideErrors();
-    //@todo show loading gif
+
+    //disable buttons
+    var btns = $(this).find('.btn');
+    btns.addClass('disabled');
+
+    //@todo spinner
+    //var submitBtn = $(this).find('.btn-submit');
+
 
     event.preventDefault();
     //@todo some FE validation?
@@ -150,16 +166,19 @@ $('#form-register').submit(function(event) {
         showFormErrors(json.responseJSON.errors, $('#form-register'));
 
         $('#error-flash-container').fadeIn();
+        btns.removeClass('disabled');
     });
 });
 
 $('.btn-back').click(function(event) {
-    event.preventDefault();
-    defaultRsvpSubtitle();
-    $('#form-register').fadeOut();
-    $('#form-maybe').fadeOut();
-    $('#form-decline').fadeOut();
-    $('#form-enter-code').fadeIn();
+    if($(this).hasClass('disabled') === false) {
+        event.preventDefault();
+        defaultRsvpSubtitle();
+        $('#form-register').fadeOut();
+        $('#form-maybe').fadeOut();
+        $('#form-decline').fadeOut();
+        $('#form-enter-code').fadeIn();
+    }
 });
 
 function defaultRsvpSubtitle()

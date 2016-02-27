@@ -22,15 +22,20 @@
                     </div>
                 </div>
             </div>
-            <div id="mobile-story" class="our-story-text">
+            <div id="mobile-story">
                 <div class="container-fluid">
-                @foreach($ourStoryContent as $storyBlock)
-                    <div class='row our-story-block'>
-                        <p class="date highway-subhead">{!! $storyBlock['date'] !!}</p>
-                        <p class="event clarendon-subhead">{!! $storyBlock['event'] !!}</p>
-                        <p class="location">{!! $storyBlock['location'] !!}</p>
+                    <div id="header-img">
+                        <img id="header-img" src="/img/Lakehouse-hires.jpg" />
                     </div>
-                @endforeach
+                    <div class="our-story-text">
+                    @foreach($ourStoryContent as $storyBlock)
+                        <div class='row our-story-block'>
+                            <p class="date highway-subhead">{!! $storyBlock['date'] !!}</p>
+                            <p class="event clarendon-subhead">{!! $storyBlock['event'] !!}</p>
+                            <p class="location">{!! $storyBlock['location'] !!}</p>
+                        </div>
+                    @endforeach
+                    </div>
                 </div>
             </div>
         </div>

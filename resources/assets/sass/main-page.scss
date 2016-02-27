@@ -198,7 +198,31 @@ img.content-image
 
   #mobile-story
   {
+    text-align: center;
+    width: 100%;
+    margin-top: -15px;
 
+    .container-fluid {
+      padding: 0px;
+    }
+
+    .clarendon-subhead {
+      font-size: 1.4em;
+    }
+
+    .our-story-text {
+      text-align: center;
+      margin-top: 0px;
+    }
+
+    .our-story-block {
+      padding: 30px 11px;
+    }
+
+    #header-img {
+      width: 100%;
+      padding: 0px;
+    }
   }
 
   .our-story-block
@@ -229,6 +253,7 @@ img.content-image
 
   #code-response-form-container
   {
+   padding-top:10px;
     background: url('/img/groovepaper.png');
     width: 100%; height: 100%;
     padding: 50px 150px;
@@ -446,7 +471,7 @@ img.content-image
   #main-page-splash {
     height: auto !important;
     margin-top: -10px;
-    padding: 25px;
+    padding: 100px 25px;
   }
   #main-page-splash #main-page-campsign {
     margin-top: 0 !important;

@@ -23,6 +23,8 @@
         <input type="password" class="form-control input" id="form-register-password-confirm" name="password_confirm" placeholder="Now type it again!">
     </div>
         <input type="hidden" id="form-register-user-id">
-    <button type="button" class="btn btn-default btn-back"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Back</button>
-    <button type="submit" class="btn btn-primary btn-default">Submit</button>
+    <div class="rsvp-form-submit-buttons">
+        <button type="button" class="btn btn-default btn-back"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Back</button>
+        <button type="submit" class="btn btn-primary btn-submit btn-default">Submit</button>
+    </div>
 </form>

@@ -24,7 +24,6 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="camp-navbar-collapse-1">
-                    <span class="navbar-left">
                         <ul class="nav navbar-nav">
                             <li>
                                 <a class="highway-subhead" href="/#our-story" id="nav-our-story-link">History</a>
@@ -53,8 +52,6 @@
                             @endif
 
                         </ul>
-                    </span>
-                    <span class="navbar-right">
                         @if(Auth::user())
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
@@ -64,7 +61,6 @@
                         @else
 
                         @endif
-                    </span>
                     {{--<div id="form-nav-login-collapsed">--}}
                         {{--<div id="nav-login-container">--}}
                             {{--<form class="navbar-form form-group-sm">--}}
