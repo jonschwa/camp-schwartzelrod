@@ -2,7 +2,7 @@
 
 $brown: #3d1e07;
 $yellow-text: #ecc884;
-$green: #138f22;
+$green: #087649;
 $grey: #666666;
 
 
@@ -13,6 +13,7 @@ a {
 a.hover {
   color: blue;
   text-decoration: underline;
+  background: inherit;
 }
 
 
@@ -113,6 +114,12 @@ body
   font-size: 40px;
 }
 
+.active{
+  //background: $green !important;
+  background: $brown !important;
+  color: $yellow-text !important;
+}
+
 .navbar-default
 {
   .navbar-nav
@@ -120,11 +127,11 @@ body
     font-size: 1em;
     li{
       a{
-        color: $yellow-text;
+        color: #fff;
       }
 
       a:hover, a:active{
-        color: $green;
+        color: $yellow-text;
       }
     }
   }
@@ -135,30 +142,39 @@ body
   span{
     display:inline-block;
   }
-
-  #nav-camp-logo
-  {
-    color: #ecc884;
-    font-size: 40px;
-    margin-top: 5px;
-  }
-
-  #nav-camp-name
-  {
-    color: $yellow-text;
-    font-family: Superclarendon, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 13px;
-    margin-top: 10px;
-  }
-
 }
 
 .navbar-right
 {
   margin-right: 0px;
-  padding-top: 6px;
+  //padding-top: 6px;  //@todo fucking fix this!
   color: $yellow-text;
+}
+
+#hacky-nav-logo-container
+{
+  position: relative;
+
+  #nav-camp-logo
+  {
+    position: absolute;
+    color: #ecc884;
+    font-size: 40px;
+    margin-top: 5px;
+    top: -15px;
+  }
+
+  #nav-camp-name
+  {
+    position: absolute;
+    left: 45px;
+    top: -15px;
+    color: $yellow-text;
+    font-family: Superclarendon, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 10px;
+  }
 }
 
 #camp-navbar-collapse-1
@@ -168,10 +184,16 @@ body
 
 .navbar
 {
-  background: $brown;
+  //background: $brown;
+  background: $green;
   margin-bottom: 0px;
   min-width: 948px;
   border: none;
+  height: 50px;
+
+  .navbar-left {
+    margin-left: 180px;
+  }
 }
 
 #form-nav-login.closed
@@ -182,8 +204,14 @@ body
 @media (max-width: 992px) {
   .navbar
   {
+    height: 53px;
     min-width: 360px;
-    text-align: center;
+
+    #hacky-nav-logo-container
+    {
+      margin-left: 15px;
+    }
+
   }
   #nav-error-container
   {
@@ -228,25 +256,25 @@ body
     }
   }
 
-  #form-nav-login
-  {
-    display: block;
-    overflow-y: hidden;
-    position: absolute;
-    top: 10px;
-    right: 0px;
-    max-height: 500px; /* approximate max height */
-    transition-property: all;
-    transition-duration: .4s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-    width: 100%;
-    background-color: $green;
-
-
-    .navbar-form {
-      text-align: center;
-    }
-  }
+  //#form-nav-login
+  //{
+  //  display: block;
+  //  overflow-y: hidden;
+  //  position: absolute;
+  //  top: 10px;
+  //  right: 0px;
+  //  max-height: 500px; /* approximate max height */
+  //  transition-property: all;
+  //  transition-duration: .4s;
+  //  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  //  width: 100%;
+  //  background-color: $green;
+  //
+  //
+  //  .navbar-form {
+  //    text-align: center;
+  //  }
+  //}
 }
 
 .form-rsvp-guest-header span
@@ -295,6 +323,7 @@ a.page-top
     display: block;
   }
   .navbar-collapse {
+    background: $green;
     border-top: 1px solid transparent;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }

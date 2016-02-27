@@ -2,11 +2,11 @@
 @section("content")
     <div id="logged-in-homepage-header" class="container-fluid">
         <div class="row">
-            <div class="col-md-3 col-md-offset-3">
+            <div class="col-md-4 col-md-offset-2 col-xs-12">
                 {{--<object id="camp-logo" class="svg" data="/img/camp-logo.svg" type="image/svg+xml"></object>--}}
-                <img id="camp-logo" class="svg" src="/img/camp-logo.svg"/>
+                <div class="icon-camp-logo rsvp-logo-header"></div>
             </div>
-            <div class="col-md-4" id="logged-in-rsvp-status">
+            <div class="col-md-6 col-xs-12" id="logged-in-rsvp-status">
                 <p class="clarendon-headline">Your RSVP:
                     @if(is_null($rsvp))
                         ????

@@ -3,13 +3,12 @@
     <img src="/img/greetings.jpg">
 </div>
 <div class="container-fluid">
-    <a name="wedding-info"></a>
     <div class="main-page-content-block" id="wedding-info">
         <div id="wedding-info-section">
             <div id="wedding-info-content">
                 <div class="row">
                     @foreach($weddingInfoContent as $key => $content)
-                        <div class="col-sm-4">
+                        <div class="col-md-4">
                             <div class="content-block">
                                 <p class="clarendon-subhead green">{{ $content['title'] }}</p>
                                 @if(isset($content['subtitle']))

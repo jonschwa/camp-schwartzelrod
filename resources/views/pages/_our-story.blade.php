@@ -1,4 +1,3 @@
-<a name="our-story"></a>
 <div id="our-story">
         <div id="our-story-section">
             <div id="desktop-story">
@@ -24,9 +23,6 @@
             </div>
             <div id="mobile-story">
                 <div class="container-fluid">
-                    <div id="header-img">
-                        <img id="header-img" src="/img/Lakehouse-hires.jpg" />
-                    </div>
                     <div class="our-story-text">
                     @foreach($ourStoryContent as $storyBlock)
                         <div class='row our-story-block'>
@@ -35,6 +31,9 @@
                             <p class="location">{!! $storyBlock['location'] !!}</p>
                         </div>
                     @endforeach
+                    </div>
+                    <div id="header-img">
+                        <img id="header-img" src="/img/Lakehouse-hires.jpg" />
                     </div>
                 </div>
             </div>

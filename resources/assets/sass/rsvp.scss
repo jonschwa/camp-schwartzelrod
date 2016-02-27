@@ -1,6 +1,6 @@
 $brown: #3d1e07;
 $yellow-text: #ecc884;
-$green: #138f22;
+$green: #087649;
 $grey: #666666;
 
 $trees: url('/img/tree_bark.jpg');
@@ -288,6 +288,7 @@ $trees: url('/img/tree_bark.jpg');
   margin-top: -10px;
   padding: 40px;
   background: $trees repeat fixed;
+  text-align: center;
 
   #logged-in-rsvp-status
   {
@@ -317,6 +318,12 @@ $trees: url('/img/tree_bark.jpg');
 .guest-rsvp-card
 {
   margin-bottom: 25px;
+}
+
+.rsvp-logo-header
+{
+  font-size: 333px;
+  color: #000;
 }
 
 .selected-activities-container
