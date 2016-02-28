@@ -164,7 +164,16 @@ $('#rsvp-guests-container').on('click', '.activityIcon', function(e) {
             active = true;
         }
         else {
+            var icon = $(this);
+            $(this).addClass('unclickable');
+
+            setTimeout(function () {
+                icon.removeClass('unclickable');
+                console.log('remove');
+            }, 1000);
+
             $(this).closest('.rsvp-guest-interests')
+            //.closest('.rsvp-guest-interests')
                 .find('.top3-instructions')
                 .css('color', 'red')
                 .effect( "bounce", {times:4}, 1000, function() {
