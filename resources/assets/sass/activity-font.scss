@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('/fonts/icomoon.eot?wvhuui');
-    src:    url('/fonts/icomoon.eot?wvhuui#iefix') format('embedded-opentype'),
-            url('/fonts/icomoon.ttf?wvhuui') format('truetype'),
-            url('/fonts/icomoon.woff?wvhuui') format('woff'),
-            url('/fonts/icomoon.svg?wvhuui#icomoon') format('svg');
+    src:    url('/fonts/icomoon.eot?7vmbj2');
+    src:    url('/fonts/icomoon.eot?7vmbj2#iefix') format('embedded-opentype'),
+    url('/fonts/icomoon.ttf?7vmbj2') format('truetype'),
+    url('/fonts/icomoon.woff?7vmbj2') format('woff'),
+    url('/fonts/icomoon.svg?7vmbj2#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,6 +24,18 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-cal1-private:before {
+    content: "\31";
+}
+.icon-cal2-shared:before {
+    content: "\32";
+}
+.icon-cal3-group:before {
+    content: "\33";
+}
+.icon-cal4-party:before {
+    content: "\34";
+}
 .icon-camp-logo-no-text:before {
     content: "\79";
 }

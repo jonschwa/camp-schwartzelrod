@@ -24,11 +24,11 @@ $(window).on("scroll", function() {
     //}
 
 
-    var ourStoryOffset = $('#our-story-anchor').offset().top -5;
-    var weddingInfoOffset = $('#wedding-info-anchor').offset().top -5;
-    var vtInfoOffset = $('#vt-info-anchor').offset().top -5;
-    var lodgingInfoOffset = $('#lodging-info-anchor').offset().top -5;
-    var rsvpInfoOffset = $('#rsvp-info-anchor').offset().top -5;
+    var ourStoryOffset = $('#our-story-anchor').offset().top -25;
+    var weddingInfoOffset = $('#wedding-info-anchor').offset().top -15;
+    var vtInfoOffset = $('#vt-info-anchor').offset().top -15;
+    var lodgingInfoOffset = $('#lodging-info-anchor').offset().top -15;
+    var rsvpInfoOffset = $('#rsvp-info-anchor').offset().top -15;
 
     if ($(window).scrollTop() > ourStoryOffset && $(window).scrollTop() < weddingInfoOffset) {
         if($('#nav-our-story-link').hasClass('active') == false) {

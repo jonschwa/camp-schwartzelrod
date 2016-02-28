@@ -106,6 +106,21 @@ $trees: url('/img/tree_bark.jpg');
   }
 }
 
+#button-rsvp-add-guest
+{
+  color: #fff;
+  background-color: $green;
+  border-color: $green;
+  cursor: pointer;
+}
+
+#button-rsvp-add-guest:hover
+{
+  color: $yellow-text;
+}
+
+
+
 #camper-info-form
 {
   background: $trees repeat;
@@ -206,9 +221,28 @@ $trees: url('/img/tree_bark.jpg');
 {
   text-align: center;
 
+  .cal-icon
+  {
+    font-size: 70px;
+    margin-top: -10px;
+    color: #acadad;
+    cursor: pointer;
+    margin-bottom: 8px;
+  }
+
+  .cal-number, .cal-title
+  {
+    color: #acadad;
+    cursor: pointer;
+  }
+
   .selected
   {
-    background-color: #acadad;
+    //background-color: #acadad;
+    .cal-icon, .cal-number, .cal-title
+    {
+      color: $green;
+    }
   }
 }
 
@@ -339,5 +373,4 @@ $trees: url('/img/tree_bark.jpg');
 {
   padding: 20px;
   height: 140px;
-
 }

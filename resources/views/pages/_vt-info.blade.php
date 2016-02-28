@@ -33,8 +33,8 @@
                         <p class="grey">Camp Abnaki is located in North Hero, VT, one of four towns which make up the Lake Champlain Islands. It is easily accessible by car.</p>
                         <div id="distance-to-camp">
                             <p>
-                                <span class="highway-subhead">Burlington International Airport</span><span class="grey"> 45 minutes</span><br />
-                                <span class="highway-subhead">Plattsburgh International Airport</span><span class="grey"> 1 hour, 15 minutes</span><br />
+                                <span class="highway-subhead">Burlington Int'l Airport</span><span class="grey"> 45 minutes</span><br />
+                                <span class="highway-subhead">Plattsburgh Int'l Airport</span><span class="grey"> 1 hour, 15 minutes</span><br />
                                 <span class="highway-subhead">Burlington, VT</span><span class="grey"> 45 minutes</span><br />
                                 <span class="highway-subhead">Plattsburgh, NY</span><span class="grey"> 1 hour (or <a href=”http://www.ferries.com/crossing-schedule-rates/grand-isle-to-plattsburgh-ferry” target=”_blank”>take the ferry</a>!)</span><br />
                                 <span class="highway-subhead">Boston, MA</span><span class="grey"> 4 hours</span><br />
