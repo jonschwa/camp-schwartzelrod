@@ -119,6 +119,10 @@ $trees: url('/img/tree_bark.jpg');
   color: $yellow-text;
 }
 
+#add-guest-button {
+  margin-bottom: 20px;
+}
+
 
 
 #camper-info-form
@@ -260,6 +264,10 @@ $trees: url('/img/tree_bark.jpg');
 }
 
 @media (min-width: 0px) {
+  #camper-info-form {
+    padding: 0px;
+  }
+
   #rsvp-guests-container
   {
     margin: auto;
@@ -270,12 +278,39 @@ $trees: url('/img/tree_bark.jpg');
     }
 
     .rsvp-guest-interests {
-      padding:30px;
+      padding:15px;
+    }
+  }
+
+  .guest-lodging-container {
+    width: 100%;
+    padding: 0px;
+  }
+
+  #lodging-info-form, #lodging-selection-form {
+    width: 100%;
+
+    .guest-lodging-container {
+      width: 100%;
+      padding: 0px;
+    }
+
+    .bunkmates-ask {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .cabin-details {
+      padding: 5px;
     }
   }
 }
 
 @media (min-width: 768px) {
+  #camper-info-form {
+    padding: 40px;
+  }
+
   #rsvp-guests-container
   {
     margin: auto;
@@ -287,6 +322,24 @@ $trees: url('/img/tree_bark.jpg');
 
     .rsvp-guest-interests {
       padding:30px;
+    }
+  }
+
+  #lodging-info-form, #lodging-selection-form {
+    width: 80%;
+
+    .guest-lodging-container {
+      width: 90%;
+      padding: 30px;
+    }
+
+    .bunkmates-ask {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .cabin-details {
+      padding: 5px;
     }
   }
 }
