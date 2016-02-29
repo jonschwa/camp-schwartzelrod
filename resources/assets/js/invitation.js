@@ -5,6 +5,12 @@ function hideErrors()
     $('.error-label').hide();
 }
 
+$('#form-enter-code').bind("keypress", function (e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+    }
+});
+
 $('.button-form-enter-code-positive').click(function() {
     submitCode('yes');
 });
@@ -65,7 +71,7 @@ function submitCode(response)
             //$('#form-maybe-message').val(json.data.invitation.user.id);
             $('#form-enter-code').hide();
             $('#form-maybe').fadeIn();
-            $('#rsvp-subtitle').html('<p class="highway-subhead">We get it! No pressure!</p>Please confirm your contact information so we can get in touch when the RSVP deadline rolls around (that\’s August 1st, by the way). You may come back to this website and enter your code to change your RSVP at any time.');
+            $('#rsvp-subtitle').html('<p class="highway-subhead">We get it! No pressure!</p>Please confirm your contact information so we can get in touch when the RSVP deadline rolls around (that\’s August 1st, by the way). You may come back to this website ​anytime​ and enter your code to change your RSVP.');
 
         }).error(function(json) {
             showErrorMessage(json.responseJSON.message);
@@ -82,12 +88,13 @@ function submitCode(response)
         }).success(function(json) {
             changeRsvpTitle('no');
             //prefill the next form, hide this one, show the next
-            //@todo make this less janky, use waypoints
             $('#form-decline-user-id').val(json.data.invitation.user.id);
-            //$('#form-decline-message').val(json.data.invitation.user.id);
+            $('#form-decline-email').val(json.data.invitation.user.email);
+            $('#form-decline-first-name').val(json.data.invitation.user.first_name);
+            $('#form-decline-last-name').val(json.data.invitation.user.last_name);
             $('#form-enter-code').hide();
             $('#form-decline').fadeIn();
-            $('#rsvp-subtitle').html('<p class="highway-subhead">We will miss you!</p>Feel free to write us a message below. You may come back to this website and enter your code to change your RSVP at any time (deadline is August 1st).');
+            $('#rsvp-subtitle').html('<p class="highway-subhead">We will miss you!</p>Feel free to write us a message below. Please confirm your contact information just in case we need to get in touch with you. You may come back to this website anytime and enter your code to change your RSVP (deadline is August 1st).');
         }).error(function(json) {
             showErrorMessage(json.responseJSON.message);
             showInvitationCodeError();
@@ -112,8 +119,7 @@ function submitCode(response)
             $('#rsvp-subtitle').html('<div class="opt-out-form-text">' +
                                      '<p class="highway-subhead">Are you sure you want to opt out of our awesome website?</p>' +
                                      '<p>No big deal... we only slaved over it for a few months!</p>'+
-                                     '<p>If all this newfangled internet technology is really too much for you, please '+
-                                     'fill out this form and we will follow up with you within 2 weeks.</p>'+
+                                     '<p>If all this newfangled internet technology is really too much for you, please fill out this form and we will ​contact​ you within ​two​ weeks</p>'+
                                      '</div>'
                    );
         }).error(function(json) {
@@ -135,6 +141,9 @@ $('#form-decline').submit(function(event) {
         method: "POST",
         data: {
             "comment" : $('#form-decline-comment').val(),
+            "first_name" : $('#form-decline-first-name').val(),
+            "last_name" : $('#form-decline-last-name').val(),
+            "email" : $('#form-decline-email').val(),
             "will_attend" : 0,
             "num_guests" : 0
         }
@@ -146,6 +155,7 @@ $('#form-decline').submit(function(event) {
     }).error(function(json) {
         showErrorMessage(json.responseJSON.message);
         btns.removeClass('disabled');
+        showFormErrors(json.responseJSON.errors, $('#form-decline'));
     });
 });
 

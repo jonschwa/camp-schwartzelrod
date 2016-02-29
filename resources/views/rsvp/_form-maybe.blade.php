@@ -17,7 +17,7 @@
         <input type="text" class="form-control input" id="form-maybe-email" name="email" placeholder="Enter your email">
     </div>
     <div class="form-group">
-        <textarea cols="3" class="form-control input" id="form-maybe-comment" name="comment" placeholder="Can you briefly explain your indecisiveness?"></textarea>
+        <textarea cols="3" class="form-control input" id="form-maybe-comment" name="comment" placeholder="Enter a message for Jon and Stacey"></textarea>
     </div>
     <input type="hidden" id="form-maybe-user-id">
     <button type="button" class="btn btn-default btn-back"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Back</button>

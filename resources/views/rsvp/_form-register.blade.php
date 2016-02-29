@@ -15,10 +15,12 @@
         <input type="text" class="form-control input" id="form-register-email" name="email" placeholder="Enter your email">
     </div>
     <div class="form-group">
+        <label for="form-register-password">Password</label>
         <label class="control-label error-label" for="form-register-password" style="display:none;"></label>
         <input type="password" class="form-control input" id="form-register-password" name="password" placeholder="Pick a password!">
     </div>
     <div class="form-group">
+        <label for="form-register-password-confirm">Confirm Password</label>
         <label class="control-label error-label" for="form-register-password-confirm" style="display:none;"></label>
         <input type="password" class="form-control input" id="form-register-password-confirm" name="password_confirm" placeholder="Now type it again!">
     </div>
