@@ -1,6 +1,7 @@
 <a name="rsvp"></a>
 <div id="rsvp-border"></div>
 <div class="container-fluid" id="rsvp-section">
+    @if(!Auth::user())
     <div id="error-flash-container" class="alert alert-danger" role="alert" style="display:none">
         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
         <span id="error-flash-message" class="alert-error-text"></span>
@@ -24,4 +25,15 @@
             </div>
         </div>
     </div>
+    @else
+    <div class="row">
+        <div id="code-response-form-container">
+            <div class="container-fluid">
+                <div class="col-md-12">
+                    @include('rsvp._loggedin-in-user')
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
 </div>

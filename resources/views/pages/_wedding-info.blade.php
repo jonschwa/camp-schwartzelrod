@@ -7,7 +7,7 @@
         <div id="wedding-info-section">
             <div id="wedding-info-content">
                 <div class="row">
-                    @foreach($weddingInfoContent as $key => $content)
+                    @foreach($pageContent['weddingInfoContent'] as $key => $content)
                         <div class="col-md-4">
                             <div class="content-block">
                                 <p class="clarendon-subhead green">{{ $content['title'] }}</p>

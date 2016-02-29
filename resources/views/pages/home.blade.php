@@ -14,7 +14,5 @@
     <a id="lodging-info-anchor"></a>
     @include("pages._lodging-info")
     <a id="rsvp-info-anchor"></a>
-    @if(!Auth::user())
-        @include("pages._rsvp")
-    @endif
+    @include("pages._rsvp")
 @stop

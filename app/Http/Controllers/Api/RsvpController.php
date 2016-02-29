@@ -10,7 +10,7 @@ class RsvpController extends ApiController
     protected $repo;
     protected $user;
 
-    protected $storeRules = [
+    protected $userStoreRules = [
         'will_attend'        => 'required|in:-2,-1,1,0',
         'num_guests'         => 'numeric',
         'first_name'         => 'required',
@@ -18,6 +18,11 @@ class RsvpController extends ApiController
         'contact_preference' => 'required_if:will_attend,-2',
         'email'              => 'required',
         'phone'              => 'required_if:contact_preference,phone'
+    ];
+
+    protected $storeRules = [
+        'will_attend'        => 'required|in:-2,-1,1,0',
+        'num_guests'         => 'numeric',
     ];
 
     protected $storeRulesMessages = [
@@ -37,7 +42,14 @@ class RsvpController extends ApiController
     {
         $user = $this->user->findById($userId);
 
-        $validator = Validator::make($request->all(), $this->storeRules, $this->storeRulesMessages);
+        if(isset($request->all()['with_user_update'])) {
+            $validatorRules = $this->userStoreRules;
+        }
+        else {
+            $validatorRules = $this->storeRules;
+        }
+
+        $validator = Validator::make($request->all(), $validatorRules, $this->storeRulesMessages);
         if ($validator->fails()) {
             return $this->apiErrorResponse('Unable to RSVP', 503, $validator->errors()->toArray());
         }

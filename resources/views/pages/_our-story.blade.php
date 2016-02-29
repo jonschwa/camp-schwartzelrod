@@ -7,14 +7,14 @@
                     @for($i=0, $j=5; $i < 5; $i++, $j++)
                         <div class="row our-story-row">
                             <div class="col-md-6 our-story-block">
-                                <p class="date highway-subhead">{!! $ourStoryContent[$i]['date'] !!}</p>
-                                <p class="event clarendon-subhead">{!! $ourStoryContent[$i]['event'] !!}</p>
-                                <p class="location">{!! $ourStoryContent[$i]['location'] !!}</p>
+                                <p class="date highway-subhead">{!! $pageContent['ourStoryContent'][$i]['date'] !!}</p>
+                                <p class="event clarendon-subhead">{!! $pageContent['ourStoryContent'][$i]['event'] !!}</p>
+                                <p class="location">{!! $pageContent['ourStoryContent'][$i]['location'] !!}</p>
                             </div>
                             <div class="col-md-6 our-story-block">
-                                <p class="date highway-subhead">{!! $ourStoryContent[$j]['date'] !!}</p>
-                                <p class="event clarendon-subhead">{!! $ourStoryContent[$j]['event'] !!}</p>
-                                <p class="location">{!! $ourStoryContent[$j]['location'] !!}</p>
+                                <p class="date highway-subhead">{!! $pageContent['ourStoryContent'][$j]['date'] !!}</p>
+                                <p class="event clarendon-subhead">{!! $pageContent['ourStoryContent'][$j]['event'] !!}</p>
+                                <p class="location">{!! $pageContent['ourStoryContent'][$j]['location'] !!}</p>
                             </div>
                         </div>
                     @endfor
@@ -24,7 +24,7 @@
             <div id="mobile-story">
                 <div class="container-fluid">
                     <div class="our-story-text">
-                    @foreach($ourStoryContent as $storyBlock)
+                    @foreach($pageContent['ourStoryContent'] as $storyBlock)
                         <div class='row our-story-block'>
                             <p class="date highway-subhead">{!! $storyBlock['date'] !!}</p>
                             <p class="event clarendon-subhead">{!! $storyBlock['event'] !!}</p>

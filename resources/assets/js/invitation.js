@@ -144,6 +144,7 @@ $('#form-decline').submit(function(event) {
             "first_name" : $('#form-decline-first-name').val(),
             "last_name" : $('#form-decline-last-name').val(),
             "email" : $('#form-decline-email').val(),
+            "with_user_update" : 1,
             "will_attend" : 0,
             "num_guests" : 0
         }
@@ -174,6 +175,7 @@ $('#form-maybe').submit(function(event) {
             "last_name" : $('#form-maybe-last-name').val(),
             "email" : $('#form-maybe-email').val(),
             "comment" : $('#form-maybe-comment').val(),
+            "with_user_update" : 1,
             "will_attend" : -1,
             "num_guests" : 0
         }
@@ -208,6 +210,7 @@ $('#form-opt-out').submit(function(event) {
             "contact_preference" : $('#form-opt-out-contact-preference').val(),
             "comment" : $('#form-opt-out-comment').val(),
             "will_attend" : -2, //@todo - build a thing for us to check on opt-out guests
+            "with_user_update" : 1,
             "num_guests" : 0
         }
     }).success(function(json) {

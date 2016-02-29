@@ -39,10 +39,7 @@
                     @if(Auth::user())
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a class="highway-subhead nav-link" href="/status">RSVP</a>
-                            </li>
-                            <li>
-                                <p class="highway-subhead nav-link" class="navbar-text">Logged in as {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} <a href="/logout">(Log Out)</a></p>
+                                <p class="highway-subhead nav-link">Logged in as {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} (<a href="/status">View RSVP</a> | <a href="/logout">Log Out</a>)</p>
                             </li>
                         </ul>
                     @else

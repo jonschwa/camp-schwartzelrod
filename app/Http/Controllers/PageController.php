@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Routing\Controller;
 
 class PageController extends Controller
@@ -92,11 +93,21 @@ class PageController extends Controller
 
     public function index()
     {
+        $rsvp = $user = null;
+        if(Auth::User()) {
+            $user = Auth::User();
+            $rsvp = $user->rsvp;
+        }
+
         $pageContent = [
             'weddingInfoContent' => $this->weddingInfoContent,
-            'ourStoryContent'    => $this->ourStoryContent
+            'ourStoryContent'    => $this->ourStoryContent,
         ];
-        return view('pages.home', $pageContent);
+        return view('pages.home', [
+            'pageContent' => $pageContent,
+            'user' => $user,
+            'rsvp' => $rsvp,
+        ]);
     }
 
     public function opt_out()
