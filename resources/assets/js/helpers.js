@@ -18,6 +18,12 @@ function showFormErrors(errors, form) {
     });
 }
 
+function showInvitationCodeError() {
+    var codeForm = $('#form-enter-code').find('.form-group');
+    codeForm.addClass('has-error');
+    codeForm.find('.error-label').html('Please double check your code').show();
+}
+
 function toggleInterestColor(active, element) {
     if(active === true) {
         element.style.color = '#138f22';

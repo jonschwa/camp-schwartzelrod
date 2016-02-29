@@ -20,6 +20,10 @@ class UserController extends ApiController
         'password_confirm' => 'required|same:password'
     ];
 
+    protected $storeMessages = [
+
+    ];
+
     protected $activateRules = [
         'first_name'       => 'required|max:30',
         'last_name'        => 'required|max:30',

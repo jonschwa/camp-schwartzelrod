@@ -1,6 +1,7 @@
 function hideErrors()
 {
     $('#error-flash-container').fadeOut();
+    $('#form-enter-code').find('.form-group').removeClass('has-error');
     $('.error-label').hide();
 }
 
@@ -26,6 +27,7 @@ function submitCode(response)
     if(response == 'yes') {
         if ($('#rsvp-code').val() == '') {
             showErrorMessage('You didn\'t enter a code!');
+            showInvitationCodeError();
         }
         $.ajax({
             url: "/api/invitations/code/" + $('#rsvp-code').val()
@@ -41,11 +43,13 @@ function submitCode(response)
 
         }).error(function (json) {
             showErrorMessage(json.responseJSON.message);
+            showInvitationCodeError();
         });
     }
     else if(response == 'maybe') {
         if($('#rsvp-code').val() == '') {
             showErrorMessage('You didn\'t enter a code!');
+            showInvitationCodeError();
         }
         $.ajax({
             url: "/api/invitations/code/" + $('#rsvp-code').val()
@@ -63,11 +67,13 @@ function submitCode(response)
 
         }).error(function(json) {
             showErrorMessage(json.responseJSON.message);
+            showInvitationCodeError();
         });
     }
     else if(response == 'no') {
         if($('#rsvp-code').val() == '') {
             showErrorMessage('You didn\'t enter a code!');
+            showInvitationCodeError();
         }
         $.ajax({
             url: "/api/invitations/code/" + $('#rsvp-code').val()
@@ -81,11 +87,13 @@ function submitCode(response)
             $('#rsvp-subtitle').html('<p class="highway-subhead">We will miss you!</p>Feel free to write us a message below. You may come back to this website and enter your code to change your RSVP at any time (deadline is August 1st).');
         }).error(function(json) {
             showErrorMessage(json.responseJSON.message);
+            showInvitationCodeError();
         });
     }
     else if(response == 'opt-out') {
         if($('#rsvp-code').val() == '') {
             showErrorMessage('Please enter the code from your save the date!');
+            showInvitationCodeError();
         }
         $.ajax({
             url: "/api/invitations/code/" + $('#rsvp-code').val()
@@ -101,13 +109,14 @@ function submitCode(response)
             $('#form-opt-out').fadeIn();
             $('#rsvp-subtitle').html('<div class="opt-out-form-text">' +
                                      '<p class="highway-subhead">Are you sure you want to opt out of our awesome website?</p>' +
-                                     '<p>No big deal- We only slaved over it for a few months!</p>'+
+                                     '<p>No big deal... we only slaved over it for a few months!</p>'+
                                      '<p>If all this newfangled internet technology is really too much for you, please '+
                                      'fill out this form and we will follow up with you within 2 weeks.</p>'+
                                      '</div>'
                    );
         }).error(function(json) {
             showErrorMessage(json.responseJSON.message);
+            showInvitationCodeError();
         });
     }
 }
@@ -164,6 +173,7 @@ $('#form-maybe').submit(function(event) {
     }).error(function(json) {
         showErrorMessage(json.responseJSON.message);
         btns.removeClass('disabled');
+        showFormErrors(json.responseJSON.errors, $('#form-maybe'));
     });
 });
 

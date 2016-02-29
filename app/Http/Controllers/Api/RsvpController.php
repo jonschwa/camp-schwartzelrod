@@ -16,12 +16,12 @@ class RsvpController extends ApiController
         'first_name'         => 'required',
         'last_name'          => 'required',
         'contact_preference' => 'required_if:will_attend,-2',
-        'email'              => 'required_if:contact_preference,email',
+        'email'              => 'required',
         'phone'              => 'required_if:contact_preference,phone'
     ];
 
     protected $storeRulesMessages = [
-        'email.required_if' => 'We will need your email to email you!',
+        'email.required' => 'We need your email!',
         'phone.required_if' => 'We will need your phone number to call you!',
         'contact_preference.required_if' => 'Please let us know how to contact you.',
         'first_name.required' => 'We need your first name',

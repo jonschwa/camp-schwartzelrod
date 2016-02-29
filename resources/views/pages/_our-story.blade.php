@@ -33,7 +33,7 @@
                     @endforeach
                     </div>
                     <div id="header-img">
-                        <img id="header-img" src="/img/Lakehouse-hires.jpg" />
+                        <img id="header-img" src="/img/lakehouse-hires-centered.jpg" />
                     </div>
                 </div>
             </div>

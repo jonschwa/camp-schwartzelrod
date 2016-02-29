@@ -4,6 +4,7 @@
 </div>
 <form id="form-enter-code" action="#">
         <div class="form-group">
+            <label class="control-label error-label" for="rsvp-code" style="display:none;"></label>
             <input type="text" class="form-control giant-input" id="rsvp-code" name="rsvp-code" placeholder="Enter your code here">
         </div>
     <div id="code-response-container">
