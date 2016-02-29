@@ -27,7 +27,7 @@ class UserController extends ApiController
     protected $activateRules = [
         'first_name'       => 'required|max:30',
         'last_name'        => 'required|max:30',
-        'email'            => 'required|max:100',
+        'email'            => 'required|unique:users,email|max:100',
         'password'         => 'required',
         'password_confirm' => 'required|same:password'
     ];
