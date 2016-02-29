@@ -9,7 +9,7 @@
         <div id="code-response-form-container">
             <div class="container-fluid">
                 <div class="col-md-8">
-                    <p class="clarendon-headline">RSVP</p>
+                    <p class="clarendon-headline" id="rsvp-section-title">RSVP</p>
                     @include("rsvp._form-enter-code")
                     @include("rsvp._form-register")
                     @include("rsvp._form-maybe")

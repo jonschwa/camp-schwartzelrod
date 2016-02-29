@@ -32,6 +32,7 @@ function submitCode(response)
         $.ajax({
             url: "/api/invitations/code/" + $('#rsvp-code').val()
         }).success(function (json) {
+            changeRsvpTitle('yes');
             //prefill the next form, hide this one, show the next
             $('#form-register-email').val(json.data.invitation.user.email);
             $('#form-register-first-name').val(json.data.invitation.user.first_name);
@@ -54,6 +55,7 @@ function submitCode(response)
         $.ajax({
             url: "/api/invitations/code/" + $('#rsvp-code').val()
         }).success(function(json) {
+            changeRsvpTitle('maybe');
             console.log(json.data.invitation.user.id);
             //prefill the next form, hide this one, show the next
             $('#form-maybe-email').val(json.data.invitation.user.email);
@@ -78,6 +80,7 @@ function submitCode(response)
         $.ajax({
             url: "/api/invitations/code/" + $('#rsvp-code').val()
         }).success(function(json) {
+            changeRsvpTitle('no');
             //prefill the next form, hide this one, show the next
             //@todo make this less janky, use waypoints
             $('#form-decline-user-id').val(json.data.invitation.user.id);
@@ -99,7 +102,6 @@ function submitCode(response)
             url: "/api/invitations/code/" + $('#rsvp-code').val()
         }).success(function(json) {
             //prefill the next form, hide this one, show the next
-            //@todo make this less janky, use waypoints
             $('#form-opt-out-email').val(json.data.invitation.user.email);
             $('#form-opt-out-first-name').val(json.data.invitation.user.first_name);
             $('#form-opt-out-last-name').val(json.data.invitation.user.last_name);
@@ -257,6 +259,7 @@ $('.btn-back').click(function(event) {
     if($(this).hasClass('disabled') === false) {
         event.preventDefault();
         defaultRsvpSubtitle();
+        changeRsvpTitle('default');
         $('#form-register').fadeOut();
         $('#form-maybe').fadeOut();
         $('#form-decline').fadeOut();
@@ -268,4 +271,14 @@ $('.btn-back').click(function(event) {
 function defaultRsvpSubtitle()
 {
     $('#rsvp-subtitle').html('<p class="highway-subhead rsvp-code-ask">Please enter the code from your save the date card!</p> <p>Once registered, you will be able to confirm your RSVP for the wedding and other weekend events, enter guest information, and choose lodging.</p>');
+}
+
+function changeRsvpTitle(type) {
+    var titles = {
+        'yes'     : 'Your RSVP: Yes',
+        'no'      : 'Your RSVP: No',
+        'maybe'   : 'Your RSVP: Maybe',
+        'default' : 'RSVP'
+    };
+    $('#rsvp-section-title').html(titles[type]);
 }
