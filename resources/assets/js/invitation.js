@@ -94,7 +94,7 @@ function submitCode(response)
             $('#form-decline-last-name').val(json.data.invitation.user.last_name);
             $('#form-enter-code').hide();
             $('#form-decline').fadeIn();
-            $('#rsvp-subtitle').html('<p class="highway-subhead">We will miss you!</p>Feel free to write us a message below. Please confirm your contact information just in case we need to get in touch with you. You may come back to this website anytime and enter your code to change your RSVP (deadline is August 1st).');
+            $('#rsvp-subtitle').html('<p class="highway-subhead">We will miss you!</p>Please confirm your contact information just in case we need to get in touch with you. You may come back to this website anytime and enter your code to change your RSVP (deadline is August 1st).');
         }).error(function(json) {
             showErrorMessage(json.responseJSON.message);
             showInvitationCodeError();
