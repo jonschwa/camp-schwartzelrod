@@ -1,16 +1,16 @@
 <form id="form-maybe" action="#" style="display:none;">
     <div class="row">
         <div class="form-group col-md-6">
-            <label for="form-register-first-name">First Name</label>
+            <label for="form-maybe-first-name">First Name</label>
             <input type="text" class="form-control input" id="form-maybe-first-name" name="first-name" placeholder="Enter your first name">
         </div>
         <div class="form-group col-md-6">
-            <label for="form-register-last-name">Last Name</label>
+            <label for="form-maybe-last-name">Last Name</label>
             <input type="text" class="form-control input" id="form-maybe-last-name" name="last-name" placeholder="Enter your last name">
         </div>
     </div>
     <div class="form-group">
-        <label for="form-register-email">Email Address</label>
+        <label for="form-maybe-email">Email Address</label>
         <input type="text" class="form-control input" id="form-maybe-email" name="email" placeholder="Enter your email">
     </div>
     <div class="form-group">

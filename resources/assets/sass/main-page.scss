@@ -263,7 +263,7 @@ img.content-image
    padding-top:10px;
     background: url('/img/groovepaper.png');
     width: 100%; height: 100%;
-    padding: 50px 150px;
+    padding: 50px;
     margin-left: 7px;
   }
 }
@@ -468,6 +468,25 @@ img.content-image
 #rsvp-section
 {
   text-align: center;
+
+  p {
+    width: 80%;
+    margin: auto;
+  }
+  .rsvp-code-ask {
+    font-size:1.7em;
+  }
+
+  .opt-out-form-text {
+    margin-bottom: 10px;
+    p {
+      padding: 5px;
+    }
+  }
+
+  .img-save-the-date {
+    width: 100%;
+  }
 }
 
 //all praise to the great Robert Burch for helping me with these breakpoints

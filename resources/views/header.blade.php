@@ -12,8 +12,10 @@
                         <span class="icon-bar"></span>
                     </button>
                     <span id="hacky-nav-logo-container">
-                        <span id="nav-camp-logo" class="icon-camp-logo-no-text"></span>
-                        <span id="nav-camp-name">Camp<br />Schwartzelrod<span>
+                        <a href="\">
+                            <span id="nav-camp-logo" class="icon-camp-logo-no-text"></span>
+                            <span id="nav-camp-name">Camp<br />Schwartzelrod<span>
+                        </a>
                     </span>
 
                 </div>

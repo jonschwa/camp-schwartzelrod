@@ -43,6 +43,31 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
         return $user;
     }
 
+    public function update($userId, $params)
+    {
+        $user = $this->model->find($userId);
+        $updateParams = [];
+        if(isset($params['first_name'])) {
+            $updateParams['first_name'] = $params['first_name'];
+        }
+        if(isset($params['last_name'])) {
+            $updateParams['last_name'] = $params['last_name'];
+        }
+        if(isset($params['email'])) {
+            $updateParams['email'] = $params['email'];
+        }
+        if(isset($params['phone'])) {
+            $cleanPhone = preg_replace("/[^0-9.]/", "", $params['phone']);
+            $updateParams['phone'] = $cleanPhone;
+        }
+        if(isset($params['contact_preference'])) {
+            $updateParams['contact_preference'] = $params['contact_preference'];
+        }
+
+        $user->update($updateParams);
+        return $user;
+    }
+
     public function addGuest($userId, $params)
     {
         //@todo pass a user object - 1 less query

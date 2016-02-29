@@ -9,6 +9,10 @@ function showFormErrors(errors, form) {
     $.each(errors, function(key, val) {
        console.log(key);
         var formFieldParent = form.find("input[name='"+key+"']").closest('.form-group');
+        if (formFieldParent.length == 0) { //look for a select
+            formFieldParent = form.find("select[name='"+key+"']").closest('.form-group');
+        }
+        console.log(formFieldParent);
         formFieldParent.addClass('has-error');
         formFieldParent.find('.error-label').html(val).show();
     });

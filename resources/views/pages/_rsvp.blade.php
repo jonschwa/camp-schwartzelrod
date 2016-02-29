@@ -7,13 +7,21 @@
     </div>
     <div class="row">
         <div id="code-response-form-container">
-            <p class="clarendon-headline">RSVP</p>
-            @include("rsvp._form-enter-code")
-            @include("rsvp._form-register")
-            @include("rsvp._form-maybe")
-            @include("rsvp._form-decline")
-            @include('rsvp._response-forms')
-            <p><a href="/test_invites">Invitation codes</a></p>
+            <div class="container-fluid">
+                <div class="col-md-8">
+                    <p class="clarendon-headline">RSVP</p>
+                    @include("rsvp._form-enter-code")
+                    @include("rsvp._form-register")
+                    @include("rsvp._form-maybe")
+                    @include("rsvp._form-decline")
+                    @include("rsvp._form-opt-out")
+                    @include('rsvp._response-forms')
+                    <p><a href="/test_invites">Invitation codes</a></p>
+                </div>
+                <div class="col-md-4">
+                    <img class="img-save-the-date" src="/img/std-card-help.png" />
+                </div>
+            </div>
         </div>
     </div>
 </div>

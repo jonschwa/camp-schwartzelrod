@@ -23,7 +23,6 @@ $(window).on("scroll", function() {
     //    toggleNavForm('show');
     //}
 
-
     var ourStoryOffset = $('#our-story-anchor').offset().top -25;
     var weddingInfoOffset = $('#wedding-info-anchor').offset().top -15;
     var vtInfoOffset = $('#vt-info-anchor').offset().top -15;

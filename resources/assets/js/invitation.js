@@ -16,6 +16,10 @@ $('.button-form-enter-code-negative').click(function() {
     submitCode('no');
 });
 
+$('.button-form-enter-code-opt-out').click(function() {
+    submitCode('opt-out');
+});
+
 function submitCode(response)
 {
     hideErrors();
@@ -52,7 +56,7 @@ function submitCode(response)
             $('#form-maybe-first-name').val(json.data.invitation.user.first_name);
             $('#form-maybe-last-name').val(json.data.invitation.user.last_name);
             $('#form-maybe-user-id').val(json.data.invitation.user.id);
-            $('#form-maybe-message').val(json.data.invitation.user.id);
+            //$('#form-maybe-message').val(json.data.invitation.user.id);
             $('#form-enter-code').hide();
             $('#form-maybe').fadeIn();
             $('#rsvp-subtitle').html('<p class="highway-subhead">We get it! No pressure!</p>Please confirm your contact information so we can get in touch when the RSVP deadline rolls around (that\’s August 1st, by the way). You may come back to this website and enter your code to change your RSVP at any time.');
@@ -71,10 +75,37 @@ function submitCode(response)
             //prefill the next form, hide this one, show the next
             //@todo make this less janky, use waypoints
             $('#form-decline-user-id').val(json.data.invitation.user.id);
-            $('#form-decline-message').val(json.data.invitation.user.id);
+            //$('#form-decline-message').val(json.data.invitation.user.id);
             $('#form-enter-code').hide();
             $('#form-decline').fadeIn();
             $('#rsvp-subtitle').html('<p class="highway-subhead">We will miss you!</p>Feel free to write us a message below. You may come back to this website and enter your code to change your RSVP at any time (deadline is August 1st).');
+        }).error(function(json) {
+            showErrorMessage(json.responseJSON.message);
+        });
+    }
+    else if(response == 'opt-out') {
+        if($('#rsvp-code').val() == '') {
+            showErrorMessage('Please enter the code from your save the date!');
+        }
+        $.ajax({
+            url: "/api/invitations/code/" + $('#rsvp-code').val()
+        }).success(function(json) {
+            //prefill the next form, hide this one, show the next
+            //@todo make this less janky, use waypoints
+            $('#form-opt-out-email').val(json.data.invitation.user.email);
+            $('#form-opt-out-first-name').val(json.data.invitation.user.first_name);
+            $('#form-opt-out-last-name').val(json.data.invitation.user.last_name);
+            $('#form-opt-out-user-id').val(json.data.invitation.user.id);
+            $('#form-opt-out-phone').val(json.data.invitation.user.phone);
+            $('#form-enter-code').hide();
+            $('#form-opt-out').fadeIn();
+            $('#rsvp-subtitle').html('<div class="opt-out-form-text">' +
+                                     '<p class="highway-subhead">Are you sure you want to opt out of our awesome website?</p>' +
+                                     '<p>No big deal- We only slaved over it for a few months!</p>'+
+                                     '<p>If all this newfangled internet technology is really too much for you, please '+
+                                     'fill out this form and we will follow up with you within 2 weeks.</p>'+
+                                     '</div>'
+                   );
         }).error(function(json) {
             showErrorMessage(json.responseJSON.message);
         });
@@ -98,6 +129,7 @@ $('#form-decline').submit(function(event) {
         }
     }).success(function(json) {
         $('#form-decline').hide();
+        $('#rsvp-subtitle').hide();
         $('#rsvp-not-coming').fadeIn();
 
     }).error(function(json) {
@@ -117,17 +149,58 @@ $('#form-maybe').submit(function(event) {
         url: "/api/users/" + $('#form-maybe-user-id').val() + '/rsvp/',
         method: "POST",
         data: {
+            "first_name" : $('#form-maybe-first-name').val(),
+            "last_name" : $('#form-maybe-last-name').val(),
+            "email" : $('#form-maybe-email').val(),
             "comment" : $('#form-maybe-comment').val(),
             "will_attend" : -1,
             "num_guests" : 0
         }
     }).success(function(json) {
         $('#form-maybe').hide();
-        $('#rsvp-not-coming').fadeIn();
+        $('#rsvp-subtitle').hide();
+        $('#rsvp-maybe-coming').fadeIn();
 
     }).error(function(json) {
         showErrorMessage(json.responseJSON.message);
         btns.removeClass('disabled');
+    });
+});
+
+
+$('#form-opt-out').submit(function(event) {
+    hideErrors();
+    //disable buttons
+    var btns = $(this).find('.btn');
+    btns.addClass('disabled');
+
+    event.preventDefault();
+    $.ajax({
+        url: "/api/users/" + $('#form-opt-out-user-id').val() + '/rsvp/',
+        method: "POST",
+        data: {
+            "first_name" : $('#form-opt-out-first-name').val(),
+            "last_name" : $('#form-opt-out-last-name').val(),
+            "email" : $('#form-opt-out-email').val(),
+            "phone" : $('#form-opt-out-phone').val(),
+            "contact_preference" : $('#form-opt-out-contact-preference').val(),
+            "comment" : $('#form-opt-out-comment').val(),
+            "will_attend" : -2, //@todo - build a thing for us to check on opt-out guests
+            "num_guests" : 0
+        }
+    }).success(function(json) {
+        console.log(json);
+        var prefContact = json.data.user.contact_preference;
+        $('#preferred-contact-method').html(prefContact);
+        $('#form-opt-out').hide();
+        $('#rsvp-subtitle').hide();
+        $('#rsvp-opted-out').fadeIn();
+
+    }).error(function(json) {
+        showErrorMessage(json.responseJSON.message);
+        btns.removeClass('disabled');
+
+        showFormErrors(json.responseJSON.errors, $('#form-opt-out'));
     });
 });
 
@@ -177,11 +250,12 @@ $('.btn-back').click(function(event) {
         $('#form-register').fadeOut();
         $('#form-maybe').fadeOut();
         $('#form-decline').fadeOut();
+        $('#form-opt-out').fadeOut();
         $('#form-enter-code').fadeIn();
     }
 });
 
 function defaultRsvpSubtitle()
 {
-    $('#rsvp-subtitle').html('Got a code? It\'s your invitation! Enter it to start camp registration:');
+    $('#rsvp-subtitle').html('<p class="highway-subhead rsvp-code-ask">PLEASE ENTER YOUR CODE!</p><p class="highway-subhead">HINT: LOOK UNDER THE MAGNET INSIDE YOUR SAVE THE DATE CARD. </p> <p>Once registered, you will be able to confirm your RSVP for the wedding and other weekend events, enter guest information, and choose lodging.</p>');
 }

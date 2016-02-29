@@ -12,6 +12,8 @@ interface UserRepository
 
     public function activate($userId, $params);
 
+    public function update($userId, $params);
+
     public function addGuest($userId, $params);
 
     public function getUserWithGuests($userId);

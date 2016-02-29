@@ -1,12 +1,14 @@
 <?php namespace App\Repositories\Rsvp;
 
 use App\Rsvp;
+use App\Repositories\User\UserRepository;
 use App\Repositories\AbstractEloquentRepository;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class EloquentRsvpRepository extends AbstractEloquentRepository implements RsvpRepository
 {
     protected $model;
+    protected $user;
 
     public function __construct(Rsvp $model)
     {
