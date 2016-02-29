@@ -1,14 +1,6 @@
 <div id="rsvp-subtitle">
-    <p class="highway-subhead rsvp-code-ask">
-        PLEASE ENTER YOUR CODE!
-    </p>
-    <p class="highway-subhead">
-        HINT: LOOK UNDER THE MAGNET INSIDE YOUR SAVE THE DATE CARD.
-    </p>
-    <p>
-        Once registered, you will be able to confirm your RSVP for the wedding and other weekend events,
-        enter guest information, and choose lodging.
-    </p>
+    <p class="highway-subhead rsvp-code-ask">Please enter the code from your save the date card!</p>
+    <p>Once registered, you will be able to confirm your RSVP for the wedding and other weekend events, enter guest information, and choose lodging.</p>
 </div>
 <form id="form-enter-code" action="#">
         <div class="form-group">

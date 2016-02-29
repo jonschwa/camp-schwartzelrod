@@ -473,15 +473,31 @@ img.content-image
     width: 80%;
     margin: auto;
   }
-  .rsvp-code-ask {
-    font-size:1.7em;
-  }
 
   .opt-out-form-text {
     margin-bottom: 10px;
     p {
       padding: 5px;
     }
+  }
+
+  #rsvp-code {
+    width: 100%;
+  }
+
+  #code-response-container button {
+    margin: 5px 10px;
+  }
+
+  #rsvp-subtitle {
+    .rsvp-code-ask {
+      margin-bottom: 20px;
+    }
+    margin-bottom: 20px;
+  }
+
+  .button-form-enter-code-opt-out {
+    font-size: 0.8em;
   }
 
   .img-save-the-date {
