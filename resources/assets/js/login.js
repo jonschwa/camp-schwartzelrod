@@ -20,6 +20,7 @@ $('#form-login').submit(function(event) {
         showErrorMessage(json.responseJSON.message);
         //@todo highlight validation errs and show messages
         $('#error-flash-container').fadeIn();
+        showFormErrors(json.responseJSON.errors, $('#form-login'));
     });
 });
 
