@@ -18,6 +18,8 @@ interface UserRepository
 
     public function getUserWithGuests($userId);
 
+    public function checkIfEmailIsAvailable($email);
+
     public function getAllUserInfo($userId);
 
     public function syncUserGuests($user, $guests);

@@ -1,6 +1,5 @@
 <?php namespace App\Http\Controllers\Api;
 
-use App\Repositories\Guest\GuestRepository;
 use Auth;
 use Event;
 use Input;
@@ -8,6 +7,7 @@ use Validator;
 use Illuminate\Http\Request;
 use App\Events\UserWasCreated;
 use App\Repositories\User\UserRepository;
+use App\Repositories\Guest\GuestRepository;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class UserController extends ApiController
@@ -27,7 +27,7 @@ class UserController extends ApiController
     protected $activateRules = [
         'first_name'       => 'required|max:30',
         'last_name'        => 'required|max:30',
-        'email'            => 'required|unique:users,email|max:100',
+        'email'            => 'required|max:100',
         'password'         => 'required',
         'password_confirm' => 'required|same:password'
     ];
@@ -77,13 +77,17 @@ class UserController extends ApiController
             return $this->apiErrorResponse('Unable to register', 400, $validator->errors()->toArray());
         }
 
-        if ($user = $this->repo->activate($userId, $request->all())) {
-            Auth::loginUsingId($user->id);
-            Event::fire(new UserWasCreated(['user' => $user]));
-            return $this->apiResponse('User registered and logged in!', $user);
+        if($this->repo->checkIfEmailIsAvailable($request->all()['email'])) {
+            if ($user = $this->repo->activate($userId, $request->all())) {
+                Auth::loginUsingId($user->id);
+                Event::fire(new UserWasCreated(['user' => $user]));
+                return $this->apiResponse('User registered and logged in!', $user);
+            } else {
+                return $this->apiErrorResponse('Error activating user');
+            }
         }
         else {
-            return $this->apiErrorResponse('Error activating user');
+            return $this->apiErrorResponse('Error activating user', 503, ['email' => 'This email is already taken']);
         }
     }
 
