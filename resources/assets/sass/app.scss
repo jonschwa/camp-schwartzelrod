@@ -214,6 +214,13 @@ p.highway-subhead.nav-link
   color: #fff;
 }
 
+p.highway-subhead
+{
+  a {
+    text-decoration: none;
+  }
+}
+
 @media (max-width: 992px) {
   .navbar
   {
