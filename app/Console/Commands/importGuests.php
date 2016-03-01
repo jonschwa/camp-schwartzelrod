@@ -8,7 +8,7 @@ use App\Repositories\User\UserRepository;
 use App\Repositories\Guest\GuestRepository;
 use App\Repositories\Invitation\InvitationRepository;
 
-class importGuests extends Command
+class ImportGuests extends Command
 {
     /**
      * The name and signature of the console command.
