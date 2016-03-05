@@ -36,7 +36,7 @@
                                                         available.</p>
                                                         <p class="txt-centered highway-subhead">Cabin booking coming soon</p>
                                                         <a href="#"><p class="txt-centered highway-subhead">CHECK OUT OUR PHOTOS OF THE CABINS</p></a>
-                                                        '
+                                                        <hr width="60%">'
                                  ]
                              )
                     </div>
@@ -59,11 +59,7 @@
                 </div>
                 <div class="col-md-6 col-sm-6 lodging-options" id="lodging-off-site">
                     <p class="clarendon-headline green">Off-Site Lodging</p>
-                    <p class="option-detail-type grey">If camping isn't your thing, there are lots of places to stay within 1 hour of
-                        camp. Guests staying off-site will be welcome to hang out on the camp property and participate in activities.
-                        Food will only be provided for off-site guests during the Friday BBQ and Saturday reception. Transportation
-                        will not be provided, but there is plenty of parking available. We expect anyone staying off site to make
-                        safe and responsible decisions.
+                    <p class="option-detail-type grey">Guests staying off-site will be welcome to hang out on the camp property and participate in activities throughout the weekend. Food will only be provided during the Friday BBQ and Saturday reception. Transportation will not be provided, but there is plenty of parking available. We expect anyone staying off site to make safe and responsible decisions.
                     </p>
                     <hr class="lodging-header-hr">
                     <div class="option">
@@ -74,9 +70,7 @@
                                     'icon_url'      => '/img/accommodations/airbnb-icon.svg',
                                     'subtitle'      => '<p class="highway-subhead">$140 - $350/night</p>
                                                         <p class="option-subhead">8 minute drive from camp</p>',
-                                    'option_detail' => '<p>We recommend staying at one of the inns on North Hero Island. Both have lake
-                                                           view rooms, restaurants on site, breakfast included with your stay, and lots
-                                                           of lakeside activities. Online booking is available on their websites:</p>
+                                    'option_detail' => '<p class="option-text">We recommend staying at one of the inns on North Hero Island. Both have lake view rooms, a restaurant on site, breakfast included with your stay, and lots of lakeside activities. Online booking is available on their websites:</p>
                                                         <div class="highway-subhead txt-centered">
                                                             <span>
                                                                 <a href="http://www.shoreacres.com" target="_blank">
@@ -96,12 +90,9 @@
                                                             </span>
                                                         </div>
                                                         <br />
-                                                        <p class="option-text">You could also choose one of the many other inns on neighboring islands and across the lake.
-                                                        We recommend staying in Vermont only; even though Plattsburgh, NY, is right across the lake, you
-                                                        would have to take a ferry to camp.</p>
-                                                        <p>We also recommend checking <a href="https://www.airbnb.com/s/North-Hero--VT--United-States?checkin=09%2F09%2F2016&checkout=09%2F11%2F2016&guests=2&zoom=10&search_by_map=true&sw_lat=44.376186833162976&sw_lng=-73.64270654933614&ne_lat=44.99466833264836&ne_lng=-72.96567407863301&ss_id=w0gv53yi" target="_blank">
-                                                        AirBNB listings around North Hero</a>. It’s home away from home!</p>
-                                                        '
+                                                        <p class="option-text">You could also choose one of the many other inns on neighboring islands and across the lake. We also recommend checking <a href="https://www.airbnb.com/s/North-Hero--VT--United-States?checkin=09%2F09%2F2016&checkout=09%2F11%2F2016&guests=2&zoom=10&search_by_map=true&sw_lat=44.376186833162976&sw_lng=-73.64270654933614&ne_lat=44.99466833264836&ne_lng=-72.96567407863301&ss_id=w0gv53yi" target="_blank">
+                                                        AirBNB listings</a> around North Hero. Stay in Vermont only; if you stay in Plattsburgh, NY, you would have to take a ferry to camp.</p>
+                                                        <hr width="60%">'
                                  ]
                              )
                     </div>
@@ -113,7 +104,7 @@
                                     'icon_url'      => '/img/accommodations/hotel-icon.svg',
                                     'subtitle'      => '<p class="highway-subhead">$179/Night</p>
                                                         <p class="option-subhead">35 minute drive from camp</p>',
-                                    'option_detail' => '<p>We have secured a group rate at The Hampton Inn near Burlington for the weekend.
+                                    'option_detail' => '<p class="option-text">We have secured a group rate at The Hampton Inn near Burlington for the weekend.
                                                         There is no minimum stay</p>
                                                         <p class="highway-subhead txt-centered">BOOKING SITE COMING SOON</p><br />
                                                         <p class="option-text">Please let us know on your RSVP form that you’re interested in staying at The Hampton Inn.

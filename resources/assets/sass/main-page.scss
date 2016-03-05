@@ -375,6 +375,7 @@ img.content-image
 
   @media(min-width:0px) {
     border: none;
+    margin-top: 90px;
 
     .inline-option-header {
       margin-left: 0px;
@@ -387,18 +388,24 @@ img.content-image
   }
   @media(min-width:768px) {
     //border-left: 1px solid #acadad;
-    padding:50px;
+    padding-left: 40px;
+    margin-top: 0px;
   }
 }
 
 #lodging-on-site {
   @media(min-width:768px) {
-    //padding-right:40px !important;
-    padding:50px;
+    padding-right:40px !important;
+    padding-right: 40px;
   }
   @media(min-width:0px) {
     padding-right:0px;
   }
+}
+
+hr {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #lodging-info-content {
@@ -437,6 +444,7 @@ img.content-image
 
   #lodging-options-container
   {
+    margin-top: -20px;
     padding:80px;
     text-align: center;
 
@@ -474,12 +482,7 @@ img.content-image
       width: 100%;
       margin:auto;
       color: $grey;
-      text-align: justify;
-
-      @media(min-width:992px) {
-        height: 200px;
-      }
-
+      text-align: center;
     }
 
     .option-text

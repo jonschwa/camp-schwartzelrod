@@ -12,7 +12,7 @@
             </div>
         </div>
     @elseif($column == 'right')
-        <div class="col-md-3 col-lg-3 {{ $column }}-img">
+        <div class="col-md-3 col-lg-2 {{ $column }}-img">
             <img class="option-image img-circle" src="{!! $icon_url !!}" />
         </div>
         <div class="col-md-8 col-lg-8">
