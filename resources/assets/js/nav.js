@@ -14,16 +14,8 @@ function checkMainPage()
 }
 
 $(window).on("scroll", function() {
-    //var scrollPos = $(window).scrollTop();
-    //if (scrollPos >= 40) {
-    //    toggleNavForm('hide');
-    //    hideNavErrors();
-    //}
-    //else if (scrollPos <= 0) {
-    //    toggleNavForm('show');
-    //}
 
-    var ourStoryOffset = $('#our-story-anchor').offset().top;;
+    var ourStoryOffset = $('#our-story-anchor').offset().top - 15;
     var weddingInfoOffset = $('#wedding-info-anchor').offset().top -15;
     var vtInfoOffset = $('#vt-info-anchor').offset().top -15;
     var lodgingInfoOffset = $('#lodging-info-anchor').offset().top -15;
@@ -112,7 +104,6 @@ $('#nav-our-story-link').on('click', function(e){
        e.preventDefault();
        $(this).blur();
    }
-   $('.navbar-toggle').click();
    scrollToAnchor('our-story', 'slow');
 });
 
@@ -121,7 +112,6 @@ $('#nav-wedding-info-link').on('click', function(e){
         e.preventDefault();
         $(this).blur();
     }
-    $('.navbar-toggle').click();
     scrollToAnchor('wedding-info', 'slow');
 });
 
@@ -130,7 +120,6 @@ $('#nav-lodging-info-link').on('click', function(e){
         e.preventDefault();
         $(this).blur();
     }
-    $('.navbar-toggle').click();
     scrollToAnchor('lodging-info', 'slow');
 });
 
@@ -139,7 +128,6 @@ $('#nav-vt-info-link').on('click', function(e){
         e.preventDefault();
         $(this).blur();
     }
-    $('.navbar-toggle').click();
     scrollToAnchor('vt-info', 'slow');
 });
 $('#nav-rsvp-link').on('click', function(e){
@@ -147,7 +135,6 @@ $('#nav-rsvp-link').on('click', function(e){
         e.preventDefault();
         $(this).blur();
     }
-    $('.navbar-toggle').click();
     scrollToAnchor('rsvp', 'slow');
 });
 
