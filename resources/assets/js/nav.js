@@ -150,3 +150,7 @@ $('#nav-rsvp-link').on('click', function(e){
     $('.navbar-toggle').click();
     scrollToAnchor('rsvp', 'slow');
 });
+
+$('#read-more-container').on('click', function(e){
+    scrollToAnchor('our-story', 'slow');
+});

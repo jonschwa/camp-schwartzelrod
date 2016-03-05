@@ -74,11 +74,21 @@ img.content-image
     {
       width: 100%;
     }
+
+    #campsign-container
+    {
+      max-width: 700px;
+    }
   }
   @media(min-width: 992px) {
     #main-page-campsign
     {
       width: 70%;
+    }
+
+    #campsign-container
+    {
+      max-width: 1024px;
     }
   }
 
@@ -97,6 +107,31 @@ img.content-image
   }
 
   //1024
+  #read-more-container
+  {
+    -webkit-transform: rotate(90deg);
+    cursor: pointer;
+  }
+
+  #read-more-chevron
+  {
+    font-size: 90px;
+    //color: $yellow-text;
+    -webkit-animation: bounce .3s infinite alternate;
+    -moz-animation: bounce .3s infinite alternate;
+    animation: bounce .3s infinite alternate;
+    //animation-iteration-count: 10;
+  }
+  @-webkit-keyframes bounce {
+    to { -webkit-transform: translate(5px,0px); }
+  }
+  @-moz-keyframes bounce {
+    to { -webkit-transform: translate(5px,0px); }
+  }
+  @keyframes bounce {
+    to { -webkit-transform: translate(5px,0px); }
+  }
+
 }
 
 .wedding-location
@@ -510,6 +545,18 @@ img.content-image
 
   .img-save-the-date {
     width: 100%;
+  }
+  @media(min-width: 0px) {
+    .img-save-the-date {
+      width: 60%;
+      margin-top: 20px;
+    }
+  }
+
+  @media(min-width: 992px) {
+    .img-save-the-date {
+      width: 100%;
+    }
   }
 }
 
