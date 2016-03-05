@@ -354,7 +354,57 @@ img.content-image
   }
 }
 
+@media(min-width:0px) {
+  .lodging-option-text-container-left {
+    margin-left: 0px;
+  }
+}
+
+@media(min-width:992px) {
+  .lodging-option-text-container-left {
+    margin-left: 40px;
+  }
+}
+
+#lodging-off-site {
+
+  .clarendon-headline {
+    min-width: 355px;
+    text-align: center;
+  }
+
+  @media(min-width:0px) {
+    border: none;
+
+    .inline-option-header {
+      margin-left: 0px;
+    }
+  }
+  @media(min-width:992px) {
+    .inline-option-header {
+      margin-left: -35px;
+    }
+  }
+  @media(min-width:768px) {
+    //border-left: 1px solid #acadad;
+    padding:50px;
+  }
+}
+
+#lodging-on-site {
+  @media(min-width:768px) {
+    //padding-right:40px !important;
+    padding:50px;
+  }
+  @media(min-width:0px) {
+    padding-right:0px;
+  }
+}
+
 #lodging-info-content {
+  .container-fluid {
+    padding-right: 0px;
+  }
   #lodging-header
   {
     position: relative;
@@ -381,10 +431,18 @@ img.content-image
 
   }
 
+  .lodging-options {
+    min-width: 365px;
+  }
+
   #lodging-options-container
   {
     padding:80px;
     text-align: center;
+
+    @media(min-width:0px) {
+      padding: 100px;
+    }
 
     .clarendon-headline
     {
@@ -403,12 +461,32 @@ img.content-image
 
     .option-detail
     {
-      padding:20px;
-      width: 90%;
+      padding:10px;
+      width: 100%;
       margin:auto;
       color: $grey;
+      text-align: justify;
     }
 
+    .option-detail-type
+    {
+      //padding:10px;
+      width: 100%;
+      margin:auto;
+      color: $grey;
+      text-align: justify;
+
+      @media(min-width:992px) {
+        height: 200px;
+      }
+
+    }
+
+    .option-text
+    {
+      color: $grey;
+      text-align: justify;
+    }
     .option-image
     {
       height: 110px;
@@ -561,7 +639,7 @@ img.content-image
 }
 
 //all praise to the great Robert Burch for helping me with these breakpoints
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 992px) {
   .navbar {
     min-width: 320px;
   }
@@ -603,6 +681,7 @@ img.content-image
   }
   #rsvp-section {
     padding: 0 15px;
+    padding-top: 20px;
   }
   #rsvp-section #code-response-form-container { padding: 20px; }
   .button-form-opt-out {
@@ -615,6 +694,8 @@ img.content-image
   #code-response-container button {
     display: block;
     margin: 0 auto 10px;
+    text-align: center;
+    width: 100%;
   }
   #code-response-container button:last-of-type {
     margin-bottom: 0;
@@ -636,3 +717,4 @@ img.content-image
     height: 100%;
   }
 }
+

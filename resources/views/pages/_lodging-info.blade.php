@@ -10,13 +10,14 @@
             <div id="lodging-options-container">
                 <div class="col-md-6 col-sm-6 lodging-options" id="lodging-on-site">
                     <p class="clarendon-headline green">Camp Lodging</p>
-                    <p class="option-detail grey">
+                    <p class="option-detail-type grey">
                         Guests staying at camp will be free to enjoy the entire lakefront property and all the fun
                         activities we have planned. There is no need to drive anywhere and you’ll be right in the
                         center of all the action. Plus, you’ll have an easy stumble to bed after the party!
                         Breakfast and a light lunch will be provided on Saturday.
                         Visit the <a href="http://www.campabnaki.org" target="_blank">Camp Abnaki website</a>
                         for more info, photos, and a virtual tour.</p>
+                    <hr>
                     <div class="option">
                         @include('pages._lodging-option',
                                  [
@@ -26,7 +27,7 @@
                                     'subtitle'      => '<p class="highway-subhead">$200/night</p>
                                                         <p class="option-subhead">Sleeps up to 10 people - fill it with friends for a really affordable
                                                         stay or keep it private</p>',
-                                    'option_detail' => '<p>Get the whole camp experience in a rustic cabin! Each cabin has 4 or 5 bunk beds in one large room
+                                    'option_detail' => '<p class="option-text">Get the whole camp experience in a rustic cabin! Each cabin has 4 or 5 bunk beds in one large room
                                                         with electricity and lights. Sheets, pillows, and towels will be provided. Cabins are arranged in a
                                                         village with 6 cabins, a fire pit, and a separate (but conveniently located!) wash house. Each wash
                                                         house has multiple toilets, sinks, showers, changing areas, and plenty of hot water. The wash houses
@@ -48,22 +49,23 @@
                                     'subtitle'      => '<p class="highway-subhead">$20/person/night</p>
                                                         <p class="option-subhead">Bring your own tent, RV, trailer, hammock, yurt, tipi, build
                                                         a shelter in the woods…</p>',
-                                    'option_detail' => 'If you’re the super adventurous type, feel free to bring your own
+                                    'option_detail' => '<p class="option-text">If you’re the super adventurous type, feel free to bring your own
                                                         lodging and we’ll make sure there’s a place for you to set up.
                                                         You will have access to a shared wash house and the entire camp
-                                                        property. Sheets, pillows, towels, and toiletries will NOT be provided.'
+                                                        property. Sheets, pillows, towels, and toiletries will NOT be provided.</p>'
                                  ]
                              )
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 lodging-options" id="lodging-off-site">
                     <p class="clarendon-headline green">Off-Site Lodging</p>
-                    <p class="option-detail grey">If camping isn't your thing, there are lots of places to stay within 1 hour of
+                    <p class="option-detail-type grey">If camping isn't your thing, there are lots of places to stay within 1 hour of
                         camp. Guests staying off-site will be welcome to hang out on the camp property and participate in activities.
                         Food will only be provided for off-site guests during the Friday BBQ and Saturday reception. Transportation
                         will not be provided, but there is plenty of parking available. We expect anyone staying off site to make
                         safe and responsible decisions.
                     </p>
+                    <hr class="lodging-header-hr">
                     <div class="option">
                         @include('pages._lodging-option',
                                  [
@@ -94,7 +96,7 @@
                                                             </span>
                                                         </div>
                                                         <br />
-                                                        <p>You could also choose one of the many other inns on neighboring islands and across the lake.
+                                                        <p class="option-text">You could also choose one of the many other inns on neighboring islands and across the lake.
                                                         We recommend staying in Vermont only; even though Plattsburgh, NY, is right across the lake, you
                                                         would have to take a ferry to camp.</p>
                                                         <p>We also recommend checking <a href="https://www.airbnb.com/s/North-Hero--VT--United-States?checkin=09%2F09%2F2016&checkout=09%2F11%2F2016&guests=2&zoom=10&search_by_map=true&sw_lat=44.376186833162976&sw_lng=-73.64270654933614&ne_lat=44.99466833264836&ne_lng=-72.96567407863301&ss_id=w0gv53yi" target="_blank">
@@ -114,7 +116,7 @@
                                     'option_detail' => '<p>We have secured a group rate at The Hampton Inn near Burlington for the weekend.
                                                         There is no minimum stay</p>
                                                         <p class="highway-subhead txt-centered">BOOKING SITE COMING SOON</p><br />
-                                                        <p>Please let us know on your RSVP form that you’re interested in staying at The Hampton Inn.
+                                                        <p class="option-text">Please let us know on your RSVP form that you’re interested in staying at The Hampton Inn.
                                                         If enough people want to stay there, we will lock in the group rate and email you instructions to book a room.
                                                         </p>
 
