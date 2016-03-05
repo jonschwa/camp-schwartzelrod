@@ -488,6 +488,17 @@ hr {
     {
       color: $grey;
       text-align: justify;
+
+      p {
+        margin: 0px;
+      }
+
+      @media(min-width:768px) {
+        padding: 0px !important;
+      }
+      @media(min-width:0px) {
+        padding: 40px;
+      }
     }
     .option-image
     {
@@ -546,7 +557,7 @@ hr {
 
         .left-img {
           margin-left: -50px;
-          margin-top: 10px;
+          margin-top: 0px;
         }
         .right-text {
           text-align: left;
@@ -554,7 +565,7 @@ hr {
 
         .right-img {
           margin-right: 0px;
-          margin-top: 10px;
+          margin-top: 0px;
         }
       }
 
