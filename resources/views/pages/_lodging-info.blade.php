@@ -105,12 +105,11 @@
                                     'subtitle'      => '<p class="highway-subhead">$179/Night</p>
                                                         <p class="option-subhead">35 minute drive from camp</p>',
                                     'option_detail' => '<p class="option-text">We have secured a group rate at The Hampton Inn near Burlington for the weekend.
-                                                        There is no minimum stay</p>
+                                                        There is no minimum stay.</p>
                                                         <p class="highway-subhead txt-centered">BOOKING SITE COMING SOON</p><br />
                                                         <p class="option-text">Please let us know on your RSVP form that you’re interested in staying at The Hampton Inn.
                                                         If enough people want to stay there, we will lock in the group rate and email you instructions to book a room.
                                                         </p>
-
                                                         '
                                  ]
                              )
