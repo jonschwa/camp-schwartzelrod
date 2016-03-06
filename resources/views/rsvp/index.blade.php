@@ -44,9 +44,10 @@
     <div id="add-camper-row">
         @include('rsvp._add-camper')
     </div>
-</div>
-@include('rsvp._lodging-selection-form')
-<div id="rsvp-submit-area">
-    <button type="button" class="btn-primary btn btn-lg" id="btn-user-guest-submit">Confirm RSVP</button>
+
+    @include('rsvp._lodging-selection-form')
+    <div id="rsvp-submit-area">
+        <button type="button" class="btn-primary btn btn-lg" id="btn-user-guest-submit">Confirm RSVP</button>
+    </div>
 </div>
 @stop

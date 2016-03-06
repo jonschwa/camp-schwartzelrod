@@ -129,7 +129,7 @@ $trees: url('/img/tree_bark.jpg');
 {
   background: $trees repeat;
   padding: 40px;
-  margin-bottom: 50px;
+  //margin-bottom: 50px;
 }
 
 .guest-rsvp-container
@@ -206,6 +206,7 @@ $trees: url('/img/tree_bark.jpg');
   width: 80%;
 
   .guest-lodging-container {
+    background: #fff;
     margin: auto;
     width: 70%;
     outline: 5px dotted $green;
