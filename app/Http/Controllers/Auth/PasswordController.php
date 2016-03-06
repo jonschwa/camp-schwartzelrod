@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Mail\Message;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class PasswordController extends Controller
 {
@@ -36,19 +38,19 @@ class PasswordController extends Controller
         return view('users.password-reset');
     }
 
-    public function postEmail(Request $request)
+    public function postEmail(\Request $request)
     {
         $this->validate($request, ['email' => 'required|exists:users,email,active,1']);
 
-        $response = Password::sendResetLink($request->only('email'), function (Message $message) {
+        $response = \Password::sendResetLink($request->only('email'), function (Message $message) {
             $message->subject($this->getEmailSubject());
         });
 
         switch ($response) {
-            case Password::RESET_LINK_SENT:
+            case \Password::RESET_LINK_SENT:
                 return redirect()->back()->with('status', trans($response));
 
-            case Password::INVALID_USER:
+            case \Password::INVALID_USER:
                 return redirect()->back()->withErrors(['email' => trans($response)]);
         }
     }
