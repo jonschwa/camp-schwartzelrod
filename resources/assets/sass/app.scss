@@ -370,3 +370,32 @@ a.page-top
     padding-right: 0px;
   }
 }
+
+#password-reset-container {
+  text-align: center;
+  padding: 40px;
+
+  .form-group {
+      @media(min-width: 0px) {
+        width: 100%;
+        input {
+          height: 76px;
+          font-size: 30px;
+        }
+      }
+      @media(min-width: 768px) {
+        width: 60%;
+        input {
+          height: 40px;
+          font-size: 1em;
+        }
+      }
+        margin: auto;
+        margin-bottom: 20px;
+  }
+}
+
+.login-help {
+  margin-top:20px;
+  text-align: center;
+}

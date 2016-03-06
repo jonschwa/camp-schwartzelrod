@@ -28,5 +28,11 @@ class PasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->redirectTo = '/status';
+    }
+
+    public function getEmail()
+    {
+        return view('users.password-reset');
     }
 }

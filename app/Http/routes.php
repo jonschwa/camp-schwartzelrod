@@ -5,9 +5,13 @@ Route::get('test_invites', function() {
     return $i->with('user')->get();
 });
 
-Route::get('test', function() {
-    dd('changed!');
-});
+// Password reset link request routes...
+Route::get('password/recover', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 Route::group(['prefix' => 'api'], function()
 {
