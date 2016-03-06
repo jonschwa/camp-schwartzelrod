@@ -35,4 +35,30 @@ class PasswordController extends Controller
     {
         return view('users.password-reset');
     }
+
+    public function postEmail(Request $request)
+    {
+        $this->validate($request, ['email' => 'required|exists:users,email,active,1']);
+
+        $response = Password::sendResetLink($request->only('email'), function (Message $message) {
+            $message->subject($this->getEmailSubject());
+        });
+
+        switch ($response) {
+            case Password::RESET_LINK_SENT:
+                return redirect()->back()->with('status', trans($response));
+
+            case Password::INVALID_USER:
+                return redirect()->back()->withErrors(['email' => trans($response)]);
+        }
+    }
+
+    public function getReset($token = null)
+    {
+        if (is_null($token)) {
+            throw new NotFoundHttpException;
+        }
+
+        return view('users.password-reset-token-entry')->with('token', $token);
+    }
 }
