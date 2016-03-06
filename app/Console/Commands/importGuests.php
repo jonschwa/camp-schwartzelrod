@@ -63,7 +63,6 @@ class ImportGuests extends Command
                 //$line is an array of the csv elements
                 //dd($line);
                 $guestData = $this->parseGuests(['adults' => $line[17], 'children' => $line[18]]);
-                //dd($guestData);
                 $userName = $this->parseUserName($line[16]);
                 $userEmail = $line[6];
 

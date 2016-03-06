@@ -201,12 +201,14 @@ $('#rsvp-guests-container').on('click', '.cb-activities', function(e) {
 $('#rsvp-guests-container').on('click', '.button-rsvp-remove-guest', function(){
     //hide the button if the number of guests is higher than what the user is allowed
     var maxGuests = $('#maxguests').val();
-    var numGuests = $('.guest-rsvp-container').length;
+    var numGuests = $('.guest-rsvp-container').length - 2;
+
+    updateNumCampers(numGuests);
 
     var guestDiv = $(this).closest('.guest-rsvp-container');
     guestDiv.fadeOut().remove();
 
-    if(maxGuests <= numGuests)
+    if(maxGuests >= numGuests)
     {
         if($('#add-guest-button').is(':visible')) {
             //do nothing
@@ -230,6 +232,8 @@ $('#rsvp-guests-container').on('click', 'input[name="is-child"]', function(){
 $('#button-rsvp-add-guest').on('click', function(e){
     var maxGuests = $('#maxguests').val();
     var numGuests = $('.guest-rsvp-container').length;
+
+    updateNumCampers(numGuests);
 
     //console.log('numGuests: ' + numGuests + ' maxGuests: ' + maxGuests);
     if(numGuests == maxGuests) {
@@ -270,3 +274,14 @@ $('#lodging-selection-form').on('change', '#offsite-lodging-options-select', fun
 
     $(this).closest('.offsite-details').find('.offsite-lodging-feedback').html(additionalInfo);
 });
+
+function updateNumCampers(num)
+{
+    $('#num-campers').html(num);
+    if(num == 1) {
+        $('#camper-label').html('camper');
+    }
+    else {
+        $('#camper-label').html('campers');
+    }
+}

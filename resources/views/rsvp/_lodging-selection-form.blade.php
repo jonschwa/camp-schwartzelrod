@@ -7,7 +7,7 @@
         <div class="container guest-lodging-container">
             <div class="col-md-12">
                 <div class="row guest-form-row">
-                    <p class="highway-subhead txt-centered">Where will your <span id="num-campers">{{ $numGuests }}</span> campers be staying?</p>
+                    <p class="highway-subhead txt-centered">Where will your <span id="num-campers">{{ $numGuests }}</span> <span id="camper-label">@if($numGuests > 1) campers @else camper @endif</span> be staying?</p>
                     <div class="lodging-option-radio-row txt-centered">
                         <label class="radio-inline">
                             <input class="radio-is-staying" type="radio" name="is-staying" @if($guest->is_staying == 1) checked @endif value=true> Staying on site (in a cabin/tent, etc)
