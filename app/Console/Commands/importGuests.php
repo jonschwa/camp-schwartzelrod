@@ -155,6 +155,6 @@ class ImportGuests extends Command
 
     public function generateInviteCode($user)
     {
-        return substr(sha1(time() . $user->first_name . $user->email),0,8);
+        return substr(sha1($user->first_name . $user->email),0,8);
     }
 }

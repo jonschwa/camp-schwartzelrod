@@ -3,7 +3,7 @@
 <head>
 </head>
 <body>
-<img src="{{ URL::to('/img/email-header.jpg') }}" style="width:100%"/>
+<a href="{{ URL::to('/') }}"><img src="{{ URL::to('/img/email-header.jpg') }}" style="width:100%"/></a>
 <div id="email-body">
     @yield("content")
 </div>
