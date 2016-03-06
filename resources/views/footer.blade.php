@@ -27,7 +27,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="credits-block">
-                                <div class="credits-head highway-subhead">Consutants</div>
+                                <div class="credits-head highway-subhead">Consultants</div>
                                 <p>Hope Chu</p>
                                 <p>Bobby Burch</p>
                                 <p>Paul Chamberlain</p>
