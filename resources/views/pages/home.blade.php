@@ -15,4 +15,5 @@
     @include("pages._lodging-info")
     <a id="rsvp-info-anchor"></a>
     @include("pages._rsvp")
+    @include("footer")
 @stop
