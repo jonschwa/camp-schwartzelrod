@@ -6,6 +6,5 @@
   "dependencies": {
     "bootstrap-sass": "^3.3.5",
     "laravel-elixir": "^3.2.8",
-    "vivus": "^0.2.3"
   }
 }
