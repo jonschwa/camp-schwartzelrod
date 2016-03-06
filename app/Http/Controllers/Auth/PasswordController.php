@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Mail\Message;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
-use Illuminate\Mail\Message;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class PasswordController extends Controller
@@ -38,7 +39,7 @@ class PasswordController extends Controller
         return view('users.password-reset');
     }
 
-    public function postEmail(\Request $request)
+    public function postEmail(Request $request)
     {
         $this->validate($request, ['email' => 'required|exists:users,email,active,1']);
 
