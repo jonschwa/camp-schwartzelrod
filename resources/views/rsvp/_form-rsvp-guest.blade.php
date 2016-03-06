@@ -57,7 +57,7 @@
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input name="wedding-attend" type="checkbox" @if($guest->wedding_attend == 1) checked @endif>Our Wedding
+                            <input name="wedding-attend" type="checkbox" @if(is_null($rsvp) || $guest->wedding_attend == 1) checked @endif>Our Wedding
                         </label>
                     </div>
                 </div>

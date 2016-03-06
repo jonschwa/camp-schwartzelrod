@@ -98,7 +98,7 @@ $trees: url('/img/tree_bark.jpg');
 .rsvp-guest-interests {
   background-color: #fff;
   outline: 5px dotted $yellow-text;
-  padding:30px;
+  //padding:30px;
   min-width: 360px;
 
   .clarendon-subhead {
@@ -287,6 +287,10 @@ $trees: url('/img/tree_bark.jpg');
     }
   }
 
+  #rsvp-guest-list {
+    width: 100% !important;
+  }
+
   #rsvp-guests-container
   {
     margin: auto;
@@ -301,17 +305,12 @@ $trees: url('/img/tree_bark.jpg');
     }
   }
 
-  .guest-lodging-container {
-    width: 100%;
-    padding: 0px;
-  }
-
   #lodging-info-form, #lodging-selection-form {
-    width: 100%;
+    width: 97%;
 
     .guest-lodging-container {
       width: 100%;
-      padding: 0px;
+      padding: 20px;
     }
 
     .bunkmates-ask {
@@ -345,6 +344,10 @@ $trees: url('/img/tree_bark.jpg');
     button {
       font-size: 1.2em;
     }
+  }
+
+  #rsvp-guest-list {
+    width: 90% !important;
   }
 
   #rsvp-guests-container
@@ -441,13 +444,14 @@ $trees: url('/img/tree_bark.jpg');
 
 #rsvp-guest-list
 {
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 
 .guest-rsvp-card
 {
-  margin-bottom: 25px;
+  padding: 30px;
+  padding-bottom: 0px;
 }
 
 .rsvp-logo-header
@@ -458,7 +462,7 @@ $trees: url('/img/tree_bark.jpg');
 
 .selected-activities-container
 {
-  padding: 0px 100px;
+  padding: 10px 100px;
 
   .activity-icon-font{
     font-size:40px;
@@ -474,4 +478,9 @@ $trees: url('/img/tree_bark.jpg');
 .unclickable
 {
   color: red !important;
+}
+
+#btn-update-camper-info
+{
+  margin-top:40px;
 }

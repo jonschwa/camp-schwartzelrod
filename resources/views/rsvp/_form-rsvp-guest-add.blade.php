@@ -57,7 +57,7 @@
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input name="wedding-attend" type="checkbox">Our Wedding
+                            <input name="wedding-attend" type="checkbox" checked>Our Wedding
                         </label>
                     </div>
                 </div>

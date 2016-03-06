@@ -61,6 +61,9 @@
                 <p>Your Desired Bunkmates: {{$cabinInfo['bunkmates']}}</p>
             @endif
         @endif
-     @endif
+    @endif
+    @if(!is_null($rsvp))
+        <a href="/rsvp"><button id="btn-update-camper-info" class="button btn-primary btn-lg">Update Camper Info</button></a>
+    @endif
 @stop
 
