@@ -21,6 +21,12 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <meta property="og:title" content="Camp Schwartzelrod" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://camp.schwartzelrods.com" />
+    <meta property="og:image" content="http://camp.schwartzelrods.com/img/email-header.jpg" />
+    <meta property="og:description" content="We are finally getting married!" />
     <title>Camp Schwartzelrod</title>
 </head>
 <body>

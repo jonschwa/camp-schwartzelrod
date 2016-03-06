@@ -16,7 +16,7 @@ function checkMainPage()
 $(window).on("scroll", function() {
 
     if(checkMainPage()) {
-        var ourStoryOffset = $('#our-story-anchor').offset().top - 15;
+        var ourStoryOffset = $('#our-story-anchor').offset().top - 30;
         var weddingInfoOffset = $('#wedding-info-anchor').offset().top - 15;
         var vtInfoOffset = $('#vt-info-anchor').offset().top - 15;
         var lodgingInfoOffset = $('#lodging-info-anchor').offset().top - 15;

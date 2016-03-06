@@ -1,5 +1,6 @@
 var elixir = require('laravel-elixir');
 var gulp = require('gulp');
+var uglify = require('gulp-uglify');
 
 //var sourcestream = require('vinyl-source-stream');
 
@@ -51,5 +52,13 @@ elixir(function(mix) {
                 ],
                 'resources/assets/js/dev-mixed.js'
                 )
-    .browserify('resources/assets/js/dev-mixed.js', 'public/js/main.js');
+    //.browserify('resources/assets/js/dev-mixed.js', 'public/js/main.js');
+    .browserify('resources/assets/js/dev-mixed.js', 'resources/assets/js/main.js');
+    mix.task('compress');
+});
+
+gulp.task('compress', function() {
+    return gulp.src('resources/assets/js/main.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('public/js/'));
 });
