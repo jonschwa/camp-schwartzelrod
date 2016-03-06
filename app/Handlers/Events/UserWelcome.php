@@ -31,7 +31,7 @@ class UserWelcome
     {
         $user = $event->user;
         Mail::send('emails.users.welcome', ['user' => $user], function ($m) use ($user) {
-            $m->to($user->email, $user->name)->subject('Welcome to Camp!');
+            $m->to($user->email, $user->name)->subject('Welcome to Camp Schwartzelrod!');
         });
     }
 }
