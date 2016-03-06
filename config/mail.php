@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'info@schwartzelrods.com', 'name' => 'Jon and Stacey'],
+    'from' => ['address' => 'schwartzelrods@gmail.com', 'name' => 'Jon and Stacey'],
 
     /*
     |--------------------------------------------------------------------------

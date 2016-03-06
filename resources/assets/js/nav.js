@@ -15,55 +15,57 @@ function checkMainPage()
 
 $(window).on("scroll", function() {
 
-    var ourStoryOffset = $('#our-story-anchor').offset().top - 15;
-    var weddingInfoOffset = $('#wedding-info-anchor').offset().top -15;
-    var vtInfoOffset = $('#vt-info-anchor').offset().top -15;
-    var lodgingInfoOffset = $('#lodging-info-anchor').offset().top -15;
-    var rsvpInfoOffset = $('#rsvp-info-anchor').offset().top -15;
+    if(checkMainPage()) {
+        var ourStoryOffset = $('#our-story-anchor').offset().top - 15;
+        var weddingInfoOffset = $('#wedding-info-anchor').offset().top - 15;
+        var vtInfoOffset = $('#vt-info-anchor').offset().top - 15;
+        var lodgingInfoOffset = $('#lodging-info-anchor').offset().top - 15;
+        var rsvpInfoOffset = $('#rsvp-info-anchor').offset().top - 15;
 
-    if ($(window).scrollTop() > ourStoryOffset && $(window).scrollTop() < weddingInfoOffset) {
-        if($('#nav-our-story-link').hasClass('active') == false) {
-            $('#nav-our-story-link').addClass('active');
+        if ($(window).scrollTop() > ourStoryOffset && $(window).scrollTop() < weddingInfoOffset) {
+            if ($('#nav-our-story-link').hasClass('active') == false) {
+                $('#nav-our-story-link').addClass('active');
+            }
         }
-    }
-    else {
-        $('#nav-our-story-link').removeClass('active');
-    }
+        else {
+            $('#nav-our-story-link').removeClass('active');
+        }
 
-    if ($(window).scrollTop() > weddingInfoOffset && $(window).scrollTop() < vtInfoOffset) {
-        if($('#nav-wedding-info-link').hasClass('active') == false) {
-            $('#nav-wedding-info-link').addClass('active');
+        if ($(window).scrollTop() > weddingInfoOffset && $(window).scrollTop() < vtInfoOffset) {
+            if ($('#nav-wedding-info-link').hasClass('active') == false) {
+                $('#nav-wedding-info-link').addClass('active');
+            }
         }
-    }
-    else {
-        $('#nav-wedding-info-link').removeClass('active');
-    }
+        else {
+            $('#nav-wedding-info-link').removeClass('active');
+        }
 
-    if ($(window).scrollTop() > vtInfoOffset && $(window).scrollTop() < lodgingInfoOffset) {
-        if($('#nav-vt-info-link').hasClass('active') == false) {
-            $('#nav-vt-info-link').addClass('active');
+        if ($(window).scrollTop() > vtInfoOffset && $(window).scrollTop() < lodgingInfoOffset) {
+            if ($('#nav-vt-info-link').hasClass('active') == false) {
+                $('#nav-vt-info-link').addClass('active');
+            }
         }
-    }
-    else {
-        $('#nav-vt-info-link').removeClass('active');
-    }
+        else {
+            $('#nav-vt-info-link').removeClass('active');
+        }
 
-    if ($(window).scrollTop() > lodgingInfoOffset && $(window).scrollTop() < rsvpInfoOffset) {
-        if($('#nav-lodging-info-link').hasClass('active') == false) {
-            $('#nav-lodging-info-link').addClass('active');
+        if ($(window).scrollTop() > lodgingInfoOffset && $(window).scrollTop() < rsvpInfoOffset) {
+            if ($('#nav-lodging-info-link').hasClass('active') == false) {
+                $('#nav-lodging-info-link').addClass('active');
+            }
         }
-    }
-    else {
-        $('#nav-lodging-info-link').removeClass('active');
-    }
+        else {
+            $('#nav-lodging-info-link').removeClass('active');
+        }
 
-    if ($(window).scrollTop() > rsvpInfoOffset) {
-        if($('#nav-rsvp-link').hasClass('active') == false) {
-            $('#nav-rsvp-link').addClass('active');
+        if ($(window).scrollTop() > rsvpInfoOffset) {
+            if ($('#nav-rsvp-link').hasClass('active') == false) {
+                $('#nav-rsvp-link').addClass('active');
+            }
         }
-    }
-    else {
-        $('#nav-rsvp-link').removeClass('active');
+        else {
+            $('#nav-rsvp-link').removeClass('active');
+        }
     }
 });
 

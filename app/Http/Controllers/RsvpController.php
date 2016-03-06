@@ -30,8 +30,11 @@ class RsvpController extends Controller
         $lodgingInfo = new Collection;
 
         $lodgingInfo->is_staying = $user->guests->first()->is_staying;
+        $lodgingInfo->in_cabin = $user->guests->first()->in_cabin;
         $lodgingInfo->cabin_adventure_level = $user->guests->first()->cabin_adventure_level;
         $lodgingInfo->desired_bunkmates = $user->guests->first()->desired_bunkmates;
+        $lodgingInfo->byo_plan = $user->guests->first()->byo_plan;
+        $lodgingInfo->hotel_choice = $user->guests->first()->hotel_choice;
 
         return view('rsvp.index', ['user' => $allUserInfo,
                                    'rsvp' => $rsvp,

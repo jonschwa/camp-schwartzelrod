@@ -10,14 +10,17 @@
                     <p class="highway-subhead txt-centered">Where will your <span id="num-campers">{{ $numGuests }}</span> <span id="camper-label">@if($numGuests > 1) campers @else camper @endif</span> be staying?</p>
                     <div class="lodging-option-radio-row txt-centered">
                         <label class="radio-inline">
-                            <input class="radio-is-staying" type="radio" name="is-staying" @if($guest->is_staying == 1) checked @endif value=true> Staying on site (in a cabin/tent, etc)
+                            <input class="radio-is-staying" type="radio" name="is-staying" @if($guest->is_staying == 1 && $guest->in_cabin == 1) checked @endif value=true staying_in="cabin"> Staying at camp (cabin)
+                        </label>
+                        <label class="radio-inline">
+                            <input class="radio-is-staying" type="radio" name="is-staying" @if($guest->is_staying == 1 && $guest->in_cabin == 0) checked @endif value=true staying_in="byo"> Staying at camp (BYO/Tent/RV)
                         </label>
                         <label class="radio-inline">
                             <input class="radio-is-staying" type="radio" name="is-staying" @if($guest->is_staying == 0 && !is_null($rsvp)) checked @endif value=false> Staying elsewhere
                         </label>
                     </div>
                 </div>
-                <div class="cabin-details" @if($guest->is_staying == 0) style="display:none;" @endif >
+                <div class="cabin-details" @if($lodging->is_staying == 0 || $lodging->is_staying == 1 && $lodging->in_cabin == 0) style="display:none;" @endif >
                     <div class="row">
                         <div class="col-md-12">
                             @include('rsvp._cabin-adventure-level')
@@ -34,6 +37,7 @@
                     </div>
                 </div>
                 @include('rsvp._offsite-stay-options')
+                @include('rsvp._byo-plan')
             </div>
         </div>
     </form>
