@@ -3,7 +3,7 @@
     <div id="password-reset-container" class="container-fluid">
         @if (session('status'))
             <div class="alert alert-success">
-                <span class="glyphicon glyphicon-check aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-envelope aria-hidden="true"></span>
                 <span class="success">{{ session('status') }}</span>
             </div>
         @endif
@@ -11,7 +11,7 @@
         <div id="error-flash-container" class="alert alert-danger" role="alert">
             @foreach ($errors->all() as $error)
             <div>
-                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                 <span id="error-flash-message" class="alert-error-text">{{ $error }}</span>
             </div>
             @endforeach
