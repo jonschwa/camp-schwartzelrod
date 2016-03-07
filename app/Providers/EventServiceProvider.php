@@ -16,6 +16,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\UserWasCreated' => [
             'App\Handlers\Events\UserWelcome',
         ],
+        'App\Events\UserRsvped' => [
+            'App\Listeners\Events\UserRsvp',
+        ]
     ];
 
     /**

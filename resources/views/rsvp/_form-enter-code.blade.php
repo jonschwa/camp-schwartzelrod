@@ -5,7 +5,7 @@
 <form id="form-enter-code" action="#">
         <div class="form-group">
             <label class="control-label error-label" for="rsvp-code" style="display:none;"></label>
-            <input type="text" class="form-control giant-input" id="rsvp-code" name="rsvp-code" placeholder="Enter your code here">
+            <input type="text" class="form-control giant-input" id="rsvp-code" name="rsvp-code" placeholder="Enter your code here" @if(!is_null($code))value="{{$code}}"@endif>
         </div>
     <div id="code-response-container">
         <button type="button" class="btn btn-default button-form-enter-code-negative">Sorry, Can't make it</button>

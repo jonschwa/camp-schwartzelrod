@@ -28,11 +28,42 @@ class UserController extends Controller
         $loggedInUser = Auth::user();
         $user = $this->user->getAllUserInfo($loggedInUser->id);
         $rsvp = !is_null($user->rsvp()) ? $user->rsvp()->first(): null;
-        $cabinInfo = [];
-        if($user->guests->first()->is_staying == 1) {
-            $cabinInfo['adventureLevel'] = $user->guests->first()->cabin_adventure_level;
-            $cabinInfo['bunkmates'] = $user->guests->first()->desired_bunkmates;
+        $onSiteInfo = [];
+        $offSiteInfo = [];
+        $hotelChoices = [
+            'hampton-inn' => 'Staying at the Hampton Inn',
+            'shore-acres-inn' => 'Staying at the Shore Acres Inn',
+            'north-hero-house' => 'Staying at the North Hero House',
+            'airbnb' => 'Staying in an AirBNB'
+        ];
+        $cabinAdventureLevels = [
+            1 => 'Private Cabin',
+            2 => 'Shared Cabin',
+            3 => 'Group Cabin',
+            4 => 'Party Cabin'
+        ];
+
+        if($user->guests->first()->is_staying == 0) {
+            $offSiteInfo['hotel_choice'] = $user->guests->first()->hotel_choice;
         }
-        return view('users.home_loggedin', ['user' => $user, 'rsvp' => $rsvp, 'cabinInfo' => $cabinInfo]);
+        if($user->guests->first()->is_staying == 1) {
+            if($user->guests->first()->in_cabin == 1) {
+                $onSiteInfo['staying_in'] = 'cabin';
+                $onSiteInfo['adventureLevel'] = $user->guests->first()->cabin_adventure_level;
+                $onSiteInfo['bunkmates'] = $user->guests->first()->desired_bunkmates;
+            }
+            else {
+                $onSiteInfo['staying_in'] = 'byo';
+                $onSiteInfo['byo_plan'] = $user->guests->first()->byo_plan;
+            }
+        }
+        return view('users.home_loggedin', [
+                                            'user' => $user,
+                                            'rsvp' => $rsvp,
+                                            'onSiteInfo' => $onSiteInfo,
+                                            'offSiteInfo' => $offSiteInfo,
+                                            'hotelChoices' => $hotelChoices,
+                                            'cabinAdventureLevels' =>$cabinAdventureLevels
+                                        ]);
     }
 }

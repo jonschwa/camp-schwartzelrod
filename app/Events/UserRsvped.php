@@ -17,6 +17,9 @@ class UserRsvped extends Event
     public function __construct($data)
     {
         $this->user = $data['user'];
+        $this->isFirstRsvp = $data['isFirstRsvp'];
+        $this->isChangedRsvp = $data['isChangedRsvp'];
+        $this->rsvp = $data['rsvp'];
     }
 
     /**

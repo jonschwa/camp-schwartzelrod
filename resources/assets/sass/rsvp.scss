@@ -442,6 +442,16 @@ $trees: url('/img/tree_bark.jpg');
   text-align: center;
 }
 
+#logged-in-lodging-summary
+{
+  margin-top:40px;
+
+  .cal-icon {
+    font-size: 80px;
+    color: $green;
+  }
+}
+
 #rsvp-guest-list
 {
   width: 90%;

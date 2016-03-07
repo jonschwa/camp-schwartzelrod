@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use Auth;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class PageController extends Controller
@@ -63,7 +64,7 @@ class PageController extends Controller
                 'location' => 'Portland Or &#10132; San Francisco CA'
             ],
             [
-                'date'     => 'July 4 2013',
+                'date'     => 'July 4, 2013',
                 'event'    => 'We\'re Engaged!',
                 'location' => 'Grounds For Sculpture - Hamilton, NJ'
             ],
@@ -91,7 +92,7 @@ class PageController extends Controller
         ];
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $rsvp = $user = null;
         if(Auth::User()) {
@@ -107,6 +108,7 @@ class PageController extends Controller
             'pageContent' => $pageContent,
             'user' => $user,
             'rsvp' => $rsvp,
+            'code' => $request->code
         ]);
     }
 

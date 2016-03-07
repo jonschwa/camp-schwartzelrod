@@ -30,7 +30,7 @@
     </div>
     @if(!is_null($rsvp) && $rsvp->will_attend == 1)
     <div class="container-fluid" id="logged-in-guests-container">
-        <div class="row">
+        <div class="row" id="logged-in-guests-cards">
             <div class="col-md-12">
                 <p class="clarendon-subhead">Guests</p>
                 @if(!is_null($user->guests))
@@ -51,19 +51,10 @@
                 @endif
             </div>
         </div>
-        @if(!empty($cabinInfo))
-            <p class="clarendon-subhead">Cabin</p>
-            <p>Cabin registration is coming soon!</p>
-            @if($cabinInfo['adventureLevel'] > 0)
-                <p>Your Adventure Level: {{$cabinInfo['adventureLevel']}}</p>
-            @endif
-            @if(!is_null($cabinInfo['bunkmates']))
-                <p>Your Desired Bunkmates: {{$cabinInfo['bunkmates']}}</p>
-            @endif
-        @endif
+        @include('rsvp._logged-in-lodging-summary')
     @endif
     @if(!is_null($rsvp))
-        <a href="/rsvp"><button id="btn-update-camper-info" class="button btn-primary btn-lg">Update Camper Info</button></a>
+        <a href="/rsvp"><button id="btn-update-camper-info" class="button btn-primary btn-lg">Update RSVP Info</button></a>
     @endif
 @stop
 

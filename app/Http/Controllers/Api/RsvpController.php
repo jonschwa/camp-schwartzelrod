@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers\Api;
 
+use Event;
 use Validator;
+use App\Events\UserRsvped;
 use Illuminate\Http\Request;
 use App\Repositories\Rsvp\RsvpRepository;
 use App\Repositories\User\UserRepository;
@@ -41,7 +43,13 @@ class RsvpController extends ApiController
     public function store($userId, Request $request)
     {
         $user = $this->user->findById($userId);
+        $isChangedRsvp = $initialRsvp = false;
 
+        $isFirstRsvp = $user->has_rsvped ? false : true;
+
+        if(!$isFirstRsvp) {
+            $initialRsvp = $user->rsvp;
+        }
         if(isset($request->all()['with_user_update'])) {
             $validatorRules = $this->userStoreRules;
         }
@@ -58,10 +66,21 @@ class RsvpController extends ApiController
         $userUpdate = $this->user->update($userId, $params);
 
         if($rsvp = $this->repo->saveRsvp($user, $params)) {
+            if($initialRsvp && !is_null($initialRsvp)) {
+                $isChangedRsvp = $this->checkForRsvpChange($initialRsvp, $rsvp);
+            }
+            Event::fire(new UserRsvped(['user' => $userUpdate,'isFirstRsvp' => $isFirstRsvp, 'rsvp' => $rsvp, 'isChangedRsvp' => $isChangedRsvp]));
             return $this->apiResponse('Thanks for RSVPing!', ['user' => $user, 'rsvp' => $rsvp]);
         }
         else {
             return $this->apiErrorResponse('Something went wrong');
         }
+    }
+
+    private function checkForRsvpChange($initialRsvp, $rsvp) {
+        if($initialRsvp->will_attend != $rsvp->will_attend) {
+            return true;
+        }
+        return false;
     }
 }
