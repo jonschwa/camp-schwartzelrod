@@ -426,6 +426,11 @@ a.page-top
 
   #footer-image {
     margin-top: 65px;
+    img {
+      height: 200px;
+      width: 200px;
+    }
+
     @media(min-width: 992px) {
       padding-left: 30px;
       float: right;

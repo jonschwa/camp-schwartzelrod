@@ -72,7 +72,7 @@
         </div>
         <div class="col-md-3 col-xs-12">
             <div id="footer-image">
-                <img src="http://placehold.it/200x200" class="img-circle">
+                <img src="/img/escher_happytail.png" class="img-circle">
             </div>
         </div>
     </div>

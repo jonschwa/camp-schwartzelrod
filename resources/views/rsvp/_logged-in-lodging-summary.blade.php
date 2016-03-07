@@ -5,7 +5,15 @@
     <p>Cabin registration is coming soon - we will email you when it's ready!</p>
     @if($onSiteInfo['adventureLevel'] > 0)
         <p>Your Cabin Adventure Level&#8482;</p>
-        <div class="icon-cal{{$onSiteInfo['adventureLevel']}}-group cal-icon"></div>
+        @if($onSiteInfo['adventureLevel'] == 1)
+            <div class="icon-cal1-private cal-icon"></div>
+        @elseif($onSiteInfo['adventureLevel'] == 2)
+            <div class="icon-cal2-group cal-icon"></div>
+        @elseif($onSiteInfo['adventureLevel'] == 3)
+            <div class="icon-cal3-group cal-icon"></div>
+        @elseif($onSiteInfo['adventureLevel'] == 4)
+            <div class="icon-cal4-party cal-icon"></div>
+        @endif
         <p class="lodging-cabin-adventure-level-name highway-subhead green">{{$cabinAdventureLevels[$onSiteInfo['adventureLevel']]}}</p>
     @endif
     @if(!is_null($onSiteInfo['bunkmates']))
