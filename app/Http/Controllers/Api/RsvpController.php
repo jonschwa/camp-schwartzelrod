@@ -18,7 +18,7 @@ class RsvpController extends ApiController
         'first_name'         => 'required',
         'last_name'          => 'required',
         'contact_preference' => 'required_if:will_attend,-2',
-        'email'              => 'required',
+        'email'              => 'required_unless:will_attend,-2|required_if:contact_preference,email',
         'phone'              => 'required_if:contact_preference,phone'
     ];
 
