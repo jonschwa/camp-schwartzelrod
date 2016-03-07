@@ -44,7 +44,7 @@
                         </ul>
                     @else
                         <ul class="nav navbar-nav navbar-right">
-                            <li>
+                            <li data-toggle="tooltip" data-placement="left" title="Wait! Make sure you scroll down and read through this page before RSVPing">
                                 <a class="highway-subhead nav-link" href="/#rsvp" id="nav-rsvp-link">RSVP</a>
                             </li>
                             <li>
