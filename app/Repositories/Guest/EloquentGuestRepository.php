@@ -34,18 +34,18 @@ class EloquentGuestRepository extends AbstractEloquentRepository implements Gues
                     'desired_bunkmates' => intval($guest['isStaying']) == 0 ? null : $guest['desiredBunkMates'],
                     'byo_plan' => intval($guest['isStaying']) == 0 ? null : $guest['byoPlan'],
                     'hotel_choice' => intval($guest['isStaying']) == 0 ? $guest['hotelChoice'] : null,
-                    'interested_archery' => intval($guest['archery']),
-                    'interested_swimming' => intval($guest['swimming']),
-                    'interested_boating' => intval($guest['boating']),
-                    'interested_arts_and_crafts' => intval($guest['artsAndCrafts']),
-                    'interested_soccer' => intval($guest['soccer']),
-                    'interested_tennis' => intval($guest['tennis']),
-                    'interested_volleyball' => intval($guest['volleyball']),
-                    'interested_football' => intval($guest['football']),
-                    'interested_frisbee' => intval($guest['frisbee']),
-                    'interested_kickball' => intval($guest['kickball']),
-                    'interested_capture_the_flag' => intval($guest['ctf']),
-                    'interested_scavenger_hunt' => intval($guest['scavengerHunt'])
+                    'interested_archery' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['archery']) : 0,
+                    'interested_swimming' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['swimming']) : 0,
+                    'interested_boating' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['boating']) : 0,
+                    'interested_arts_and_crafts' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['artsAndCrafts']) : 0,
+                    'interested_soccer' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['soccer']) : 0,
+                    'interested_tennis' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ?  intval($guest['tennis']) : 0,
+                    'interested_volleyball' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['volleyball']) : 0,
+                    'interested_football' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['football']) : 0,
+                    'interested_frisbee' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ?  intval($guest['frisbee']) :0,
+                    'interested_kickball' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['kickball']) : 0,
+                    'interested_capture_the_flag' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['ctf']) : 0,
+                    'interested_scavenger_hunt' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['scavengerHunt']) : 0
                 ]);
                 $guests[] = $newGuest->toArray();
             } else {
@@ -66,18 +66,18 @@ class EloquentGuestRepository extends AbstractEloquentRepository implements Gues
                     'desired_bunkmates' => intval($guest['isStaying']) == 0 ? null : $guest['desiredBunkMates'],
                     'byo_plan' => intval($guest['isStaying']) == 0 ? null : $guest['byoPlan'],
                     'hotel_choice' => intval($guest['isStaying']) == 0 ? $guest['hotelChoice'] : null,
-                    'interested_archery' => intval($guest['archery']),
-                    'interested_swimming' => intval($guest['swimming']),
-                    'interested_boating' => intval($guest['boating']),
-                    'interested_arts_and_crafts' => intval($guest['artsAndCrafts']),
-                    'interested_soccer' => intval($guest['soccer']),
-                    'interested_tennis' => intval($guest['tennis']),
-                    'interested_volleyball' => intval($guest['volleyball']),
-                    'interested_football' => intval($guest['football']),
-                    'interested_frisbee' => intval($guest['frisbee']),
-                    'interested_kickball' => intval($guest['kickball']),
-                    'interested_capture_the_flag' => intval($guest['ctf']),
-                    'interested_scavenger_hunt' => intval($guest['scavengerHunt'])
+                    'interested_archery' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['archery']) : 0,
+                    'interested_swimming' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['swimming']) : 0,
+                    'interested_boating' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['boating']) : 0,
+                    'interested_arts_and_crafts' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['artsAndCrafts']) : 0,
+                    'interested_soccer' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['soccer']) : 0,
+                    'interested_tennis' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ?  intval($guest['tennis']) : 0,
+                    'interested_volleyball' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['volleyball']) : 0,
+                    'interested_football' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['football']) : 0,
+                    'interested_frisbee' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ?  intval($guest['frisbee']) :0,
+                    'interested_kickball' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['kickball']) : 0,
+                    'interested_capture_the_flag' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['ctf']) : 0,
+                    'interested_scavenger_hunt' => intval($guest['friCampActivities']) == 1 || intval($guest['satCampActivities']) == 1 ? intval($guest['scavengerHunt']) : 0
                 ]);
                 $existingGuest->save();
                 $guests[] = $existingGuest->toArray();
