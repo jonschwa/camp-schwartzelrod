@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="credits-block">
-                                <div class="credits-head highway-subhead">Lead Developer</div>
+                                <div class="credits-head highway-subhead">Dev Team of One</div>
                                 <p>Jon Schwartz</p>
                             </div>
                         </div>

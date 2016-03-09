@@ -175,6 +175,8 @@ $trees: url('/img/tree_bark.jpg');
     .age-input-label
     {
       font-size: 24px;
+      font-weight: normal;
+      margin-right: 5px;
     }
   }
 
@@ -187,11 +189,6 @@ $trees: url('/img/tree_bark.jpg');
   {
     margin-left:0px;
     padding-top: 10px;
-  }
-
-  .top3-instructions
-  {
-    font-size: 0.8em;
   }
 
   .activities-header
@@ -274,6 +271,12 @@ $trees: url('/img/tree_bark.jpg');
   text-align: center;
   margin: auto;
   padding: 50px;
+}
+
+#btn-user-guest-submit
+{
+  padding: 20px 30px;
+  font-size: 25px!important;
 }
 
 @media (min-width: 0px) {

@@ -5,8 +5,8 @@
         We really hope you can make it! Please let us know by August 1st.
     </p>
     <p>
-        A quick note for future-you - your rsvp code is <strong>{{ $user->invitation->code }}</strong>.
-        Just enter that code again when you decide.
+        A quick note for future-you: Your RSVP code is <strong>{{ $user->invitation->code }}</strong>.
+        Just visit <a href="{{ URL::to('/?code=' . $user->invitation->code) }}#rsvp">camp.schwartzelrods.com</a> and enter that code again if you want to change your RSVP.
     </p>
     <table cellspacing="0" cellpadding="0">
         <tr>
@@ -16,12 +16,13 @@
         </tr>
     </table>
     <p>
-        Maybe joining our <a href="https://www.facebook.com/groups/922948407781596/">Camp Schwartzelrod group on Facebook</a> to meet, mingle, and coordinate with other guests will help sway your decision?
+        Maybe joining our <a href="https://www.facebook.com/groups/922948407781596/">Camp Schwartzelrod group on Facebook</a> will help sway your decision?
     </p>
     <p>
         Questions? Just reply to this email.
     </p>
     <p>
-        -Jon & Stacey
+        Thanks,>br />
+        Jon & Stacey
     </p>
 @stop

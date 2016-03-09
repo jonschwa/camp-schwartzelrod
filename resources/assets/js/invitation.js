@@ -46,7 +46,7 @@ function submitCode(response)
             $('#form-register-user-id').val(json.data.invitation.user.id);
             $('#form-enter-code').hide();
             $('#form-register').fadeIn();
-            $('#rsvp-subtitle').html('<p class="highway-subhead">AWESOME! WE CAN’T WAIT TO CELEBRATE WITH YOU!!</p>Please confirm your information and set a password.');
+            $('#rsvp-subtitle').html('<p class="highway-subhead">AWESOME! WE CAN’T WAIT TO CELEBRATE WITH YOU!</p>Please confirm your information and set a password. You will enter additional guest information on the next page.');
 
         }).error(function (json) {
             showErrorMessage(json.responseJSON.message);
@@ -119,7 +119,7 @@ function submitCode(response)
             $('#rsvp-subtitle').html('<div class="opt-out-form-text">' +
                                      '<p class="highway-subhead">Are you sure you want to opt out of our awesome website?</p>' +
                                      '<p>No big deal... we only slaved over it for a few months!</p>'+
-                                     '<p>If all this newfangled internet technology is really too much for you, please fill out this form and we will ​contact​ you within ​two​ weeks</p>'+
+                                     '<p>If all this newfangled internet technology is really too much for you, please fill out this form and we will ​contact​ you within ​two​ weeks.</p>'+
                                      '</div>'
                    );
         }).error(function(json) {

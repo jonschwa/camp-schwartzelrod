@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <div class="guest-activities">
             <div class="activities-header">
-                <span class="clarendon-subhead">Activities </span>
+                <span class="highway-headline">Activities - </span>
                 <span class="highway-subhead top3-instructions">Pick your top 3!</span>
             </div>
             <div class="row activity-icon-row">

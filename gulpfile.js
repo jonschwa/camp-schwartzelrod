@@ -52,9 +52,9 @@ elixir(function(mix) {
                 ],
                 'resources/assets/js/dev-mixed.js'
                 )
-    //.browserify('resources/assets/js/dev-mixed.js', 'public/js/main.js');
-    .browserify('resources/assets/js/dev-mixed.js', 'resources/assets/js/main.js');
-    mix.task('compress');
+    .browserify('resources/assets/js/dev-mixed.js', 'public/js/main.js');
+    //.browserify('resources/assets/js/dev-mixed.js', 'resources/assets/js/main.js');
+    //.task('compress');
 });
 
 gulp.task('compress', function() {

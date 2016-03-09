@@ -29,6 +29,7 @@
         Questions? Just reply to this email.
     </p>
     <p>
-        -Jon & Stacey
+        Thanks, <br />
+        Jon & Stacey
     </p>
 @stop

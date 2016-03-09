@@ -13,9 +13,12 @@
             so we need to know who is coming, where they’re planning to stay, and what activities they would like to do.
             Lawn games (cornhole, horseshoes, etc.) and sporting equipment (soccer, baseball, tennis, and basketball)
             will definitely be available throughout the weekend. You will not be required to participate in anything if
-            all you want to do is relax and enjoy the scenery! If you have a special skill that you’d like to share with
+            all you want to do is relax and enjoy the scenery!
+        </p>
+        <p>
+            If you have a special skill that you’d like to share with
             other guests (for example: yoga instruction, outdoor survival skills, birdwatching, art) or an activity you’d
-            like to host, please <a href="#">contact us</a> with your idea!
+            like to host, please <a href="mailto:schwartzelrods@gmail.com">contact us</a> with your idea!
         </p>
         @if(is_null($rsvp) || $rsvp->will_attend != 1)
             <p class="highway-subhead txt-centered">PLEASE SUBMIT YOUR RSVP BY AUGUST 1ST<p>

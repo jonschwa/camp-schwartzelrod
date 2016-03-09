@@ -2,12 +2,12 @@
 @section("content")
     <h2>Hey {{ $user->first_name }},</h2>
     <p>
-        That’s a bummer, but we understand. We will miss you! If you change your mind,
-        feel free to make changes until August 1st.
+        That’s a bummer, but we understand. We will miss you!
+        If you change your mind, feel free to make changes until August 1st.
     </p>
     <p>
-        A quick note for future-you - your rsvp code is <strong>{{ $user->invitation->code }}</strong>.
-        Just enter that code in again if things change.
+        A quick note for future-you: Your RSVP code is <strong>{{ $user->invitation->code }}</strong>.
+        Just visit <a href="{{ URL::to('/?code=' . $user->invitation->code) }}#rsvp">camp.schwartzelrods.com</a> and enter that code again if you want to change your RSVP.
     </p>
     <table cellspacing="0" cellpadding="0">
         <tr>
@@ -20,6 +20,7 @@
         Questions? Just reply to this email.
     </p>
     <p>
-        -Jon & Stacey
+        Thanks, <br />
+        Jon & Stacey
     </p>
 @stop

@@ -187,6 +187,12 @@ sup {
     margin-top: 10px;
   }
 }
+.tooltip.bottom .tooltip-inner, .tooltip.top .tooltip-inner {
+  background-color: $brown
+}
+.tooltip.top .tooltip-arrow {
+  border-top-color: $brown;
+}
 
 #camp-navbar-collapse-1
 {

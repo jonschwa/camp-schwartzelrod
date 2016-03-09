@@ -4,7 +4,7 @@
         <div class="form-rsvp-guest-header">
             <div class="row">
                 <div class="col-md-3">
-                    <p class="clarendon-subhead">Camper:</p>
+                    <p class="highway-headline">Camper:</p>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
@@ -21,7 +21,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 form-inline child-age-form" @if($guest->is_adult == 1) style="display:none" @endif>
-                <label class="age-input-label">Age:</label>
+                <label class="highway-headline age-input-label">Age:</label>
                 <div class="form-group">
                     <input class="form-control rsvp-camper-lg-input child-age-input" style="width:50px;" type="text" name="child-age" value="{{ $guest->child_age }}">
                 </div>
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="row guest-form-row">
-            <p class="clarendon-subhead">Events</p>
+            <p class="highway-headline">Events</p>
             <div class="container-fluid">
                 <div class="col-md-6">
                     <div class="checkbox">
@@ -57,7 +57,7 @@
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input name="wedding-attend" type="checkbox" @if(is_null($rsvp) || $guest->wedding_attend == 1) checked @endif>Our Wedding
+                            <input name="wedding-attend" type="checkbox" @if(is_null($rsvp) || $guest->wedding_attend == 1) checked @endif>The Wedding
                         </label>
                     </div>
                 </div>

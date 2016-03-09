@@ -35,7 +35,7 @@
                                                         cabin. Bring your own toiletries, but we’ll make sure there’s plenty of sunscreen and bug spray
                                                         available.</p>
                                                         <p class="txt-centered highway-subhead">Cabin booking coming soon</p>
-                                                        <a href="#"><p class="txt-centered highway-subhead">CHECK OUT OUR PHOTOS OF THE CABINS</p></a>
+                                                        <a href="https://www.facebook.com/media/set/?set=oa.935073049902465&type=1" target="blank"><p class="txt-centered highway-subhead">CHECK OUT OUR PHOTOS OF THE CABINS</p></a>
                                                         <hr width="60%">'
                                  ]
                              )
