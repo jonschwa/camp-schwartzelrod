@@ -112,6 +112,7 @@ $trees: url('/img/tree_bark.jpg');
   background-color: $green;
   border-color: $green;
   cursor: pointer;
+  margin-bottom: 40px;
 }
 
 #button-rsvp-add-guest:hover
@@ -216,6 +217,12 @@ $trees: url('/img/tree_bark.jpg');
     width: 70%;
     outline: 5px dotted $green;
     padding:30px;
+
+    .lodging-option-radio-row {
+      input, label {
+        font-weight: normal;
+      }
+    }
   }
 
   .lodging-option-radio-row {
@@ -445,6 +452,10 @@ $trees: url('/img/tree_bark.jpg');
 #logged-in-lodging-summary
 {
   margin-top:40px;
+
+  .section-head {
+    margin-top: 20px
+  }
 
   .cal-icon {
     font-size: 80px;

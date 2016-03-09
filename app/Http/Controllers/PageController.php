@@ -16,7 +16,7 @@ class PageController extends Controller
         $this->weddingInfoContent = [
             [
                 'title' => 'The Wedding',
-                'subtitle' => 'Saturday September 10th, 2016',
+                'subtitle' => 'Saturday | September 10<sup>th</sup>, 2016',
                 'body' => '<p class="grey">Our wedding will be on Lake Champlain at Camp Abnaki in North Hero, VT. Leave your stilettos and tuxedos at home - this is a more casual affair with the ceremony on grass and reception in the dining hall.</p>',
                 'img'  => 'https://placehold.it/200x200',
                 'post-header' => 'Ceremony: Time TBD<br />
@@ -24,27 +24,27 @@ class PageController extends Controller
             ],
             [
                 'title' => 'The Weekend',
-                'subtitle' => 'Fri Sept 9th - Sun Sept 11th 2016',
+                'subtitle' => 'Friday - Sunday | September 9<sup>th</sup> - 11<sup>th</sup>, 2016',
                 'body' => '<p class="grey">We also invite everyone to enjoy the lakeside camp property with us all weekend! If you\'re adventurous and want to stay with us at camp for the full experience–fantastic! If you can\'t wait to join in the weekend\'s festivities, but prefer to stay off site–no problem! If you\'ll be joining us for just the ceremony and reception–fabulous! We look forward to celebrating with you.</p>',
                 'img'  => 'https://placehold.it/200x200'
             ],
             [
                 'title' => 'Events & Activities',
                 'subtitle' => 'Official Schedule of Events coming soon',
-                'body' => "<p class=\"grey\">We will be hosting a Welcome BBQ on Friday, fun activities throughout the weekend, and, of course, s’mores over the campfire at night.</p>
-                          <p class=\"grey\">Lawn games, sporting equipment, and hiking trails will be available throughout the weekend. You can also just relax and enjoy the scenery!</p>",
+                'body' => "<p class=\"grey\">We will be hosting a Welcome BBQ on Friday, fun activities throughout the weekend, and, of course, s’mores over the campfire at night.
+                          Lawn games, sporting equipment, and hiking trails will be available throughout the weekend. You can also just relax and enjoy the scenery!</p>",
                 'img'  => 'https://placehold.it/200x200'
             ],
         ];
 
         $this->ourStoryContent = [
             [
-                'date'     => 'November 23, 2010',
+                'date'     => 'November 23<sup>rd</sup>, 2010',
                 'event'    => 'First Message',
                 'location' => '97% match on OkCupid'
             ],
             [
-                'date'     => 'December 20, 2010',
+                'date'     => 'December 20<sup>th</sup>, 2010',
                 'event'    => 'First Date',
                 'location' => 'Cheesecake Factory - Bridgewater, NJ'
             ],
@@ -64,7 +64,7 @@ class PageController extends Controller
                 'location' => 'Portland Or &#10132; San Francisco CA'
             ],
             [
-                'date'     => 'July 4, 2013',
+                'date'     => 'July 4<sup>th</sup>, 2013',
                 'event'    => 'We\'re Engaged!',
                 'location' => 'Grounds For Sculpture - Hamilton, NJ'
             ],

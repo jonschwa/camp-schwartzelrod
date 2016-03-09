@@ -13,7 +13,7 @@
                     <p class="clarendon-headline green">Camp Abnaki</p>
                     <p class="highway-subhead">(a.k.a. Camp Schwartzelrod)</p>
                     <div class="content-body">
-                        <p class="grey">Now in its 115th year, Camp Abnaki hosts 750 campers and 70 staff each summer. The 90-acre property features a modern dining hall, four cabin villages, an expansive waterfront, hiking trails, sports fields, skate park, archery range, low ropes course, historic camp buildings, and multiple scenic fire circles.</p>
+                        <p class="grey">Now in its 115<sup>th</sup> year, Camp Abnaki hosts 750 campers and 70 staff each summer. The 90-acre property features a modern dining hall, four cabin villages, an expansive waterfront, hiking trails, sports fields, skate park, archery range, low ropes course, historic camp buildings, and multiple scenic fire circles.</p>
                         <p class="grey">We will have exclusive use of the entire camp property for the whole weekend!</p>
                         <p>
                             <a class="highway-subhead" href="http://www.campabnaki.org/map_of_camp.shtml" target="_blank">Camp Map</a><br />
@@ -32,17 +32,44 @@
                     <div class="content-body">
                         <p class="grey">Camp Abnaki is located in North Hero, VT, one of four towns which make up the Lake Champlain Islands. It is easily accessible by car.</p>
                         <div id="distance-to-camp">
-                            <p>
-                                <span class="highway-subhead">Burlington Airport</span><span class="grey"> 45 minutes</span><br />
-                                <span class="highway-subhead">Plattsburgh Airport</span><span class="grey"> 1 hour, 15 minutes</span><br />
-                                <span class="highway-subhead">Burlington, VT</span><span class="grey"> 45 minutes</span><br />
-                                <span class="highway-subhead">Plattsburgh, NY</span><span class="grey"> 1 hour (or <a href=”http://www.ferries.com/crossing-schedule-rates/grand-isle-to-plattsburgh-ferry” target=”_blank”>take the ferry</a>!)</span><br />
-                                <span class="highway-subhead">Boston, MA</span><span class="grey"> 4 hours</span><br />
-                                <span class="highway-subhead">Ithaca, NY</span><span class="grey"> 6 hours</span><br />
-                                <span class="highway-subhead">New York, NY</span><span class="grey"> 6 hours</span><br />
-                                <span class="highway-subhead">Washington, DC</span><span class="grey"> 9.5 hours</span><br />
-                                <span class="highway-subhead">Montreal, Canada</span><span class="grey"> 1.5 hours</span>
-                            </p>
+                                {{--<span class="highway-subhead">Burlington Airport</span><span class="grey"> 45 minutes</span><br />--}}
+                                {{--<span class="highway-subhead">Plattsburgh Airport</span><span class="grey"> 1 hour, 15 minutes</span><br />--}}
+                                {{--<span class="highway-subhead">Burlington, VT</span><span class="grey"> 45 minutes</span><br />--}}
+                                {{--<span class="highway-subhead">Plattsburgh, NY</span><span class="grey"> 1 hour (or <a href='http://www.ferries.com/crossing-schedule-rates/grand-isle-to-plattsburgh-ferry' target='_blank'>take the ferry</a>!)</span><br />--}}
+                                {{--<span class="highway-subhead">Boston, MA</span><span class="grey"> 4 hours</span><br />--}}
+                                {{--<span class="highway-subhead">Ithaca, NY</span><span class="grey"> 6 hours</span><br />--}}
+                                {{--<span class="highway-subhead">New York, NY</span><span class="grey"> 6 hours</span><br />--}}
+                                {{--<span class="highway-subhead">Washington, DC</span><span class="grey"> 9.5 hours</span><br />--}}
+                                {{--<span class="highway-subhead">Montreal, Canada</span><span class="grey"> 1.5 hours</span>--}}
+                            <table>
+                                <tr>
+                                    <td class="highway-subhead">Burlington Airport</td><td class="grey"> 45 minutes</td>
+                                </tr>
+                                <tr>
+                                    <td class="highway-subhead">Plattsburgh Airport</td><td class="grey"> 1 hour, 15 minutes</td>
+                                </tr>
+                                <tr>
+                                    <td class="highway-subhead">Burlington, VT</td><td class="grey"> 45 minutes</td>
+                                </tr>
+                                <tr>
+                                    <td class="highway-subhead">Plattsburgh, NY</td><td class="grey"> 1 hour (or <a href='http://www.ferries.com/crossing-schedule-rates/grand-isle-to-plattsburgh-ferry' target='_blank'>take the ferry</a>!)</td>
+                                </tr>
+                                <tr>
+                                    <td class="highway-subhead">Boston, MA</td><td class="grey"> 4 hours</td>
+                                </tr>
+                                <tr>
+                                    <td class="highway-subhead">Ithaca, NY</td><td class="grey"> 6 hours</td>
+                                </tr>
+                                <tr>
+                                    <td class="highway-subhead">New York, NY</td><td class="grey"> 6 hours</td>
+                                </tr>
+                                <tr>
+                                    <td class="highway-subhead">Washington, DC</td><td class="grey"> 9.5 hours</td>
+                                </tr>
+                                <tr>
+                                    <td class="highway-subhead">Montreal, Canada</td><td class="grey"> 1.5 hours</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>

@@ -34,7 +34,8 @@ class UserController extends Controller
             'hampton-inn' => 'Staying at the Hampton Inn',
             'shore-acres-inn' => 'Staying at the Shore Acres Inn',
             'north-hero-house' => 'Staying at the North Hero House',
-            'airbnb' => 'Staying in an AirBNB'
+            'airbnb' => 'Staying in an AirBNB',
+            'other'  => 'Other/Not Sure Yet'
         ];
         $cabinAdventureLevels = [
             1 => 'Private Cabin',

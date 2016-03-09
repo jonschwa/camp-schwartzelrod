@@ -15,6 +15,7 @@
                         Having trouble logging in?
                     </p>
                     <p>Click <a href="/password/recover">here</a> to reset your password.</p>
+                    <p>Still having trouble? <a href="mailto:schwartzelrods@gmail.com">Contact us</a>.</p>
                 </div>
             </div>
         </div>

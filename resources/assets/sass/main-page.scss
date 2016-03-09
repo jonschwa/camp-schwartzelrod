@@ -350,6 +350,22 @@ img.content-image
   }
   #distance-to-camp
   {
+    width: 100%;
+    table {
+      width: 100%;
+      margin: 0 auto;
+    }
+    td {
+      text-align: left;
+      width: 50%;
+    }
+    td.grey {
+      padding-left:5px;
+    }
+    td.highway-subhead {
+      text-align:right;
+      padding-right: 5px;
+    }
     .grey {
       margin-left: 3px;
     }

@@ -12,9 +12,10 @@
                 </p>
                 <p>
                     @if(is_null($rsvp))
-                        <p>You haven't rsvped yet. <a href="/rsvp">Do it now!</a></p>
+                        <p class="highway-subhead">You haven’t submitted your RSVP yet.</p>
+                        <a href="/rsvp"><button id="btn-update-camper-info" class="button btn-primary btn-lg">RSVP Now!</button></a>
                     @else
-                        <p>
+                        <p class="highway-subhead">
                             @if($rsvp->will_attend == 1)
                                 We can't wait to see you!
                             @elseif($rsvp->will_attend == 0)
@@ -23,6 +24,7 @@
                                 You can click <a href="/rsvp">here</a> to RSVP
                             @endif
                         </p>
+                        <a href="/rsvp"><button id="btn-update-camper-info" class="button btn-primary btn-lg">Edit RSVP</button></a>
                     @endif
                 </p>
             </div>
@@ -32,10 +34,9 @@
     <div class="container-fluid" id="logged-in-guests-container">
         <div class="row" id="logged-in-guests-cards">
             <div class="col-md-12">
-                <p class="clarendon-subhead">Guests</p>
+                <p class="clarendon-subhead">Campers</p>
                 @if(!is_null($user->guests))
                     <div id="rsvp-guest-list">
-                        <p>Here are the guests that you have said are coming. If you need to modify this, click <a href="/rsvp">here</a>.
                         @foreach($user->guests as $key => $guest)
                             @if($key == 0 || $key == 2 || $key == 4)
                                 <div class="row">
@@ -52,9 +53,6 @@
             </div>
         </div>
         @include('rsvp._logged-in-lodging-summary')
-    @endif
-    @if(!is_null($rsvp))
-        <a href="/rsvp"><button id="btn-update-camper-info" class="button btn-primary btn-lg">Update RSVP Info</button></a>
     @endif
 @stop
 
