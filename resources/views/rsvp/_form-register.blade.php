@@ -2,10 +2,12 @@
     <div class="row">
         <div class="form-group col-md-6">
             <label for="form-register-first-name">First Name<span class="form-required">*</span></label>
+            <label class="control-label error-label" for="form-register-first-name" style="display:none;"></label>
             <input type="text" class="form-control input" id="form-register-first-name" name="first-name" placeholder="Enter your first name">
         </div>
         <div class="form-group col-md-6">
             <label for="form-register-last-name">Last Name<span class="form-required">*</span></label>
+            <label class="control-label error-label" for="form-register-last-name" style="display:none;"></label>
             <input type="text" class="form-control input" id="form-register-last-name" name="last-name" placeholder="Enter your last name">
         </div>
     </div>

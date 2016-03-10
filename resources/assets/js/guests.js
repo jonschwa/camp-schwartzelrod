@@ -38,7 +38,6 @@ $('#btn-user-guest-submit').on('click', function() {
     var userGuests = generateRequestBody(guestFormData);
 
     validateGuests(userGuests);
-    return false;
     //console.log(userGuests);
     $.ajax({
         url: "/api/users/" + userId + "/guests",
