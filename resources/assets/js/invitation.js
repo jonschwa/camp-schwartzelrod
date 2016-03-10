@@ -1,7 +1,7 @@
 function hideErrors()
 {
     $('#error-flash-container').fadeOut();
-    $('#form-enter-code').find('.form-group').removeClass('has-error');
+    $('#code-response-form-container').find('.form-group').removeClass('has-error');
     $('.error-label').hide();
 }
 
@@ -230,7 +230,7 @@ $('#form-opt-out').submit(function(event) {
 });
 
 $('#form-register').submit(function(event) {
-
+    hideErrors();
     //disable buttons
     var btns = $(this).find('.btn');
     btns.addClass('disabled');

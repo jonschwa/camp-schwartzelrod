@@ -18,8 +18,27 @@ class RsvpController extends ApiController
         'first_name'         => 'required',
         'last_name'          => 'required',
         'contact_preference' => 'required_if:will_attend,-2',
-        'email'              => 'required_if:will_attend,0,-1|required_if:contact_preference,email',
-        'phone'              => 'required_if:contact_preference,phone'
+        'email'              => ['required|email'],
+    ];
+
+    protected $optOutRules = [
+        'will_attend'        => 'required|in:-2,-1,1,0',
+        'first_name'         => 'required',
+        'last_name'          => 'required',
+        'contact_preference' => 'required_if:will_attend,-2',
+        'email'              => 'email|required_if:contact_preference,email',
+        'phone'              => ['required_if:contact_preference,phone','regex:/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/']
+    ];
+
+    protected $optOutMessages = [
+        'email.required_if' => 'We will need your email to contact you!',
+        'phone.required_if' => 'We will need your phone number to call you!',
+        'contact_preference.required_if' => 'Required',
+        'first_name.required' => 'Required',
+        'last_name.required' => 'Required',
+        'phone.regex' => 'Invalid phone number',
+        'email.email' => 'Invalid email',
+        'email.required' => 'Required'
     ];
 
     protected $storeRules = [
@@ -28,7 +47,8 @@ class RsvpController extends ApiController
     ];
 
     protected $storeRulesMessages = [
-        'email.required' => 'We need your email!',
+        'email.required' => 'Required',
+        'email.required_if' => 'Required',
         'phone.required_if' => 'We will need your phone number to call you!',
         'contact_preference.required_if' => 'Please let us know how to contact you.',
         'first_name.required' => 'We need your first name',
@@ -52,17 +72,29 @@ class RsvpController extends ApiController
         }
         if(isset($request->all()['with_user_update'])) {
             $validatorRules = $this->userStoreRules;
+            $validatorMessages = $this->storeRulesMessages;
         }
         else {
             $validatorRules = $this->storeRules;
+            $validatorMessages = $this->storeRulesMessages;
         }
 
-        $validator = Validator::make($request->all(), $validatorRules, $this->storeRulesMessages);
+        if(isset($request->all()['will_attend']) && $request->all()['will_attend'] == -2) {
+            $validatorRules = $this->optOutRules;
+            $validatorMessages = $this->optOutMessages;
+        }
+
+        $validator = Validator::make($request->all(), $validatorRules, $validatorMessages);
         if ($validator->fails()) {
             return $this->apiErrorResponse('Unable to RSVP', 503, $validator->errors()->toArray());
         }
         $params = $request->all();
 
+        if(isset($params['email'])) {
+            if($this->user->checkIfEmailIsAvailable($params['email'], $user) == false){
+                return $this->apiErrorResponse('Unable to RSVP', 503, ['email' => 'This email is already taken']);
+            }
+        }
         $userUpdate = $this->user->update($userId, $params);
 
         if($rsvp = $this->repo->saveRsvp($user, $params)) {

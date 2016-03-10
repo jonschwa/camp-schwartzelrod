@@ -1,18 +1,18 @@
 <form id="form-decline" action="#" style="display:none">
     <div class="row">
         <div class="form-group col-md-6">
-            <label for="form-decline-first-name">First Name</label>
+            <label for="form-decline-first-name">First Name<span class="form-required">*</span></label>
             <label class="control-label error-label" for="form-decline-first-name" style="display:none;"></label>
             <input type="text" class="form-control input" id="form-decline-first-name" name="first-name" placeholder="Enter your first name">
         </div>
         <div class="form-group col-md-6">
-            <label for="form-decline-last-name">Last Name</label>
+            <label for="form-decline-last-name">Last Name<span class="form-required">*</span></label>
             <label class="control-label error-label" for="form-decline-last-name" style="display:none;"></label>
             <input type="text" class="form-control input" id="form-decline-last-name" name="last-name" placeholder="Enter your last name">
         </div>
     </div>
     <div class="form-group">
-        <label for="form-decline-email">Email Address</label>
+        <label for="form-decline-email">Email Address<span class="form-required">*</span></label>
         <label class="control-label error-label" for="form-decline-email" style="display:none;"></label>
         <input type="text" class="form-control input" id="form-decline-email" name="email" placeholder="Enter your email">
     </div>

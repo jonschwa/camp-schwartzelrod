@@ -103,13 +103,21 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
         dd($guests);
     }
 
-    public function checkIfEmailIsAvailable($email)
+    public function checkIfEmailIsAvailable($email, $user=false)
     {
         $activeUserWithEmail = $this->model->where('email', '=', $email)
                                            ->where('active', '=', 1)
                                            ->get();
         if($activeUserWithEmail->count() > 0) {
-            return false;
+            \Log::info($activeUserWithEmail->count());
+            if($user == false) {
+                return false;
+            }
+            else {
+                if($activeUserWithEmail->first()->id != $user->id) {
+                    return false;
+                }
+            }
         }
 
         return true;

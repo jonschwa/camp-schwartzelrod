@@ -18,7 +18,7 @@ interface UserRepository
 
     public function getUserWithGuests($userId);
 
-    public function checkIfEmailIsAvailable($email);
+    public function checkIfEmailIsAvailable($email, $user=false);
 
     public function getAllUserInfo($userId);
 

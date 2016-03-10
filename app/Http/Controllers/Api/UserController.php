@@ -15,19 +15,24 @@ class UserController extends ApiController
     protected $storeRules = [
         'first_name'       => 'required|max:30',
         'last_name'        => 'required|max:30',
-        'email'            => 'required|unique:users,email|max:100',
+        'email'            => 'required|unique:users,email|max:100|email',
         'password'         => 'required',
         'password_confirm' => 'required|same:password'
     ];
 
     protected $storeMessages = [
-
+        'password_confirm.same' => 'The password and password confirm must match',
+        'email.required' => 'Required',
+        'first_name.required' => 'Required',
+        'last_name.required' => 'Required',
+        'password.required' => 'Required',
+        'password_confirm.required' => 'Required',
     ];
 
     protected $activateRules = [
         'first_name'       => 'required|max:30',
         'last_name'        => 'required|max:30',
-        'email'            => 'required|max:100',
+        'email'            => 'required|max:100|email',
         'password'         => 'required',
         'password_confirm' => 'required|same:password'
     ];
@@ -54,7 +59,7 @@ class UserController extends ApiController
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), $this->storeRules);
+        $validator = Validator::make($request->all(), $this->storeRules, $this->storeMessages);
         if ($validator->fails()) {
             return $this->apiErrorResponse('Unable to register', $validator->errors()->toArray());
         }
@@ -72,7 +77,7 @@ class UserController extends ApiController
             return $this->apiErrorResponse('User not found', 404);
         }
 
-        $validator = Validator::make($request->all(), $this->activateRules);
+        $validator = Validator::make($request->all(), $this->activateRules, $this->storeMessages);
         if ($validator->fails()) {
             return $this->apiErrorResponse('Unable to register', 400, $validator->errors()->toArray());
         }
