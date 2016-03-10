@@ -65,6 +65,7 @@ class ImportGuests extends Command
                 $guestData = $this->parseGuests(['adults' => $line[17], 'children' => $line[18]]);
                 $userName = $this->parseUserName($line[16]);
                 $userEmail = $line[6];
+                $maxNumGuests = intval($line[3]) + intval($line[4]);
 
                 $userData = [
                     'first_name' => $userName['first'],
@@ -72,7 +73,7 @@ class ImportGuests extends Command
                     'email'      => empty($userEmail) ? null : $userEmail,
                     'password'   => Hash::make('password'),
                     //'active'     => false,
-                    'max_guests' => $guestData['total']
+                    'max_guests' => $maxNumGuests
                 ];
 
                 $this->info('@@@@@@@@@@@    creating user: '.$userData['email'] .'    @@@@@@@@@@@');
