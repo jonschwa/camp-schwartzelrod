@@ -8,6 +8,13 @@ function showFormErrors(errors, form) {
     console.log(errors);
     $.each(errors, function(key, val) {
        console.log(key);
+        if(key == 'first_name') {
+            key = 'first-name';
+        }
+        if(key == 'last_name') {
+            key = 'last-name';
+        }
+        console.log(key);
         var formFieldParent = form.find("input[name='"+key+"']").closest('.form-group');
         if (formFieldParent.length == 0) { //look for a select
             formFieldParent = form.find("select[name='"+key+"']").closest('.form-group');

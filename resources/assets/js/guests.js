@@ -37,6 +37,8 @@ $('#btn-user-guest-submit').on('click', function() {
     var userId = $('#userid').val();
     var userGuests = generateRequestBody(guestFormData);
 
+    validateGuests(userGuests);
+    return false;
     //console.log(userGuests);
     $.ajax({
         url: "/api/users/" + userId + "/guests",
@@ -308,4 +310,9 @@ function updateNumCampers(num)
     else {
         $('#camper-label').html('campers');
     }
+}
+
+function validateGuests(userGuests) {
+    console.log(userGuests);
+    return false;
 }

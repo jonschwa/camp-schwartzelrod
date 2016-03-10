@@ -209,7 +209,7 @@ $('#form-opt-out').submit(function(event) {
             "phone" : $('#form-opt-out-phone').val(),
             "contact_preference" : $('#form-opt-out-contact-preference').val(),
             "comment" : $('#form-opt-out-comment').val(),
-            "will_attend" : -2, //@todo - build a thing for us to check on opt-out guests
+            "will_attend" : -2,
             "with_user_update" : 1,
             "num_guests" : 0
         }

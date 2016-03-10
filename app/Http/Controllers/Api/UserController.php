@@ -38,7 +38,7 @@ class UserController extends ApiController
     ];
 
     protected $loginRules = [
-        'email'            => 'required|exists:users,email',
+        'email'            => 'required|exists:users,email|email',
         'password'         => 'required',
     ];
 

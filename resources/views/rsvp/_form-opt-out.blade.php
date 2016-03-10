@@ -3,12 +3,12 @@
         <div class="form-group col-md-6">
             <label for="form-opt-out-first-name">First Name<span class="form-required">*</span></label>
             <label class="control-label error-label" for="form-opt-out-first-name" style="display:none;"></label>
-            <input type="text" class="form-control input" id="form-opt-out-first-name" name="first_name" placeholder="Enter your first name">
+            <input type="text" class="form-control input" id="form-opt-out-first-name" name="first-name" placeholder="Enter your first name">
         </div>
         <div class="form-group col-md-6">
             <label for="form-opt-out-last-name">Last Name<span class="form-required">*</span></label>
             <label class="control-label error-label" for="form-opt-out-last-name" style="display:none;"></label>
-            <input type="text" class="form-control input" id="form-opt-out-last-name" name="last_name" placeholder="Enter your last name">
+            <input type="text" class="form-control input" id="form-opt-out-last-name" name="last-name" placeholder="Enter your last name">
         </div>
     </div>
     <div class="row">
