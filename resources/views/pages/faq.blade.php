@@ -18,10 +18,9 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="question highway-subhead txt-centered">What should I wear?</div>
+                            <div class="question highway-subhead txt-centered">How do I get to the wedding?</div>
                             <div class="answer">
-                                <p><strong>For men:</strong> Jacket and tie not required, but feel free to jazz it up if you want! Jeans aren’t cool, but a tuxedo is overkill.</p>
-                                <p><strong>For women:</strong> Wear practical shoes! Avoid shoes with a heel, particularly a stiletto. Flat shoes, boots, or low wedges are your best bet.</p>
+                                <p>If you’re staying on the camp property, just roll out of bed (we recommend the ladder if you’re on a top bunk). If you’re staying off-site, you can drive to the camp and park in the designated lot. We recommend using <a href="https://www.google.com/maps/dir//YMCA+Camp+Abnaki,+1252+Abnaki+Rd,+North+Hero,+VT+05474/@44.766335,-73.3120637,17z/data=!4m13!1m4!3m3!1s0x4cca3d8d3348bc7b:0xe882e8adb68df88d!2sYMCA+Camp+Abnaki!3b1!4m7!1m0!1m5!1m1!1s0x4cca3d8d3348bc7b:0xe882e8adb68df88d!2m2!1d-73.309875!2d44.766335" target="_blank">Google Maps</a>.</p>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -32,16 +31,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="question highway-subhead txt-centered">How do I get to the wedding?</div>
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <div class="question highway-subhead txt-centered">What should I wear?</div>
                             <div class="answer">
-                                <p>If you’re staying on the camp property, just roll out of bed (we recommend the ladder if you’re on a top bunk). If you’re staying off-site, you can drive to the camp and park in the designated lot. We recommend using Google Maps.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="question highway-subhead txt-centered">Do you have a registry?</div>
-                            <div class="answer">
-                                <p>Coming soon!</p>
+                                <p><strong>For men:</strong> Jacket and tie not required, but feel free to jazz it up if you want! Jeans aren’t cool, but a tuxedo is overkill.</p>
+                                <p><strong>For women:</strong> Wear practical shoes! You’ll be walking on grass a lot so flats, boots, or low wedges are your best bet. Cocktail dresses and sun dresses are perfect. Don’t forget a light sweater just in case it gets chilly at night.</p>
                             </div>
                         </div>
                     </div>
@@ -98,6 +92,16 @@
                                 <p>Jon combined his incredible web development skills with Stacey’s ability to point at things and say what color they should be to create this entire website from scratch. But seriously, it was a major team effort and we’re incredibly proud to share this with everyone.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <hr width="80%">
+                <div class="faq-question-section" id="contact">
+                    <div class="row">
+                        <p class="highway-subhead txt-centered">Additional Questions? <a href="mailto:schwartzelrods@gmail.com">Contact Us!</a></p>
+
+                    </div>
+                    <div>
+
                     </div>
                 </div>
             </div>

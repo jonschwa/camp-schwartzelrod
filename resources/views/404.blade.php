@@ -10,7 +10,7 @@
                 <img class="img-circle" src="/img/escher-computer.jpg" />
             </div>
             <div class="col-sm-4 col-xs-4">
-                <img class="img-circle" src="img/lola-computer.jpg" />
+                <img class="img-circle" src="/img/lola-computer.jpg" />
             </div>
         </div>
         <div class="row">
