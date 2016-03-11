@@ -38,6 +38,7 @@ $('#btn-user-guest-submit').on('click', function() {
     var userGuests = generateRequestBody(guestFormData);
 
     validateGuests(userGuests);
+    return false;
     //console.log(userGuests);
     $.ajax({
         url: "/api/users/" + userId + "/guests",
@@ -312,6 +313,18 @@ function updateNumCampers(num)
 }
 
 function validateGuests(userGuests) {
-    console.log(userGuests);
+    //console.log(userGuests);
+    var visibleGuestForms = $('div.guest-rsvp-container').not('.blank');
+
+    //userGuests
+
+    for (var key in userGuests) {
+        if (userGuests.hasOwnProperty(key)) {
+            //console.log(userGuests[key].guestId);
+            //console.log('form ' + guestForm);
+            $(visibleGuestForms[0]).fadeOut();
+        }
+    }
+
     return false;
 }

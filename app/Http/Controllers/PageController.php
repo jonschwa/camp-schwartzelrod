@@ -117,4 +117,9 @@ class PageController extends Controller
         return view('rsvp.opt-out');
     }
 
+    public function faq()
+    {
+        return view('pages.faq');
+    }
+
 }

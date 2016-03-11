@@ -442,16 +442,15 @@ a.page-top
       height: 200px;
       width: 200px;
     }
-
-    @media(min-width: 992px) {
-      padding-left: 30px;
-      float: right;
-    }
     @media(min-width: 0px) {
       text-align: center;
       float:none;
       padding: 0px;
       margin-left: -35px;
+    }
+    @media(min-width: 992px) {
+      padding-left: 30px;
+      float: right;
     }
   }
 
@@ -475,5 +474,67 @@ a.page-top
   #footer-links {
     margin-top:30px;
     font-size: 1.4em;
+  }
+}
+
+#faq-container
+{
+  padding:40px;
+  width: 80%;
+  margin: auto auto;
+  #faq-escher {
+    height: 175px;
+    width: 175px;
+  }
+
+  #faq-header {
+  }
+
+  .faq-question-section {
+    .clarendon-subhead {
+      padding: 40px;
+      padding-top: 0px;
+    }
+    .question {
+
+    }
+    .answer {
+      padding: 20px 50px;
+    }
+  }
+}
+
+#error-page-container
+{
+  text-align: center;
+  padding:90px;
+
+  #error-animal-row {
+      width: 100%;
+      margin: auto;
+      img {
+        height: 100px;
+        width: 100px;
+      }
+    @media(min-width: 767px) {
+      width: 90%;
+      margin: auto;
+      img {
+        height: 150px;
+        width: 150px;
+      }
+    }
+    @media(min-width: 992px) {
+      width: 80%;
+      margin: auto;
+      img {
+        height: 200px;
+        width: 200px;
+      }
+    }
+  }
+
+  #really-big-status-code {
+    font-size:140px;
   }
 }

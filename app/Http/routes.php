@@ -52,8 +52,8 @@ Route::get('technology-opt-out', 'PageController@opt_out');
 Route::get('guests', 'GuestController@index');
 Route::get('invitation', 'InvitationController@savethedate');
 
+Route::get('faq', 'PageController@faq');
 Route::get('login', ['as' => 'user.login', 'uses' => 'UserController@login']);
 Route::get('logout', ['as' => 'user.logout', 'uses' => 'UserController@logout']);
 Route::get('rsvp', ['as' => 'rsvp', 'middleware' => 'auth', 'uses' => 'RsvpController@store']);
 Route::get('status', ['as' => 'user.loggedIn.home', 'middleware' => 'auth', 'uses' => 'UserController@loggedInHome']);
-Route::get('bummer', 'RsvpController@bummer');
