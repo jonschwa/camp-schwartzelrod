@@ -1,6 +1,8 @@
 $( document ).ready(function() {
 
-    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+    if(checkMainPage()) {
+        $("body").tooltip({selector: '[data-toggle=tooltip]'});
+    }
 
     var mainSplashArea = $('#main-page-splash');
 

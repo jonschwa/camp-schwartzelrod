@@ -34,8 +34,12 @@ function UserGuest (params) {
 }
 
 $('#btn-user-guest-submit').on('click', function(e) {
-    hideRsvpErrors()
+    hideRsvpErrors();
     e.preventDefault();
+    if($(this).is(':disabled')) {
+        return false;
+    }
+    $(this).button('disable').addClass('btn-disabled');
     var guestFormData = $.find('.rsvp-guest-interests');
     var userId = $('#userid').val();
     var userGuests = generateRequestBody(guestFormData);

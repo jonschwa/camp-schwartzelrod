@@ -215,7 +215,8 @@ $('#form-opt-out').submit(function(event) {
         }
     }).success(function(json) {
         console.log(json);
-        var prefContact = json.data.user.contact_preference;
+        var prefContact = $('#form-opt-out-contact-preference').val();
+        console.log(json.data.user.contact_preference);
         $('#preferred-contact-method').html(prefContact);
         $('#form-opt-out').hide();
         $('#rsvp-subtitle').hide();
