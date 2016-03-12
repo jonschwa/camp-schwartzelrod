@@ -3,7 +3,7 @@
         <div class="guest-activities">
             <div class="activities-header">
                 <span class="highway-headline">Activities - </span>
-                <span class="highway-subhead top3-instructions">Pick your top 3!</span>
+                <span class="highway-subhead top3-instructions">Pick your top 3!</span><span class="activity-error-label control-label error-label" style="display:none;"></span>
             </div>
             <div class="row activity-icon-row">
                 <div class="col-md-2 col-s-4 col-xs-6">

@@ -1,5 +1,5 @@
 <div class="guest-rsvp-container">
-    <form class="rsvp-guest-interests">
+    <form class="rsvp-guest-interests" id="{{ uniqid() }}">
         <input type="hidden" name="guestid" value="{{$guest->id}}">
         <div class="form-rsvp-guest-header">
             <div class="row">
@@ -9,11 +9,13 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <input class="form-control rsvp-camper-lg-input" type="text" name="first-name" placeholder="First Name" value="{{ $guest->first_name }}">
+                        <label class="control-label error-label" style="display:none;"></label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <input class="form-control rsvp-camper-lg-input" type="text" name="last-name" placeholder="Last Name" value="{{ $guest->last_name }}">
+                        <label class="control-label error-label" style="display:none;"></label>
                     </div>
                 </div>
                 <div class="button-rsvp-remove-guest glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="left" title="Delete this camper"></div>

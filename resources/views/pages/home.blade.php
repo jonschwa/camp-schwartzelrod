@@ -4,7 +4,6 @@
 @section("content")
 <div id="mainpage" isMainPage=true style="display:none;"></div>
     @include("pages._big-logo-splash")
-    <p>ssss</p>
     <a id="our-story-anchor" name="our-story"></a>
     @include("pages._our-story")
     <a id="wedding-info-anchor" name="wedding-info"></a>

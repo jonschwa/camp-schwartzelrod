@@ -30,59 +30,58 @@ function UserGuest (params) {
     this.kickball = params.kickball;
     this.ctf = params.ctf;
     this.scavengerHunt = params.scavengerHunt;
+    this.uniqueId = params.uniqueId;
 }
 
-$('#btn-user-guest-submit').on('click', function() {
+$('#btn-user-guest-submit').on('click', function(e) {
+    hideRsvpErrors()
+    e.preventDefault();
     var guestFormData = $.find('.rsvp-guest-interests');
     var userId = $('#userid').val();
     var userGuests = generateRequestBody(guestFormData);
 
-    validateGuests(userGuests);
-    return false;
-    //console.log(userGuests);
-    $.ajax({
-        url: "/api/users/" + userId + "/guests",
-        method: "POST",
-        data: {
-            "guests" : userGuests
-        }
-    }).success(function(json) {
-        console.log(json);
-
-        //console.log('guests updated!');
-        //create or update the rsvp record
+    if(!validateGuests(userGuests)) {
+        //console.log(userGuests);
         $.ajax({
-            url: "/api/users/" + userId + '/rsvp/',
+            url: "/api/users/" + userId + "/guests",
             method: "POST",
             data: {
-                "will_attend" : 1,
-                "num_guests" : userGuests.length
+                "guests" : userGuests
             }
         }).success(function(json) {
-            //console.log('rsvp updated!');
-            //redirect to the status page!
-            window.location.href = "/status";
+            console.log(json);
 
+            //console.log('guests updated!');
+            //create or update the rsvp record
+            $.ajax({
+                url: "/api/users/" + userId + '/rsvp/',
+                method: "POST",
+                data: {
+                    "will_attend" : 1,
+                    "num_guests" : userGuests.length
+                }
+            }).success(function(json) {
+                //console.log('rsvp updated!');
+                //redirect to the status page!
+                window.location.href = "/status";
+
+            }).error(function(json) {
+                showErrorMessage(json.responseJSON.message);
+            });
+
+            //window.location.href = "/status";
         }).error(function(json) {
             showErrorMessage(json.responseJSON.message);
+            //@todo highlight validation errs and show messages
+            $('#error-flash-container').fadeIn();
         });
-
-        //window.location.href = "/status";
-    }).error(function(json) {
-        showErrorMessage(json.responseJSON.message);
-        //@todo highlight validation errs and show messages
-        $('#error-flash-container').fadeIn();
-    });
+    }
 });
 
 function generateRequestBody(guestFormData) {
     var userGuests = [];
 
     var lodgingInfo = getLodgingInfo();
-    console.log(lodgingInfo);
-
-    //console.log(lodgingInfo.isStaying);
-    //console.log(lodgingInfo.cabinAdventureLevel);
 
     $.each(guestFormData, function(guestData) {
         var params = {
@@ -97,7 +96,7 @@ function generateRequestBody(guestFormData) {
             friCampActivities : $(this).find("input[name='fri-camp-activities']").is(':checked') ? 1 : 0,
             satCampActivities : $(this).find("input[name='sat-camp-activities']").is(':checked') ? 1 : 0,
             weddingAttend : $(this).find("input[name='wedding-attend']").is(':checked') ? 1 : 0,
-            cabinAdventureLevel : parseInt(lodgingInfo.cabinAdventureLevel),
+            cabinAdventureLevel : lodgingInfo.cabinAdventureLevel,
             desiredBunkMates : lodgingInfo.desiredBunkMates,
             byoPlan : lodgingInfo.byoPlan,
             hotelChoice : lodgingInfo.hotelChoice,
@@ -112,7 +111,8 @@ function generateRequestBody(guestFormData) {
             frisbee : $(this).find("input[name='interested-frisbee']").is(':checked') ? 1 : 0,
             kickball : $(this).find("input[name='interested-kickball']").is(':checked') ? 1 : 0,
             ctf : $(this).find("input[name='interested-ctf']").is(':checked') ? 1 : 0,
-            scavengerHunt : $(this).find("input[name='interested-scavenger-hunt']").is(':checked') ? 1 : 0
+            scavengerHunt : $(this).find("input[name='interested-scavenger-hunt']").is(':checked') ? 1 : 0,
+            uniqueId : $(this).attr('id')
         };
 
         if($(this).parent().hasClass('blank') === false) {
@@ -196,7 +196,7 @@ $('#rsvp-guests-container').on('click', '.activityIcon', function(e) {
             $(this).closest('.rsvp-guest-interests')
             //.closest('.rsvp-guest-interests')
                 .find('.top3-instructions')
-                .css('color', 'red')
+                .css('color', '#a94442')
                 .effect( "bounce", {times:4}, 1000, function() {
                     $(this).css('color', 'black');
             });
@@ -262,7 +262,11 @@ $('#button-rsvp-add-guest').on('click', function(e){
     }
 
     var clone = $('.guest-rsvp-container.blank').clone().removeClass('blank').appendTo('#rsvp-guests-container');
-    var activities = clone.find('')
+    console.log(clone);
+
+    //random number for the new guest div id
+    var newId = Math.random().toString(36).substr(2, 5);
+    clone.find('.rsvp-guest-interests').prop("id", newId);
     clone.fadeIn();
 });
 
@@ -313,18 +317,126 @@ function updateNumCampers(num)
 }
 
 function validateGuests(userGuests) {
-    //console.log(userGuests);
-    var visibleGuestForms = $('div.guest-rsvp-container').not('.blank');
+    console.log(userGuests);
+    var firstError = false; //init error form id
 
-    //userGuests
+    $.each( userGuests, function(key, guest) {
+        if(guest.firstName.length == 0) {
+            console.log('no first name!');
+            $('#'+guest.uniqueId).find("input[name='first-name']").closest('.form-group').addClass('has-error');
+            $('#'+guest.uniqueId).find("input[name='first-name']").closest('.form-group').find('.error-label').html('Required').show();
+            if(firstError == false) {
+                firstError = guest.uniqueId;
+            }
+        }
+        if(guest.lastName.length == 0) {
+            console.log('no last name!');
+            $('#'+guest.uniqueId).find("input[name='last-name']").closest('.form-group').addClass('has-error');
+            $('#'+guest.uniqueId).find("input[name='last-name']").closest('.form-group').find('.error-label').html('Required').show();
+            if(firstError == false) {
+                firstError = guest.uniqueId;
+            }
+        }
+        if(guest.friCampActivities == 1 || guest.satCampActivities == 1) {
+            if (countActivitiesSelected(guest) < 3) {
+                console.log('not enough activities!')
+                $('#'+guest.uniqueId).find(".guest-activities").find('.error-label').html('Please pick 3!').show();
 
-    for (var key in userGuests) {
-        if (userGuests.hasOwnProperty(key)) {
-            //console.log(userGuests[key].guestId);
-            //console.log('form ' + guestForm);
-            $(visibleGuestForms[0]).fadeOut();
+                if(firstError == false) {
+                    firstError = guest.uniqueId;
+                }
+            }
+        }
+    });
+
+    if (!$("input[name='is-staying']:checked").val()) {
+        console.log('Where staying is not selected!');
+        $('#no-lodging-selected-error').html('Please select a lodging option!').show();
+        if(firstError == false) {
+            firstError = 'lodging-select';
         }
     }
 
-    return false;
+    if(userGuests[0].stayingIn == "byo" && userGuests[0].byoPlan.length == 0) {
+        console.log('need info about byo plan!');
+        $('#no-byo-plan-error').html('Please tell us your plans!').show();
+        $('#byo-plan').closest('.form-group').addClass('has-error');
+        if(firstError == false) {
+            firstError = 'lodging-select';
+        }
+    }
+
+    if(userGuests[0].stayingIn == "cabin" && userGuests[0].cabinAdventureLevel.length == 0) {
+        console.log('need cabin adventure level!');
+        $('#no-cal-selected-error').html('Please select which type of cabin you want to stay in!').show();
+        if(firstError == false) {
+            firstError = 'lodging-select';
+        }
+
+    }
+
+    if(userGuests[0].isStaying == 0 && userGuests[0].hotelChoice.length == 0) {
+        console.log('need to let us know where you plan on staying!');
+        $('#no-hotel-choice-error').html('Please choose an option').show();
+        if(firstError == false) {
+            firstError = 'lodging-select';
+        }
+    }
+
+    if(firstError) {
+        scrollToId(firstError, 'slow');
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function countActivitiesSelected(guest)
+{
+    var count = 0;
+    if(guest.archery == 1) {
+        count++;
+    }
+    if(guest.artsAndCrafts == 1){
+        count++;
+    }
+    if(guest.boating == 1){
+        count++;
+    }
+    if(guest.ctf == 1){
+        count++
+    }
+    if(guest.football == 1){
+        count++;
+    }
+    if(guest.frisbee == 1){
+        count++;
+    }
+    if(guest.kickball == 1){
+        count++;
+    }
+    if(guest.scavengerHunt == 1){
+        count++;
+    }
+    if(guest.swimming == 1){
+        count++;
+    }
+    if(guest.tennis == 1){
+        count++;
+    }
+    if(guest.soccer == 1){
+        count++;
+    }
+    if(guest.volleyball == 1){
+        count++;
+    }
+    console.log(count + ' activities!');
+    return count;
+}
+
+function hideRsvpErrors()
+{
+    $('.error-label').hide();
+    $('.form-group').removeClass('has-error');
 }

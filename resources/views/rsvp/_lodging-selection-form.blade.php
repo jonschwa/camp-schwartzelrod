@@ -8,7 +8,8 @@
             <div class="col-md-12">
                 <div class="row guest-form-row">
                     <p class="highway-subhead txt-centered">Where will your <span id="num-campers">{{ $numGuests }}</span> <span id="camper-label">@if($numGuests > 1) campers @else camper @endif</span> be staying?</p>
-                    <div class="lodging-option-radio-row txt-centered">
+                    <p class="activity-error-label control-label error-label txt-centered" id="no-lodging-selected-error" style="display:none;"></p>
+                    <div class="lodging-option-radio-row txt-centered" id="lodging-select">
                         <label class="radio">
                             <input class="radio-is-staying" type="radio" name="is-staying" @if($guest->is_staying == 1 && $guest->in_cabin == 1) checked @endif value=true staying_in="cabin"> Staying at camp (cabin)
                         </label>

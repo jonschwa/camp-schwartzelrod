@@ -2,6 +2,7 @@ $brown: #3d1e07;
 $yellow-text: #ecc884;
 $green: #087649;
 $grey: #666666;
+$red-error: #a94442;
 
 $trees: url('/img/tree_bark.jpg');
 
@@ -505,10 +506,16 @@ $trees: url('/img/tree_bark.jpg');
 
 .unclickable
 {
-  color: red !important;
+  color: $red-error !important;
 }
 
 #btn-update-camper-info
 {
   margin-top:40px;
+}
+
+.activity-error-label {
+  margin-left: 10px;
+  color: $red-error;
+  font-weight: bold;
 }

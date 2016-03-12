@@ -3,6 +3,11 @@ function scrollToAnchor(aid, speed){
     $('html,body').animate({scrollTop: aTag.offset().top},speed);
 }
 
+function scrollToId(id, speed){
+    var idLocation = $("#" + id);
+    $('html,body').animate({scrollTop: idLocation.offset().top - 75},speed);
+}
+
 function checkMainPage()
 {
     var mainPage = $('#mainpage').attr('isMainPage');
