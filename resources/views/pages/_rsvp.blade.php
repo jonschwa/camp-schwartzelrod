@@ -17,7 +17,6 @@
                     @include("rsvp._form-decline")
                     @include("rsvp._form-opt-out")
                     @include('rsvp._response-forms')
-                    <p><a href="/test_invites">Invitation codes</a></p>
                 </div>
                 <div class="col-md-4">
                     <img class="img-save-the-date" src="/img/std-card-help.png" />

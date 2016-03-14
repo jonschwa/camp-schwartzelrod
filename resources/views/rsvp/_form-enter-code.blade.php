@@ -14,19 +14,4 @@
         <div id="old-person-opt-out-container">
             <button type="button" class="btn btn-danger button-form-enter-code-opt-out">Help! I want to do this the old-fashioned way</button>
         </div>
-    </div>
-    {{--<div id="old-person-opt-out-container">--}}
-        {{--<p class="clarendon-subhead">Need Help?</p>--}}
-        {{--<p>--}}
-            {{--Remember, we will NOT be sending out paper invitations and all RSVPs will be processed through this website.--}}
-            {{--We think it’s pretty simple and tested it on some not-so-tech-savvy parents so we hope everyone will give--}}
-            {{--it a shot. But if all this newfangled internet technology is really too much to handle, you can click the--}}
-            {{--large red button below and we will follow up with you individually.--}}
-        {{--</p>--}}
-        {{--<a href="/technology-opt-out">--}}
-            {{--<button type="button" class="btn btn-danger button-form-opt-out">--}}
-                {{--Help! I want to do this the old-fashioned way--}}
-            {{--</button>--}}
-        {{--</a>--}}
-    {{--</div>--}}
 </form>
