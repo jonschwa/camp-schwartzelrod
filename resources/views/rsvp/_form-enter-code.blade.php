@@ -14,4 +14,5 @@
         <div id="old-person-opt-out-container">
             <button type="button" class="btn btn-danger button-form-enter-code-opt-out">Help! I want to do this the old-fashioned way</button>
         </div>
+    </div>
 </form>
