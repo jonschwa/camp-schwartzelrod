@@ -1,10 +1,5 @@
 <?php
 
-Route::get('test_invites', function() {
-    $i = new App\Invitation();
-    return $i->with('user')->get();
-});
-
 // Password reset link request routes...
 Route::get('password/recover', 'Auth\PasswordController@getEmail');
 Route::post('password/email', 'Auth\PasswordController@postEmail');
