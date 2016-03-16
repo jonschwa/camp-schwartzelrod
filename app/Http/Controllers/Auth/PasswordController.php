@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
+use Password;
 use Illuminate\Mail\Message;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -63,5 +65,26 @@ class PasswordController extends Controller
         }
 
         return view('users.password-reset-token-entry')->with('token', $token);
+    }
+
+    /**
+     * Overriding the pw reset email subject
+     */
+    protected function getEmailSubject()
+    {
+        return property_exists($this, 'subject') ? $this->subject : 'Reset your Camp Schwartzelrod password';
+    }
+
+
+    /**
+     * Overriding the pw reset (use Hash in User model)
+     */
+    protected function resetPassword($user, $password)
+    {
+        $user->password = $password;
+
+        $user->save();
+
+        Auth::login($user);
     }
 }
