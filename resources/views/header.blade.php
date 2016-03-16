@@ -36,10 +36,16 @@
                             <a class="highway-subhead nav-link" href="/#lodging-info" id="nav-lodging-info-link">Accommodations</a>
                         </li>
                     </ul>
-                    @if(Auth::user())
+                    @if(Auth::user() && Auth::user()->is_admin == 0)
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <p class="highway-subhead nav-link"><span class="nav-logged-in-text">Logged in as {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span> <a href="/status">View RSVP</a> <span class="yellow"> | </span><a href="/logout">Log Out</a></p>
+                            </li>
+                        </ul>
+                    @elseif(Auth::user() && Auth::user()->is_admin == 1)
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <p class="highway-subhead nav-link"><span class="nav-logged-in-text">Logged in as {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span> <a href="/admin">Admin</a> <span class="yellow"> | </span><a href="/logout">Log Out</a></p>
                             </li>
                         </ul>
                     @else

@@ -26,6 +26,9 @@ class UserController extends Controller
     {
         //get the logged in user's relevant information
         $loggedInUser = Auth::user();
+        if($loggedInUser->is_admin == 1) {
+            return redirect('/admin');
+        }
         $user = $this->user->getAllUserInfo($loggedInUser->id);
         $rsvp = !is_null($user->rsvp()) ? $user->rsvp()->first(): null;
         $onSiteInfo = [];

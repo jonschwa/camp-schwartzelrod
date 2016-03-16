@@ -23,4 +23,6 @@ interface UserRepository
     public function getAllUserInfo($userId);
 
     public function syncUserGuests($user, $guests);
+
+    public function getUsers();
 }

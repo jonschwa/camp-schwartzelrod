@@ -123,5 +123,28 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
         return true;
     }
 
+    public function getUsers()
+    {
+        $allUsers = $this->model->where('is_admin', 0)->get();
+
+        $activeUsers = $allUsers->filter(function($user) {
+            if($user->active == 1) {
+                return $user;
+            }
+        });
+        $inactiveUsers = $allUsers->filter(function($user) {
+            if($user->active == 0) {
+                return $user;
+            }
+        });
+
+        $userCollections = [
+            'active' => $activeUsers,
+            'inactive' => $inactiveUsers
+        ];
+
+        return $userCollections;
+    }
+
 
 }

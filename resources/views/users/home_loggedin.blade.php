@@ -41,7 +41,7 @@
                             @if($key == 0 || $key == 2 || $key == 4)
                                 <div class="row">
                             @endif
-                            <div class="col-md-6 col-xs-12 guest-rsvp-card">
+                            <div class="col-md-6 @if($user->guests->count() == 1 || $key == 2 && $user->guests->count() == 3 || $key == 4 && $user->guests->count() > 4) col-md-offset-3  @endif col-xs-12 guest-rsvp-card">
                                 @include('guests.rsvp-info')
                             </div>
                             @if($key == 1 || $key == 3 || $key == 5)
@@ -52,7 +52,11 @@
                 @endif
             </div>
         </div>
-        @include('rsvp._logged-in-lodging-summary')
+        <div class="row">
+            <div class="col-md-12">
+                @include('rsvp._logged-in-lodging-summary')
+            </div>
+        </div>
     @endif
 @stop
 

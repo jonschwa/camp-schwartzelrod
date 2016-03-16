@@ -3,4 +3,5 @@
 interface RsvpRepository
 {
     public function saveRsvp($user, $params);
+    public function getAllRsvps();
 }
