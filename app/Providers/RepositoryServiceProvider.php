@@ -25,7 +25,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind('App\Repositories\Guest\GuestRepository', function($app)
         {
-            return new \App\Repositories\Guest\EloquentGuestRepository(new \App\Guest);
+            return new \App\Repositories\Guest\EloquentGuestRepository(new \App\Guest, new \App\User);
         });
 
         $this->app->bind('App\Repositories\User\UserRepository', function($app)

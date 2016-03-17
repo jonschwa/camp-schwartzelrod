@@ -25,9 +25,11 @@ class AdminController extends Controller
     {
         /*
          * @array of Collection Objects
-         * Contains ['yes', 'no', 'maybe' ,'optOut', 'all']
+         * Contains ['yes', 'no', 'maybe' ,'optOut', 'all', 'numbers']
          */
         $allRsvps = $this->rsvp->getAllRsvps();
+
+        //$attendees = $this->guest->getAttendees();
 
         //last invitations actually accessed
         $accessLog = AccessLog::where('loggable_type', 'invitation')
@@ -44,5 +46,4 @@ class AdminController extends Controller
                                         'users' => $allUsers,
                                         'accessLog' => $accessLog]);
     }
-
 }

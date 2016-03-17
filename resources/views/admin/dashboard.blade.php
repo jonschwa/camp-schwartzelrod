@@ -7,8 +7,10 @@
             </div>
         </div>
     @include('admin._rsvp')
+    <hr width="100%">
+    @include('admin._guests')
+    <hr width="100%">
     @include('admin._user')
-    {{--@include('admin._guests')--}}
     </div>
 
 @stop

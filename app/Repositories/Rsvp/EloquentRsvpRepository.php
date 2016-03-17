@@ -85,9 +85,70 @@ class EloquentRsvpRepository extends AbstractEloquentRepository implements RsvpR
             'yes' => $rsvpsYes,
             'maybe' => $rsvpsMaybe,
             'no' => $rsvpsNo,
-            'optOut' => $rsvpsOptOut
+            'optOut' => $rsvpsOptOut,
+            'numbers' => $this->getReportNumbers($rsvpsYes)
          ];
 
         return $rsvpCollections;
+    }
+
+    private function getReportNumbers($rsvps)
+    {
+        $reportNumbers = [
+            'guests' => [
+                'total' => 0,
+                'adults' => 0,
+                'children' => 0
+            ],
+            'events' => [
+                'wedding' => 0,
+                'friday_bbq' => 0,
+            ],
+            'activities' => [
+                'friday' => 0,
+                'saturday' => 0
+            ],
+            'lodging' => [
+                'cabin' => 0,
+                'byo' => 0,
+                'offsite' => 0
+            ],
+        ];
+
+        foreach($rsvps as $rsvp) {
+            foreach($rsvp['user']['guests'] as $guest) {
+                $reportNumbers['guests']['total']++;
+                //var_dump($guest);
+                if($guest->is_adult == 1) {
+                    $reportNumbers['guests']['adults']++;
+                }
+                else {
+                    $reportNumbers['guests']['children']++;
+                }
+                if($guest->wedding_attend == 1) {
+                    $reportNumbers['events']['wedding']++;
+                }
+                if($guest->friday_bbq == 1) {
+                    $reportNumbers['events']['friday_bbq']++;
+                }
+                if($guest->fri_camp_activities == 1) {
+                    $reportNumbers['activities']['friday']++;
+                }
+                if($guest->sat_camp_activities == 1) {
+                    $reportNumbers['activities']['saturday']++;
+                }
+                if($guest->is_staying == 1) {
+                    if ($guest->in_cabin == 1) {
+                        $reportNumbers['lodging']['cabin']++;
+                    }
+                    else {
+                        $reportNumbers['lodging']['byo']++;
+                    }
+                } else {
+                    $reportNumbers['lodging']['offsite']++;
+                }
+            }
+        }
+        return $reportNumbers;
     }
 }
