@@ -37,7 +37,7 @@ class EloquentRsvpRepository extends AbstractEloquentRepository implements RsvpR
     {
         $allRsvps = $this->model->with(['user' => function($q) {
             $q->with('guests');
-        }])->get();
+        }])->orderBy('created_at', 'desc')->get();
 
         $allRsvps->each(function($rsvp) {
             $adults = $rsvp->user->guests->filter(function($guest) {
@@ -46,13 +46,9 @@ class EloquentRsvpRepository extends AbstractEloquentRepository implements RsvpR
                 }
             });
             $rsvp->user->num_adults = $adults->count();
-            if($rsvp->user->guests->count() < $adults->count()) {
-                $kids = $rsvp->user->guests->filter(function($guest) {
-                    if($guest->is_adult == 0) {
-                        return $guest;
-                    }
-                });
-                $rsvp->user->num_kids = $kids->count();
+            if($rsvp->user->guests->count() > $adults->count()) {
+                $kidsCount = $rsvp->user->guests->count() - $adults->count();
+                $rsvp->user->num_kids = $kidsCount;
             }
             else {
                 $rsvp->user->num_kids = 0;
