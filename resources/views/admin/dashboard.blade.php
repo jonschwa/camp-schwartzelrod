@@ -11,6 +11,7 @@
     @include('admin._guests')
     <hr width="100%">
     @include('admin._user')
+    @include('admin._user-table')
     </div>
 
 @stop
