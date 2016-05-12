@@ -102,7 +102,21 @@ class EloquentRsvpRepository extends AbstractEloquentRepository implements RsvpR
             ],
             'activities' => [
                 'friday' => 0,
-                'saturday' => 0
+                'saturday' => 0,
+                'user_selections' => [
+                    'archery' => 0,
+                    'swimming' => 0,
+                    'boating' => 0,
+                    'arts_and_crafts' => 0,
+                    'soccer' => 0,
+                    'tennis' => 0,
+                    'volleyball' => 0,
+                    'football' => 0,
+                    'frisbee' => 0,
+                    'kickball' => 0,
+                    'capture_the_flag' => 0,
+                    'scavenger_hunt' => 0
+                ]
             ],
             'lodging' => [
                 'cabin' => 0,
@@ -132,6 +146,42 @@ class EloquentRsvpRepository extends AbstractEloquentRepository implements RsvpR
                 }
                 if($guest->sat_camp_activities == 1) {
                     $reportNumbers['activities']['saturday']++;
+                }
+                if($guest->interested_archery == 1) {
+                    $reportNumbers['activities']['user_selections']['archery']++;
+                }
+                if($guest->interested_swimming == 1) {
+                    $reportNumbers['activities']['user_selections']['swimming']++;
+                }
+                if($guest->interested_boating == 1) {
+                    $reportNumbers['activities']['user_selections']['boating']++;
+                }
+                if($guest->interested_arts_and_crafts == 1) {
+                    $reportNumbers['activities']['user_selections']['arts_and_crafts']++;
+                }
+                if($guest->interested_soccer == 1) {
+                    $reportNumbers['activities']['user_selections']['soccer']++;
+                }
+                if($guest->interested_tennis == 1) {
+                    $reportNumbers['activities']['user_selections']['tennis']++;
+                }
+                if($guest->interested_volleyball == 1) {
+                    $reportNumbers['activities']['user_selections']['volleyball']++;
+                }
+                if($guest->interested_football == 1) {
+                    $reportNumbers['activities']['user_selections']['football']++;
+                }
+                if($guest->interested_frisbee == 1) {
+                    $reportNumbers['activities']['user_selections']['frisbee']++;
+                }
+                if($guest->interested_kickball == 1) {
+                    $reportNumbers['activities']['user_selections']['kickball']++;
+                }
+                if($guest->interested_capture_the_flag == 1) {
+                    $reportNumbers['activities']['user_selections']['capture_the_flag']++;
+                }
+                if($guest->interested_scavenger_hunt == 1) {
+                    $reportNumbers['activities']['user_selections']['scavenger_hunt']++;
                 }
                 if($guest->is_staying == 1) {
                     if ($guest->in_cabin == 1) {

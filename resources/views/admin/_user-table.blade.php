@@ -22,6 +22,22 @@
                     </tr>
                     @endforeach
                 </table>
+                <table class="table">
+                    <tr>
+                        <th>Time of RSVP</th>
+                        <th>User Name</th>
+                        <th>RSVP</th>
+                        <th>Message</th>
+                    </tr>
+                    @foreach($rsvps['no'] as $rsvp)
+                        <tr>
+                            <td>{{ $rsvp->created_at }}</td>
+                            <td>{{ $rsvp->user->first_name }} {{ $rsvp->user->last_name }}</td>
+                            <td>@include('admin._user-form-rsvp-choice')</td>
+                            <td>{{ $rsvp->comment }}</td>
+                        </tr>
+                    @endforeach
+                </table>
             </div>
         </div>
     </div>

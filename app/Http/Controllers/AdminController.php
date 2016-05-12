@@ -4,6 +4,7 @@ use App\AccessLog;
 use App\Repositories\User\UserRepository;
 use App\Repositories\Rsvp\RsvpRepository;
 use App\Repositories\Guest\GuestRepository;
+use Symfony\Component\HttpFoundation\Response;
 
 class AdminController extends Controller
 {
@@ -44,6 +45,8 @@ class AdminController extends Controller
 
         return view('admin.dashboard', ['rsvps' => $allRsvps,
                                         'users' => $allUsers,
-                                        'accessLog' => $accessLog]);
+                                        'accessLog' => $accessLog
+            ]
+        );
     }
 }

@@ -27,6 +27,11 @@ Route::group(['prefix' => 'api'], function()
         Route::post('{userId}/rsvp', 'Api\RsvpController@store');
     });
 
+    Route::group(['prefix' => 'admin'], function()
+    {
+        Route::get('activity_count', 'Api\AdminController@activityCount');
+    });
+
     /*
      * Invitation API Endpoints
      */

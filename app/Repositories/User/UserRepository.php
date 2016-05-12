@@ -25,4 +25,6 @@ interface UserRepository
     public function syncUserGuests($user, $guests);
 
     public function getUsers();
+
+    public function getUsersWithNoRsvp();
 }
