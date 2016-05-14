@@ -2,21 +2,31 @@
 @section("content")
     <h2>Hi, {{ $user->first_name }}!</h2>
     <p>
-        This is a friendly reminder to come check out <a href="{{ URL::to('/')}}">our wedding site</a> and let us know if
-        you can make it to the wedding! We know things sometimes get lost in the mail, animals eat invitations, etc so
-        here is your invitation code in case you need it:
+        This is a friendly reminder to let us know if you can make it to our wedding! You can get all the details at
+        <a href="{{ URL::to('/')}}">camp.schwartzelrods.com</a> or click this big green button to jump straight to the
+        action:
     </p>
-    <p style="font-size: 2em; text-align: center; font-weight: bold;">
-        {{ $user->invitation->code }}
+    <table cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="center" width="200" height="40" bgcolor="#087649" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #ecc884; display: block;">
+                <a href="{{ URL::to('/?code=' . $user->invitation->code) }}#rsvp" style="font-size:16px; font-weight: bold; font-family: Helvetica, Arial, sans-serif; text-decoration: none; line-height:40px; width:100%; display:inline-block"><span style="color: #FFFFFF">RSVP</span></a>
+            </td>
+        </tr>
+    </table>
+    <p>
+        Forgot your RSVP code? Invitation lost in the mail? Dog ate it? Well you're in luck! Your code is
+        <strong>"{{ $user->invitation->code }}"</strong>.
     </p>
     <p>
-        Please enter your code <a href="{{ URL::to('/?code=' . $user->invitation->code) }}#rsvp">here</a> to RSVP.
-        Even if your aren't entirely sure yet, please RSVP "maybe" and let us know; It will help us out a lot with the
-        planning. We hope you can come, but if you know for sure that you can't, the earlier you can let us know, the better.
+        Even if your aren't entirely sure yet, please RSVP maybe. It will help us out a lot with the planning.
+        You can always return to the site, log in, and change your RSVP later. Please let us know your final
+        decision by August 1st.
     </p>
     <p>
-        Thank you! If you have any questions you can just reply to this email.
-        ...or you can call us! We must be pretty tight - you're invited to our wedding!
+        Questions? Just reply to this email.
+    </p>
+    <p>
+        Thank you!
     </p>
     <p>
         -Jon & Stacey
