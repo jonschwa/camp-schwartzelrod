@@ -50,7 +50,6 @@ class RsvpReminder extends Command
                     $user->reminder_1 = 1;
                     $user->save();
                 }
-                dd('fin');
             }
 
         }
@@ -59,7 +58,7 @@ class RsvpReminder extends Command
     public function sendReminderEmail($user)
     {
         return Mail::send('emails.users.rsvp-reminder-1', ['user' => $user], function ($m) use ($user) {
-            $m->to('schwartzelrods@gmail.com', $user->name)->subject('Are you coming to our wedding?');
+            $m->to($user->email, $user->name)->subject('Are you coming to our wedding?');
         });
     }
 }
