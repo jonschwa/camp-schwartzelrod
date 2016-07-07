@@ -53,6 +53,7 @@ Route::get('guests', 'GuestController@index');
 Route::get('invitation', 'InvitationController@savethedate');
 
 Route::get('faq', 'PageController@faq');
+Route::get('registry', 'PageController@registry');
 Route::get('login', ['as' => 'user.login', 'uses' => 'UserController@login']);
 Route::get('logout', ['as' => 'user.logout', 'uses' => 'UserController@logout']);
 Route::get('rsvp', ['as' => 'rsvp', 'middleware' => 'auth', 'uses' => 'RsvpController@store']);

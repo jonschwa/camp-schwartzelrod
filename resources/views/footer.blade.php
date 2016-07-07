@@ -61,7 +61,7 @@
                                             <a href="mailto:schwartzelrods@gmail.com" class="highway-subhead">Contact</a>
                                         </div>
                                         <div class="col-md-4 footer-link-block">
-                                            <a data-toggle="tooltip" data-placement="top" title="Coming Soon!" class="highway-subhead">Registry</a>
+                                            <a class="highway-subhead" href="/registry">Registry</a>
                                         </div>
                                     </div>
                                 </div>

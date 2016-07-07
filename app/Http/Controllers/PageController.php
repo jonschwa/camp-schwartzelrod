@@ -122,4 +122,9 @@ class PageController extends Controller
         return view('pages.faq');
     }
 
+    public function registry()
+    {
+        return view('pages.registry');
+    }
+
 }
