@@ -20,7 +20,7 @@
                     </div>
                     <div id="gift-registry">
                         <div class="row">
-                            <div class="col-sm-12 txt-centered">
+                            <div class="col-sm-12 txt-centered gift-top">
                                 <p><a class="highway-subhead txt-centered" href="https://www.paypal.me/campschwartzelrod">Contribute to Escher's Care Fund</a></p>
                                 <p>As you probably know, we adopted and continue to rehabilitate a very damaged, but deserving, dog. We wish he could come to the wedding and join us on our honeymoon, but instead he will get some quality time (three weeks total!) with his awesome pet sitter and best friend Paula. Please consider contributing to Escher's care* while we're away.</p>
                             </div>
