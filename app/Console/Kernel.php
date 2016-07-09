@@ -15,7 +15,8 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         //\App\Console\Commands\Inspire::class,
         \App\Console\Commands\ImportGuests::class,
-        \App\Console\Commands\RsvpReminder::class
+        \App\Console\Commands\RsvpReminderJuly::class,
+        \App\Console\Commands\GenerateUser::class
     ];
 
     /**

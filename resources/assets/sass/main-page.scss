@@ -753,8 +753,18 @@ hr {
 
 #gift-registry
 {
+  margin-top:20px;
+
   .row {
     margin-bottom: 20px;
   }
+
+  p.registry-footnote {
+    font-size: 0.8em;
+  }
+}
+
+.registry-pet {
+  margin: 15px;
 }
 

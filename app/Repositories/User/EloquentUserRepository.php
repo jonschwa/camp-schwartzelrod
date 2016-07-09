@@ -133,7 +133,7 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
             }
         });
         $inactiveUsers = $allUsers->filter(function($user) {
-            if($user->active == 0) {
+            if($user->active == 0 && $user->rsvp == null) {
                 return $user;
             }
         });
