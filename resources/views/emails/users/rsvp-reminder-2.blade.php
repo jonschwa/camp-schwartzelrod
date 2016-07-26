@@ -2,7 +2,7 @@
 @section("content")
     <h2>Hi, {{ $user->first_name }}!</h2>
     <p>
-        This is a friendly reminder to let us know if you can make it to our wedding! You can get all the details at
+        Last chance to let us know if you can make it to our wedding! You can get all the details at
         <a href="{{ URL::to('/')}}">camp.schwartzelrods.com</a> or click this big green button to jump straight to the
         action:
     </p>
@@ -18,12 +18,14 @@
         <strong>"{{ $user->invitation->code }}"</strong>.
     </p>
     <p>
-        Even if your aren't entirely sure yet, please RSVP maybe. It will help us out a lot with the planning.
-        You can always return to the site, log in, and change your RSVP later. Please let us know your final
-        decision by August 1st.
+        <strong>Wondering where to stay?</strong> Most of our guests will be staying at the two inns on the island,
+        <a href="http://www.shoreacres.com/">Shore Acres Inn</a> and <a href="http://www.northherohouse.com/">North Hero House</a>.
+        We also still have room in the camp cabins and lots of people will be bringing their own tents! No matter
+        where you stay, you’re welcome to hang out at the camp and enjoy the activities we have planned on Friday,
+        Saturday, and Sunday.
     </p>
     <p>
-        Questions? Just reply to this email.
+        Questions? Just reply to this email, or feel free to call us (Stacey: 908-420-4006, Jon: 908-421-6493).
     </p>
     <p>
         Thank you!

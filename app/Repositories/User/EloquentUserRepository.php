@@ -148,7 +148,9 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
 
     public function getUsersWithNoRsvp()
     {
-        return $this->model->doesntHave('rsvp')->where('reminder_1', 0)->get();
+        //return $this->model->doesntHave('rsvp')->where('reminder_1', 0)->get();
+        return $this->model->doesntHave('rsvp')
+                           ->where('reminder_2', 0)->get();
     }
 
 

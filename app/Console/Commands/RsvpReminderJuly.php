@@ -47,19 +47,18 @@ class RsvpReminderJuly extends Command
             if(!is_null($user->email) && $user->is_admin == 0) {
                 $this->info($user->email);
                 if($this->sendReminderEmail($user)) {
-                    $user->reminder_1 = 1;
+                    $user->reminder_2 = 1;
                     $user->save();
                 }
             }
-
         }
     }
 
     public function sendReminderEmail($user)
     {
         return Mail::send('emails.users.rsvp-reminder-2', ['user' => $user], function ($m) use ($user) {
-            //$m->to($user->email, $user->name)->subject('Are you coming to our wedding?');
-            $m->to('jalexan@gmail.com', $user->name)->subject('Are you coming to our wedding?');
+            $m->to($user->email, $user->name)->subject('RSVP to our wedding by August 1st!');
+            //$m->to('schwartzelrods@gmail.com', $user->name)->subject('RSVP to our wedding by August 1st!');
         });
     }
 }

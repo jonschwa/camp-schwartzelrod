@@ -117,7 +117,8 @@ class GenerateUser extends Command
             'first_name' => $data['first_name'],
             'last_name'  => $data['last_name'],
             'email'      => $data['email'],
-            'password'   => \Hash::make('password'),
+            'password'   => \Hash::maken('password'),
+            'active'     => 0,
             'max_guests' => $data['max_guests'],
         ];
 
