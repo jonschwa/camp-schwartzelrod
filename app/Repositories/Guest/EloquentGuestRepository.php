@@ -83,6 +83,9 @@ class EloquentGuestRepository extends AbstractEloquentRepository implements Gues
                 $guests[] = $existingGuest->toArray();
             }
         }
+        if(!is_null($user->rsvp)) {
+            $user->rsvp()->update(array('updated_at' => date('Y-m-d H:i:s')));
+        }
         return $guests;
     }
 
