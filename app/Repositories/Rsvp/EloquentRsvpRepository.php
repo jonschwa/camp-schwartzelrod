@@ -37,7 +37,7 @@ class EloquentRsvpRepository extends AbstractEloquentRepository implements RsvpR
     {
         $allRsvps = $this->model->with(['user' => function($q) {
             $q->with('guests');
-        }])->orderBy('created_at', 'desc')->get();
+        }])->orderBy('updated_at', 'desc')->get();
 
         $allRsvps->each(function($rsvp) {
             $adults = $rsvp->user->guests->filter(function($guest) {

@@ -5,6 +5,7 @@
                 <table class="table">
                     <tr>
                         <th>Time of RSVP</th>
+                        <th>Last Update</th>
                         <th>User Name</th>
                         <th>RSVP</th>
                         <th># Adults</th>
@@ -14,6 +15,7 @@
                     @foreach($rsvps['yes'] as $rsvp)
                     <tr>
                         <td>{{ $rsvp->created_at }}</td>
+                        <td>{{ $rsvp->updated_at }}</td>
                         <td>{{ $rsvp->user->first_name }} {{ $rsvp->user->last_name }}</td>
                         <td>@include('admin._user-form-rsvp-choice')</td>
                         <td>{{ $rsvp->user->num_adults }}</td>
