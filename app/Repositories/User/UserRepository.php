@@ -27,4 +27,6 @@ interface UserRepository
     public function getUsers();
 
     public function getUsersWithNoRsvp();
+
+    public function getUsersWithRsvp();
 }

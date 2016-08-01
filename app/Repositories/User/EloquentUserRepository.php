@@ -153,5 +153,13 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
                            ->where('reminder_2', 0)->get();
     }
 
+    public function getUsersWithRsvp()
+    {
+        return $this->model->whereHas('rsvp', function($r) {
+                $r->where('will_attend', '!=', 0);
+            })
+            ->where('rsvp_confirmation', 0)->get();
+    }
+
 
 }

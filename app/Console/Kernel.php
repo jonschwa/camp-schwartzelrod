@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         //\App\Console\Commands\Inspire::class,
         \App\Console\Commands\ImportGuests::class,
         \App\Console\Commands\RsvpReminderJuly::class,
+        \App\Console\Commands\RsvpConfirmationCommand::class,
         \App\Console\Commands\GenerateUser::class
     ];
 

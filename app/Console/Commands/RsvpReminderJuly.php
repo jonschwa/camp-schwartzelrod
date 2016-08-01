@@ -57,8 +57,8 @@ class RsvpReminderJuly extends Command
     public function sendReminderEmail($user)
     {
         return Mail::send('emails.users.rsvp-reminder-2', ['user' => $user], function ($m) use ($user) {
-            $m->to($user->email, $user->name)->subject('RSVP to our wedding by August 1st!');
-            //$m->to('schwartzelrods@gmail.com', $user->name)->subject('RSVP to our wedding by August 1st!');
+            //$m->to($user->email, $user->name)->subject('RSVP to our wedding by August 1st!');
+            $m->to('schwartzelrods@gmail.com', $user->name)->subject('RSVP to our wedding by August 1st!');
         });
     }
 }
